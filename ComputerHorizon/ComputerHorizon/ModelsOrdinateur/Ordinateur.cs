@@ -1,34 +1,54 @@
-﻿namespace ComputerHorizon.ModelsOrdinateur
+﻿using System;
+using System.Data.SqlClient;
+using ComputerHorizon.ModelsProc;
+
+namespace ComputerHorizon.ModelsOrdinateur
 {
     public class Ordinateur
     {
-        public string nom { get; set; }
-        public string marque { get; set; }
-        public double prix { get; set; }
-        public string nomProc { get; set; }
-        public string nomCg { get; set; }
-        public string capacite { get; set; }
-        public int memoireV { get; set; }
-        public bool ssd { get; set; }
-        public string description { get; set; }
-        public int quantite { get; set; }
-        public string capaciteSsd { get; set; }
-        public string img { get; set; }
+        public string Nom { get; set; }
+        public string Marque { get; set; }
+        public double Prix { get; set; }
+        public string NomProc { get; set; }
+        public string NomCg { get; set; }
+        public string Capacite { get; set; }
+        public int MemoireV { get; set; }
+        public bool Ssd { get; set; }
+        public string Description { get; set; }
+        public int Quantite { get; set; }
+        public string CapaciteSsd { get; set; }
+        public string Img { get; set; }
 
         public Ordinateur(string nom, string marque, double prix, string nomProc, string nomCg, string capacite, int memoireV, bool ssd, string description, int quantite, string capaciteSsd, string img)
         {
-            this.nom = nom;
-            this.marque = marque;
-            this.prix = prix;
-            this.nomProc = nomProc;
-            this.nomCg = nomCg;
-            this.capacite = capacite;
-            this.memoireV = memoireV;
-            this.ssd = ssd;
-            this.description = description;
-            this.quantite = quantite;
-            this.capaciteSsd = capaciteSsd;
-            this.img = img;
+            Nom = nom;
+            Marque = marque;
+            Prix = prix;
+            NomProc = nomProc;
+            NomCg = nomCg;
+            Capacite = capacite;
+            MemoireV = memoireV;
+            Ssd = ssd;
+            Description = description;
+            Quantite = quantite;
+            CapaciteSsd = capaciteSsd;
+            Img = img;
+        }
+        
+        public Ordinateur(SqlDataReader reader)
+        {
+            Nom = reader[OrdinateurDao.FIELD_NOM].ToString();
+            Marque = reader[OrdinateurDao.FIELD_MARQUE].ToString();
+            Prix = Convert.ToDouble(reader[OrdinateurDao.FIELD_PRIX].ToString());
+            NomProc = reader[OrdinateurDao.FIELD_NOMPROC].ToString();
+            NomCg = reader[OrdinateurDao.FIELD_NOMCG].ToString();
+            Capacite = reader[OrdinateurDao.FIELD_CAPACITE].ToString();
+            MemoireV = Convert.ToInt32(reader[OrdinateurDao.FIELD_MEMOIREV].ToString());
+            Ssd = Convert.ToBoolean(reader[OrdinateurDao.FIELD_SSD].ToString());
+            Description = reader[OrdinateurDao.FIELD_DESCRIPTION].ToString();
+            Quantite = Convert.ToInt32(reader[OrdinateurDao.FIELD_QUANTITE].ToString());
+            CapaciteSsd = reader[OrdinateurDao.FIELD_CAPACITE_SSD].ToString();
+            Img = reader[OrdinateurDao.FIELD_IMG].ToString();
         }
     }
 }

@@ -45,6 +45,10 @@
           "target": "Package",
           "version": "[2.2.0, )",
           "autoReferenced": true
+        },
+        "System.Data.SqlClient": {
+          "target": "Package",
+          "version": "[4.8.0-preview1.19504.10, )"
         }
       },
       "imports": [

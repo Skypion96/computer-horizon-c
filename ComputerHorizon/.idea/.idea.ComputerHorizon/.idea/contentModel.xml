@@ -10,6 +10,10 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="ComputerHorizon.csproj" t="IncludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="CarteGraphiqueController.cs" t="Include" />
+          <e p="DisqueDurController.cs" t="Include" />
+          <e p="OrdinateurController.cs" t="Include" />
+          <e p="ProcesseurController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
