@@ -13,5 +13,11 @@ namespace ComputerHorizon.Controllers
         {
             return CarteGraphiqueDao.Query();
         }
+        
+        [HttpPost]
+        public ComputerHorizon.ModelsCG.CarteGraphique Post([FromBody]ComputerHorizon.ModelsCG.CarteGraphique carteG)
+        {
+            return CarteGraphiqueDao.Post(carteG);
+        }
     }
 }

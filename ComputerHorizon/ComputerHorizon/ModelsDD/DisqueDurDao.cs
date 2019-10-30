@@ -44,6 +44,28 @@ namespace ComputerHorizon.ModelsDD
 
             return dds;
         }
+        
+        public static DisqueDur Post(DisqueDur disqueD)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_POST;
+
+                command.Parameters.AddWithValue($"@{FIELD_MARQUE}", disqueD.Marque);
+                command.Parameters.AddWithValue($"@{FIELD_CAPACITE}", disqueD.Capacite);
+                command.Parameters.AddWithValue($"@{FIELD_SSD}", disqueD.Ssd);
+                command.Parameters.AddWithValue($"@{FIELD_PRIX}", disqueD.Prix);
+                command.Parameters.AddWithValue($"@{FIELD_INTERNE}", disqueD.Interne);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", disqueD.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_IMG}", disqueD.Img);
+
+                disqueD.Nom = (string)command.ExecuteScalar();
+            }
+
+            return disqueD;
+        }
 
     }
 }

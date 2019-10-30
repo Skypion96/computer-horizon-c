@@ -14,5 +14,11 @@ namespace ComputerHorizon.Controllers
         {
             return DisqueDurDao.Query();
         }
+        
+        [HttpPost]
+        public ComputerHorizon.ModelsDD.DisqueDur Post([FromBody]ComputerHorizon.ModelsDD.DisqueDur disqueD)
+        {
+            return DisqueDurDao.Post(disqueD);
+        }
     }
 }

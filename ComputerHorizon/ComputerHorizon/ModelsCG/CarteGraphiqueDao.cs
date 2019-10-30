@@ -44,5 +44,26 @@ namespace ComputerHorizon.ModelsCG
 
             return cgs;
         }
+        
+        public static CarteGraphique Post(CarteGraphique carteG)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_POST;
+
+                command.Parameters.AddWithValue($"@{FIELD_MARQUE}", carteG.Marque);
+                command.Parameters.AddWithValue($"@{FIELD_PRIX}", carteG.Prix);
+                command.Parameters.AddWithValue($"@{FIELD_FREQUENCE}", carteG.Frequence);
+                command.Parameters.AddWithValue($"@{FIELD_MEMOIRE_VIDEO}", carteG.MemoireVideo);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", carteG.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_IMG}", carteG.Img);
+
+                carteG.Nom = (string)command.ExecuteScalar();
+            }
+
+            return carteG;
+        }
     }
 }

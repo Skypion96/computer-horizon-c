@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using ComputerHorizon.Models;
 using ComputerHorizon.ModelsProc;
@@ -48,6 +49,32 @@ namespace ComputerHorizon.ModelsOrdinateur
             }
 
             return ordis;
+        }
+        
+        public static Ordinateur Post(Ordinateur ordi)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_POST;
+
+                command.Parameters.AddWithValue($"@{FIELD_MARQUE}", ordi.Marque);
+                command.Parameters.AddWithValue($"@{FIELD_PRIX}", ordi.Prix);
+                command.Parameters.AddWithValue($"@{FIELD_NOMPROC}", ordi.NomProc);
+                command.Parameters.AddWithValue($"@{FIELD_NOMCG}", ordi.NomCg);
+                command.Parameters.AddWithValue($"@{FIELD_CAPACITE}", ordi.Capacite);
+                command.Parameters.AddWithValue($"@{FIELD_MEMOIREV}", ordi.MemoireV);
+                command.Parameters.AddWithValue($"@{FIELD_SSD}", ordi.Ssd);
+                command.Parameters.AddWithValue($"@{FIELD_DESCRIPTION}", ordi.Description);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", ordi.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_CAPACITE_SSD}", ordi.CapaciteSsd);
+                command.Parameters.AddWithValue($"@{FIELD_IMG}", ordi.Img);
+
+                ordi.Nom = (string)command.ExecuteScalar();
+            }
+
+            return ordi;
         }
     }
 }

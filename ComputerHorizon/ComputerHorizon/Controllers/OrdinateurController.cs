@@ -14,5 +14,11 @@ namespace ComputerHorizon.Controllers
         {
             return OrdinateurDao.Query();
         }
+        
+        [HttpPost]
+        public ComputerHorizon.ModelsOrdinateur.Ordinateur Post([FromBody]ComputerHorizon.ModelsOrdinateur.Ordinateur ordi)
+        {
+            return OrdinateurDao.Post(ordi);
+        }
     }
 }

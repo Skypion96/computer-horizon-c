@@ -14,5 +14,11 @@ namespace ComputerHorizon.Controllers
         {
             return ProcesseurDao.Query();
         }
+        
+        [HttpPost]
+        public ComputerHorizon.ModelsProc.Processeur Post([FromBody]ComputerHorizon.ModelsProc.Processeur proc)
+        {
+            return ProcesseurDao.Post(proc);
+        }
     }
 }

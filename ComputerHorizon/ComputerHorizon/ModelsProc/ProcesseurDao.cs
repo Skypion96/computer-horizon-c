@@ -44,6 +44,27 @@ namespace ComputerHorizon.ModelsProc
             return procs;
         }
         
+        public static Processeur Post(Processeur proc)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_POST;
+
+                command.Parameters.AddWithValue($"@{FIELD_MARQUE}", proc.Marque);
+                command.Parameters.AddWithValue($"@{FIELD_NBCOEURS}", proc.NbCoeurs);
+                command.Parameters.AddWithValue($"@{FIELD_FREQUENCE}", proc.Frequence);
+                command.Parameters.AddWithValue($"@{FIELD_PRIX}", proc.Prix);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", proc.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_IMG}", proc.Img);
+
+                proc.Nom = (string)command.ExecuteScalar();
+            }
+
+            return proc;
+        }
+        
         
         
         
