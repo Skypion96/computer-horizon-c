@@ -12,13 +12,19 @@ namespace ComputerHorizon.Controllers
         [HttpGet]
         public IEnumerable<ComputerHorizon.ModelsProc.Processeur> Get()
         {
-            return ProcesseurDao.Query();
+            return ProcesseurDao.QueryBase();
         }
         
         [HttpPost]
         public ComputerHorizon.ModelsProc.Processeur Post([FromBody]ComputerHorizon.ModelsProc.Processeur proc)
         {
             return ProcesseurDao.Post(proc);
+        }
+        
+        [HttpGet]
+        public ComputerHorizon.ModelsProc.Processeur GetOneElement(Processeur proc)
+        {
+            return ProcesseurDao.Query(proc);
         }
     }
 }
