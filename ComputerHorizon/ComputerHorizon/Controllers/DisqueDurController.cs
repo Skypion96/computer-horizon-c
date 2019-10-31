@@ -9,22 +9,32 @@ namespace ComputerHorizon.Controllers
     [Route("[controller]")] //ATENTION A LA ROUTE UTILISER
     public class DisqueDurController : ControllerBase
     {
+        //AFFICHAGE DE TOUT LES DISQUES DUR / IMAGE + NOM +MARQUE
         [HttpGet]
         public IEnumerable<ComputerHorizon.ModelsDD.DisqueDur> Get()
         {
             return DisqueDurDao.QueryBase();
         }
         
+        //AFFICHAGE D'UN DISQUE DUR PARTICULIER
+        [HttpGet]
+        public ComputerHorizon.ModelsDD.DisqueDur GetOneElement(DisqueDur disqued)
+        {
+            return DisqueDurDao.Query(disqued);
+        }
+
+        //AJOUT D'UN NOUVEAU DISQUE DUR
         [HttpPost]
         public ComputerHorizon.ModelsDD.DisqueDur Post([FromBody]ComputerHorizon.ModelsDD.DisqueDur disqueD)
         {
             return DisqueDurDao.Post(disqueD);
         }
         
-        [HttpGet]
-        public ComputerHorizon.ModelsDD.DisqueDur GetOneElement(DisqueDur disqued)
+        //SUPPRESSION D'UN DISQUE DUR PARTICULIER
+        [HttpDelete("{id}")]
+        public ActionResult Delete(string nom)
         {
-            return DisqueDurDao.Query(disqued);
+            return DisqueDurDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();
         }
     }
 }

@@ -8,22 +8,32 @@ namespace ComputerHorizon.Controllers
     [Route("[controller]")] //ATENTION A LA ROUTE UTILISER
     public class CarteGraphiqueController : ControllerBase
     {
+        //AFFICHAGE DE TOUTES LES CARTES GRAPHIQUES / IMAGE + NOM +MARQUE
         [HttpGet]
         public IEnumerable<ComputerHorizon.ModelsCG.CarteGraphique> Get()
         {
             return CarteGraphiqueDao.QueryBase();
         }
-        
+          
+        //AFFICHAGE D'UNE CARTE GRAPHIQUE PARTICULIERE
+        [HttpGet]
+        public ComputerHorizon.ModelsCG.CarteGraphique GetOneElement(CarteGraphique carteG)
+        {
+            return CarteGraphiqueDao.Query(carteG);
+        }
+
+        //AJOUT D'UNE NOUVELLE CARTE GRAPHIQUE
         [HttpPost]
         public ComputerHorizon.ModelsCG.CarteGraphique Post([FromBody]ComputerHorizon.ModelsCG.CarteGraphique carteG)
         {
             return CarteGraphiqueDao.Post(carteG);
         }
-        
-        [HttpGet]
-        public ComputerHorizon.ModelsCG.CarteGraphique GetOneElement(CarteGraphique carteG)
+      
+        //SUPPRESSION D'UNE CARTE GRAPHIQUE PARTICULIERE
+        [HttpDelete("{id}")]
+        public ActionResult Delete(string nom)
         {
-            return CarteGraphiqueDao.Query(carteG);
+            return CarteGraphiqueDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();
         }
     }
 }
