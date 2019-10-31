@@ -37,6 +37,12 @@ namespace ComputerHorizon.ModelsDD
         private static readonly string REQ_DELETE =
             $"DELETE from {TABLE_NAME} WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
+            //METTRE A JOUR LES INFOS D'UN ORDINATEUR
+        private static readonly string REQ_UPDATE =
+            $"UPDATE {TABLE_NAME} SET {FIELD_MARQUE} = @{FIELD_MARQUE},{FIELD_SSD} = @{FIELD_SSD} " +
+            $", {FIELD_PRIX} = @{FIELD_PRIX},{FIELD_INTERNE} = @{FIELD_INTERNE} " +
+            $", {FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_IMG} = @{FIELD_IMG}" +
+            $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
         //METHODES :
         
@@ -90,7 +96,8 @@ namespace ComputerHorizon.ModelsDD
                 command.Parameters.AddWithValue($"@{FIELD_INTERNE}", disqueD.Interne);
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", disqueD.Quantite);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", disqueD.Img);
-                disqueD.Nom = (string)command.ExecuteScalar();
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", disqueD.Nom);
+                //disqueD.Nom = (string)command.ExecuteScalar(); -> utilisation possible NE PAS SUPPRIMER
             }
             return disqueD;
         }
@@ -108,6 +115,28 @@ namespace ComputerHorizon.ModelsDD
                 hasBeenDeleted = command.ExecuteNonQuery() == 1;
             }
             return hasBeenDeleted;
+        }
+        
+            //MISE A JOUR DE LA TABLE POUR UNE CARTE GRAPHIQUE SOUHAITE
+        public static bool Update(DisqueDur disqueD)
+        {
+            bool hasBeenUpdate = false;
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_UPDATE;
+                command.Parameters.AddWithValue($"@{FIELD_MARQUE}", disqueD.Marque);
+                command.Parameters.AddWithValue($"@{FIELD_CAPACITE}", disqueD.Capacite);
+                command.Parameters.AddWithValue($"@{FIELD_SSD}", disqueD.Ssd);
+                command.Parameters.AddWithValue($"@{FIELD_PRIX}", disqueD.Prix);
+                command.Parameters.AddWithValue($"@{FIELD_INTERNE}", disqueD.Interne);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", disqueD.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_IMG}", disqueD.Img);
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", disqueD.Nom);
+                hasBeenUpdate = command.ExecuteNonQuery() ==1;
+            }
+            return hasBeenUpdate;
         }
     }
 }

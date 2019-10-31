@@ -36,5 +36,12 @@ namespace ComputerHorizon.Controllers
         {
             return OrdinateurDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();
         }
+        
+        //MISE A JOUR DES INFORMATIONS D'UN ORDINATEUR
+        [HttpPut]
+        public ActionResult Update([FromBody]ComputerHorizon.ModelsOrdinateur.Ordinateur ordi)
+        {
+            return OrdinateurDao.Update(ordi) ? (ActionResult) Ok():BadRequest();
+        }
     }
 }

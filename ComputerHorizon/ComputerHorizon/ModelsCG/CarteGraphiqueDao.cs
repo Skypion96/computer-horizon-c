@@ -37,6 +37,13 @@ namespace ComputerHorizon.ModelsCG
         private static readonly string REQ_DELETE =
             $"DELETE from {TABLE_NAME} WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
+            //METTRE A JOUR LES INFOS D'UN ORDINATEUR
+        private static readonly string REQ_UPDATE =
+            $"UPDATE {TABLE_NAME} SET {FIELD_MARQUE} = @{FIELD_MARQUE},{FIELD_PRIX} = @{FIELD_PRIX} " +
+            $", {FIELD_FREQUENCE} = @{FIELD_FREQUENCE},{FIELD_MEMOIRE_VIDEO} = @{FIELD_MEMOIRE_VIDEO} " +
+            $", {FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_IMG} = @{FIELD_IMG}" +
+            $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
+
         //METHODES :
         
             //VALEUR D'UNE CARTE GRAPHIQUE PARTICULIERE
@@ -89,7 +96,8 @@ namespace ComputerHorizon.ModelsCG
                 command.Parameters.AddWithValue($"@{FIELD_MEMOIRE_VIDEO}", carteG.MemoireVideo);
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", carteG.Quantite);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", carteG.Img);
-                carteG.Nom = (string)command.ExecuteScalar();
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", carteG.Nom);
+                //carteG.Nom = (string)command.ExecuteScalar(); -> utilisation possible NE PAS SUPPRIMER
             }
             return carteG;
         }
@@ -107,6 +115,27 @@ namespace ComputerHorizon.ModelsCG
                 hasBeenDeleted = command.ExecuteNonQuery() == 1;
             }
             return hasBeenDeleted;
+        }
+        
+            //MISE A JOUR DE LA TABLE POUR UNE CARTE GRAPHIQUE SOUHAITE
+        public static bool Update(CarteGraphique carteG)
+        {
+            bool hasBeenUpdate = false;
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_UPDATE;
+                command.Parameters.AddWithValue($"@{FIELD_MARQUE}", carteG.Marque);
+                command.Parameters.AddWithValue($"@{FIELD_PRIX}", carteG.Prix);
+                command.Parameters.AddWithValue($"@{FIELD_FREQUENCE}", carteG.Frequence);
+                command.Parameters.AddWithValue($"@{FIELD_MEMOIRE_VIDEO}", carteG.MemoireVideo);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", carteG.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_IMG}", carteG.Img);
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", carteG.Nom);
+                hasBeenUpdate = command.ExecuteNonQuery() ==1;
+            }
+            return hasBeenUpdate;
         }
     }
 }

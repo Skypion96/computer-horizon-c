@@ -43,6 +43,15 @@ namespace ComputerHorizon.ModelsOrdinateur
         private static readonly string REQ_DELETE =
             $"DELETE from {TABLE_NAME} WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
+            //METTRE A JOUR LES INFOS D'UN ORDINATEUR
+        private static readonly string REQ_UPDATE =
+            $"UPDATE {TABLE_NAME} SET {FIELD_MARQUE} = @{FIELD_MARQUE},{FIELD_PRIX} = @{FIELD_PRIX} " +
+            $", {FIELD_NOMPROC} = @{FIELD_NOMPROC},{FIELD_NOMCG} = @{FIELD_NOMCG} " +
+            $", {FIELD_CAPACITE} = @{FIELD_CAPACITE},{FIELD_MEMOIREV} = @{FIELD_MEMOIREV} " +
+            $", {FIELD_SSD} = @{FIELD_SSD},{FIELD_DESCRIPTION} = @{FIELD_DESCRIPTION} " +
+            $", {FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_CAPACITE_SSD} = @{FIELD_CAPACITE_SSD},{FIELD_IMG} = @{FIELD_IMG}" +
+            $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
+        
         //METHODES :
         
             //VALEUR D'UN ORDINATEUR PARTICULIER
@@ -100,7 +109,8 @@ namespace ComputerHorizon.ModelsOrdinateur
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", ordi.Quantite);
                 command.Parameters.AddWithValue($"@{FIELD_CAPACITE_SSD}", ordi.CapaciteSsd);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", ordi.Img);
-                ordi.Nom = (string)command.ExecuteScalar();
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", ordi.Nom);
+                //ordi.Nom = (string)command.ExecuteScalar(); -> utilisation possible NE PAS SUPPRIMER
             }
             return ordi;
         }
@@ -118,6 +128,32 @@ namespace ComputerHorizon.ModelsOrdinateur
                 hasBeenDeleted = command.ExecuteNonQuery() == 1;
             }
             return hasBeenDeleted;
+        }
+            
+            //MISE A JOUR DE LA TABLE POUR UNE CARTE GRAPHIQUE SOUHAITE
+        public static bool Update(Ordinateur ordi)
+        {
+            bool hasBeenUpdate = false;
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_UPDATE;
+                command.Parameters.AddWithValue($"@{FIELD_MARQUE}", ordi.Marque);
+                command.Parameters.AddWithValue($"@{FIELD_PRIX}", ordi.Prix);
+                command.Parameters.AddWithValue($"@{FIELD_NOMPROC}", ordi.NomProc);
+                command.Parameters.AddWithValue($"@{FIELD_NOMCG}", ordi.NomCg);
+                command.Parameters.AddWithValue($"@{FIELD_CAPACITE}", ordi.Capacite);
+                command.Parameters.AddWithValue($"@{FIELD_MEMOIREV}", ordi.MemoireV);
+                command.Parameters.AddWithValue($"@{FIELD_SSD}", ordi.Ssd);
+                command.Parameters.AddWithValue($"@{FIELD_DESCRIPTION}", ordi.Description);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", ordi.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_CAPACITE_SSD}", ordi.CapaciteSsd);
+                command.Parameters.AddWithValue($"@{FIELD_IMG}", ordi.Img);
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", ordi.Nom);
+                hasBeenUpdate = command.ExecuteNonQuery() ==1;
+            }
+            return hasBeenUpdate;
         }
     }
 }

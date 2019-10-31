@@ -36,5 +36,12 @@ namespace ComputerHorizon.Controllers
         {
             return ProcesseurDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();
         }
+        
+        //MISE A JOUR DES INFORMATIONS D'UN PROCESSEUR
+        [HttpPut]
+        public ActionResult Update([FromBody]ComputerHorizon.ModelsProc.Processeur proc)
+        {
+            return ProcesseurDao.Update(proc) ? (ActionResult) Ok():BadRequest();
+        }
     }
 }

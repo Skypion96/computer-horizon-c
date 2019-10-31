@@ -36,5 +36,12 @@ namespace ComputerHorizon.Controllers
         {
             return DisqueDurDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();
         }
+        
+        //MISE A JOUR DES INFORMATIONS D'UN DISQUE DUR
+        [HttpPut]
+        public ActionResult Update([FromBody]ComputerHorizon.ModelsDD.DisqueDur disqueD)
+        {
+            return DisqueDurDao.Update(disqueD) ? (ActionResult) Ok():BadRequest();
+        }
     }
 }

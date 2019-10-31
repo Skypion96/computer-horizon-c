@@ -35,5 +35,12 @@ namespace ComputerHorizon.Controllers
         {
             return CarteGraphiqueDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();
         }
+        
+        //MISE A JOUR DES INFORMATIONS D'UNE CARTE GRAPHIQUE
+        [HttpPut]
+        public ActionResult Update([FromBody]ComputerHorizon.ModelsCG.CarteGraphique carteG)
+        {
+            return CarteGraphiqueDao.Update(carteG) ? (ActionResult) Ok():BadRequest();
+        }
     }
 }

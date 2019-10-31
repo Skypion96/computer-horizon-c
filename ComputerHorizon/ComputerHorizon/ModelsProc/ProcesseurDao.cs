@@ -37,6 +37,12 @@ namespace ComputerHorizon.ModelsProc
         private static readonly string REQ_DELETE =
             $"DELETE from {TABLE_NAME} WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
+            //METTRE A JOUR LES INFOS D'UN PROCESSEUR
+        private static readonly string REQ_UPDATE =
+            $"UPDATE {TABLE_NAME} SET {FIELD_MARQUE} = @{FIELD_MARQUE},{FIELD_NBCOEURS} = @{FIELD_NBCOEURS} +" +
+            $", {FIELD_FREQUENCE} = @{FIELD_FREQUENCE},{FIELD_PRIX} = @{FIELD_PRIX},{FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_IMG} = @{FIELD_IMG}" +
+            $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
+        
         //METHODES :
         
             //VALEUR DE UN PROCESSEUR PARTICULIER
@@ -90,7 +96,8 @@ namespace ComputerHorizon.ModelsProc
                 command.Parameters.AddWithValue($"@{FIELD_PRIX}", proc.Prix);
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", proc.Quantite);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", proc.Img);
-                proc.Nom = (string)command.ExecuteScalar();
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", proc.Nom);
+                //proc.Nom = (string)command.ExecuteScalar(); -> utilisation possible NE PAS SUPPRIMER
             }
             return proc;
         }
@@ -108,6 +115,27 @@ namespace ComputerHorizon.ModelsProc
                 hasBeenDeleted = command.ExecuteNonQuery() == 1;
             }
             return hasBeenDeleted;
+        }
+        
+            //MISE A JOUR DE LA TABLE POUR UNE CARTE GRAPHIQUE SOUHAITE
+        public static bool Update(Processeur proc)
+        {
+            bool hasBeenUpdate = false;
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_UPDATE;
+                command.Parameters.AddWithValue($"@{FIELD_MARQUE}", proc.Marque);
+                command.Parameters.AddWithValue($"@{FIELD_NBCOEURS}", proc.NbCoeurs);
+                command.Parameters.AddWithValue($"@{FIELD_FREQUENCE}", proc.Frequence);
+                command.Parameters.AddWithValue($"@{FIELD_PRIX}", proc.Prix);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", proc.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_IMG}", proc.Img);
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", proc.Nom);
+                hasBeenUpdate = command.ExecuteNonQuery() ==1;
+            }
+            return hasBeenUpdate;
         }
     }
 }
