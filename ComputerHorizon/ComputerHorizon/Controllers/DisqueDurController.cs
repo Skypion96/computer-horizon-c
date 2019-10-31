@@ -12,13 +12,19 @@ namespace ComputerHorizon.Controllers
         [HttpGet]
         public IEnumerable<ComputerHorizon.ModelsDD.DisqueDur> Get()
         {
-            return DisqueDurDao.Query();
+            return DisqueDurDao.QueryBase();
         }
         
         [HttpPost]
         public ComputerHorizon.ModelsDD.DisqueDur Post([FromBody]ComputerHorizon.ModelsDD.DisqueDur disqueD)
         {
             return DisqueDurDao.Post(disqueD);
+        }
+        
+        [HttpGet]
+        public ComputerHorizon.ModelsDD.DisqueDur GetOneElement(DisqueDur disqued)
+        {
+            return DisqueDurDao.Query(disqued);
         }
     }
 }

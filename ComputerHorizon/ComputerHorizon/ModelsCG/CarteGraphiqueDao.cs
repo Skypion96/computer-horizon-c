@@ -18,31 +18,53 @@ namespace ComputerHorizon.ModelsCG
         public static readonly string FIELD_IMG = "img";
 
         private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}";
+        
+        private static readonly string REQ_QUERY_BASE = $"SELECT {FIELD_IMG},{FIELD_NOM},{FIELD_MARQUE} FROM {TABLE_NAME}";
 
         private static readonly string REQ_POST = 
             $"INSERT INTO {TABLE_NAME} ({FIELD_MARQUE},{FIELD_PRIX},{FIELD_FREQUENCE},{FIELD_MEMOIRE_VIDEO},{FIELD_QUANTITE},{FIELD_IMG})" +
             $" OUTPUT Inserted.{FIELD_NOM}" +
             $" VALUES (@{FIELD_MARQUE},@{FIELD_PRIX},@{FIELD_FREQUENCE},@{FIELD_MEMOIRE_VIDEO},@{FIELD_QUANTITE},@{FIELD_IMG})";
 
-        public static List<CarteGraphique> Query()
+        //VALEUR DE UN PROCESSEUR PARTICULIER
+        public static CarteGraphique Query(CarteGraphique carteG)
         {
-            List<CarteGraphique> cgs = new List<CarteGraphique>();
-
             using (SqlConnection connection = DataBase.GetConnection())
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_QUERY;
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", carteG.Nom);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    carteG = new CarteGraphique(reader);
+                }
+            }
+            return carteG;
+        }
+        
+        
+        //AFFICHAGE DE L'IMAGE/ NOM / MARQUE'
+        public static List<CarteGraphique> QueryBase()
+        {
+            List<CarteGraphique> carteGs = new List<CarteGraphique>();
+
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_QUERY_BASE;
 
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    cgs.Add(new CarteGraphique(reader));
+                    carteGs.Add(new CarteGraphique(reader));
                 }
             }
 
-            return cgs;
+            return carteGs;
         }
         
         public static CarteGraphique Post(CarteGraphique carteG)

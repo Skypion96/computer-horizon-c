@@ -12,13 +12,19 @@ namespace ComputerHorizon.Controllers
         [HttpGet]
         public IEnumerable<ComputerHorizon.ModelsOrdinateur.Ordinateur> Get()
         {
-            return OrdinateurDao.Query();
+            return OrdinateurDao.QueryBase();
         }
         
         [HttpPost]
         public ComputerHorizon.ModelsOrdinateur.Ordinateur Post([FromBody]ComputerHorizon.ModelsOrdinateur.Ordinateur ordi)
         {
             return OrdinateurDao.Post(ordi);
+        }
+        
+        [HttpGet]
+        public ComputerHorizon.ModelsOrdinateur.Ordinateur GetOneElement(Ordinateur ordi)
+        {
+            return OrdinateurDao.Query(ordi);
         }
     }
 }

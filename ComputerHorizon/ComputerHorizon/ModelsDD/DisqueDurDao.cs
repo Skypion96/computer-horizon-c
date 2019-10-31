@@ -19,12 +19,34 @@ namespace ComputerHorizon.ModelsDD
 
         private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}";
 
+        private static readonly string REQ_QUERY_BASE = $"SELECT {FIELD_IMG},{FIELD_NOM},{FIELD_MARQUE} FROM {TABLE_NAME}";
+
         private static readonly string REQ_POST = 
             $"INSERT INTO {TABLE_NAME} ({FIELD_MARQUE},{FIELD_CAPACITE},{FIELD_SSD},{FIELD_PRIX},{FIELD_INTERNE},{FIELD_QUANTITE},{FIELD_IMG})" +
             $" OUTPUT Inserted.{FIELD_NOM}" +
             $" VALUES (@{FIELD_MARQUE},@{FIELD_CAPACITE},@{FIELD_SSD},@{FIELD_PRIX},@{FIELD_INTERNE},@{FIELD_QUANTITE},@{FIELD_IMG})";
         
-        public static List<DisqueDur> Query()
+        //VALEUR DE UN PROCESSEUR PARTICULIER
+        public static DisqueDur Query(DisqueDur dds)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_QUERY;
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", dds.Nom);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    dds = new DisqueDur(reader);
+                }
+            }
+            return dds;
+        }
+        
+        
+        //AFFICHAGE DE L'IMAGE/ NOM / MARQUE'
+        public static List<DisqueDur> QueryBase()
         {
             List<DisqueDur> dds = new List<DisqueDur>();
 
@@ -32,7 +54,7 @@ namespace ComputerHorizon.ModelsDD
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = REQ_QUERY;
+                command.CommandText = REQ_QUERY_BASE;
 
                 SqlDataReader reader = command.ExecuteReader();
 

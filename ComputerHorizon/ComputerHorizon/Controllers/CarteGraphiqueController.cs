@@ -11,13 +11,19 @@ namespace ComputerHorizon.Controllers
         [HttpGet]
         public IEnumerable<ComputerHorizon.ModelsCG.CarteGraphique> Get()
         {
-            return CarteGraphiqueDao.Query();
+            return CarteGraphiqueDao.QueryBase();
         }
         
         [HttpPost]
         public ComputerHorizon.ModelsCG.CarteGraphique Post([FromBody]ComputerHorizon.ModelsCG.CarteGraphique carteG)
         {
             return CarteGraphiqueDao.Post(carteG);
+        }
+        
+        [HttpGet]
+        public ComputerHorizon.ModelsCG.CarteGraphique GetOneElement(CarteGraphique carteG)
+        {
+            return CarteGraphiqueDao.Query(carteG);
         }
     }
 }
