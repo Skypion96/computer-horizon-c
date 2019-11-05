@@ -17,6 +17,7 @@ namespace ComputerHorizon.Controllers
         }
          
         //AFFICHAGE D'UN PROCESSEURS PARTICULIER
+        [Route("[controller]")]
         [HttpGet]
         public ComputerHorizon.ModelsProc.Processeur GetOneElement(Processeur proc)
         {
@@ -31,7 +32,7 @@ namespace ComputerHorizon.Controllers
         }
        
         //SUPPRESSION D'UN PROCESSEUR PARTICULIER
-        [HttpDelete("{id}")]
+        [HttpDelete("{nom}")]
         public ActionResult Delete(string nom)
         {
             return ProcesseurDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();

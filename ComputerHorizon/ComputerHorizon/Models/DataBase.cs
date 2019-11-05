@@ -4,7 +4,7 @@ namespace ComputerHorizon.Models
 {
     public static class DataBase
     {
-        private static readonly string CONNECTION_STRING = @"Server=AMODIFIER;Database=AMODIFIER;Integrated Security=SSPI;";
+        private static readonly string CONNECTION_STRING = @"Server=VINCENT;Database=Computer-Horizon;Integrated Security=SSPI;";
 
         public static SqlConnection GetConnection()
         {
