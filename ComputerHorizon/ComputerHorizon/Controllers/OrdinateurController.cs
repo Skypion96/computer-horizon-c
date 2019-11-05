@@ -24,6 +24,7 @@ namespace ComputerHorizon.Controllers
         }
         
         //AFFICHAGE D'UN ORDINATEUR PARTICULIER
+        [Route("[controller]")]
         [HttpGet]
         public ComputerHorizon.ModelsOrdinateur.Ordinateur GetOneElement(Ordinateur ordi)
         {

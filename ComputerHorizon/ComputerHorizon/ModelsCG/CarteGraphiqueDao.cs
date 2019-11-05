@@ -22,10 +22,11 @@ namespace ComputerHorizon.ModelsCG
         //REQUETES :
         
             //AFFICHER EN FONCTION DU NOM
-        private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}";
+        private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}"+
+                                                   $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
             //AFFICHER UNIQUEMENT IMAGE + NOM + MARQUE 
-        private static readonly string REQ_QUERY_BASE = $"SELECT {FIELD_IMG},{FIELD_NOM},{FIELD_MARQUE} FROM {TABLE_NAME}";
+        private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME}";
         
             //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST = 
@@ -55,10 +56,13 @@ namespace ComputerHorizon.ModelsCG
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_QUERY;
                 command.Parameters.AddWithValue($"@{FIELD_NOM}", carteG.Nom);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                if (command.ExecuteNonQuery() == 1)
                 {
-                    carteG = new CarteGraphique(reader);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        carteG = new CarteGraphique(reader);
+                    }
                 }
             }
             return carteG;
@@ -90,14 +94,14 @@ namespace ComputerHorizon.ModelsCG
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_POST;
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", carteG.Nom);
                 command.Parameters.AddWithValue($"@{FIELD_MARQUE}", carteG.Marque);
                 command.Parameters.AddWithValue($"@{FIELD_PRIX}", carteG.Prix);
                 command.Parameters.AddWithValue($"@{FIELD_FREQUENCE}", carteG.Frequence);
                 command.Parameters.AddWithValue($"@{FIELD_MEMOIRE_VIDEO}", carteG.MemoireVideo);
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", carteG.Quantite);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", carteG.Img);
-                command.Parameters.AddWithValue($"@{FIELD_NOM}", carteG.Nom);
-                //carteG.Nom = (string)command.ExecuteScalar(); -> utilisation possible NE PAS SUPPRIMER
+                carteG.Nom = (string)command.ExecuteScalar(); //-> utilisation possible NE PAS SUPPRIMER
             }
             return carteG;
         }

@@ -17,6 +17,7 @@ namespace ComputerHorizon.Controllers
         }
         
         //AFFICHAGE D'UN DISQUE DUR PARTICULIER
+        [Route("[controller]")]
         [HttpGet]
         public ComputerHorizon.ModelsDD.DisqueDur GetOneElement(DisqueDur disqued)
         {

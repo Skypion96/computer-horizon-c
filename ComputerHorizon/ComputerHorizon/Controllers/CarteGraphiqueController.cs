@@ -15,7 +15,9 @@ namespace ComputerHorizon.Controllers
             return CarteGraphiqueDao.QueryBase();
         }
           
+        
         //AFFICHAGE D'UNE CARTE GRAPHIQUE PARTICULIERE
+        [Route("[controller]")]
         [HttpGet]
         public ComputerHorizon.ModelsCG.CarteGraphique GetOneElement(CarteGraphique carteG)
         {

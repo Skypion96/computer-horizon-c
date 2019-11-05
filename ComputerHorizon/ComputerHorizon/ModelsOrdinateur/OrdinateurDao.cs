@@ -28,7 +28,8 @@ namespace ComputerHorizon.ModelsOrdinateur
         //REQUETES :
         
             //AFFICHER EN FONCTION DU NOM
-        private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}";
+        private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}" +
+                                                   $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
             //AFFICHER UNIQUEMENT IMAGE + NOM + MARQUE   
         private static readonly string REQ_QUERY_BASE = $"SELECT {FIELD_IMG},{FIELD_NOM},{FIELD_MARQUE} FROM {TABLE_NAME}";
@@ -63,10 +64,13 @@ namespace ComputerHorizon.ModelsOrdinateur
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_QUERY;
                 command.Parameters.AddWithValue($"@{FIELD_NOM}", ordis.Nom);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                if (command.ExecuteNonQuery() == 1)
                 {
-                    ordis = new Ordinateur(reader);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ordis = new Ordinateur(reader);
+                    }
                 }
             }
             return ordis;
@@ -98,6 +102,7 @@ namespace ComputerHorizon.ModelsOrdinateur
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_POST;
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", ordi.Nom);
                 command.Parameters.AddWithValue($"@{FIELD_MARQUE}", ordi.Marque);
                 command.Parameters.AddWithValue($"@{FIELD_PRIX}", ordi.Prix);
                 command.Parameters.AddWithValue($"@{FIELD_NOMPROC}", ordi.NomProc);
@@ -109,8 +114,7 @@ namespace ComputerHorizon.ModelsOrdinateur
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", ordi.Quantite);
                 command.Parameters.AddWithValue($"@{FIELD_CAPACITE_SSD}", ordi.CapaciteSsd);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", ordi.Img);
-                command.Parameters.AddWithValue($"@{FIELD_NOM}", ordi.Nom);
-                //ordi.Nom = (string)command.ExecuteScalar(); -> utilisation possible NE PAS SUPPRIMER
+                ordi.Nom = (string)command.ExecuteScalar(); //-> utilisation possible NE PAS SUPPRIMER
             }
             return ordi;
         }

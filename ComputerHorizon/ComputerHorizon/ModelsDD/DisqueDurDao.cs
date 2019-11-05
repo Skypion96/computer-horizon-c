@@ -22,10 +22,11 @@ namespace ComputerHorizon.ModelsDD
         //REQUETES :
         
             //AFFICHER EN FONCTION DU NOM
-        private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}";
+        private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME}" +
+                                                   $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
             //AFFICHER UNIQUEMENT IMAGE + NOM + MARQUE 
-        private static readonly string REQ_QUERY_BASE = $"SELECT {FIELD_IMG},{FIELD_NOM},{FIELD_MARQUE} FROM {TABLE_NAME}";
+        private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME}";
         
             //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST = 
@@ -55,10 +56,13 @@ namespace ComputerHorizon.ModelsDD
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_QUERY;
                 command.Parameters.AddWithValue($"@{FIELD_NOM}", dds.Nom);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                if (command.ExecuteNonQuery() == 1)
                 {
-                    dds = new DisqueDur(reader);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        dds = new DisqueDur(reader);
+                    }
                 }
             }
             return dds;
@@ -89,6 +93,7 @@ namespace ComputerHorizon.ModelsDD
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_POST;
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", disqueD.Nom);
                 command.Parameters.AddWithValue($"@{FIELD_MARQUE}", disqueD.Marque);
                 command.Parameters.AddWithValue($"@{FIELD_CAPACITE}", disqueD.Capacite);
                 command.Parameters.AddWithValue($"@{FIELD_SSD}", disqueD.Ssd);
@@ -96,8 +101,7 @@ namespace ComputerHorizon.ModelsDD
                 command.Parameters.AddWithValue($"@{FIELD_INTERNE}", disqueD.Interne);
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", disqueD.Quantite);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", disqueD.Img);
-                command.Parameters.AddWithValue($"@{FIELD_NOM}", disqueD.Nom);
-                //disqueD.Nom = (string)command.ExecuteScalar(); -> utilisation possible NE PAS SUPPRIMER
+                disqueD.Nom = (string)command.ExecuteScalar(); //-> utilisation possible NE PAS SUPPRIMER
             }
             return disqueD;
         }
