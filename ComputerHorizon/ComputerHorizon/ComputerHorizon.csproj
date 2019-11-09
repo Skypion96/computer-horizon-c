@@ -11,4 +11,29 @@
         <PackageReference Include="System.Data.SqlClient" Version="4.8.0-preview1.19504.10" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\js\favicon.ico" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\index.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\main-es2015.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\main-es2015.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\main-es5.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\main-es5.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\polyfills-es2015.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\polyfills-es2015.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\polyfills-es5.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\polyfills-es5.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\runtime-es2015.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\runtime-es2015.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\runtime-es5.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\runtime-es5.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\styles-es2015.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\styles-es2015.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\styles-es5.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\styles-es5.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\vendor-es2015.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\vendor-es2015.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\vendor-es5.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\vendor-es5.js.map" />
+    </ItemGroup>
+
 </Project>

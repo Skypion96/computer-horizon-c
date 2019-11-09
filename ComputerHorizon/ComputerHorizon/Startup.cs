@@ -15,6 +15,7 @@ namespace ComputerHorizon
 {
     public class Startup
     {
+        private static readonly string PATH_ANGULAR_APP = "wwwroot/js";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -26,6 +27,7 @@ namespace ComputerHorizon
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSpaStaticFiles(spa => spa.RootPath = PATH_ANGULAR_APP); // modifier
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,8 +43,11 @@ namespace ComputerHorizon
                 app.UseHsts();
             }
 
+            app.UseStaticFiles(); //modifier
+            app.UseSpaStaticFiles(); // modifier
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSpa(spa => spa.Options.SourcePath = PATH_ANGULAR_APP);
         }
     }
 }

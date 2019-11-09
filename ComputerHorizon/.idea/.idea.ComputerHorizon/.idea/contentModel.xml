@@ -47,6 +47,39 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="wwwroot" t="Include">
+          <e p="js" t="Include">
+            <e p="assets" t="Include">
+              <e p="carte_graphiquepdt.jpg" t="Include" />
+              <e p="disque_durpdt.jpg" t="Include" />
+              <e p="logo.png" t="Include" />
+              <e p="ordinateurpdt.jpg" t="Include" />
+              <e p="processeurpdt.jpg" t="Include" />
+            </e>
+            <e p="favicon.ico" t="Include" />
+            <e p="index.html" t="Include" />
+            <e p="main-es2015.js" t="Include" />
+            <e p="main-es2015.js.map" t="Include" />
+            <e p="main-es5.js" t="Include" />
+            <e p="main-es5.js.map" t="Include" />
+            <e p="polyfills-es2015.js" t="Include" />
+            <e p="polyfills-es2015.js.map" t="Include" />
+            <e p="polyfills-es5.js" t="Include" />
+            <e p="polyfills-es5.js.map" t="Include" />
+            <e p="runtime-es2015.js" t="Include" />
+            <e p="runtime-es2015.js.map" t="Include" />
+            <e p="runtime-es5.js" t="Include" />
+            <e p="runtime-es5.js.map" t="Include" />
+            <e p="styles-es2015.js" t="Include" />
+            <e p="styles-es2015.js.map" t="Include" />
+            <e p="styles-es5.js" t="Include" />
+            <e p="styles-es5.js.map" t="Include" />
+            <e p="vendor-es2015.js" t="Include" />
+            <e p="vendor-es2015.js.map" t="Include" />
+            <e p="vendor-es5.js" t="Include" />
+            <e p="vendor-es5.js.map" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="ComputerHorizon.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

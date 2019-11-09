@@ -19,6 +19,7 @@ namespace ComputerHorizon.ModelsProc
         public static readonly string FIELD_IMG = "img";
         public static readonly string FIELD_REDUCTION = "reduction";
         public static readonly string FIELD_COTE = "cote";
+        public static readonly string FIELD_DATE_COTE = "dateCote";
 
         //REQUETES :
         
@@ -31,9 +32,9 @@ namespace ComputerHorizon.ModelsProc
         
             //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST = 
-            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM},{FIELD_MARQUE},{FIELD_NBCOEURS},{FIELD_FREQUENCE},{FIELD_PRIX},{FIELD_QUANTITE},{FIELD_IMG},{FIELD_REDUCTION},{FIELD_COTE})" +
+            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM},{FIELD_MARQUE},{FIELD_NBCOEURS},{FIELD_FREQUENCE},{FIELD_PRIX},{FIELD_QUANTITE},{FIELD_IMG},{FIELD_REDUCTION},{FIELD_COTE},{FIELD_DATE_COTE})" +
             //$" OUTPUT Inserted.{FIELD_NOM}" +
-            $" VALUES (@{FIELD_NOM},@{FIELD_MARQUE},@{FIELD_NBCOEURS},@{FIELD_FREQUENCE},@{FIELD_PRIX},@{FIELD_QUANTITE},@{FIELD_IMG},@{FIELD_REDUCTION},@{FIELD_COTE})";
+            $" VALUES (@{FIELD_NOM},@{FIELD_MARQUE},@{FIELD_NBCOEURS},@{FIELD_FREQUENCE},@{FIELD_PRIX},@{FIELD_QUANTITE},@{FIELD_IMG},@{FIELD_REDUCTION},@{FIELD_COTE},@{FIELD_DATE_COTE})";
         
             //SUPPRIMER EN FONCTION DU NOM
         private static readonly string REQ_DELETE =
@@ -43,7 +44,7 @@ namespace ComputerHorizon.ModelsProc
         private static readonly string REQ_UPDATE =
             $"UPDATE {TABLE_NAME} SET {FIELD_MARQUE} = @{FIELD_MARQUE},{FIELD_NBCOEURS} = @{FIELD_NBCOEURS} " +
             $", {FIELD_FREQUENCE} = @{FIELD_FREQUENCE},{FIELD_PRIX} = @{FIELD_PRIX},{FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_IMG} = @{FIELD_IMG} "+
-            $",{FIELD_REDUCTION} = @{FIELD_REDUCTION},{FIELD_COTE} = @{FIELD_COTE}" +
+            $",{FIELD_REDUCTION} = @{FIELD_REDUCTION},{FIELD_COTE} = @{FIELD_COTE},{FIELD_DATE_COTE} = @{FIELD_DATE_COTE}" +
             $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
         //METHODES :
@@ -53,7 +54,6 @@ namespace ComputerHorizon.ModelsProc
         {
             using (SqlConnection connection = DataBase.GetConnection())
             {
-                bool hasBeenOK;
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_QUERY;
@@ -106,6 +106,7 @@ namespace ComputerHorizon.ModelsProc
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", proc.Img);
                 command.Parameters.AddWithValue($"@{FIELD_REDUCTION}", proc.Reduction);
                 command.Parameters.AddWithValue($"@{FIELD_COTE}", proc.Cote);
+                command.Parameters.AddWithValue($"@{FIELD_DATE_COTE}", proc.DateCote);
                 proc.Nom = (string)command.ExecuteScalar(); 
             }
             return proc;
@@ -143,6 +144,7 @@ namespace ComputerHorizon.ModelsProc
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", proc.Img);
                 command.Parameters.AddWithValue($"@{FIELD_REDUCTION}", proc.Reduction);
                 command.Parameters.AddWithValue($"@{FIELD_COTE}", proc.Cote);
+                command.Parameters.AddWithValue($"@{FIELD_DATE_COTE}", proc.DateCote);
                 command.Parameters.AddWithValue($"@{FIELD_NOM}", proc.Nom);
                 hasBeenUpdate = command.ExecuteNonQuery() ==1;
             }
