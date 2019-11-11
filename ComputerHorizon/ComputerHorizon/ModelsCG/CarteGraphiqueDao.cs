@@ -16,7 +16,7 @@ namespace ComputerHorizon.ModelsCG
         public static readonly string FIELD_PRIX = "prix";
         public static readonly string FIELD_FREQUENCE = "frequence";
         public static readonly string FIELD_MEMOIRE_VIDEO = "memoireVideo";
-        public static readonly string FIELD_QUANTITE = "quantite";
+        public static readonly string FIELD_QUANTITE = "qte";
         public static readonly string FIELD_IMG = "img";
         
         //REQUETES :
@@ -30,9 +30,8 @@ namespace ComputerHorizon.ModelsCG
         
             //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST = 
-            $"INSERT INTO {TABLE_NAME} ({FIELD_MARQUE},{FIELD_PRIX},{FIELD_FREQUENCE},{FIELD_MEMOIRE_VIDEO},{FIELD_QUANTITE},{FIELD_IMG})" +
-            $" OUTPUT Inserted.{FIELD_NOM}" +
-            $" VALUES (@{FIELD_MARQUE},@{FIELD_PRIX},@{FIELD_FREQUENCE},@{FIELD_MEMOIRE_VIDEO},@{FIELD_QUANTITE},@{FIELD_IMG})";
+            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM},{FIELD_MARQUE},{FIELD_PRIX},{FIELD_FREQUENCE},{FIELD_MEMOIRE_VIDEO},{FIELD_QUANTITE},{FIELD_IMG})" +
+            $" VALUES (@{FIELD_NOM},@{FIELD_MARQUE},@{FIELD_PRIX},@{FIELD_FREQUENCE},@{FIELD_MEMOIRE_VIDEO},@{FIELD_QUANTITE},@{FIELD_IMG})";
         
             //SUPPRIMER EN FONCTION DU NOM
         private static readonly string REQ_DELETE =
@@ -99,7 +98,7 @@ namespace ComputerHorizon.ModelsCG
                 command.Parameters.AddWithValue($"@{FIELD_PRIX}", carteG.Prix);
                 command.Parameters.AddWithValue($"@{FIELD_FREQUENCE}", carteG.Frequence);
                 command.Parameters.AddWithValue($"@{FIELD_MEMOIRE_VIDEO}", carteG.MemoireVideo);
-                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", carteG.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", carteG.Qte);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", carteG.Img);
                 carteG.Nom = (string)command.ExecuteScalar(); //-> utilisation possible NE PAS SUPPRIMER
             }
@@ -134,7 +133,7 @@ namespace ComputerHorizon.ModelsCG
                 command.Parameters.AddWithValue($"@{FIELD_PRIX}", carteG.Prix);
                 command.Parameters.AddWithValue($"@{FIELD_FREQUENCE}", carteG.Frequence);
                 command.Parameters.AddWithValue($"@{FIELD_MEMOIRE_VIDEO}", carteG.MemoireVideo);
-                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", carteG.Quantite);
+                command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", carteG.Qte);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", carteG.Img);
                 command.Parameters.AddWithValue($"@{FIELD_NOM}", carteG.Nom);
                 hasBeenUpdate = command.ExecuteNonQuery() ==1;

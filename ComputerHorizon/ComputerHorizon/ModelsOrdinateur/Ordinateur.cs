@@ -15,11 +15,11 @@ namespace ComputerHorizon.ModelsOrdinateur
         public int MemoireV { get; set; }
         public bool Ssd { get; set; }
         public string Description { get; set; }
-        public int Quantite { get; set; }
+        public int Qte { get; set; }
         public string CapaciteSsd { get; set; }
         public string Img { get; set; }
 
-        public Ordinateur(string nom, string marque, double prix, string nomProc, string nomCg, string capacite, int memoireV, bool ssd, string description, int quantite, string capaciteSsd, string img)
+        public Ordinateur(string nom, string marque, double prix, string nomProc, string nomCg, string capacite, int memoireV, bool ssd, string description, int qte, string capaciteSsd, string img)
         {
             Nom = nom;
             Marque = marque;
@@ -30,10 +30,12 @@ namespace ComputerHorizon.ModelsOrdinateur
             MemoireV = memoireV;
             Ssd = ssd;
             Description = description;
-            Quantite = quantite;
+            Qte = qte;
             CapaciteSsd = capaciteSsd;
             Img = img;
         }
+        
+        public Ordinateur(){}
         
         public Ordinateur(SqlDataReader reader)
         {
@@ -46,7 +48,7 @@ namespace ComputerHorizon.ModelsOrdinateur
             MemoireV = Convert.ToInt32(reader[OrdinateurDao.FIELD_MEMOIREV].ToString());
             Ssd = Convert.ToBoolean(reader[OrdinateurDao.FIELD_SSD].ToString());
             Description = reader[OrdinateurDao.FIELD_DESCRIPTION].ToString();
-            Quantite = Convert.ToInt32(reader[OrdinateurDao.FIELD_QUANTITE].ToString());
+            Qte = Convert.ToInt32(reader[OrdinateurDao.FIELD_QUANTITE].ToString());
             CapaciteSsd = reader[OrdinateurDao.FIELD_CAPACITE_SSD].ToString();
             Img = reader[OrdinateurDao.FIELD_IMG].ToString();
         }

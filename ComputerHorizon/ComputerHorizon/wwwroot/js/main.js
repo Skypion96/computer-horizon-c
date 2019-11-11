@@ -49,6 +49,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/carte-graphique/carte-graphique.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/carte-graphique/carte-graphique.component.html ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"carteG\"></div>\n<ul>\n  <li *ngFor=\"let carte of carteGList\">\n    <img src=\"{{carte.img}}\"><br>\n    <b>{{carte.nom}}</b> <br>\n    <b>{{carte.marque}}</b><br>\n  </li>\n</ul>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/contact/contact/contact.component.html":
 /*!**********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/contact/contact/contact.component.html ***!
@@ -59,6 +72,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<p>contact works!</p>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/disque-dur/disque-dur.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/disque-dur/disque-dur.component.html ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"disqued\"></div>\n<ul>\n  <li *ngFor=\"let disque of disqueDList\">\n    <img src=\"{{disque.img}}\"><br>\n    <b>{{disque.nom}}</b> <br>\n    <b>{{disque.marque}}</b><br>\n  </li>\n</ul>\n");
 
 /***/ }),
 
@@ -88,6 +114,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/ordinateur/ordinateur.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/ordinateur/ordinateur.component.html ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"ordinateur\"></div>\n<ul>\n  <li *ngFor=\"let ordi of ordiList\">\n    <img src=\"{{ordi.img}}\"><br>\n    <b>{{ordi.nom}}</b> <br>\n    <b>{{ordi.marque}}</b><br>\n  </li>\n</ul>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/processeur/processeur.component.html":
 /*!********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/processeur/processeur.component.html ***!
@@ -110,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Nos produits</h1>\r\n<hr/>\r\n<div class=\"products\">\r\n  <a href=\"\">\r\n    <div class=\"card\">\r\n      <img src=\"{{graphic_card}}\" width=\"300px\" height=\"300px\"/>\r\n      <h3>Cartes graphique</h3>\r\n    </div>\r\n  </a>\r\n  <a href=\"\">\r\n    <div class=\"card\">\r\n      <img src=\"{{hard_drive}}\" width=\"300px\" height=\"300px\"/>\r\n      <h3>Disques dur</h3>\r\n    </div>\r\n  </a>\r\n  <a href=\"\">\r\n    <div class=\"card\">\r\n      <img src=\"{{laptop}}\" width=\"300px\" height=\"300px\"/>\r\n      <h3>Ordinateurs</h3>\r\n    </div>\r\n  </a>\r\n  <a [routerLink]=\"'/'+PROCESSEUR\" href={{PROCESSEUR}}>\r\n    <\r\n    <div class=\"card\">\r\n      <img src=\"{{processor}}\" width=\"300px\" height=\"300px\"/>\r\n      <h3>Processeur</h3>\r\n    </div>\r\n  </a>\r\n</div>\r\n\r\n<h1>Produits à la une</h1>\r\n<hr/>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Nos produits</h1>\r\n<hr/>\r\n<div class=\"products\">\r\n  <a [routerLink]=\"'/'+CARTEG\" href={{CARTEG}}>\r\n    <div class=\"card\">\r\n      <img src=\"{{graphic_card}}\" width=\"300px\" height=\"300px\"/>\r\n      <h3>Cartes graphique</h3>\r\n    </div>\r\n  </a>\r\n  <a [routerLink]=\"'/'+DISQUED\" href={{DISQUED}}>\r\n    <div class=\"card\">\r\n      <img src=\"{{hard_drive}}\" width=\"300px\" height=\"300px\"/>\r\n      <h3>Disques dur</h3>\r\n    </div>\r\n  </a>\r\n  <a [routerLink]=\"'/'+ORDINATEUR\" href={{ORDINATEUR}}>\r\n    <div class=\"card\">\r\n      <img src=\"{{laptop}}\" width=\"300px\" height=\"300px\"/>\r\n      <h3>Ordinateurs</h3>\r\n    </div>\r\n  </a>\r\n  <a [routerLink]=\"'/'+PROCESSEUR\" href={{PROCESSEUR}}>\r\n    <div class=\"card\">\r\n      <img src=\"{{processor}}\" width=\"300px\" height=\"300px\"/>\r\n      <h3>Processeur</h3>\r\n    </div>\r\n  </a>\r\n</div>\r\n\r\n<h1>Produits à la une</h1>\r\n<hr/>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -488,6 +527,67 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/carte-graphique/carte-graphique.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/carte-graphique/carte-graphique.component.css ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".carteG{\r\n  margin-top: 10%;\r\n  margin-left: 8%;\r\n  margin-right: 8%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2FydGUtZ3JhcGhpcXVlL2NhcnRlLWdyYXBoaXF1ZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLGVBQWU7RUFDZixnQkFBZ0I7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9jYXJ0ZS1ncmFwaGlxdWUvY2FydGUtZ3JhcGhpcXVlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2FydGVHe1xyXG4gIG1hcmdpbi10b3A6IDEwJTtcclxuICBtYXJnaW4tbGVmdDogOCU7XHJcbiAgbWFyZ2luLXJpZ2h0OiA4JTtcclxufVxyXG4iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/carte-graphique/carte-graphique.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/carte-graphique/carte-graphique.component.ts ***!
+  \**************************************************************/
+/*! exports provided: CarteGraphiqueComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarteGraphiqueComponent", function() { return CarteGraphiqueComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/carte-gservice.service */ "./src/app/services/carte-gservice.service.ts");
+
+
+
+let CarteGraphiqueComponent = class CarteGraphiqueComponent {
+    constructor(carteGService) {
+        this.carteGService = carteGService;
+        this.carteGList = [];
+    }
+    ngOnInit() {
+        this.loadProcList();
+    }
+    ngOnDestroy() {
+        this.subQuery && this.subQuery.unsubscribe();
+    }
+    loadProcList() {
+        this.subQuery = this.carteGService
+            .queryBase()
+            .subscribe(disqueDs => this.carteGList = disqueDs);
+    }
+};
+CarteGraphiqueComponent.ctorParameters = () => [
+    { type: _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_2__["CarteGServiceService"] }
+];
+CarteGraphiqueComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-carte-graphique',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./carte-graphique.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/carte-graphique/carte-graphique.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./carte-graphique.component.css */ "./src/app/carte-graphique/carte-graphique.component.css")).default]
+    })
+], CarteGraphiqueComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/contact/contact/contact.component.css":
 /*!*******************************************************!*\
   !*** ./src/app/contact/contact/contact.component.css ***!
@@ -527,6 +627,67 @@ ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./contact.component.css */ "./src/app/contact/contact/contact.component.css")).default]
     })
 ], ContactComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/disque-dur/disque-dur.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/disque-dur/disque-dur.component.css ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".disqued{\r\n  margin-top: 10%;\r\n  margin-left: 8%;\r\n  margin-right: 8%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlzcXVlLWR1ci9kaXNxdWUtZHVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2YsZUFBZTtFQUNmLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2Rpc3F1ZS1kdXIvZGlzcXVlLWR1ci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRpc3F1ZWR7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIG1hcmdpbi1sZWZ0OiA4JTtcclxuICBtYXJnaW4tcmlnaHQ6IDglO1xyXG59XHJcbiJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/disque-dur/disque-dur.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/disque-dur/disque-dur.component.ts ***!
+  \****************************************************/
+/*! exports provided: DisqueDurComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisqueDurComponent", function() { return DisqueDurComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/disque-dservice.service */ "./src/app/services/disque-dservice.service.ts");
+
+
+
+let DisqueDurComponent = class DisqueDurComponent {
+    constructor(disqueDService) {
+        this.disqueDService = disqueDService;
+        this.disqueDList = [];
+    }
+    ngOnInit() {
+        this.loadProcList();
+    }
+    ngOnDestroy() {
+        this.subQuery && this.subQuery.unsubscribe();
+    }
+    loadProcList() {
+        this.subQuery = this.disqueDService
+            .queryBase()
+            .subscribe(disqueDs => this.disqueDList = disqueDs);
+    }
+};
+DisqueDurComponent.ctorParameters = () => [
+    { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_2__["DisqueDServiceService"] }
+];
+DisqueDurComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-disque-dur',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./disque-dur.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/disque-dur/disque-dur.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./disque-dur.component.css */ "./src/app/disque-dur/disque-dur.component.css")).default]
+    })
+], DisqueDurComponent);
 
 
 
@@ -620,6 +781,67 @@ HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./header.component.css */ "./src/app/header/header.component.css")).default]
     })
 ], HeaderComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/ordinateur/ordinateur.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/ordinateur/ordinateur.component.css ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".ordinateur{\r\n  margin-top: 10%;\r\n  margin-left: 8%;\r\n  margin-right: 8%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvb3JkaW5hdGV1ci9vcmRpbmF0ZXVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2YsZUFBZTtFQUNmLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL29yZGluYXRldXIvb3JkaW5hdGV1ci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm9yZGluYXRldXJ7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIG1hcmdpbi1sZWZ0OiA4JTtcclxuICBtYXJnaW4tcmlnaHQ6IDglO1xyXG59XHJcbiJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/ordinateur/ordinateur.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/ordinateur/ordinateur.component.ts ***!
+  \****************************************************/
+/*! exports provided: OrdinateurComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrdinateurComponent", function() { return OrdinateurComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/ordi-service.service */ "./src/app/services/ordi-service.service.ts");
+
+
+
+let OrdinateurComponent = class OrdinateurComponent {
+    constructor(ordiService) {
+        this.ordiService = ordiService;
+        this.ordiList = [];
+    }
+    ngOnInit() {
+        this.loadProcList();
+    }
+    ngOnDestroy() {
+        this.subQuery && this.subQuery.unsubscribe();
+    }
+    loadProcList() {
+        this.subQuery = this.ordiService
+            .queryBase()
+            .subscribe(ordis => this.ordiList = ordis);
+    }
+};
+OrdinateurComponent.ctorParameters = () => [
+    { type: _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_2__["OrdiServiceService"] }
+];
+OrdinateurComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-ordinateur',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./ordinateur.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/ordinateur/ordinateur.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./ordinateur.component.css */ "./src/app/ordinateur/ordinateur.component.css")).default]
+    })
+], OrdinateurComponent);
 
 
 
@@ -720,6 +942,9 @@ let ProductsComponent = class ProductsComponent {
         this.laptop = "assets/ordinateurpdt.jpg";
         this.processor = "assets/processeurpdt.jpg";
         this.PROCESSEUR = "processeurs";
+        this.ORDINATEUR = "ordinateurs";
+        this.CARTEG = "carte-graphiques";
+        this.DISQUED = "disque-durs";
     }
     ngOnInit() {
     }
@@ -754,6 +979,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _processeur_processeur_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../processeur/processeur.component */ "./src/app/processeur/processeur.component.ts");
 /* harmony import */ var _products_products_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../products/products.component */ "./src/app/products/products.component.ts");
 /* harmony import */ var _contact_contact_contact_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../contact/contact/contact.component */ "./src/app/contact/contact/contact.component.ts");
+/* harmony import */ var _ordinateur_ordinateur_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../ordinateur/ordinateur.component */ "./src/app/ordinateur/ordinateur.component.ts");
+/* harmony import */ var _disque_dur_disque_dur_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../disque-dur/disque-dur.component */ "./src/app/disque-dur/disque-dur.component.ts");
+/* harmony import */ var _carte_graphique_carte_graphique_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../carte-graphique/carte-graphique.component */ "./src/app/carte-graphique/carte-graphique.component.ts");
+
+
+
 
 
 
@@ -783,13 +1014,25 @@ const routes = [
     {
         path: "Contact",
         component: _contact_contact_contact_component__WEBPACK_IMPORTED_MODULE_7__["ContactComponent"]
+    },
+    {
+        path: "ordinateurs",
+        component: _ordinateur_ordinateur_component__WEBPACK_IMPORTED_MODULE_8__["OrdinateurComponent"]
+    },
+    {
+        path: "disque-durs",
+        component: _disque_dur_disque_dur_component__WEBPACK_IMPORTED_MODULE_9__["DisqueDurComponent"]
+    },
+    {
+        path: "carte-graphiques",
+        component: _carte_graphique_carte_graphique_component__WEBPACK_IMPORTED_MODULE_10__["CarteGraphiqueComponent"]
     }
 ];
 let RoutingModule = class RoutingModule {
 };
 RoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_accueil_accueil_component__WEBPACK_IMPORTED_MODULE_4__["AccueilComponent"], _processeur_processeur_component__WEBPACK_IMPORTED_MODULE_5__["ProcesseurComponent"], _products_products_component__WEBPACK_IMPORTED_MODULE_6__["ProductsComponent"], _contact_contact_contact_component__WEBPACK_IMPORTED_MODULE_7__["ContactComponent"]],
+        declarations: [_accueil_accueil_component__WEBPACK_IMPORTED_MODULE_4__["AccueilComponent"], _processeur_processeur_component__WEBPACK_IMPORTED_MODULE_5__["ProcesseurComponent"], _products_products_component__WEBPACK_IMPORTED_MODULE_6__["ProductsComponent"], _contact_contact_contact_component__WEBPACK_IMPORTED_MODULE_7__["ContactComponent"], _ordinateur_ordinateur_component__WEBPACK_IMPORTED_MODULE_8__["OrdinateurComponent"], _disque_dur_disque_dur_component__WEBPACK_IMPORTED_MODULE_9__["DisqueDurComponent"], _carte_graphique_carte_graphique_component__WEBPACK_IMPORTED_MODULE_10__["CarteGraphiqueComponent"]],
         exports: [
             _accueil_accueil_component__WEBPACK_IMPORTED_MODULE_4__["AccueilComponent"]
         ],
@@ -799,6 +1042,150 @@ RoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ]
     })
 ], RoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/carte-gservice.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/services/carte-gservice.service.ts ***!
+  \****************************************************/
+/*! exports provided: CarteGServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarteGServiceService", function() { return CarteGServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var CarteGServiceService_1;
+
+
+
+let CarteGServiceService = CarteGServiceService_1 = class CarteGServiceService {
+    constructor(http) {
+        this.http = http;
+    }
+    queryBase() {
+        return this.http.get(CarteGServiceService_1.URAL_API);
+    }
+    post(carteG) {
+        return this.http.post(CarteGServiceService_1.URAL_API, carteG);
+    }
+    update(carteG) {
+        return this.http.put(CarteGServiceService_1.URAL_API, carteG);
+    }
+    delete(nom) {
+        return this.http.delete(CarteGServiceService_1.URAL_API + "/" + nom);
+    }
+};
+CarteGServiceService.URAL_API = '/CarteGraphique';
+CarteGServiceService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+CarteGServiceService = CarteGServiceService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CarteGServiceService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/disque-dservice.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/services/disque-dservice.service.ts ***!
+  \*****************************************************/
+/*! exports provided: DisqueDServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisqueDServiceService", function() { return DisqueDServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var DisqueDServiceService_1;
+
+
+
+let DisqueDServiceService = DisqueDServiceService_1 = class DisqueDServiceService {
+    constructor(http) {
+        this.http = http;
+    }
+    queryBase() {
+        return this.http.get(DisqueDServiceService_1.URAL_API);
+    }
+    post(disqueD) {
+        return this.http.post(DisqueDServiceService_1.URAL_API, disqueD);
+    }
+    update(disqueD) {
+        return this.http.put(DisqueDServiceService_1.URAL_API, disqueD);
+    }
+    delete(nom) {
+        return this.http.delete(DisqueDServiceService_1.URAL_API + "/" + nom);
+    }
+};
+DisqueDServiceService.URAL_API = '/DisqueDur';
+DisqueDServiceService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+DisqueDServiceService = DisqueDServiceService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], DisqueDServiceService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/ordi-service.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/services/ordi-service.service.ts ***!
+  \**************************************************/
+/*! exports provided: OrdiServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrdiServiceService", function() { return OrdiServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var OrdiServiceService_1;
+
+
+
+let OrdiServiceService = OrdiServiceService_1 = class OrdiServiceService {
+    constructor(http) {
+        this.http = http;
+    }
+    queryBase() {
+        return this.http.get(OrdiServiceService_1.URAL_API);
+    }
+    post(ordi) {
+        return this.http.post(OrdiServiceService_1.URAL_API, ordi);
+    }
+    update(ordi) {
+        return this.http.put(OrdiServiceService_1.URAL_API, ordi);
+    }
+    delete(nom) {
+        return this.http.delete(OrdiServiceService_1.URAL_API + "/" + nom);
+    }
+};
+OrdiServiceService.URAL_API = '/Ordinateur';
+OrdiServiceService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+OrdiServiceService = OrdiServiceService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], OrdiServiceService);
 
 
 
