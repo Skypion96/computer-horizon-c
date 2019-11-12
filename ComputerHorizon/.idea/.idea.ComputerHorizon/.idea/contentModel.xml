@@ -14,6 +14,7 @@
           <e p="DisqueDurController.cs" t="Include" />
           <e p="OrdinateurController.cs" t="Include" />
           <e p="ProcesseurController.cs" t="Include" />
+          <e p="UtilisateurController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -34,6 +35,10 @@
         <e p="ModelsProc" t="Include">
           <e p="Processeur.cs" t="Include" />
           <e p="ProcesseurDao.cs" t="Include" />
+        </e>
+        <e p="ModelsUtilisateur" t="Include">
+          <e p="Utilisateur.cs" t="Include" />
+          <e p="UtilisateurDAO.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
