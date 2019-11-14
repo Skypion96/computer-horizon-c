@@ -14,8 +14,11 @@ namespace ComputerHorizon.ModelsDD
         public bool Interne { get; set; }
         public int Qte { get; set; }
         public string Img { get; set; }
+        
+        public double PrixReduc { get; set; }
 
-        public DisqueDur(string nom, string marque, string capacite, bool ssd, double prix, bool interne, int qte, string img)
+
+        public DisqueDur(string nom, string marque, string capacite, bool ssd, double prix, bool interne, int qte, string img,double prixReduc)
         {
             Nom= nom;
             Marque = marque;
@@ -25,6 +28,7 @@ namespace ComputerHorizon.ModelsDD
             Interne = interne;
             Qte = qte;
             Img = img;
+            PrixReduc = prixReduc;
         }
 
         public DisqueDur()
@@ -42,6 +46,7 @@ namespace ComputerHorizon.ModelsDD
             Interne = Convert.ToBoolean(reader[DisqueDurDao.FIELD_INTERNE].ToString());
             Qte = Convert.ToInt32(reader[DisqueDurDao.FIELD_QUANTITE].ToString());
             Img = reader[DisqueDurDao.FIELD_IMG].ToString();
+            PrixReduc = Convert.ToDouble(reader[DisqueDurDao.FIELD_PRIXREDUC].ToString());
         }
     }
 }

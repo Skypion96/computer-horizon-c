@@ -24,6 +24,7 @@ namespace ComputerHorizon.ModelsOrdinateur
         public static readonly string FIELD_QUANTITE = "qte";
         public static readonly string FIELD_CAPACITE_SSD = "capaciteSsd";
         public static readonly string FIELD_IMG = "img";
+        public static readonly string FIELD_PRIXREDUC = "prixReduc";
 
         //REQUETES :
         
@@ -36,8 +37,8 @@ namespace ComputerHorizon.ModelsOrdinateur
         
             //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST = 
-            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM},{FIELD_MARQUE},{FIELD_PRIX},{FIELD_NOMPROC},{FIELD_NOMCG},{FIELD_CAPACITE},{FIELD_MEMOIREV},{FIELD_SSD},{FIELD_DESCRIPTION},{FIELD_QUANTITE},{FIELD_CAPACITE_SSD},{FIELD_IMG})" +
-            $" VALUES (@{FIELD_NOM},@{FIELD_MARQUE},@{FIELD_PRIX},@{FIELD_NOMPROC},@{FIELD_NOMCG},@{FIELD_CAPACITE},@{FIELD_MEMOIREV},@{FIELD_SSD},@{FIELD_DESCRIPTION},@{FIELD_QUANTITE},@{FIELD_CAPACITE_SSD},@{FIELD_IMG})";
+            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM},{FIELD_MARQUE},{FIELD_PRIX},{FIELD_NOMPROC},{FIELD_NOMCG},{FIELD_CAPACITE},{FIELD_MEMOIREV},{FIELD_SSD},{FIELD_DESCRIPTION},{FIELD_QUANTITE},{FIELD_CAPACITE_SSD},{FIELD_IMG},{FIELD_PRIXREDUC})" +
+            $" VALUES (@{FIELD_NOM},@{FIELD_MARQUE},@{FIELD_PRIX},@{FIELD_NOMPROC},@{FIELD_NOMCG},@{FIELD_CAPACITE},@{FIELD_MEMOIREV},@{FIELD_SSD},@{FIELD_DESCRIPTION},@{FIELD_QUANTITE},@{FIELD_CAPACITE_SSD},@{FIELD_IMG},@{FIELD_PRIXREDUC})";
             
             //SUPPRIMER EN FONCTION DU NOM
         private static readonly string REQ_DELETE =
@@ -49,7 +50,7 @@ namespace ComputerHorizon.ModelsOrdinateur
             $", {FIELD_NOMPROC} = @{FIELD_NOMPROC},{FIELD_NOMCG} = @{FIELD_NOMCG} " +
             $", {FIELD_CAPACITE} = @{FIELD_CAPACITE},{FIELD_MEMOIREV} = @{FIELD_MEMOIREV} " +
             $", {FIELD_SSD} = @{FIELD_SSD},{FIELD_DESCRIPTION} = @{FIELD_DESCRIPTION} " +
-            $", {FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_CAPACITE_SSD} = @{FIELD_CAPACITE_SSD},{FIELD_IMG} = @{FIELD_IMG}" +
+            $", {FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_CAPACITE_SSD} = @{FIELD_CAPACITE_SSD},{FIELD_IMG} = @{FIELD_IMG},{FIELD_PRIXREDUC} = @{FIELD_PRIXREDUC} " +
             $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
         //METHODES :
@@ -113,6 +114,7 @@ namespace ComputerHorizon.ModelsOrdinateur
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", ordi.Qte);
                 command.Parameters.AddWithValue($"@{FIELD_CAPACITE_SSD}", ordi.CapaciteSsd);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", ordi.Img);
+                command.Parameters.AddWithValue($"@{FIELD_PRIXREDUC}", ordi.PrixReduc);
                 ordi.Nom = (string)command.ExecuteScalar(); //-> utilisation possible NE PAS SUPPRIMER
             }
             return ordi;
@@ -153,6 +155,7 @@ namespace ComputerHorizon.ModelsOrdinateur
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", ordi.Qte);
                 command.Parameters.AddWithValue($"@{FIELD_CAPACITE_SSD}", ordi.CapaciteSsd);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", ordi.Img);
+                command.Parameters.AddWithValue($"@{FIELD_PRIXREDUC}", ordi.PrixReduc);
                 command.Parameters.AddWithValue($"@{FIELD_NOM}", ordi.Nom);
                 hasBeenUpdate = command.ExecuteNonQuery() ==1;
             }

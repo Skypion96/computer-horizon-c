@@ -18,8 +18,11 @@ namespace ComputerHorizon.ModelsOrdinateur
         public int Qte { get; set; }
         public string CapaciteSsd { get; set; }
         public string Img { get; set; }
+        
+        public double PrixReduc { get; set; }
 
-        public Ordinateur(string nom, string marque, double prix, string nomProc, string nomCg, string capacite, int memoireV, bool ssd, string description, int qte, string capaciteSsd, string img)
+
+        public Ordinateur(string nom, string marque, double prix, string nomProc, string nomCg, string capacite, int memoireV, bool ssd, string description, int qte, string capaciteSsd, string img,double prixReduc)
         {
             Nom = nom;
             Marque = marque;
@@ -33,6 +36,8 @@ namespace ComputerHorizon.ModelsOrdinateur
             Qte = qte;
             CapaciteSsd = capaciteSsd;
             Img = img;
+            PrixReduc = prixReduc;
+
         }
         
         public Ordinateur(){}
@@ -51,6 +56,7 @@ namespace ComputerHorizon.ModelsOrdinateur
             Qte = Convert.ToInt32(reader[OrdinateurDao.FIELD_QUANTITE].ToString());
             CapaciteSsd = reader[OrdinateurDao.FIELD_CAPACITE_SSD].ToString();
             Img = reader[OrdinateurDao.FIELD_IMG].ToString();
+            PrixReduc = Convert.ToDouble(reader[OrdinateurDao.FIELD_PRIXREDUC].ToString());
         }
     }
 }

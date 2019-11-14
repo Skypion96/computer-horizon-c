@@ -16,8 +16,11 @@ namespace ComputerHorizon.ModelsProc
         public int Reduction { get; set; }
         public int Cote { get; set; }
         public string  DateCote { get; set; }
+        
+        public double PrixReduc { get; set; }
 
-        public Processeur(string nom, string marque, int nbCoeurs, string frequence, double prix, int qte, string img,int reduction,int cote,string dateCote)
+
+        public Processeur(string nom, string marque, int nbCoeurs, string frequence, double prix, int qte, string img,int reduction,int cote,string dateCote,double prixReduc)
         {
             Nom = nom;
             Marque = marque;
@@ -29,6 +32,7 @@ namespace ComputerHorizon.ModelsProc
             Reduction = reduction;
             Cote = cote;
             DateCote = dateCote;
+            PrixReduc = prixReduc;
         }
 
         public Processeur()
@@ -49,6 +53,7 @@ namespace ComputerHorizon.ModelsProc
             Reduction = Convert.ToInt32(reader[ProcesseurDao.FIELD_REDUCTION].ToString());
             Cote = Convert.ToInt32(reader[ProcesseurDao.FIELD_COTE].ToString());
             DateCote = reader[ProcesseurDao.FIELD_DATE_COTE].ToString();
+            PrixReduc = Convert.ToDouble(reader[ProcesseurDao.FIELD_PRIXREDUC].ToString());
         }
         
         

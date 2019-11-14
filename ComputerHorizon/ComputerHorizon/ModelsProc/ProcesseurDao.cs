@@ -20,6 +20,7 @@ namespace ComputerHorizon.ModelsProc
         public static readonly string FIELD_REDUCTION = "reduction";
         public static readonly string FIELD_COTE = "cote";
         public static readonly string FIELD_DATE_COTE = "dateCote";
+        public static readonly string FIELD_PRIXREDUC = "prixReduc";
 
         //REQUETES :
         
@@ -32,8 +33,8 @@ namespace ComputerHorizon.ModelsProc
         
             //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST = 
-            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM},{FIELD_MARQUE},{FIELD_NBCOEURS},{FIELD_FREQUENCE},{FIELD_PRIX},{FIELD_QUANTITE},{FIELD_IMG},{FIELD_REDUCTION},{FIELD_COTE},{FIELD_DATE_COTE})" +
-            $" VALUES (@{FIELD_NOM},@{FIELD_MARQUE},@{FIELD_NBCOEURS},@{FIELD_FREQUENCE},@{FIELD_PRIX},@{FIELD_QUANTITE},@{FIELD_IMG},@{FIELD_REDUCTION},@{FIELD_COTE},@{FIELD_DATE_COTE})";
+            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM},{FIELD_MARQUE},{FIELD_NBCOEURS},{FIELD_FREQUENCE},{FIELD_PRIX},{FIELD_QUANTITE},{FIELD_IMG},{FIELD_REDUCTION},{FIELD_COTE},{FIELD_DATE_COTE},{FIELD_PRIXREDUC})" +
+            $" VALUES (@{FIELD_NOM},@{FIELD_MARQUE},@{FIELD_NBCOEURS},@{FIELD_FREQUENCE},@{FIELD_PRIX},@{FIELD_QUANTITE},@{FIELD_IMG},@{FIELD_REDUCTION},@{FIELD_COTE},@{FIELD_DATE_COTE},@{FIELD_PRIXREDUC})";
         
             //SUPPRIMER EN FONCTION DU NOM
         private static readonly string REQ_DELETE =
@@ -43,7 +44,7 @@ namespace ComputerHorizon.ModelsProc
         private static readonly string REQ_UPDATE =
             $"UPDATE {TABLE_NAME} SET {FIELD_MARQUE} = @{FIELD_MARQUE},{FIELD_NBCOEURS} = @{FIELD_NBCOEURS} " +
             $", {FIELD_FREQUENCE} = @{FIELD_FREQUENCE},{FIELD_PRIX} = @{FIELD_PRIX},{FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_IMG} = @{FIELD_IMG} "+
-            $",{FIELD_REDUCTION} = @{FIELD_REDUCTION},{FIELD_COTE} = @{FIELD_COTE},{FIELD_DATE_COTE} = @{FIELD_DATE_COTE}" +
+            $",{FIELD_REDUCTION} = @{FIELD_REDUCTION},{FIELD_COTE} = @{FIELD_COTE},{FIELD_DATE_COTE} = @{FIELD_DATE_COTE},{FIELD_PRIXREDUC} = @{FIELD_PRIXREDUC} " +
             $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
         //METHODES :
@@ -106,6 +107,7 @@ namespace ComputerHorizon.ModelsProc
                 command.Parameters.AddWithValue($"@{FIELD_REDUCTION}", proc.Reduction);
                 command.Parameters.AddWithValue($"@{FIELD_COTE}", proc.Cote);
                 command.Parameters.AddWithValue($"@{FIELD_DATE_COTE}", proc.DateCote);
+                command.Parameters.AddWithValue($"@{FIELD_PRIXREDUC}", proc.PrixReduc);
                 proc.Nom = (string)command.ExecuteScalar(); 
             }
             return proc;
@@ -144,6 +146,7 @@ namespace ComputerHorizon.ModelsProc
                 command.Parameters.AddWithValue($"@{FIELD_REDUCTION}", proc.Reduction);
                 command.Parameters.AddWithValue($"@{FIELD_COTE}", proc.Cote);
                 command.Parameters.AddWithValue($"@{FIELD_DATE_COTE}", proc.DateCote);
+                command.Parameters.AddWithValue($"@{FIELD_PRIXREDUC}", proc.PrixReduc);
                 command.Parameters.AddWithValue($"@{FIELD_NOM}", proc.Nom);
                 hasBeenUpdate = command.ExecuteNonQuery() ==1;
             }

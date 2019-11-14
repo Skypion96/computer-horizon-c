@@ -14,8 +14,10 @@ namespace ComputerHorizon.ModelsCG
         public int Qte { get; set; }
         
         public string Img { get; set; }
+        
+        public double PrixReduc { get; set; }
 
-        public CarteGraphique(string nom, string marque, double prix, string frequence, string memoireVideo, int qte,string img)
+        public CarteGraphique(string nom, string marque, double prix, string frequence, string memoireVideo, int qte,string img,double prixReduc)
         {
             Nom = nom;
             Marque = marque;
@@ -24,6 +26,7 @@ namespace ComputerHorizon.ModelsCG
             MemoireVideo = memoireVideo;
             Qte = qte;
             Img = img;
+            PrixReduc = prixReduc;
         }
         
         public CarteGraphique()
@@ -40,6 +43,7 @@ namespace ComputerHorizon.ModelsCG
             MemoireVideo =  reader[CarteGraphiqueDao.FIELD_MEMOIRE_VIDEO].ToString();
             Qte = Convert.ToInt32(reader[CarteGraphiqueDao.FIELD_QUANTITE].ToString());
             Img = reader[CarteGraphiqueDao.FIELD_IMG].ToString();
+            PrixReduc = Convert.ToDouble(reader[CarteGraphiqueDao.FIELD_PRIXREDUC].ToString());
         }
     }
 }

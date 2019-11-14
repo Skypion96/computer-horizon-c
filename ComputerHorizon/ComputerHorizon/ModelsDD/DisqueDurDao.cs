@@ -18,6 +18,7 @@ namespace ComputerHorizon.ModelsDD
         public static readonly string FIELD_INTERNE = "interne";
         public static readonly string FIELD_QUANTITE = "qte";
         public static readonly string FIELD_IMG = "img";
+        public static readonly string FIELD_PRIXREDUC = "prixReduc";
 
         //REQUETES :
         
@@ -30,8 +31,8 @@ namespace ComputerHorizon.ModelsDD
         
             //AJOUTER UN NOUVEAU DisqueDur
         private static readonly string REQ_POST = 
-            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM},{FIELD_MARQUE},{FIELD_CAPACITE},{FIELD_SSD},{FIELD_PRIX},{FIELD_INTERNE},{FIELD_QUANTITE},{FIELD_IMG})" +
-            $" VALUES (@{FIELD_NOM},@{FIELD_MARQUE},@{FIELD_CAPACITE},@{FIELD_SSD},@{FIELD_PRIX},@{FIELD_INTERNE},@{FIELD_QUANTITE},@{FIELD_IMG})";
+            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM},{FIELD_MARQUE},{FIELD_CAPACITE},{FIELD_SSD},{FIELD_PRIX},{FIELD_INTERNE},{FIELD_QUANTITE},{FIELD_IMG},{FIELD_PRIXREDUC})" +
+            $" VALUES (@{FIELD_NOM},@{FIELD_MARQUE},@{FIELD_CAPACITE},@{FIELD_SSD},@{FIELD_PRIX},@{FIELD_INTERNE},@{FIELD_QUANTITE},@{FIELD_IMG},@{FIELD_PRIXREDUC})";
         
             //SUPPRIMER EN FONCTION DU NOM
         private static readonly string REQ_DELETE =
@@ -41,7 +42,7 @@ namespace ComputerHorizon.ModelsDD
         private static readonly string REQ_UPDATE =
             $"UPDATE {TABLE_NAME} SET {FIELD_MARQUE} = @{FIELD_MARQUE},{FIELD_SSD} = @{FIELD_SSD} " +
             $", {FIELD_PRIX} = @{FIELD_PRIX},{FIELD_INTERNE} = @{FIELD_INTERNE} " +
-            $", {FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_IMG} = @{FIELD_IMG}" +
+            $", {FIELD_QUANTITE} = @{FIELD_QUANTITE},{FIELD_IMG} = @{FIELD_IMG},{FIELD_PRIXREDUC} = @{FIELD_PRIXREDUC} " +
             $" WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
         //METHODES :
@@ -100,6 +101,7 @@ namespace ComputerHorizon.ModelsDD
                 command.Parameters.AddWithValue($"@{FIELD_INTERNE}", disqueD.Interne);
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", disqueD.Qte);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", disqueD.Img);
+                command.Parameters.AddWithValue($"@{FIELD_PRIXREDUC}", disqueD.PrixReduc);
                 disqueD.Nom = (string)command.ExecuteScalar(); 
             }
             return disqueD;
@@ -136,6 +138,7 @@ namespace ComputerHorizon.ModelsDD
                 command.Parameters.AddWithValue($"@{FIELD_INTERNE}", disqueD.Interne);
                 command.Parameters.AddWithValue($"@{FIELD_QUANTITE}", disqueD.Qte);
                 command.Parameters.AddWithValue($"@{FIELD_IMG}", disqueD.Img);
+                command.Parameters.AddWithValue($"@{FIELD_PRIXREDUC}", disqueD.PrixReduc);
                 command.Parameters.AddWithValue($"@{FIELD_NOM}", disqueD.Nom);
                 hasBeenUpdate = command.ExecuteNonQuery() ==1;
             }
