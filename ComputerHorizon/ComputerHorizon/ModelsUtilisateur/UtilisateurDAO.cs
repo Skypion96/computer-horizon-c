@@ -20,6 +20,7 @@ namespace ComputerHorizon.ModelsUtilisateur
         public static readonly string FIELD_NUMRUE = "numRue";
         public static readonly string FIELD_CP = "cp";
         public static readonly string FIELD_VILLE = "ville";
+        public static readonly string FIELD_TOKEN = "token";
 
         //REQUETES :
         
@@ -32,8 +33,8 @@ namespace ComputerHorizon.ModelsUtilisateur
         
             //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST = 
-            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR},{FIELD_MAIL},{FIELD_MDP},{FIELD_TEL},{FIELD_RUE},{FIELD_NUMRUE},{FIELD_CP},{FIELD_VILLE})" +
-            $" VALUES (@{FIELD_NOM_UTILISATEUR},@{FIELD_PRENOM_UTILISATEUR},@{FIELD_MAIL},@{FIELD_MDP},@{FIELD_TEL},@{FIELD_RUE},@{FIELD_NUMRUE},@{FIELD_CP},@{FIELD_VILLE})";
+            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR},{FIELD_MAIL},{FIELD_MDP},{FIELD_TEL},{FIELD_RUE},{FIELD_NUMRUE},{FIELD_CP},{FIELD_VILLE},{FIELD_TOKEN})" +
+            $" VALUES (@{FIELD_NOM_UTILISATEUR},@{FIELD_PRENOM_UTILISATEUR},@{FIELD_MAIL},@{FIELD_MDP},@{FIELD_TEL},@{FIELD_RUE},@{FIELD_NUMRUE},@{FIELD_CP},@{FIELD_VILLE},@{FIELD_TOKEN})";
         
             //SUPPRIMER EN FONCTION DU NOM
         private static readonly string REQ_DELETE =
@@ -43,7 +44,7 @@ namespace ComputerHorizon.ModelsUtilisateur
         private static readonly string REQ_UPDATE =
             $"UPDATE {TABLE_NAME} SET {FIELD_NOM_UTILISATEUR} = @{FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR} = @{FIELD_PRENOM_UTILISATEUR} " +
             $", {FIELD_MDP} = @{FIELD_MDP},{FIELD_TEL} = @{FIELD_TEL},{FIELD_RUE} = @{FIELD_RUE},{FIELD_NUMRUE} = @{FIELD_NUMRUE} "+
-            $",{FIELD_CP} = @{FIELD_CP},{FIELD_VILLE} = @{FIELD_VILLE}" +
+            $",{FIELD_CP} = @{FIELD_CP},{FIELD_VILLE} = @{FIELD_VILLE},{FIELD_TOKEN} = @{FIELD_TOKEN}" +
             $" WHERE {FIELD_MAIL} = @{FIELD_MAIL}";
         
         //METHODES :
@@ -105,6 +106,7 @@ namespace ComputerHorizon.ModelsUtilisateur
                 command.Parameters.AddWithValue($"@{FIELD_NUMRUE}", user.NumRue);
                 command.Parameters.AddWithValue($"@{FIELD_CP}", user.Cp);
                 command.Parameters.AddWithValue($"@{FIELD_VILLE}", user.Ville);
+                command.Parameters.AddWithValue($"@{FIELD_TOKEN}", user.Token);
                 user.Mail = (string)command.ExecuteScalar(); 
             }
             return user;
@@ -142,6 +144,7 @@ namespace ComputerHorizon.ModelsUtilisateur
                 command.Parameters.AddWithValue($"@{FIELD_NUMRUE}", user.NumRue);
                 command.Parameters.AddWithValue($"@{FIELD_CP}", user.Cp);
                 command.Parameters.AddWithValue($"@{FIELD_VILLE}", user.Ville);
+                command.Parameters.AddWithValue($"@{FIELD_TOKEN}", user.Token);
                 command.Parameters.AddWithValue($"@{FIELD_MAIL}", user.Mail);
                 hasBeenUpdate = command.ExecuteNonQuery() ==1;
             }
