@@ -21,6 +21,7 @@ namespace ComputerHorizon.ModelsUtilisateur
         public static readonly string FIELD_CP = "cp";
         public static readonly string FIELD_VILLE = "ville";
         public static readonly string FIELD_TOKEN = "token";
+        public static readonly string FIELD_IDPANIER = "idPanier";
 
         //REQUETES :
         
@@ -29,12 +30,12 @@ namespace ComputerHorizon.ModelsUtilisateur
             $" WHERE {FIELD_MAIL} = @{FIELD_MAIL}";
         
             //AFFICHER UNIQUEMENT IMAGE + NOM + MARQUE                                     
-        private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME}"; //{FIELD_NOM},{FIELD_IMG},{FIELD_MARQUE} 
+        private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME}";
         
             //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST = 
-            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR},{FIELD_MAIL},{FIELD_MDP},{FIELD_TEL},{FIELD_RUE},{FIELD_NUMRUE},{FIELD_CP},{FIELD_VILLE},{FIELD_TOKEN})" +
-            $" VALUES (@{FIELD_NOM_UTILISATEUR},@{FIELD_PRENOM_UTILISATEUR},@{FIELD_MAIL},@{FIELD_MDP},@{FIELD_TEL},@{FIELD_RUE},@{FIELD_NUMRUE},@{FIELD_CP},@{FIELD_VILLE},@{FIELD_TOKEN})";
+            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR},{FIELD_MAIL},{FIELD_MDP},{FIELD_TEL},{FIELD_RUE},{FIELD_NUMRUE},{FIELD_CP},{FIELD_VILLE},{FIELD_TOKEN},{FIELD_IDPANIER})" +
+            $" VALUES (@{FIELD_NOM_UTILISATEUR},@{FIELD_PRENOM_UTILISATEUR},@{FIELD_MAIL},@{FIELD_MDP},@{FIELD_TEL},@{FIELD_RUE},@{FIELD_NUMRUE},@{FIELD_CP},@{FIELD_VILLE},@{FIELD_TOKEN},@{FIELD_IDPANIER})";
         
             //SUPPRIMER EN FONCTION DU NOM
         private static readonly string REQ_DELETE =
@@ -44,7 +45,7 @@ namespace ComputerHorizon.ModelsUtilisateur
         private static readonly string REQ_UPDATE =
             $"UPDATE {TABLE_NAME} SET {FIELD_NOM_UTILISATEUR} = @{FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR} = @{FIELD_PRENOM_UTILISATEUR} " +
             $", {FIELD_MDP} = @{FIELD_MDP},{FIELD_TEL} = @{FIELD_TEL},{FIELD_RUE} = @{FIELD_RUE},{FIELD_NUMRUE} = @{FIELD_NUMRUE} "+
-            $",{FIELD_CP} = @{FIELD_CP},{FIELD_VILLE} = @{FIELD_VILLE},{FIELD_TOKEN} = @{FIELD_TOKEN}" +
+            $",{FIELD_CP} = @{FIELD_CP},{FIELD_VILLE} = @{FIELD_VILLE},{FIELD_TOKEN} = @{FIELD_TOKEN},{FIELD_IDPANIER} = @{FIELD_IDPANIER}" +
             $" WHERE {FIELD_MAIL} = @{FIELD_MAIL}";
         
         //METHODES :
@@ -107,6 +108,8 @@ namespace ComputerHorizon.ModelsUtilisateur
                 command.Parameters.AddWithValue($"@{FIELD_CP}", user.Cp);
                 command.Parameters.AddWithValue($"@{FIELD_VILLE}", user.Ville);
                 command.Parameters.AddWithValue($"@{FIELD_TOKEN}", user.Token);
+                command.Parameters.AddWithValue($"@{FIELD_IDPANIER}", user.IdPanier);
+
                 user.Mail = (string)command.ExecuteScalar(); 
             }
             return user;
@@ -145,6 +148,8 @@ namespace ComputerHorizon.ModelsUtilisateur
                 command.Parameters.AddWithValue($"@{FIELD_CP}", user.Cp);
                 command.Parameters.AddWithValue($"@{FIELD_VILLE}", user.Ville);
                 command.Parameters.AddWithValue($"@{FIELD_TOKEN}", user.Token);
+                command.Parameters.AddWithValue($"@{FIELD_IDPANIER}", user.IdPanier);
+
                 command.Parameters.AddWithValue($"@{FIELD_MAIL}", user.Mail);
                 hasBeenUpdate = command.ExecuteNonQuery() ==1;
             }

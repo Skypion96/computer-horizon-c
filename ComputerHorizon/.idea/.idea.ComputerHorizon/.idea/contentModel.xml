@@ -13,6 +13,7 @@
           <e p="CarteGraphiqueController.cs" t="Include" />
           <e p="DisqueDurController.cs" t="Include" />
           <e p="OrdinateurController.cs" t="Include" />
+          <e p="PanierController.cs" t="Include" />
           <e p="ProcesseurController.cs" t="Include" />
           <e p="UtilisateurController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
@@ -31,6 +32,10 @@
         <e p="ModelsOrdinateur" t="Include">
           <e p="Ordinateur.cs" t="Include" />
           <e p="OrdinateurDao.cs" t="Include" />
+        </e>
+        <e p="ModelsPanier" t="Include">
+          <e p="Panier.cs" t="Include" />
+          <e p="PanierDAO.cs" t="Include" />
         </e>
         <e p="ModelsProc" t="Include">
           <e p="Processeur.cs" t="Include" />
@@ -55,10 +60,16 @@
         <e p="wwwroot" t="Include">
           <e p="js" t="Include">
             <e p="assets" t="Include">
+              <e p="8-mckinsey-horizons-765x510.jpg" t="Include" />
               <e p="carte_graphiquepdt.jpg" t="Include" />
+              <e p="dct8wa7k9th3uhk.jpg" t="Include" />
               <e p="disque_durpdt.jpg" t="Include" />
+              <e p="DqNP2L8u-disque-dur-ssd-intel-s-.webp" t="Include" />
+              <e p="home-featured-cat-pc.png" t="Include" />
+              <e p="id template.jpg" t="Include" />
               <e p="logo.png" t="Include" />
               <e p="ordinateurpdt.jpg" t="Include" />
+              <e p="pc-ordinateur-processeur.jpg" t="Include" />
               <e p="processeurpdt.jpg" t="Include" />
             </e>
             <e p="favicon.ico" t="Include" />
