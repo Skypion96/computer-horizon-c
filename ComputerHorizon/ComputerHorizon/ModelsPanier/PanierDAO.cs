@@ -12,15 +12,13 @@ namespace ComputerHorizon.ModelsPanier
         
         //LES DIFFERENTS CHAMPS
         public static readonly string FIELD_ID = "id";
-        public static readonly string FIELD_COUCOU = "testCOL";
         
         //REQUETES :
         
         //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST =
-            $"INSERT INTO {TABLE_NAME} ({FIELD_COUCOU})" +
-            $" OUTPUT Inserted.{FIELD_ID}" +
-            $" values(@{FIELD_COUCOU})";
+            $"INSERT INTO {TABLE_NAME} ({FIELD_ID})" +
+            $" values(@{FIELD_ID})";
 
         
         public static Panier Post(Panier pan)
@@ -30,8 +28,7 @@ namespace ComputerHorizon.ModelsPanier
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_POST;
-                command.Parameters.AddWithValue($"@{FIELD_COUCOU}", pan.TestCOL);
-
+                command.Parameters.AddWithValue($"@{FIELD_ID}", pan.Id);
                 pan.Id = (int)command.ExecuteScalar(); 
             }
             return pan;

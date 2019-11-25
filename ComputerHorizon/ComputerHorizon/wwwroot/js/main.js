@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul>\r\n  <li *ngFor=\"let dd of disqueDList; index as i\">\r\n    <div class=\"card\" >\r\n      <img src=\"{{dd.img}}\"/>\r\n      <div [id]=i>\r\n        <table>\r\n          <tr>\r\n            <b class=\"nom\">{{dd.nom}}</b>\r\n          </tr>\r\n          <tr>\r\n            <b class=\"description\">{{dd.marque}} - {{dd.capacite}}</b><br>\r\n          </tr>\r\n          <br><br>\r\n          <tr>\r\n            <b class=\"prixI\" id=\"prix\">{{dd.prix}} €</b>\r\n          </tr>\r\n        </table>\r\n      </div>\r\n      <button class=\"btnShow\" (click)=\"AffichageDisqueD(dd,i)\">Afficher le produit</button>\r\n    </div>\r\n  </li>\r\n</ul>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"filter\">\r\n  <h3>FILTRES : </h3>\r\n  <div class=\"filterSSD\">\r\n    SSD :\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_SSD\">\r\n\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterSSD\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedSSD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterMarque\">\r\n    Marques :\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_MARQUE\">\r\n\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterMarque\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedMarque\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<ul>\r\n  <li *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n    <div class=\"card\" >\r\n      <img src=\"{{dd.img}}\"/>\r\n      <div [id]=i>\r\n        <table>\r\n          <tr>\r\n            <b class=\"nom\">{{dd.nom}}</b>\r\n          </tr>\r\n          <tr>\r\n            <b class=\"description\">{{dd.marque}} - {{dd.capacite}}</b><br>\r\n          </tr>\r\n          <br><br>\r\n          <tr>\r\n            <b class=\"prixI\" id=\"prix\">{{dd.prix}} €</b>\r\n          </tr>\r\n        </table>\r\n      </div>\r\n      <button class=\"btnShow\" (click)=\"AffichageDisqueD(dd,i)\">Afficher le produit</button>\r\n    </div>\r\n  </li>\r\n</ul>\r\n");
 
 /***/ }),
 
@@ -127,6 +127,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup] = \"form\">\r\n  <fieldset>\r\n    <legend> Connexion </legend>\r\n    <div class = \"form-field\">\r\n      <label> Email: </label>\r\n      <input type=\"text\" name=\"email\" formControlName = \"email\">\r\n    </div>\r\n    <div class = \"form-field\">\r\n      <label> Mot de passe: </label>\r\n      <input type=\"text\" name=\"mdp\" formControlName = \"mdp\"\r\n      type = \"mot de passe\">\r\n    </div>\r\n  </fieldset>\r\n  <div class = \"form-buttons\">\r\n    <button class = \"button button-primary\" (click) = \"login()\"> Connexion </button>\r\n  </div>\r\n</form>\r\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/ordinateur/ordinateur.component.html":
 /*!********************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/ordinateur/ordinateur.component.html ***!
@@ -149,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<ul>\r\n  <li *ngFor=\"let proc of filteredProcList; index as i\">\r\n    <div class=\"card\" >\r\n      <img src=\"{{proc.img}}\"/>\r\n        <div [id]=i>\r\n        <table>\r\n          <tr>\r\n            <b class=\"nom\">{{proc.nom}}</b>\r\n          </tr>\r\n          <tr>\r\n            <b class=\"description\">{{proc.marque}} - {{proc.frequence}}</b><br>\r\n          </tr>\r\n          <br><br>\r\n          <tr>\r\n            <b class=\"prixI\" id=\"prix\">{{proc.prix}} €</b>\r\n          </tr>\r\n        </table>\r\n      </div>\r\n    <button class=\"btnShow\" (click)=\"AffichageProc(proc,i)\">Afficher le produit</button>\r\n    </div>\r\n  </li>\r\n</ul>\r\n<label for=\"recherche\">Rechercher un processeur particulier : </label>\r\n<input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div class=\"filter\">\r\n  <h3>FILTRES : </h3>\r\n  <div class=\"filterNom\">\r\n    <label for=\"recherche\">Rechercher un processeur particulier : </label>\r\n    <input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n  </div>\r\n  <div class=\"filterPrix\">\r\n    PRIX :\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER\">\r\n\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filter\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelected\">\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"filterMarque\">\r\n    MARQUES :\r\n    <div *ngFor=\"let typeFilterMarque of TYPE_FILTER_MARQUE\">\r\n      <label [for]=\"typeFilterMarque.id\">{{typeFilterMarque.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterMarque.id\" name=\"filterMarque\" [value]=\"typeFilterMarque.value\"\r\n             [(ngModel)]=\"filterSelectedMarque\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<ul>\r\n  <li *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n    <div class=\"card\">\r\n      <img src=\"{{proc.img}}\"/>\r\n        <div [id]=i>\r\n        <table>\r\n          <tr>\r\n            <b class=\"nom\">{{proc.nom}}</b>\r\n          </tr>\r\n          <tr>\r\n            <b class=\"description\">{{proc.marque}} - {{proc.frequence}}</b><br>\r\n          </tr>\r\n          <br><br>\r\n          <tr>\r\n            <b class=\"prixI\" id=\"prix\">{{proc.prix}} €</b>\r\n          </tr>\r\n        </table>\r\n      </div>\r\n    <button class=\"btnShow\" (click)=\"AffichageProc(proc,i)\">Afficher le produit</button>\r\n    </div>\r\n  </li>\r\n</ul>\r\n");
 
 /***/ }),
 
@@ -510,6 +523,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routing_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./routing/routing.module */ "./src/app/routing/routing.module.ts");
 /* harmony import */ var _services_token_interceptor_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/token-interceptor.service */ "./src/app/services/token-interceptor.service.ts");
 /* harmony import */ var _pipes_processeur_pipe_pipe__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pipes/processeur-pipe.pipe */ "./src/app/pipes/processeur-pipe.pipe.ts");
+/* harmony import */ var _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pipes/carte-g.pipe */ "./src/app/pipes/carte-g.pipe.ts");
+/* harmony import */ var _pipes_ordinateur_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pipes/ordinateur.pipe */ "./src/app/pipes/ordinateur.pipe.ts");
+/* harmony import */ var _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pipes/disque-d.pipe */ "./src/app/pipes/disque-d.pipe.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+
+
 
 
 
@@ -530,12 +553,17 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"],
             _footer_footer_component__WEBPACK_IMPORTED_MODULE_5__["FooterComponent"],
             _pipes_processeur_pipe_pipe__WEBPACK_IMPORTED_MODULE_10__["ProcesseurPipePipe"],
+            _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_11__["CarteGPipe"],
+            _pipes_ordinateur_pipe__WEBPACK_IMPORTED_MODULE_12__["OrdinateurPipe"],
+            _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_13__["DisqueDPipe"],
+            _login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"],
-            _routing_routing_module__WEBPACK_IMPORTED_MODULE_8__["RoutingModule"]
+            _routing_routing_module__WEBPACK_IMPORTED_MODULE_8__["RoutingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ReactiveFormsModule"]
         ],
         providers: [{
                 provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HTTP_INTERCEPTORS"],
@@ -675,7 +703,7 @@ ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".btnShow{\r\n  background-color: limegreen;\r\n  border: none;\r\n  border-radius: 8px;\r\n  color: white;\r\n  cursor: pointer;\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 20px;\r\n  outline: 0;\r\n  margin-left: 35%;\r\n  margin-top: 20px;\r\n}\r\n\r\n.btnShow:hover{\r\n  transform: scale(1.01);\r\n}\r\n\r\n.btnShow:active{\r\n  transform: scale(0.98);\r\n}\r\n\r\n.card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 16%;\r\n  margin-right: 16%;\r\n  width: 1000px;\r\n  height: auto;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 200px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 40px;\r\n}\r\n\r\n.prixI{\r\n  color: red;\r\n  font-size: 35px;\r\n}\r\n\r\n.prixIReduc{\r\n  color: black;\r\n  font-size: 20px;\r\n  text-decoration: line-through;\r\n}\r\n\r\n.reduction{\r\n  color: black;\r\n  font-size: 15px;\r\n}\r\n\r\ntable{\r\n  float: left;\r\n  margin-left: 4%;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlzcXVlLWR1ci9kaXNxdWUtZHVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwyQkFBMkI7RUFDM0IsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osZUFBZTtFQUNmLHNDQUFzQztFQUN0QyxlQUFlO0VBQ2YsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixxQkFBcUI7RUFDckIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsYUFBYTtFQUNiLFlBQVk7QUFDZDs7QUFFQTtFQUNFLHNDQUFzQztFQUN0QyxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsV0FBVztFQUNYLGFBQWE7RUFDYixVQUFVO0FBQ1o7O0FBRUE7RUFDRSxzQ0FBc0M7RUFDdEMsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGVBQWU7RUFDZiw2QkFBNkI7QUFDL0I7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9kaXNxdWUtZHVyL2Rpc3F1ZS1kdXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idG5TaG93e1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGxpbWVncmVlbjtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgZm9udC1mYW1pbHk6ICdZYW50cmFtYW5hdicsIHNhbnMtc2VyaWY7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIG91dGxpbmU6IDA7XHJcbiAgbWFyZ2luLWxlZnQ6IDM1JTtcclxuICBtYXJnaW4tdG9wOiAyMHB4O1xyXG59XHJcblxyXG4uYnRuU2hvdzpob3ZlcntcclxuICB0cmFuc2Zvcm06IHNjYWxlKDEuMDEpO1xyXG59XHJcblxyXG4uYnRuU2hvdzphY3RpdmV7XHJcbiAgdHJhbnNmb3JtOiBzY2FsZSgwLjk4KTtcclxufVxyXG5cclxuLmNhcmR7XHJcbiAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxuICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICBtYXJnaW4tbGVmdDogMTYlO1xyXG4gIG1hcmdpbi1yaWdodDogMTYlO1xyXG4gIHdpZHRoOiAxMDAwcHg7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG59XHJcblxyXG4uZGVzY3JpcHRpb257XHJcbiAgZm9udC1mYW1pbHk6ICdZYW50cmFtYW5hdicsIHNhbnMtc2VyaWY7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcblxyXG5pbWd7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgaGVpZ2h0OiAyMDBweDtcclxuICB3aWR0aDogMzAlO1xyXG59XHJcblxyXG4ubm9te1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogNDBweDtcclxufVxyXG5cclxuLnByaXhJe1xyXG4gIGNvbG9yOiByZWQ7XHJcbiAgZm9udC1zaXplOiAzNXB4O1xyXG59XHJcblxyXG4ucHJpeElSZWR1Y3tcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbGluZS10aHJvdWdoO1xyXG59XHJcblxyXG4ucmVkdWN0aW9ue1xyXG4gIGNvbG9yOiBibGFjaztcclxuICBmb250LXNpemU6IDE1cHg7XHJcbn1cclxuXHJcbnRhYmxle1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIG1hcmdpbi1sZWZ0OiA0JTtcclxufVxyXG5cclxudWx7XHJcbiAgbGlzdC1zdHlsZTogbm9uZTtcclxuICBtYXJnaW4tdG9wOiAxMCU7XHJcbn1cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".btnShow{\r\n  background-color: limegreen;\r\n  border: none;\r\n  border-radius: 8px;\r\n  color: white;\r\n  cursor: pointer;\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 20px;\r\n  outline: 0;\r\n  margin-left: 35%;\r\n  margin-top: 20px;\r\n}\r\n\r\n.btnShow:hover{\r\n  transform: scale(1.01);\r\n}\r\n\r\n.btnShow:active{\r\n  transform: scale(0.98);\r\n}\r\n\r\n.card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 16%;\r\n  margin-right: 16%;\r\n  width: 1000px;\r\n  height: auto;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 200px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 40px;\r\n}\r\n\r\n.prixI{\r\n  color: red;\r\n  font-size: 35px;\r\n}\r\n\r\n.prixIReduc{\r\n  color: black;\r\n  font-size: 20px;\r\n  text-decoration: line-through;\r\n}\r\n\r\n.reduction{\r\n  color: black;\r\n  font-size: 15px;\r\n}\r\n\r\ntable{\r\n  float: left;\r\n  margin-left: 4%;\r\n}\r\n\r\n.filter{\r\n  margin-top: 10%;\r\n  text-align: center;\r\n}\r\n\r\n.filterSSD{\r\n  float: left;\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-left: 40%;\r\n}\r\n\r\n.filterMarque{\r\n  float: left;\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-left: 1%;\r\n}\r\n\r\nul{\r\n  margin-top: 10%;\r\n  list-style: none;\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGlzcXVlLWR1ci9kaXNxdWUtZHVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwyQkFBMkI7RUFDM0IsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osZUFBZTtFQUNmLHNDQUFzQztFQUN0QyxlQUFlO0VBQ2YsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixxQkFBcUI7RUFDckIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsYUFBYTtFQUNiLFlBQVk7QUFDZDs7QUFFQTtFQUNFLHNDQUFzQztFQUN0QyxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsV0FBVztFQUNYLGFBQWE7RUFDYixVQUFVO0FBQ1o7O0FBRUE7RUFDRSxzQ0FBc0M7RUFDdEMsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGVBQWU7RUFDZiw2QkFBNkI7QUFDL0I7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixxQkFBcUI7RUFDckIsZ0JBQWdCO0FBQ2xCOztBQUNBO0VBQ0UsV0FBVztFQUNYLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjs7QUFFbEIiLCJmaWxlIjoic3JjL2FwcC9kaXNxdWUtZHVyL2Rpc3F1ZS1kdXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idG5TaG93e1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGxpbWVncmVlbjtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgZm9udC1mYW1pbHk6ICdZYW50cmFtYW5hdicsIHNhbnMtc2VyaWY7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIG91dGxpbmU6IDA7XHJcbiAgbWFyZ2luLWxlZnQ6IDM1JTtcclxuICBtYXJnaW4tdG9wOiAyMHB4O1xyXG59XHJcblxyXG4uYnRuU2hvdzpob3ZlcntcclxuICB0cmFuc2Zvcm06IHNjYWxlKDEuMDEpO1xyXG59XHJcblxyXG4uYnRuU2hvdzphY3RpdmV7XHJcbiAgdHJhbnNmb3JtOiBzY2FsZSgwLjk4KTtcclxufVxyXG5cclxuLmNhcmR7XHJcbiAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxuICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICBtYXJnaW4tbGVmdDogMTYlO1xyXG4gIG1hcmdpbi1yaWdodDogMTYlO1xyXG4gIHdpZHRoOiAxMDAwcHg7XHJcbiAgaGVpZ2h0OiBhdXRvO1xyXG59XHJcblxyXG4uZGVzY3JpcHRpb257XHJcbiAgZm9udC1mYW1pbHk6ICdZYW50cmFtYW5hdicsIHNhbnMtc2VyaWY7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcblxyXG5pbWd7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgaGVpZ2h0OiAyMDBweDtcclxuICB3aWR0aDogMzAlO1xyXG59XHJcblxyXG4ubm9te1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogNDBweDtcclxufVxyXG5cclxuLnByaXhJe1xyXG4gIGNvbG9yOiByZWQ7XHJcbiAgZm9udC1zaXplOiAzNXB4O1xyXG59XHJcblxyXG4ucHJpeElSZWR1Y3tcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbGluZS10aHJvdWdoO1xyXG59XHJcblxyXG4ucmVkdWN0aW9ue1xyXG4gIGNvbG9yOiBibGFjaztcclxuICBmb250LXNpemU6IDE1cHg7XHJcbn1cclxuXHJcbnRhYmxle1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIG1hcmdpbi1sZWZ0OiA0JTtcclxufVxyXG5cclxuLmZpbHRlcntcclxuICBtYXJnaW4tdG9wOiAxMCU7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4uZmlsdGVyU1NEe1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGJvcmRlci1jb2xvcjogYmxhY2s7XHJcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG4gIGJvcmRlci1zdHlsZTogc29saWQ7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIG1hcmdpbi1sZWZ0OiA0MCU7XHJcbn1cclxuLmZpbHRlck1hcnF1ZXtcclxuICBmbG9hdDogbGVmdDtcclxuICBib3JkZXItY29sb3I6IGJsYWNrO1xyXG4gIGJvcmRlci1yYWRpdXM6IDhweDtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBtYXJnaW4tbGVmdDogMSU7XHJcbn1cclxuXHJcbnVse1xyXG4gIG1hcmdpbi10b3A6IDEwJTtcclxuICBsaXN0LXN0eWxlOiBub25lO1xyXG5cclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -692,6 +720,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/disque-dservice.service */ "./src/app/services/disque-dservice.service.ts");
+/* harmony import */ var _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/disque-d-ssd.enum */ "./src/app/enums/disque-d-ssd.enum.ts");
+/* harmony import */ var _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pipes/disque-d.pipe */ "./src/app/pipes/disque-d.pipe.ts");
+/* harmony import */ var _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../enums/disque-d-marque.enum */ "./src/app/enums/disque-d-marque.enum.ts");
+
+
+
 
 
 
@@ -699,6 +733,32 @@ let DisqueDurComponent = class DisqueDurComponent {
     constructor(disqueDService) {
         this.disqueDService = disqueDService;
         this.disqueDList = [];
+        this._disqueDPipe = new _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_4__["DisqueDPipe"]();
+        this.TYPE_FILTER_SSD = [{
+                id: 'Tout',
+                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDSsd"].ALL
+            }, {
+                id: 'SSD',
+                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDSsd"].AVEC
+            }, {
+                id: 'Non SSD',
+                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDSsd"].SANS
+            }];
+        this.filterSelectedSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDSsd"].ALL;
+        this.TYPE_FILTER_MARQUE = [{
+                id: 'Tout',
+                value: _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_5__["DisqueDMarque"].ALL
+            }, {
+                id: 'Lacie',
+                value: _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_5__["DisqueDMarque"].LACIE
+            }, {
+                id: 'Intenso',
+                value: _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_5__["DisqueDMarque"].INTENSO
+            }, {
+                id: 'Seagate',
+                value: _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_5__["DisqueDMarque"].SEAGATE
+            }];
+        this.filterSelectedMarque = _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_5__["DisqueDMarque"].ALL;
     }
     ngOnInit() {
         this.loadProcList();
@@ -718,6 +778,9 @@ let DisqueDurComponent = class DisqueDurComponent {
             "</tr><br><br><tr> <b class='prixI' id=prix>" + dd.prix + "€</b> </tr> </table>";
         document.getElementById(String(i)).innerHTML = Eelement;
     }
+    get filteredDisqueD() {
+        return this._disqueDPipe.transform(this.disqueDList, this.filterSelectedSSD, this.filterSelectedMarque);
+    }
 };
 DisqueDurComponent.ctorParameters = () => [
     { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_2__["DisqueDServiceService"] }
@@ -730,6 +793,96 @@ DisqueDurComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], DisqueDurComponent);
 
+
+
+/***/ }),
+
+/***/ "./src/app/enums/disque-d-marque.enum.ts":
+/*!***********************************************!*\
+  !*** ./src/app/enums/disque-d-marque.enum.ts ***!
+  \***********************************************/
+/*! exports provided: DisqueDMarque */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisqueDMarque", function() { return DisqueDMarque; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var DisqueDMarque;
+(function (DisqueDMarque) {
+    DisqueDMarque[DisqueDMarque["ALL"] = 0] = "ALL";
+    DisqueDMarque[DisqueDMarque["LACIE"] = 1] = "LACIE";
+    DisqueDMarque[DisqueDMarque["INTENSO"] = 2] = "INTENSO";
+    DisqueDMarque[DisqueDMarque["SEAGATE"] = 3] = "SEAGATE";
+})(DisqueDMarque || (DisqueDMarque = {}));
+
+
+/***/ }),
+
+/***/ "./src/app/enums/disque-d-ssd.enum.ts":
+/*!********************************************!*\
+  !*** ./src/app/enums/disque-d-ssd.enum.ts ***!
+  \********************************************/
+/*! exports provided: DisqueDSsd */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisqueDSsd", function() { return DisqueDSsd; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var DisqueDSsd;
+(function (DisqueDSsd) {
+    DisqueDSsd[DisqueDSsd["ALL"] = 0] = "ALL";
+    DisqueDSsd[DisqueDSsd["AVEC"] = 1] = "AVEC";
+    DisqueDSsd[DisqueDSsd["SANS"] = 2] = "SANS";
+})(DisqueDSsd || (DisqueDSsd = {}));
+
+
+/***/ }),
+
+/***/ "./src/app/enums/proc-marque.enum.ts":
+/*!*******************************************!*\
+  !*** ./src/app/enums/proc-marque.enum.ts ***!
+  \*******************************************/
+/*! exports provided: ProcMarque */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProcMarque", function() { return ProcMarque; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var ProcMarque;
+(function (ProcMarque) {
+    ProcMarque[ProcMarque["ALL"] = 0] = "ALL";
+    ProcMarque[ProcMarque["Intel"] = 1] = "Intel";
+    ProcMarque[ProcMarque["AMD"] = 2] = "AMD";
+})(ProcMarque || (ProcMarque = {}));
+
+
+/***/ }),
+
+/***/ "./src/app/enums/proc-prix.enum.ts":
+/*!*****************************************!*\
+  !*** ./src/app/enums/proc-prix.enum.ts ***!
+  \*****************************************/
+/*! exports provided: ProcPrix */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProcPrix", function() { return ProcPrix; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var ProcPrix;
+(function (ProcPrix) {
+    ProcPrix[ProcPrix["SUP400"] = 0] = "SUP400";
+    ProcPrix[ProcPrix["SUP1000"] = 1] = "SUP1000";
+    ProcPrix[ProcPrix["SUP1001"] = 2] = "SUP1001";
+    ProcPrix[ProcPrix["ALL"] = 3] = "ALL";
+})(ProcPrix || (ProcPrix = {}));
 
 
 /***/ }),
@@ -899,8 +1052,7 @@ let InscriptionComponent = class InscriptionComponent {
             rue: this.form.get("rue").value,
             numRue: this.form.get("num").value,
             cp: this.form.get("cp").value,
-            ville: this.form.get("ville").value,
-            token: "zeisudfbqdyfpnvioqleug"
+            ville: this.form.get("ville").value
         };
     }
     createdUser(user) {
@@ -919,6 +1071,66 @@ InscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./inscription.component.css */ "./src/app/inscription/inscription.component.css")).default]
     })
 ], InscriptionComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/login/login.component.css ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/login/login.component.ts ***!
+  \******************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+let LoginComponent = class LoginComponent {
+    constructor(fb) {
+        this.fb = fb;
+        this.form = this.fb.group({
+            email: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            mdp: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+        });
+    }
+    ngOnInit() {
+    }
+    login() {
+        const val = this.form.value;
+        if (val.email && val.mdp) {
+        }
+    }
+};
+LoginComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
+];
+LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-login',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")).default]
+    })
+], LoginComponent);
 
 
 
@@ -992,6 +1204,132 @@ OrdinateurComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/pipes/carte-g.pipe.ts":
+/*!***************************************!*\
+  !*** ./src/app/pipes/carte-g.pipe.ts ***!
+  \***************************************/
+/*! exports provided: CarteGPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarteGPipe", function() { return CarteGPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let CarteGPipe = class CarteGPipe {
+    transform(value, ...args) {
+        return null;
+    }
+};
+CarteGPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'carteG'
+    })
+], CarteGPipe);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/disque-d.pipe.ts":
+/*!****************************************!*\
+  !*** ./src/app/pipes/disque-d.pipe.ts ***!
+  \****************************************/
+/*! exports provided: DisqueDPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisqueDPipe", function() { return DisqueDPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/disque-d-ssd.enum */ "./src/app/enums/disque-d-ssd.enum.ts");
+/* harmony import */ var _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/disque-d-marque.enum */ "./src/app/enums/disque-d-marque.enum.ts");
+
+
+
+
+let DisqueDPipe = class DisqueDPipe {
+    transform(disqueDList, typeSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL, typeMarque = _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL) {
+        if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL) {
+            return disqueDList;
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL) {
+            return disqueDList.filter(dd => dd.ssd);
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL) {
+            return disqueDList.filter(dd => !dd.ssd);
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE) {
+            return disqueDList.filter(dd => dd.marque.includes("Lacie"));
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE) {
+            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie"));
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE) {
+            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie"));
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].INTENSO) {
+            return disqueDList.filter(dd => dd.marque.includes("Intenso"));
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].INTENSO) {
+            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Intenso"));
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].INTENSO) {
+            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Intenso"));
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE) {
+            return disqueDList.filter(dd => dd.marque.includes("Seagate"));
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE) {
+            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate"));
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE) {
+            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate"));
+        }
+    }
+};
+DisqueDPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'disqueD'
+    })
+], DisqueDPipe);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/ordinateur.pipe.ts":
+/*!******************************************!*\
+  !*** ./src/app/pipes/ordinateur.pipe.ts ***!
+  \******************************************/
+/*! exports provided: OrdinateurPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrdinateurPipe", function() { return OrdinateurPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let OrdinateurPipe = class OrdinateurPipe {
+    transform(value, ...args) {
+        return null;
+    }
+};
+OrdinateurPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'ordinateur'
+    })
+], OrdinateurPipe);
+
+
+
+/***/ }),
+
 /***/ "./src/app/pipes/processeur-pipe.pipe.ts":
 /*!***********************************************!*\
   !*** ./src/app/pipes/processeur-pipe.pipe.ts ***!
@@ -1004,14 +1342,95 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProcesseurPipePipe", function() { return ProcesseurPipePipe; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/proc-prix.enum */ "./src/app/enums/proc-prix.enum.ts");
+/* harmony import */ var _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/proc-marque.enum */ "./src/app/enums/proc-marque.enum.ts");
+
+
 
 
 let ProcesseurPipePipe = class ProcesseurPipePipe {
-    transform(procList, filter) {
-        if (!filter) {
+    transform(procList, filter, typePrix = _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].ALL, typeMarque = _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].ALL) {
+        //TOUTES MARQUES
+        if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].ALL) {
+            return procList.filter(proc => proc.prix <= 400.00);
+        }
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].ALL) {
+            return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00);
+        }
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1001 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].ALL) {
+            return procList.filter(proc => proc.prix > 1000.00);
+        }
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].ALL) {
             return procList;
         }
-        return procList.filter(str => str.nom.includes(filter));
+        //UNIQUEMENT INTEL
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].Intel) {
+            return procList.filter(proc => proc.prix <= 400.00 && proc.marque.includes("Intel"));
+        }
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].Intel) {
+            return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("Intel"));
+        }
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1001 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].Intel) {
+            return procList.filter(proc => proc.prix > 1000.00 && proc.marque.includes("Intel"));
+        }
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].Intel) {
+            return procList.filter(proc => proc.prix > 0.00 && proc.marque.includes("Intel"));
+        }
+        //UNIQUEMENT AMD
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].AMD) {
+            return procList.filter(proc => proc.prix <= 400.00 && proc.marque.includes("AMD"));
+        }
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].AMD) {
+            return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("AMD"));
+        }
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1001 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].AMD) {
+            return procList.filter(proc => proc.prix > 1000.00 && proc.marque.includes("AMD"));
+        }
+        else if (!filter && typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].AMD) {
+            return procList.filter(proc => proc.prix > 0.00 && proc.marque.includes("AMD"));
+        }
+        //SI LE NOM N'EST PAS VIDE
+        else {
+            //TOUTES MARQUES
+            if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].ALL) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00);
+            }
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].ALL) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00);
+            }
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1001 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].ALL) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00);
+            }
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].ALL) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00);
+            }
+            //UNIQUEMENT INTEL
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].Intel) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00 && proc.marque.includes("Intel"));
+            }
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].Intel) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("Intel"));
+            }
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1001 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].Intel) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00 && proc.marque.includes("Intel"));
+            }
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].Intel) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00 && proc.marque.includes("Intel"));
+            }
+            //UNIQUEMENT AMD
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].AMD) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00 && proc.marque.includes("AMD"));
+            }
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].AMD) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("AMD"));
+            }
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].SUP1001 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].AMD) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00 && proc.marque.includes("AMD"));
+            }
+            else if (typePrix == _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_2__["ProcPrix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_3__["ProcMarque"].AMD) {
+                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00 && proc.marque.includes("AMD"));
+            }
+        }
     }
 };
 ProcesseurPipePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1033,7 +1452,7 @@ ProcesseurPipePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".btnShow{\r\n  background-color: limegreen;\r\n  border: none;\r\n  border-radius: 8px;\r\n  color: white;\r\n  cursor: pointer;\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 20px;\r\n  outline: 0;\r\n  margin-left: 35%;\r\n  margin-top: 90px;\r\n}\r\n\r\n.btnShow:hover{\r\n  transform: scale(1.01);\r\n}\r\n\r\n.btnShow:active{\r\n  transform: scale(0.98);\r\n}\r\n\r\n.card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 16%;\r\n  margin-right: 16%;\r\n  width: 1000px;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 200px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 40px;\r\n}\r\n\r\n.prixI{\r\n  color: red;\r\n  font-size: 35px;\r\n}\r\n\r\n.prixIReduc{\r\n  color: black;\r\n  font-size: 20px;\r\n  text-decoration: line-through;\r\n}\r\n\r\n.reduction{\r\n  color: black;\r\n  font-size: 15px;\r\n}\r\n\r\ntable{\r\n  float: left;\r\n  margin-left: 4%;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvY2Vzc2V1ci9wcm9jZXNzZXVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwyQkFBMkI7RUFDM0IsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osZUFBZTtFQUNmLHNDQUFzQztFQUN0QyxlQUFlO0VBQ2YsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixxQkFBcUI7RUFDckIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsYUFBYTtBQUNmOztBQUVBO0VBQ0Usc0NBQXNDO0VBQ3RDLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsYUFBYTtFQUNiLFVBQVU7QUFDWjs7QUFFQTtFQUNFLHNDQUFzQztFQUN0QyxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsVUFBVTtFQUNWLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZUFBZTtFQUNmLDZCQUE2QjtBQUMvQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsV0FBVztFQUNYLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsZUFBZTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL3Byb2Nlc3NldXIvcHJvY2Vzc2V1ci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJ0blNob3d7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbGltZWdyZWVuO1xyXG4gIGJvcmRlcjogbm9uZTtcclxuICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBmb250LWZhbWlseTogJ1lhbnRyYW1hbmF2Jywgc2Fucy1zZXJpZjtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbiAgb3V0bGluZTogMDtcclxuICBtYXJnaW4tbGVmdDogMzUlO1xyXG4gIG1hcmdpbi10b3A6IDkwcHg7XHJcbn1cclxuXHJcbi5idG5TaG93OmhvdmVye1xyXG4gIHRyYW5zZm9ybTogc2NhbGUoMS4wMSk7XHJcbn1cclxuXHJcbi5idG5TaG93OmFjdGl2ZXtcclxuICB0cmFuc2Zvcm06IHNjYWxlKDAuOTgpO1xyXG59XHJcblxyXG4uY2FyZHtcclxuICBib3JkZXItY29sb3I6IGJsYWNrO1xyXG4gIGJvcmRlci1yYWRpdXM6IDhweDtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAxNiU7XHJcbiAgbWFyZ2luLXJpZ2h0OiAxNiU7XHJcbiAgd2lkdGg6IDEwMDBweDtcclxufVxyXG5cclxuLmRlc2NyaXB0aW9ue1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG5cclxuaW1ne1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGhlaWdodDogMjAwcHg7XHJcbiAgd2lkdGg6IDMwJTtcclxufVxyXG5cclxuLm5vbXtcclxuICBmb250LWZhbWlseTogJ1lhbnRyYW1hbmF2Jywgc2Fucy1zZXJpZjtcclxuICBmb250LXNpemU6IDQwcHg7XHJcbn1cclxuXHJcbi5wcml4SXtcclxuICBjb2xvcjogcmVkO1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxufVxyXG5cclxuLnByaXhJUmVkdWN7XHJcbiAgY29sb3I6IGJsYWNrO1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICB0ZXh0LWRlY29yYXRpb246IGxpbmUtdGhyb3VnaDtcclxufVxyXG5cclxuLnJlZHVjdGlvbntcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcblxyXG50YWJsZXtcclxuICBmbG9hdDogbGVmdDtcclxuICBtYXJnaW4tbGVmdDogNCU7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG59XHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".btnShow{\r\n  background-color: limegreen;\r\n  border: none;\r\n  border-radius: 8px;\r\n  color: white;\r\n  cursor: pointer;\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 20px;\r\n  outline: 0;\r\n  margin-left: 45%;\r\n  margin-top: 0.5%;\r\n}\r\n\r\n.btnShow:hover{\r\n  transform: scale(1.01);\r\n}\r\n\r\n.btnShow:active{\r\n  transform: scale(0.98);\r\n}\r\n\r\n.card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 16%;\r\n  margin-right: 16%;\r\n  width: 1000px;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 250px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 30px;\r\n}\r\n\r\n.prixI{\r\n  color: red;\r\n  font-size: 25px;\r\n}\r\n\r\n.prixIReduc{\r\n  color: black;\r\n  font-size: 0px;\r\n  text-decoration: line-through;\r\n}\r\n\r\n.reduction{\r\n  color: black;\r\n  font-size: 0px;\r\n}\r\n\r\ntable{\r\n  float: left;\r\n  margin-left: 4%;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n}\r\n\r\n.filter{\r\n  margin-top: 10%;\r\n  text-align: center;\r\n}\r\n\r\n.filterNom{\r\n  float: left;\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-left: 20%;\r\n}\r\n\r\n.filterPrix{\r\n  float: left;\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-left: 1%;\r\n}\r\n\r\n.filterMarque{\r\n  float: left;\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-left: 1%;\r\n}\r\n\r\nul{\r\n  margin-top: 10%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvY2Vzc2V1ci9wcm9jZXNzZXVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwyQkFBMkI7RUFDM0IsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixZQUFZO0VBQ1osZUFBZTtFQUNmLHNDQUFzQztFQUN0QyxlQUFlO0VBQ2YsVUFBVTtFQUNWLGdCQUFnQjtFQUNoQixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixxQkFBcUI7RUFDckIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixpQkFBaUI7RUFDakIsYUFBYTtBQUNmOztBQUVBO0VBQ0Usc0NBQXNDO0VBQ3RDLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsYUFBYTtFQUNiLFVBQVU7QUFDWjs7QUFFQTtFQUNFLHNDQUFzQztFQUN0QyxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsVUFBVTtFQUNWLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osY0FBYztFQUNkLDZCQUE2QjtBQUMvQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsV0FBVztFQUNYLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxlQUFlO0VBQ2Ysa0JBQWtCO0FBQ3BCOztBQUNBO0VBQ0UsV0FBVztFQUNYLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixnQkFBZ0I7QUFDbEI7O0FBQ0E7RUFDRSxXQUFXO0VBQ1gsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIscUJBQXFCO0VBQ3JCLGVBQWU7QUFDakI7O0FBQ0E7RUFDRSxXQUFXO0VBQ1gsbUJBQW1CO0VBQ25CLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIscUJBQXFCO0VBQ3JCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvcHJvY2Vzc2V1ci9wcm9jZXNzZXVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYnRuU2hvd3tcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBsaW1lZ3JlZW47XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIGJvcmRlci1yYWRpdXM6IDhweDtcclxuICBjb2xvcjogd2hpdGU7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBvdXRsaW5lOiAwO1xyXG4gIG1hcmdpbi1sZWZ0OiA0NSU7XHJcbiAgbWFyZ2luLXRvcDogMC41JTtcclxufVxyXG5cclxuLmJ0blNob3c6aG92ZXJ7XHJcbiAgdHJhbnNmb3JtOiBzY2FsZSgxLjAxKTtcclxufVxyXG5cclxuLmJ0blNob3c6YWN0aXZle1xyXG4gIHRyYW5zZm9ybTogc2NhbGUoMC45OCk7XHJcbn1cclxuXHJcbi5jYXJke1xyXG4gIGJvcmRlci1jb2xvcjogYmxhY2s7XHJcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG4gIGJvcmRlci1zdHlsZTogc29saWQ7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbiAgbWFyZ2luLWxlZnQ6IDE2JTtcclxuICBtYXJnaW4tcmlnaHQ6IDE2JTtcclxuICB3aWR0aDogMTAwMHB4O1xyXG59XHJcblxyXG4uZGVzY3JpcHRpb257XHJcbiAgZm9udC1mYW1pbHk6ICdZYW50cmFtYW5hdicsIHNhbnMtc2VyaWY7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcblxyXG5pbWd7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgaGVpZ2h0OiAyNTBweDtcclxuICB3aWR0aDogMzAlO1xyXG59XHJcblxyXG4ubm9te1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogMzBweDtcclxufVxyXG5cclxuLnByaXhJe1xyXG4gIGNvbG9yOiByZWQ7XHJcbiAgZm9udC1zaXplOiAyNXB4O1xyXG59XHJcblxyXG4ucHJpeElSZWR1Y3tcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgZm9udC1zaXplOiAwcHg7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiBsaW5lLXRocm91Z2g7XHJcbn1cclxuXHJcbi5yZWR1Y3Rpb257XHJcbiAgY29sb3I6IGJsYWNrO1xyXG4gIGZvbnQtc2l6ZTogMHB4O1xyXG59XHJcblxyXG50YWJsZXtcclxuICBmbG9hdDogbGVmdDtcclxuICBtYXJnaW4tbGVmdDogNCU7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbn1cclxuXHJcbi5maWx0ZXJ7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4uZmlsdGVyTm9te1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGJvcmRlci1jb2xvcjogYmxhY2s7XHJcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG4gIGJvcmRlci1zdHlsZTogc29saWQ7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIG1hcmdpbi1sZWZ0OiAyMCU7XHJcbn1cclxuLmZpbHRlclByaXh7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxuICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luLWxlZnQ6IDElO1xyXG59XHJcbi5maWx0ZXJNYXJxdWV7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxuICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luLWxlZnQ6IDElO1xyXG59XHJcblxyXG51bHtcclxuICBtYXJnaW4tdG9wOiAxMCU7XHJcbn1cclxuIl19 */");
 
 /***/ }),
 
@@ -1051,6 +1470,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_proc_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/proc-service.service */ "./src/app/services/proc-service.service.ts");
 /* harmony import */ var _pipes_processeur_pipe_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pipes/processeur-pipe.pipe */ "./src/app/pipes/processeur-pipe.pipe.ts");
+/* harmony import */ var _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../enums/proc-prix.enum */ "./src/app/enums/proc-prix.enum.ts");
+/* harmony import */ var _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../enums/proc-marque.enum */ "./src/app/enums/proc-marque.enum.ts");
+
+
 
 
 
@@ -1059,6 +1482,31 @@ let ProcesseurComponent = class ProcesseurComponent {
     constructor(procService) {
         this.procService = procService;
         this._processeurPipe = new _pipes_processeur_pipe_pipe__WEBPACK_IMPORTED_MODULE_3__["ProcesseurPipePipe"]();
+        this.TYPE_FILTER = [{
+                id: 'Tout',
+                value: _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_4__["ProcPrix"].ALL
+            }, {
+                id: 'Inférieur à 400',
+                value: _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_4__["ProcPrix"].SUP400
+            }, {
+                id: 'Entre 400 et 1000',
+                value: _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_4__["ProcPrix"].SUP1000
+            }, {
+                id: 'Supérieur à 1000',
+                value: _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_4__["ProcPrix"].SUP1001
+            }];
+        this.filterSelected = _enums_proc_prix_enum__WEBPACK_IMPORTED_MODULE_4__["ProcPrix"].ALL;
+        this.TYPE_FILTER_MARQUE = [{
+                id: 'Tout',
+                value: _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_5__["ProcMarque"].ALL
+            }, {
+                id: 'Intel',
+                value: _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_5__["ProcMarque"].Intel
+            }, {
+                id: 'AMD',
+                value: _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_5__["ProcMarque"].AMD
+            }];
+        this.filterSelectedMarque = _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_5__["ProcMarque"].ALL;
     }
     ngOnInit() {
         this.loadProcList();
@@ -1082,7 +1530,7 @@ let ProcesseurComponent = class ProcesseurComponent {
         return this._procList;
     }
     get filteredProcList() {
-        return this._processeurPipe.transform(this.procList, this.nameSearched);
+        return this._processeurPipe.transform(this.procList, this.nameSearched, this.filterSelected, this.filterSelectedMarque);
     }
 };
 ProcesseurComponent.ctorParameters = () => [
