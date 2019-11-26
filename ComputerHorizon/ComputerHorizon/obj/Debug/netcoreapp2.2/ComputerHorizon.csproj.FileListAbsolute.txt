@@ -12,3 +12,17 @@ C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI C#\computer-horizon-c\C
 C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI C#\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.RazorTargetAssemblyInfo.cache
 C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI C#\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.dll
 C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI C#\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.pdb
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\bin\Debug\netcoreapp2.2\ComputerHorizon.deps.json
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\bin\Debug\netcoreapp2.2\ComputerHorizon.runtimeconfig.json
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\bin\Debug\netcoreapp2.2\ComputerHorizon.runtimeconfig.dev.json
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\bin\Debug\netcoreapp2.2\ComputerHorizon.dll
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\bin\Debug\netcoreapp2.2\ComputerHorizon.pdb
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.csprojAssemblyReference.cache
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.csproj.CoreCompileInputs.cache
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.RazorAssemblyInfo.cache
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.RazorAssemblyInfo.cs
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.AssemblyInfoInputs.cache
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.AssemblyInfo.cs
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.RazorTargetAssemblyInfo.cache
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.dll
+D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon\ComputerHorizon\obj\Debug\netcoreapp2.2\ComputerHorizon.pdb

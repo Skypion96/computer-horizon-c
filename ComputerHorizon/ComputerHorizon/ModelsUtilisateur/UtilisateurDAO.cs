@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using ComputerHorizon.Models;
 using ComputerHorizon.ModelsProc;
 
@@ -21,6 +22,7 @@ namespace ComputerHorizon.ModelsUtilisateur
         public static readonly string FIELD_CP = "cp";
         public static readonly string FIELD_VILLE = "ville";
         public static readonly string FIELD_IDPANIER = "idPanier";
+        public static readonly string FIELD_TOKEN = "token";
 
         //REQUETES :
         
@@ -33,9 +35,9 @@ namespace ComputerHorizon.ModelsUtilisateur
         
             //AJOUTER UN NOUVEAU Utilisateur
         private static readonly string REQ_POST = 
-            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR},{FIELD_MAIL},{FIELD_MDP},{FIELD_TEL},{FIELD_RUE},{FIELD_NUMRUE},{FIELD_CP},{FIELD_VILLE})" +
+            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR},{FIELD_MAIL},{FIELD_MDP},{FIELD_TEL},{FIELD_RUE},{FIELD_NUMRUE},{FIELD_CP},{FIELD_VILLE}, {FIELD_TOKEN})" +
             //$" OUTPUT Inserted.{FIELD_IDPANIER}" +
-            $" VALUES (@{FIELD_NOM_UTILISATEUR},@{FIELD_PRENOM_UTILISATEUR},@{FIELD_MAIL},@{FIELD_MDP},@{FIELD_TEL},@{FIELD_RUE},@{FIELD_NUMRUE},@{FIELD_CP},@{FIELD_VILLE})";
+            $" VALUES (@{FIELD_NOM_UTILISATEUR},@{FIELD_PRENOM_UTILISATEUR},@{FIELD_MAIL},@{FIELD_MDP},@{FIELD_TEL},@{FIELD_RUE},@{FIELD_NUMRUE},@{FIELD_CP},@{FIELD_VILLE}, @{FIELD_TOKEN})";
         
             //SUPPRIMER EN FONCTION DU NOM
         private static readonly string REQ_DELETE =
@@ -107,6 +109,7 @@ namespace ComputerHorizon.ModelsUtilisateur
                 command.Parameters.AddWithValue($"@{FIELD_NUMRUE}", user.NumRue);
                 command.Parameters.AddWithValue($"@{FIELD_CP}", user.Cp);
                 command.Parameters.AddWithValue($"@{FIELD_VILLE}", user.Ville);
+                command.Parameters.AddWithValue($@"{FIELD_TOKEN}", user.Token);
                 user.Mail = (string)command.ExecuteScalar(); 
             }
             return user;
@@ -151,5 +154,18 @@ namespace ComputerHorizon.ModelsUtilisateur
             }
             return hasBeenUpdate;
         }
+        
+        public static class ExtensionMethods
+        {
+            public static IEnumerable<Utilisateur> WithoutPasswords(IEnumerable<Utilisateur> users) {
+                return users.Select(WithoutPassword);
+                //verif
+            }    
+            public static Utilisateur WithoutPassword(Utilisateur user) {
+                user.Mdp = null;
+                return user;
+            }
+        }
+        
     }
 }

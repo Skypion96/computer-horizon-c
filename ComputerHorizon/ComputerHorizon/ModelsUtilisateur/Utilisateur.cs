@@ -16,9 +16,11 @@ namespace ComputerHorizon.ModelsUtilisateur
         public int Cp { get; set; }
         public string Ville { get; set; }
         public int IdPanier { get; set; }
+        
+        public string Token{get; set; }
 
 
-        public Utilisateur(string nomUtilisateur, string prenomUtilisateur, string mail, string mdp, string tel, string rue, string numRue, int cp, string ville,int idPanier)
+        public Utilisateur(string nomUtilisateur, string prenomUtilisateur, string mail, string mdp, string tel, string rue, string numRue, int cp, string ville,int idPanier, string token)
         {
             NomUtilisateur = nomUtilisateur;
             PrenomUtilisateur = prenomUtilisateur;
@@ -30,6 +32,7 @@ namespace ComputerHorizon.ModelsUtilisateur
             Cp = cp;
             Ville = ville;
             IdPanier = idPanier;
+            Token = token;
         }
 
         public Utilisateur()
@@ -48,6 +51,8 @@ namespace ComputerHorizon.ModelsUtilisateur
             Cp = Convert.ToInt32(reader[UtilisateurDAO.FIELD_CP].ToString());
             Ville = reader[UtilisateurDAO.FIELD_VILLE].ToString();
             //IdPanier = Convert.ToInt32(reader[UtilisateurDAO.FIELD_IDPANIER].ToString());
+            Token = reader[UtilisateurDAO.FIELD_TOKEN].ToString();
         }
+        
     }
 }

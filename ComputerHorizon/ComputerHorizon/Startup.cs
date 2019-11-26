@@ -28,6 +28,7 @@ namespace ComputerHorizon
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSpaStaticFiles(spa => spa.RootPath = PATH_ANGULAR_APP); // modifier
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +49,11 @@ namespace ComputerHorizon
             app.UseHttpsRedirection();
             app.UseMvc();
             app.UseSpa(spa => spa.Options.SourcePath = PATH_ANGULAR_APP);
+        }
+        
+        public class AppSettings
+        {
+            public string Secret { get; set; }
         }
     }
 }

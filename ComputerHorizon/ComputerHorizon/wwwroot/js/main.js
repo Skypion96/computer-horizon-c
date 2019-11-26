@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup] = \"form\">\r\n  <fieldset>\r\n    <legend> Connexion </legend>\r\n    <div class = \"form-field\">\r\n      <label> Email: </label>\r\n      <input type=\"text\" name=\"email\" formControlName = \"email\">\r\n    </div>\r\n    <div class = \"form-field\">\r\n      <label> Mot de passe: </label>\r\n      <input type=\"text\" name=\"mdp\" formControlName = \"mdp\"\r\n      type = \"mot de passe\">\r\n    </div>\r\n  </fieldset>\r\n  <div class = \"form-buttons\">\r\n    <button class = \"button button-primary\" (click) = \"login()\"> Connexion </button>\r\n  </div>\r\n</form>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form [formGroup] = \"form\">\n  <fieldset>\n    <legend> Connexion </legend>\n    <div class = \"form-field\">\n      <label> Email: </label>\n      <input type=\"text\" name=\"email\" formControlName = \"email\">\n    </div>\n    <div class = \"form-field\">\n      <label> Mot de passe: </label>\n      <input type=\"text\" name=\"mdp\" formControlName = \"mdp\"\n      type = \"mot de passe\">\n    </div>\n  </fieldset>\n  <div class = \"form-buttons\">\n    <button class = \"button button-primary\" (click) = \"login()\"> Connexion </button>\n  </div>\n</form>\n");
 
 /***/ }),
 
@@ -2075,7 +2075,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI\computer-horizon\site\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\HELHA\bloc3\projetTi\computer-horizon\site\src\main.ts */"./src/main.ts");
 
 
 /***/ })

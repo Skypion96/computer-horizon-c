@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\krefel\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\krefel\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ComputerHorizon.622193748.00" t="ExcludeRecursive" />
-    <e p="C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI C#\computer-horizon-c\ComputerHorizon" t="IncludeFlat">
+    <e p="C:\Users\Maxime\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Maxime\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ComputerHorizon.-173370166.00" t="ExcludeRecursive" />
+    <e p="D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon" t="IncludeFlat">
       <e p="ComputerHorizon" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
@@ -60,16 +60,10 @@
         <e p="wwwroot" t="Include">
           <e p="js" t="Include">
             <e p="assets" t="Include">
-              <e p="8-mckinsey-horizons-765x510.jpg" t="Include" />
               <e p="carte_graphiquepdt.jpg" t="Include" />
-              <e p="dct8wa7k9th3uhk.jpg" t="Include" />
               <e p="disque_durpdt.jpg" t="Include" />
-              <e p="DqNP2L8u-disque-dur-ssd-intel-s-.webp" t="Include" />
-              <e p="home-featured-cat-pc.png" t="Include" />
-              <e p="id template.jpg" t="Include" />
               <e p="logo.png" t="Include" />
               <e p="ordinateurpdt.jpg" t="Include" />
-              <e p="pc-ordinateur-processeur.jpg" t="Include" />
               <e p="proc1.jpg" t="Include" />
               <e p="proc10.jpg" t="Include" />
               <e p="proc2.jpg" t="Include" />
