@@ -154,18 +154,6 @@ namespace ComputerHorizon.ModelsUtilisateur
             }
             return hasBeenUpdate;
         }
-        
-        public static class ExtensionMethods
-        {
-            public static IEnumerable<Utilisateur> WithoutPasswords(IEnumerable<Utilisateur> users) {
-                return users.Select(WithoutPassword);
-                //verif
-            }   
-            public static Utilisateur WithoutPassword(Utilisateur user) {
-                user.Mdp = null;
-                return user;
-            }
-        }
-        
+
     }
 }

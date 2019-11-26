@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ComputerHorizon.ModelsDD;
 using ComputerHorizon.ModelsUtilisateur;
+using ComputerHorizon.Token;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +11,7 @@ namespace ComputerHorizon.Controllers
     [Route("[controller]")] //ATENTION A LA ROUTE UTILISER
     public class UtilisateurController : ControllerBase
     {
-        private UtilisateurController _userService;
+        private IUserService _userService;
         
         //AFFICHAGE DE TOUT LES UTILISATEURS
         [HttpGet]
@@ -47,22 +48,29 @@ namespace ComputerHorizon.Controllers
         {
             return UtilisateurDAO.Update(user) ? (ActionResult) Ok():BadRequest();
         }
-        
-        [AllowAnonymous]
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody]ComputerHorizon.ModelsUtilisateur.Utilisateur user)
+
+        public UtilisateurController(IUserService userService)
         {
-            var utiliateur = _userService.Authenticate(user.Mail, user.Mdp);
-
-            if (utiliateur == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
-
-            return Ok(utiliateur);
+            _userService = userService;
         }
 
-        private object Authenticate(string userMail, string userMdp)
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {
-            throw new System.NotImplementedException();
+            var user = _userService.Authenticate(model.Mail, model.Mdp);
+
+            if (user == null)
+                return BadRequest(new { message = "Username or password is incorrect" });
+
+            return Ok(user);
+        }
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var users = _userService.GetAll();
+            return Ok(users);
         }
     }
 }

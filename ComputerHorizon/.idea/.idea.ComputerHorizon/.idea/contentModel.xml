@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\krefel\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\krefel\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ComputerHorizon.622193748.00" t="ExcludeRecursive" />
-    <e p="C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI C#\computer-horizon-c\ComputerHorizon" t="IncludeFlat">
+    <e p="C:\Users\Maxime\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Maxime\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ComputerHorizon.-173370166.00" t="ExcludeRecursive" />
+    <e p="D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon" t="IncludeFlat">
       <e p="ComputerHorizon" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
@@ -57,6 +57,11 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
+        <e p="Token" t="Include">
+          <e p="AuthenticateModel.cs" t="Include" />
+          <e p="ExtensionMethods.cs" t="Include" />
+          <e p="IUserService.cs" t="Include" />
+        </e>
         <e p="wwwroot" t="Include">
           <e p="js" t="Include">
             <e p="assets" t="Include">
