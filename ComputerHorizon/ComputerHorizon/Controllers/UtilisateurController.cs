@@ -35,10 +35,10 @@ namespace ComputerHorizon.Controllers
         }
         
         //SUPPRESSION D'UN UTILISATEUR PARTICULIER
-        [HttpDelete("{id}")]
-        public ActionResult Delete(string nom)
+        [HttpDelete("{mail}")]
+        public ActionResult Delete(string mail)
         {
-            return UtilisateurDAO.Delete(nom) ? (ActionResult) Ok() : BadRequest();
+            return UtilisateurDAO.Delete(mail) ? (ActionResult) Ok() : BadRequest();
         }
         
         //MISE A JOUR DES INFORMATIONS D'UN UTILISATEUR

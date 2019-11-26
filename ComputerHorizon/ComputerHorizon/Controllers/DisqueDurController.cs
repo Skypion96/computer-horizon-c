@@ -32,7 +32,7 @@ namespace ComputerHorizon.Controllers
         }
         
         //SUPPRESSION D'UN DISQUE DUR PARTICULIER
-        [HttpDelete("{id}")]
+        [HttpDelete("{nom}")]
         public ActionResult Delete(string nom)
         {
             return DisqueDurDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();
