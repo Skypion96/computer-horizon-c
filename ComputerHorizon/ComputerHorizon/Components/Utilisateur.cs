@@ -53,5 +53,6 @@ namespace ComputerHorizon.ModelsUtilisateur
             //IdPanier = Convert.ToInt32(reader[UtilisateurDAO.FIELD_IDPANIER].ToString());
             Token = reader[UtilisateurDAO.FIELD_TOKEN].ToString();
         }
+        
     }
 }

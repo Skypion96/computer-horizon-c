@@ -154,6 +154,5 @@ namespace ComputerHorizon.ModelsUtilisateur
             }
             return hasBeenUpdate;
         }
-
     }
 }

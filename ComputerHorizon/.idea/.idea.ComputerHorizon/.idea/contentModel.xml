@@ -8,6 +8,22 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Components" t="Include">
+          <e p="CarteGraphique.cs" t="Include" />
+          <e p="DisqueDur.cs" t="Include" />
+          <e p="Ordinateur.cs" t="Include" />
+          <e p="Panier.cs" t="Include" />
+          <e p="Processeur.cs" t="Include" />
+          <e p="Utilisateur.cs" t="Include" />
+        </e>
+        <e p="ComponentsDAO" t="Include">
+          <e p="CarteGraphiqueDao.cs" t="Include" />
+          <e p="DisqueDurDao.cs" t="Include" />
+          <e p="OrdinateurDao.cs" t="Include" />
+          <e p="PanierDAO.cs" t="Include" />
+          <e p="ProcesseurDao.cs" t="Include" />
+          <e p="UtilisateurDAO.cs" t="Include" />
+        </e>
         <e p="ComputerHorizon.csproj" t="IncludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="CarteGraphiqueController.cs" t="Include" />
@@ -20,30 +36,6 @@
         </e>
         <e p="Models" t="Include">
           <e p="DataBase.cs" t="Include" />
-        </e>
-        <e p="ModelsCG" t="Include">
-          <e p="CarteGraphique.cs" t="Include" />
-          <e p="CarteGraphiqueDao.cs" t="Include" />
-        </e>
-        <e p="ModelsDD" t="Include">
-          <e p="DisqueDur.cs" t="Include" />
-          <e p="DisqueDurDao.cs" t="Include" />
-        </e>
-        <e p="ModelsOrdinateur" t="Include">
-          <e p="Ordinateur.cs" t="Include" />
-          <e p="OrdinateurDao.cs" t="Include" />
-        </e>
-        <e p="ModelsPanier" t="Include">
-          <e p="Panier.cs" t="Include" />
-          <e p="PanierDAO.cs" t="Include" />
-        </e>
-        <e p="ModelsProc" t="Include">
-          <e p="Processeur.cs" t="Include" />
-          <e p="ProcesseurDao.cs" t="Include" />
-        </e>
-        <e p="ModelsUtilisateur" t="Include">
-          <e p="Utilisateur.cs" t="Include" />
-          <e p="UtilisateurDAO.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

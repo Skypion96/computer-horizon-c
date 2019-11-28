@@ -7,6 +7,7 @@ using System.Text;
 using ComputerHorizon.ModelsUtilisateur;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using static ComputerHorizon.Token.ExtensionMethods;
 
 namespace ComputerHorizon.Token
 {
@@ -54,14 +55,13 @@ namespace ComputerHorizon.Token
             var token = tokenHandler.CreateToken(tokenDescriptor);
             user.Token = tokenHandler.WriteToken(token);
 
-            //return user.WithoutPassword();
-            return null;
+            return user;
         }
 
         public IEnumerable<Utilisateur> GetAll()
         {
-            //return _users.WithoutPasswords();
-            return null;
+            List<Utilisateur> users = UtilisateurDAO.QueryBase();
+            return users;
         }
     }
 }
