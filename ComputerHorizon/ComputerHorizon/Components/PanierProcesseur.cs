@@ -11,8 +11,12 @@ namespace ComputerHorizon.Components
         public string Nom { get; set; }
         
         public PanierProcesseur(){}
-        
-        public PanierProcesseur(int id, string nom){}
+
+        public PanierProcesseur(int id, string nom)
+        {
+            Id = id;
+            Nom = nom;
+        }
         
         public PanierProcesseur(SqlDataReader reader)
         {
