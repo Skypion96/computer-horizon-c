@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"acceuil\">\r\n\r\n  <h1 class=\"welcome\">BIENVENUE</h1>\r\n\r\n</div>\r\n<br>\r\n<div>\r\n  <div class=\"view2\">\r\n    <img src=\"{{laptop}}\" width=\"700px\" height=\"393px\"/>\r\n  </div>\r\n</div>\r\n<br><br><br><br>\r\n\r\n<h1>Hi {{currentUser.nomUtilisateur}} {{currentUser.prenomUtilisateur}}!</h1>\r\n<p>You're logged in with Angular 8!!</p>\r\n<h3>All registered users:</h3>\r\n<ul>\r\n  <li *ngFor=\"let user of users\">\r\n    {{user.username}} ({{user.nomUtilisateur}} {{user.prenomUtilisateur}})\r\n    - <a (click)=\"deleteUser(user.mail)\" class=\"text-danger\">Delete</a>\r\n  </li>\r\n</ul>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"acceuil\">\r\n\r\n  <h1 class=\"welcome\">BIENVENUE</h1>\r\n\r\n</div>\r\n<br>\r\n<div>\r\n  <div class=\"view2\">\r\n    <img src=\"{{newHorizon}}\" width=\"700px\" height=\"393px\"/>\r\n  </div>\r\n</div>\r\n<br><br><br><br>\r\n\r\n<h1>Hi {{currentUser.nomUtilisateur}} {{currentUser.prenomUtilisateur}}!</h1>\r\n<p>You're logged in with Angular 8!!</p>\r\n<h3>All registered users:</h3>\r\n<ul>\r\n  <li *ngFor=\"let user of users\">\r\n    {{user.username}} ({{user.nomUtilisateur}} {{user.prenomUtilisateur}})\r\n    - <a (click)=\"deleteUser(user.mail)\" class=\"text-danger\">Delete</a>\r\n  </li>\r\n</ul>\r\n\r\n");
 
 /***/ }),
 

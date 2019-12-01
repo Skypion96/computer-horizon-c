@@ -15,5 +15,12 @@ namespace ComputerHorizon.Controllers
             return PanierDAO.Post(panier);
         }
         
+                
+        [HttpGet("{id}")]
+        public ComputerHorizon.Components.Panier Get(int id)
+        {
+            return PanierDAO.QueryBase(id);
+        }
+        
     }
 }
