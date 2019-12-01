@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using ComputerHorizon.ModelsDD;
-using ComputerHorizon.ModelsPanier;
+using ComputerHorizon.ComponentsDAO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputerHorizon.Controllers
@@ -11,7 +10,7 @@ namespace ComputerHorizon.Controllers
     {
         //AJOUT D'UN NOUVEAU PROCESSEURS
         [HttpPost]
-        public ComputerHorizon.ModelsPanier.Panier Post([FromBody]ComputerHorizon.ModelsPanier.Panier panier)
+        public ComputerHorizon.Components.Panier Post([FromBody]ComputerHorizon.Components.Panier panier)
         {
             return PanierDAO.Post(panier);
         }

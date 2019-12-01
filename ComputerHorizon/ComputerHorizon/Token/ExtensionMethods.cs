@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ComputerHorizon.ModelsUtilisateur;
+using ComputerHorizon.Components;
 
 namespace ComputerHorizon.Token
 {

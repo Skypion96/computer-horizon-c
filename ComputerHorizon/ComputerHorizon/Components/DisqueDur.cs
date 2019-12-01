@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
-using ComputerHorizon.ModelsProc;
+using ComputerHorizon.ComponentsDAO;
 
-namespace ComputerHorizon.ModelsDD
+namespace ComputerHorizon.Components
 {
     public class DisqueDur
     {

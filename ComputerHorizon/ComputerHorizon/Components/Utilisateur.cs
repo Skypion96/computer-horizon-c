@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Globalization;
+using ComputerHorizon.ComponentsDAO;
 
-namespace ComputerHorizon.ModelsUtilisateur
+namespace ComputerHorizon.Components
 {
     public class Utilisateur
     {

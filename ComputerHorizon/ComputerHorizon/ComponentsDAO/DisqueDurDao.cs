@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
+using ComputerHorizon.Components;
 using ComputerHorizon.Models;
 
-namespace ComputerHorizon.ModelsDD
+namespace ComputerHorizon.ComponentsDAO
 {
     public class DisqueDurDao
     {

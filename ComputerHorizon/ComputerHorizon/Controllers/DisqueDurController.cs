@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using ComputerHorizon.ModelsCG;
-using ComputerHorizon.ModelsDD;
+using ComputerHorizon.Components;
+using ComputerHorizon.ComponentsDAO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputerHorizon.Controllers
@@ -11,7 +11,7 @@ namespace ComputerHorizon.Controllers
     {
         //AFFICHAGE DE TOUT LES DISQUES DUR / IMAGE + NOM +MARQUE
         [HttpGet]
-        public IEnumerable<ComputerHorizon.ModelsDD.DisqueDur> Get()
+        public IEnumerable<ComputerHorizon.Components.DisqueDur> Get()
         {
             return DisqueDurDao.QueryBase();
         }
@@ -19,14 +19,14 @@ namespace ComputerHorizon.Controllers
         //AFFICHAGE D'UN DISQUE DUR PARTICULIER
         [Route("[controller]")]
         [HttpGet]
-        public ComputerHorizon.ModelsDD.DisqueDur GetOneElement(DisqueDur disqued)
+        public ComputerHorizon.Components.DisqueDur GetOneElement(DisqueDur disqued)
         {
             return DisqueDurDao.Query(disqued);
         }
 
         //AJOUT D'UN NOUVEAU DISQUE DUR
         [HttpPost]
-        public ComputerHorizon.ModelsDD.DisqueDur Post([FromBody]ComputerHorizon.ModelsDD.DisqueDur disqueD)
+        public ComputerHorizon.Components.DisqueDur Post([FromBody]ComputerHorizon.Components.DisqueDur disqueD)
         {
             return DisqueDurDao.Post(disqueD);
         }
@@ -40,7 +40,7 @@ namespace ComputerHorizon.Controllers
         
         //MISE A JOUR DES INFORMATIONS D'UN DISQUE DUR
         [HttpPut]
-        public ActionResult Update([FromBody]ComputerHorizon.ModelsDD.DisqueDur disqueD)
+        public ActionResult Update([FromBody]ComputerHorizon.Components.DisqueDur disqueD)
         {
             return DisqueDurDao.Update(disqueD) ? (ActionResult) Ok():BadRequest();
         }

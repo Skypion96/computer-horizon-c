@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
-using ComputerHorizon.ModelsDD;
+using ComputerHorizon.ComponentsDAO;
 
-namespace ComputerHorizon.ModelsCG
+namespace ComputerHorizon.Components
 {
     public class CarteGraphique
     {

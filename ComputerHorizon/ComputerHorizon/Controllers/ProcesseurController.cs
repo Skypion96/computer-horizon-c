@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using ComputerHorizon.ModelsCG;
-using ComputerHorizon.ModelsProc;
+using ComputerHorizon.Components;
+using ComputerHorizon.ComponentsDAO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputerHorizon.Controllers
@@ -11,7 +11,7 @@ namespace ComputerHorizon.Controllers
     {
         //AFFICHAGE DE TOUT LES PROCESSEURS / IMAGE + NOM +MARQUE
         [HttpGet]
-        public IEnumerable<ComputerHorizon.ModelsProc.Processeur> Get()
+        public IEnumerable<ComputerHorizon.Components.Processeur> Get()
         {
             return ProcesseurDao.QueryBase();
         }
@@ -19,14 +19,14 @@ namespace ComputerHorizon.Controllers
         //AFFICHAGE D'UN PROCESSEURS PARTICULIER
         [Route("[controller]")]
         [HttpGet]
-        public ComputerHorizon.ModelsProc.Processeur GetOneElement(Processeur proc)
+        public ComputerHorizon.Components.Processeur GetOneElement(Processeur proc)
         {
             return ProcesseurDao.Query(proc);
         }
 
         //AJOUT D'UN NOUVEAU PROCESSEURS
         [HttpPost]
-        public ComputerHorizon.ModelsProc.Processeur Post([FromBody]ComputerHorizon.ModelsProc.Processeur proc)
+        public ComputerHorizon.Components.Processeur Post([FromBody]ComputerHorizon.Components.Processeur proc)
         {
             return ProcesseurDao.Post(proc);
         }
@@ -40,7 +40,7 @@ namespace ComputerHorizon.Controllers
         
         //MISE A JOUR DES INFORMATIONS D'UN PROCESSEUR
         [HttpPut]
-        public ActionResult Update([FromBody]ComputerHorizon.ModelsProc.Processeur proc)
+        public ActionResult Update([FromBody]ComputerHorizon.Components.Processeur proc)
         {
             return ProcesseurDao.Update(proc) ? (ActionResult) Ok():BadRequest();
         }

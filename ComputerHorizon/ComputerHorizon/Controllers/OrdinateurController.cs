@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using ComputerHorizon.ModelsCG;
-using ComputerHorizon.ModelsOrdinateur;
+using ComputerHorizon.Components;
+using ComputerHorizon.ComponentsDAO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputerHorizon.Controllers
@@ -11,14 +11,14 @@ namespace ComputerHorizon.Controllers
     {
         //AFFICHAGE DE TOUT LES ORDINATEURS / IMAGE + NOM +MARQUE
         [HttpGet]
-        public IEnumerable<ComputerHorizon.ModelsOrdinateur.Ordinateur> Get()
+        public IEnumerable<ComputerHorizon.Components.Ordinateur> Get()
         {
             return OrdinateurDao.QueryBase();
         }
         
         //AJOUT D4UN NOUVELLE ORDINATEUR
         [HttpPost]
-        public ComputerHorizon.ModelsOrdinateur.Ordinateur Post([FromBody]ComputerHorizon.ModelsOrdinateur.Ordinateur ordi)
+        public ComputerHorizon.Components.Ordinateur Post([FromBody]ComputerHorizon.Components.Ordinateur ordi)
         {
             return OrdinateurDao.Post(ordi);
         }
@@ -26,7 +26,7 @@ namespace ComputerHorizon.Controllers
         //AFFICHAGE D'UN ORDINATEUR PARTICULIER
         [Route("[controller]")]
         [HttpGet]
-        public ComputerHorizon.ModelsOrdinateur.Ordinateur GetOneElement(Ordinateur ordi)
+        public ComputerHorizon.Components.Ordinateur GetOneElement(Ordinateur ordi)
         {
             return OrdinateurDao.Query(ordi);
         }
@@ -40,7 +40,7 @@ namespace ComputerHorizon.Controllers
         
         //MISE A JOUR DES INFORMATIONS D'UN ORDINATEUR
         [HttpPut]
-        public ActionResult Update([FromBody]ComputerHorizon.ModelsOrdinateur.Ordinateur ordi)
+        public ActionResult Update([FromBody]ComputerHorizon.Components.Ordinateur ordi)
         {
             return OrdinateurDao.Update(ordi) ? (ActionResult) Ok():BadRequest();
         }

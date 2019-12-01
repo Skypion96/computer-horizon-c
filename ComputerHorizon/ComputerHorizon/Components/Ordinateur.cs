@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
-using ComputerHorizon.ModelsProc;
+using ComputerHorizon.ComponentsDAO;
 
-namespace ComputerHorizon.ModelsOrdinateur
+namespace ComputerHorizon.Components
 {
     public class Ordinateur
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
+using ComputerHorizon.ComponentsDAO;
 using ComputerHorizon.Controllers;
-using ComputerHorizon.ModelsUtilisateur;
 
-namespace ComputerHorizon.ModelsPanier
+namespace ComputerHorizon.Components
 {
     public class Panier
     {

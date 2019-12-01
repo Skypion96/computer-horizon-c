@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
+using ComputerHorizon.ComponentsDAO;
 
-namespace ComputerHorizon.ModelsProc
+namespace ComputerHorizon.Components
 {
     public class Processeur
     {

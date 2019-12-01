@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using ComputerHorizon.Components;
 using ComputerHorizon.Models;
-using ComputerHorizon.ModelsProc;
 
-namespace ComputerHorizon.ModelsUtilisateur
+namespace ComputerHorizon.ComponentsDAO
 {
     public class UtilisateurDAO
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using ComputerHorizon.ModelsDD;
-using ComputerHorizon.ModelsUtilisateur;
+using ComputerHorizon.Components;
+using ComputerHorizon.ComponentsDAO;
 using ComputerHorizon.Token;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +15,7 @@ namespace ComputerHorizon.Controllers
         
         //AFFICHAGE DE TOUT LES UTILISATEURS
         [HttpGet]
-        public IEnumerable<ComputerHorizon.ModelsUtilisateur.Utilisateur> Get()
+        public IEnumerable<ComputerHorizon.Components.Utilisateur> Get()
         {
             return UtilisateurDAO.QueryBase();
         }
@@ -23,14 +23,14 @@ namespace ComputerHorizon.Controllers
         //AFFICHAGE D'UN UTILISATEUR PARTICULIER
         [Route("[controller]")]
         [HttpGet]
-        public ComputerHorizon.ModelsUtilisateur.Utilisateur GetOneElement(Utilisateur user)
+        public ComputerHorizon.Components.Utilisateur GetOneElement(Utilisateur user)
         {
             return UtilisateurDAO.Query(user);
         }
 
         //AJOUT D'UN NOUVEAU UTILISATEUR
         [HttpPost]
-        public ComputerHorizon.ModelsUtilisateur.Utilisateur Post([FromBody]ComputerHorizon.ModelsUtilisateur.Utilisateur user)
+        public ComputerHorizon.Components.Utilisateur Post([FromBody]ComputerHorizon.Components.Utilisateur user)
         {
             return UtilisateurDAO.Post(user);
         }
@@ -44,7 +44,7 @@ namespace ComputerHorizon.Controllers
         
         //MISE A JOUR DES INFORMATIONS D'UN UTILISATEUR
         [HttpPut]
-        public ActionResult Update([FromBody]ComputerHorizon.ModelsUtilisateur.Utilisateur user)
+        public ActionResult Update([FromBody]ComputerHorizon.Components.Utilisateur user)
         {
             return UtilisateurDAO.Update(user) ? (ActionResult) Ok():BadRequest();
         }
