@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\krefel\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\krefel\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ComputerHorizon.622193748.00" t="ExcludeRecursive" />
-    <e p="C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI C#\computer-horizon-c\ComputerHorizon" t="IncludeFlat">
+    <e p="C:\Users\Maxime\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Maxime\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ComputerHorizon.-173370166.00" t="ExcludeRecursive" />
+    <e p="D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon" t="IncludeFlat">
       <e p="ComputerHorizon" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
@@ -13,6 +13,9 @@
           <e p="DisqueDur.cs" t="Include" />
           <e p="Ordinateur.cs" t="Include" />
           <e p="Panier.cs" t="Include" />
+          <e p="PanierCarteGraphique.cs" t="Include" />
+          <e p="PanierDisqueDur.cs" t="Include" />
+          <e p="PanierOrdinateur.cs" t="Include" />
           <e p="PanierProcesseur.cs" t="Include" />
           <e p="Processeur.cs" t="Include" />
           <e p="Utilisateur.cs" t="Include" />
@@ -21,7 +24,10 @@
           <e p="CarteGraphiqueDao.cs" t="Include" />
           <e p="DisqueDurDao.cs" t="Include" />
           <e p="OrdinateurDao.cs" t="Include" />
+          <e p="PanierCarteGraphiqueDAO.cs" t="Include" />
           <e p="PanierDAO.cs" t="Include" />
+          <e p="PanierDisqueDurDAO.cs" t="Include" />
+          <e p="PanierOrdinateurDAO.cs" t="Include" />
           <e p="PanierProcesseurDAO.cs" t="Include" />
           <e p="ProcesseurDao.cs" t="Include" />
           <e p="UtilisateurDAO.cs" t="Include" />
@@ -31,7 +37,10 @@
           <e p="CarteGraphiqueController.cs" t="Include" />
           <e p="DisqueDurController.cs" t="Include" />
           <e p="OrdinateurController.cs" t="Include" />
+          <e p="PanierCarteGraphiqueController.cs" t="Include" />
           <e p="PanierController.cs" t="Include" />
+          <e p="PanierDisqueDurController.cs" t="Include" />
+          <e p="PanierOrdinateurController.cs" t="Include" />
           <e p="PanierProcesseurController.cs" t="Include" />
           <e p="ProcesseurController.cs" t="Include" />
           <e p="UtilisateurController.cs" t="Include" />
