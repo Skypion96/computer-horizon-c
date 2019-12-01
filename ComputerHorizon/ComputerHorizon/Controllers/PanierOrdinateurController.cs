@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ComputerHorizon.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class PanierOrdinateurController : ControllerBase
     {
         [HttpPost]

@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"filter\">\r\n  <h3>FILTRE EN FONCTION DU PRIX : </h3>\r\n  <div class=\"filterPrixProc\">\r\n    PRIX :\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_PRIX\">\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterProc\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedPrix\">\r\n    </div>\r\n  </div>\r\n  <h3>FILTRES DISQUES DUR : </h3>\r\n  <div class=\"filterSSDDD\">\r\n    SSD :\r\n    <div *ngFor=\"let typeFilterSSD of TYPE_FILTER_SSD\">\r\n\r\n      <label [for]=\"typeFilterSSD.id\">{{typeFilterSSD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterSSD.id\" name=\"filterSSDDD\" [value]=\"typeFilterSSD.value\"\r\n             [(ngModel)]=\"filterSelectedSSD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterMarque\">\r\n    Marques :\r\n    <div *ngFor=\"let typeFilterMDD of TYPE_FILTER_MARQUE_DISQUED\">\r\n\r\n      <label [for]=\"typeFilterMDD.id\">{{typeFilterMDD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterMDD.id\" name=\"filterMarquesDD\" [value]=\"typeFilterMDD.value\"\r\n             [(ngModel)]=\"filterSelectedMarqueDD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n    <h3>FILTRES ORDINATEUR : </h3>\r\n    <div class=\"filterMarqueOrdi\">\r\n      Marques :\r\n      <div *ngFor=\"let typeFilterMOrdi of TYPE_FILTER_MARQUE_ORDI\">\r\n\r\n        <label [for]=\"typeFilterMOrdi.id\">{{typeFilterMOrdi.id}}</label>\r\n        <input type=\"radio\" [id]=\"typeFilterMOrdi.id\" name=\"filterMarquesOrdi\" [value]=\"typeFilterMOrdi.value\"\r\n               [(ngModel)]=\"filterSelectedMarqueOrdi\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n    <h3>FILTRES PROCESSEURS : </h3>\r\n    <div class=\"filterNomProc\">\r\n      <label for=\"recherche\">Rechercher un processeur particulier : </label>\r\n      <input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n    </div>\r\n\r\n    <div class=\"filterMarqueProc\">\r\n      MARQUES :\r\n      <div *ngFor=\"let typeFilterMarque of TYPE_FILTER_MARQUE_PROC\">\r\n        <label [for]=\"typeFilterMarque.id\">{{typeFilterMarque.id}}</label>\r\n        <input type=\"radio\" [id]=\"typeFilterMarque.id\" name=\"filterMarqueProc\" [value]=\"typeFilterMarque.value\"\r\n               [(ngModel)]=\"filterSelectedMarqueProc\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\">\r\n  <ul>\r\n    <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n      <div class=\"card\" >\r\n        <img src=\"{{cg.img}}\"/>\r\n        <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n          <table>\r\n            <tr>\r\n              <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n            </tr>\r\n            <br><br>\r\n            <tr>\r\n              <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n            </tr>\r\n          </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n          </ng-template>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\">\r\n  <div class=\"disqueD\">\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n            </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\">\r\n  <div class=\"ordinateur\">\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\">\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n            <button (click)=\"createdTodo(proc)\">Ajouter au Panier</button>\r\n\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n            <button (click)=\"createdTodo(proc.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"filter\">\r\n  <h3>FILTRE EN FONCTION DU PRIX : </h3>\r\n  <div class=\"filterPrixProc\">\r\n    PRIX :\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_PRIX\">\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterProc\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedPrix\">\r\n    </div>\r\n  </div>\r\n  <h3>FILTRES DISQUES DUR : </h3>\r\n  <div class=\"filterSSDDD\">\r\n    SSD :\r\n    <div *ngFor=\"let typeFilterSSD of TYPE_FILTER_SSD\">\r\n\r\n      <label [for]=\"typeFilterSSD.id\">{{typeFilterSSD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterSSD.id\" name=\"filterSSDDD\" [value]=\"typeFilterSSD.value\"\r\n             [(ngModel)]=\"filterSelectedSSD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterMarque\">\r\n    Marques :\r\n    <div *ngFor=\"let typeFilterMDD of TYPE_FILTER_MARQUE_DISQUED\">\r\n\r\n      <label [for]=\"typeFilterMDD.id\">{{typeFilterMDD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterMDD.id\" name=\"filterMarquesDD\" [value]=\"typeFilterMDD.value\"\r\n             [(ngModel)]=\"filterSelectedMarqueDD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n    <h3>FILTRES ORDINATEUR : </h3>\r\n    <div class=\"filterMarqueOrdi\">\r\n      Marques :\r\n      <div *ngFor=\"let typeFilterMOrdi of TYPE_FILTER_MARQUE_ORDI\">\r\n\r\n        <label [for]=\"typeFilterMOrdi.id\">{{typeFilterMOrdi.id}}</label>\r\n        <input type=\"radio\" [id]=\"typeFilterMOrdi.id\" name=\"filterMarquesOrdi\" [value]=\"typeFilterMOrdi.value\"\r\n               [(ngModel)]=\"filterSelectedMarqueOrdi\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n    <h3>FILTRES PROCESSEURS : </h3>\r\n    <div class=\"filterNomProc\">\r\n      <label for=\"recherche\">Rechercher un processeur particulier : </label>\r\n      <input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n    </div>\r\n\r\n    <div class=\"filterMarqueProc\">\r\n      MARQUES :\r\n      <div *ngFor=\"let typeFilterMarque of TYPE_FILTER_MARQUE_PROC\">\r\n        <label [for]=\"typeFilterMarque.id\">{{typeFilterMarque.id}}</label>\r\n        <input type=\"radio\" [id]=\"typeFilterMarque.id\" name=\"filterMarqueProc\" [value]=\"typeFilterMarque.value\"\r\n               [(ngModel)]=\"filterSelectedMarqueProc\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\">\r\n  <ul>\r\n    <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n      <div class=\"card\" >\r\n        <img src=\"{{cg.img}}\"/>\r\n        <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n          <table>\r\n            <tr>\r\n              <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n            </tr>\r\n            <br><br>\r\n            <tr>\r\n              <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n            </tr>\r\n          </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\">\r\n  <div class=\"disqueD\">\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n            <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\">\r\n  <div class=\"ordinateur\">\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n            <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n            <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\">\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n            <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n            <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -677,6 +677,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../enums/ordi-marque.enum */ "./src/app/enums/ordi-marque.enum.ts");
 /* harmony import */ var _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../pipes/carte-g.pipe */ "./src/app/pipes/carte-g.pipe.ts");
 /* harmony import */ var _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/panier-proc.service */ "./src/app/services/panier-proc.service.ts");
+/* harmony import */ var _services_panier_carte_graphique_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../services/panier-carte-graphique.service */ "./src/app/services/panier-carte-graphique.service.ts");
+/* harmony import */ var _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../services/panier-disque-dur.service */ "./src/app/services/panier-disque-dur.service.ts");
+/* harmony import */ var _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/panier-ordinateur.service */ "./src/app/services/panier-ordinateur.service.ts");
+
+
+
 
 
 
@@ -694,12 +700,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ComponentAllComponent = class ComponentAllComponent {
-    constructor(procService, disqueDService, ordiService, carteGService, panierpService) {
+    constructor(procService, disqueDService, ordiService, carteGService, panierpService, panieCGService, panierDDService, panierOrdinateurService) {
         this.procService = procService;
         this.disqueDService = disqueDService;
         this.ordiService = ordiService;
         this.carteGService = carteGService;
         this.panierpService = panierpService;
+        this.panieCGService = panieCGService;
+        this.panierDDService = panierDDService;
+        this.panierOrdinateurService = panierOrdinateurService;
         this._processeurPipe = new _pipes_processeur_pipe_pipe__WEBPACK_IMPORTED_MODULE_2__["ProcesseurPipePipe"]();
         //AJOUT DANS PANIER
         this._panierp = new class {
@@ -720,6 +729,9 @@ let ComponentAllComponent = class ComponentAllComponent {
         //DISQUE DUR
         this.disqueDList = [];
         this._disqueDPipe = new _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_6__["DisqueDPipe"]();
+        //AJOUT DANS PANIER
+        this._panierdd = new class {
+        };
         this.TYPE_FILTER_SSD = [{
                 id: 'Tout',
                 value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_7__["DisqueDSsd"].ALL
@@ -764,6 +776,9 @@ let ComponentAllComponent = class ComponentAllComponent {
         this.ordiList = [];
         this._ordiPipe = new _pipes_ordinateur_pipe__WEBPACK_IMPORTED_MODULE_12__["OrdinateurPipe"]();
         this._iOrdi = -1;
+        //AJOUT DANS PANIER
+        this._paniero = new class {
+        };
         this.TYPE_FILTER_MARQUE_ORDI = [{
                 id: 'Tout',
                 value: _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_13__["OrdiMarque"].ALL
@@ -786,6 +801,9 @@ let ComponentAllComponent = class ComponentAllComponent {
         this.carteGList = [];
         this._carteGPipe = new _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_14__["CarteGPipe"]();
         this._icg = -1;
+        //AJOUT DANS PANIER
+        this._paniercg = new class {
+        };
     }
     get panierp() {
         return this._panierp;
@@ -826,12 +844,18 @@ let ComponentAllComponent = class ComponentAllComponent {
         this.iProc = -1;
     }
     //AJOUT DANS PANIER
-    createdTodo(nom) {
+    createdProc(nom) {
         this.panierp.nom = nom;
         this.panierp.id = 1;
         const sub = this.panierpService
             .post(this.panierp)
             .subscribe(thePP => console.log(thePP));
+    }
+    get panierdd() {
+        return this._panierdd;
+    }
+    set panierdd(value) {
+        this._panierdd = value;
     }
     loadDDList() {
         this.subQuery = this.disqueDService
@@ -853,6 +877,20 @@ let ComponentAllComponent = class ComponentAllComponent {
     changeretroDD(num) {
         this.iDD = -1;
     }
+    //AJOUT DANS PANIER
+    createdDD(nom) {
+        this.panierdd.nom = nom;
+        this.panierdd.id = 1;
+        const sub = this.panierDDService
+            .post(this.panierdd)
+            .subscribe(thePP => console.log(thePP));
+    }
+    get paniero() {
+        return this._paniero;
+    }
+    set paniero(value) {
+        this._paniero = value;
+    }
     get iOrdi() {
         return this._iOrdi;
     }
@@ -872,6 +910,20 @@ let ComponentAllComponent = class ComponentAllComponent {
     }
     get filteredOrdinateur() {
         return this._ordiPipe.transform(this.ordiList, this.filterSelectedPrix, this.filterSelectedMarqueOrdi);
+    }
+    //AJOUT DANS PANIER
+    createdOrdi(nom) {
+        this.paniero.nom = nom;
+        this.paniero.id = 1;
+        const sub = this.panierOrdinateurService
+            .post(this.paniero)
+            .subscribe(thePP => console.log(thePP));
+    }
+    get paniercg() {
+        return this._paniercg;
+    }
+    set paniercg(value) {
+        this._paniercg = value;
     }
     loadCGList() {
         this.subQuery = this.carteGService
@@ -893,13 +945,24 @@ let ComponentAllComponent = class ComponentAllComponent {
     changeretroICG(num) {
         this.icg = -1;
     }
+    //AJOUT DANS PANIER
+    createdCG(nom) {
+        this.paniercg.nom = nom;
+        this.paniercg.id = 1;
+        const sub = this.panieCGService
+            .post(this.paniercg)
+            .subscribe(thePP => console.log(thePP));
+    }
 };
 ComponentAllComponent.ctorParameters = () => [
     { type: _services_proc_service_service__WEBPACK_IMPORTED_MODULE_5__["ProcServiceService"] },
     { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_9__["DisqueDServiceService"] },
     { type: _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_10__["OrdiServiceService"] },
     { type: _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_11__["CarteGServiceService"] },
-    { type: _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_15__["PanierProcService"] }
+    { type: _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_15__["PanierProcService"] },
+    { type: _services_panier_carte_graphique_service__WEBPACK_IMPORTED_MODULE_16__["PanierCarteGraphiqueService"] },
+    { type: _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_17__["PanierDisqueDurService"] },
+    { type: _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_18__["PanierOrdinateurService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
@@ -2212,6 +2275,123 @@ OrdiServiceService = OrdiServiceService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["
         providedIn: 'root'
     })
 ], OrdiServiceService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/panier-carte-graphique.service.ts":
+/*!************************************************************!*\
+  !*** ./src/app/services/panier-carte-graphique.service.ts ***!
+  \************************************************************/
+/*! exports provided: PanierCarteGraphiqueService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PanierCarteGraphiqueService", function() { return PanierCarteGraphiqueService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var PanierCarteGraphiqueService_1;
+
+
+
+let PanierCarteGraphiqueService = PanierCarteGraphiqueService_1 = class PanierCarteGraphiqueService {
+    constructor(http) {
+        this.http = http;
+    }
+    post(cartesGs) {
+        return this.http.post(PanierCarteGraphiqueService_1.URAL_API, cartesGs);
+    }
+};
+PanierCarteGraphiqueService.URAL_API = '/PanierCarteGraphique';
+PanierCarteGraphiqueService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+PanierCarteGraphiqueService = PanierCarteGraphiqueService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], PanierCarteGraphiqueService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/panier-disque-dur.service.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/services/panier-disque-dur.service.ts ***!
+  \*******************************************************/
+/*! exports provided: PanierDisqueDurService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PanierDisqueDurService", function() { return PanierDisqueDurService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var PanierDisqueDurService_1;
+
+
+
+let PanierDisqueDurService = PanierDisqueDurService_1 = class PanierDisqueDurService {
+    constructor(http) {
+        this.http = http;
+    }
+    post(disqueDs) {
+        return this.http.post(PanierDisqueDurService_1.URAL_API, disqueDs);
+    }
+};
+PanierDisqueDurService.URAL_API = '/PanierDisqueDur';
+PanierDisqueDurService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+PanierDisqueDurService = PanierDisqueDurService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], PanierDisqueDurService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/panier-ordinateur.service.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/services/panier-ordinateur.service.ts ***!
+  \*******************************************************/
+/*! exports provided: PanierOrdinateurService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PanierOrdinateurService", function() { return PanierOrdinateurService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var PanierOrdinateurService_1;
+
+
+
+let PanierOrdinateurService = PanierOrdinateurService_1 = class PanierOrdinateurService {
+    constructor(http) {
+        this.http = http;
+    }
+    post(ordis) {
+        return this.http.post(PanierOrdinateurService_1.URAL_API, ordis);
+    }
+};
+PanierOrdinateurService.URAL_API = '/PanierOrdinateur';
+PanierOrdinateurService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+PanierOrdinateurService = PanierOrdinateurService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], PanierOrdinateurService);
 
 
 
