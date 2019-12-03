@@ -33,7 +33,7 @@ namespace ComputerHorizon.Controllers
         }
       
         //SUPPRESSION D'UNE CARTE GRAPHIQUE PARTICULIERE
-        [HttpDelete("{id}")]
+        [HttpDelete("{nom}")]
         public ActionResult Delete(string nom)
         {
             return CarteGraphiqueDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();

@@ -32,7 +32,7 @@ namespace ComputerHorizon.Controllers
         }
         
         //SUPPRESSION D'UN ORDINATEUR PARTICULIER
-        [HttpDelete("{id}")]
+        [HttpDelete("{nom}")]
         public ActionResult Delete(string nom)
         {
             return OrdinateurDao.Delete(nom) ? (ActionResult) Ok() : BadRequest();
