@@ -21,7 +21,7 @@ namespace ComputerHorizon.ComponentsDAO
         public static readonly string FIELD_NUMRUE = "numRue";
         public static readonly string FIELD_CP = "cp";
         public static readonly string FIELD_VILLE = "ville";
-        public static readonly string FIELD_IDPANIER = "idPanier";
+        //public static readonly string FIELD_IDPANIER = "idPanier";
         public static readonly string FIELD_TOKEN = "token";
 
         //REQUETES :
@@ -147,7 +147,7 @@ namespace ComputerHorizon.ComponentsDAO
                 command.Parameters.AddWithValue($"@{FIELD_NUMRUE}", user.NumRue);
                 command.Parameters.AddWithValue($"@{FIELD_CP}", user.Cp);
                 command.Parameters.AddWithValue($"@{FIELD_VILLE}", user.Ville);
-                command.Parameters.AddWithValue($"@{FIELD_IDPANIER}", user.IdPanier);
+                //command.Parameters.AddWithValue($"@{FIELD_IDPANIER}", user.IdPanier);
 
                 command.Parameters.AddWithValue($"@{FIELD_MAIL}", user.Mail);
                 hasBeenUpdate = command.ExecuteNonQuery() ==1;
