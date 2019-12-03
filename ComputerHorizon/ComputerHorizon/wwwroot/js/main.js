@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"message\" [ngClass]=\"message.cssClass\">{{message.text}}</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"message\" [ngClass]=\"message.cssClass\">{{message.text}}</div>\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"filter\">\r\n  <h3>FILTRE EN FONCTION DU PRIX : </h3>\r\n  <div class=\"filterPrixProc\">\r\n    PRIX :\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_PRIX\">\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterProc\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedPrix\">\r\n    </div>\r\n  </div>\r\n  <h3>FILTRES DISQUES DUR : </h3>\r\n  <div class=\"filterSSDDD\">\r\n    SSD :\r\n    <div *ngFor=\"let typeFilterSSD of TYPE_FILTER_SSD\">\r\n\r\n      <label [for]=\"typeFilterSSD.id\">{{typeFilterSSD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterSSD.id\" name=\"filterSSDDD\" [value]=\"typeFilterSSD.value\"\r\n             [(ngModel)]=\"filterSelectedSSD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterMarque\">\r\n    Marques :\r\n    <div *ngFor=\"let typeFilterMDD of TYPE_FILTER_MARQUE_DISQUED\">\r\n\r\n      <label [for]=\"typeFilterMDD.id\">{{typeFilterMDD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterMDD.id\" name=\"filterMarquesDD\" [value]=\"typeFilterMDD.value\"\r\n             [(ngModel)]=\"filterSelectedMarqueDD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n    <h3>FILTRES ORDINATEUR : </h3>\r\n    <div class=\"filterMarqueOrdi\">\r\n      Marques :\r\n      <div *ngFor=\"let typeFilterMOrdi of TYPE_FILTER_MARQUE_ORDI\">\r\n\r\n        <label [for]=\"typeFilterMOrdi.id\">{{typeFilterMOrdi.id}}</label>\r\n        <input type=\"radio\" [id]=\"typeFilterMOrdi.id\" name=\"filterMarquesOrdi\" [value]=\"typeFilterMOrdi.value\"\r\n               [(ngModel)]=\"filterSelectedMarqueOrdi\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n    <h3>FILTRES PROCESSEURS : </h3>\r\n    <div class=\"filterNomProc\">\r\n      <label for=\"recherche\">Rechercher un processeur particulier : </label>\r\n      <input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n    </div>\r\n\r\n    <div class=\"filterMarqueProc\">\r\n      MARQUES :\r\n      <div *ngFor=\"let typeFilterMarque of TYPE_FILTER_MARQUE_PROC\">\r\n        <label [for]=\"typeFilterMarque.id\">{{typeFilterMarque.id}}</label>\r\n        <input type=\"radio\" [id]=\"typeFilterMarque.id\" name=\"filterMarqueProc\" [value]=\"typeFilterMarque.value\"\r\n               [(ngModel)]=\"filterSelectedMarqueProc\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\">\r\n  <ul>\r\n    <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n      <div class=\"card\" >\r\n        <img src=\"{{cg.img}}\"/>\r\n        <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n          <table>\r\n            <tr>\r\n              <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n            </tr>\r\n            <br><br>\r\n            <tr>\r\n              <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n            </tr>\r\n          </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\">\r\n  <div class=\"disqueD\">\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n            <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\">\r\n  <div class=\"ordinateur\">\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n            <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n            <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\">\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n            <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n            <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"filter\">\r\n  <h3>FILTRES : </h3>\r\n  <div class=\"filterPrixProc\">\r\n    <b>PRIX :</b>\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_PRIX\">\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterProc\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedPrix\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterNomProc\">\r\n    <b><label for=\"recherche\">Rechercher : </label></b>\r\n    <input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n  </div>\r\n  <div class=\"filterMarqueProc\">\r\n    <b>MARQUES :</b>\r\n    <div *ngFor=\"let typeFilterMarque of TYPE_FILTER_MARQUE\">\r\n      <label [for]=\"typeFilterMarque.id\">{{typeFilterMarque.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterMarque.id\" name=\"filterMarqueProc\" [value]=\"typeFilterMarque.value\"\r\n             [(ngModel)]=\"filterSelectedMarque\">\r\n    </div>\r\n  </div>\r\n  <h3>FILTRES DISQUES DUR : </h3>\r\n  <div class=\"filterSSDDD\">\r\n    <b>SSD :</b>\r\n    <div *ngFor=\"let typeFilterSSD of TYPE_FILTER_SSD\">\r\n      <label [for]=\"typeFilterSSD.id\">{{typeFilterSSD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterSSD.id\" name=\"filterSSDDD\" [value]=\"typeFilterSSD.value\"\r\n             [(ngModel)]=\"filterSelectedSSD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n  </div>\r\n</div>\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\">\r\n  <ul>\r\n    <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n      <div class=\"card\" >\r\n        <img src=\"{{cg.img}}\"/>\r\n        <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n          <table>\r\n            <tr>\r\n              <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n            </tr>\r\n            <br><br>\r\n            <tr>\r\n              <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n            </tr>\r\n          </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\">\r\n  <div class=\"disqueD\">\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n            <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\">\r\n  <div class=\"ordinateur\">\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n            <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n            <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\">\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n            <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n            <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header></header>\r\n<router-outlet>\r\n<nav>\r\n  <a [routerLink]=\"'/'+ACCUEIL\">\r\n    <img src=\"{{logoPath}}\" width=\"100px\" height=\"100px\"/>\r\n  </a>\r\n  <ul>\r\n    <li>\r\n      <a [routerLink]=\"'/'+ACCUEIL\">Accueil</a>\r\n    </li>\r\n    <li class=\"items\">\r\n      <a [routerLink]=\"'/'+PRODUCT\">Nos produits</a>\r\n    </li>\r\n    <li>\r\n      <a [routerLink]=\"'/'+CONTACT\">Nous contacter</a>\r\n    </li>\r\n    <li class=\"btnContainer\">\r\n      <button class=\"btn\" id=\"inscrire\" [routerLink]=\"'/'+INSCRIPTION\">S'inscrire</button>\r\n      <button class=\"btn\" id=\"connexion\">Connexion</button>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n</router-outlet>\r\n<footer></footer>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header></header>\r\n<router-outlet>\r\n<nav>\r\n  <a [routerLink]=\"'/'+ACCUEIL\">\r\n    <img src=\"{{logoPath}}\" width=\"100px\" height=\"100px\"/>\r\n  </a>\r\n  <ul>\r\n    <li>\r\n      <a [routerLink]=\"'/'+ACCUEIL\">Accueil</a>\r\n    </li>\r\n    <li class=\"items\">\r\n      <a [routerLink]=\"'/'+PRODUCT\">Nos produits</a>\r\n    </li>\r\n    <li>\r\n      <a [routerLink]=\"'/'+CONTACT\">Nous contacter</a>\r\n    </li>\r\n    <li class=\"btnContainer\">\r\n      <button class=\"btn\" id=\"inscrire\" [routerLink]=\"'/'+INSCRIPTION\">S'inscrire</button>\r\n      <button class=\"btn\" id=\"connexion\" [routerLink]=\"'/'+LOGIN\">Connexion</button>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n</router-outlet>\r\n<footer></footer>\r\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Register</h2>\r\n<form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"nomUtilisateur\">Nom</label>\r\n    <input type=\"text\" formControlName=\"nomUtilisateur\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.nomUtilisateur.errors }\" />\r\n    <div *ngIf=\"submitted && f.nomUtilisateur.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.nomUtilisateur.errors.required\">Nom is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"prenomUtilisateur\">Prenom</label>\r\n    <input type=\"text\" formControlName=\"prenomUtilisateur\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.prenomUtilisateur.errors }\" />\r\n    <div *ngIf=\"submitted && f.prenomUtilisateur.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.prenomUtilisateur.errors.required\">Prenom is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"password\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"tel\">Tel</label>\r\n    <input type=\"text\" formControlName=\"tel\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.tel.errors }\" />\r\n    <div *ngIf=\"submitted && f.tel.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.tel.errors.required\">Tel is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"rue\">Rue</label>\r\n    <input type=\"text\" formControlName=\"rue\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.rue.errors }\" />\r\n    <div *ngIf=\"submitted && f.rue.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.rue.errors.required\">Rue is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"numRue\">Numéro</label>\r\n    <input type=\"text\" formControlName=\"numRue\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.numRue.errors }\" />\r\n    <div *ngIf=\"submitted && f.numRue.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.numRue.errors.required\">Numéro is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"cp\">Code postal</label>\r\n    <input type=\"text\" formControlName=\"cp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.cp.errors }\" />\r\n    <div *ngIf=\"submitted && f.cp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.cp.errors.required\">Code postal is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"ville\">Ville</label>\r\n    <input type=\"text\" formControlName=\"ville\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.ville.errors }\" />\r\n    <div *ngIf=\"submitted && f.ville.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.ville.errors.required\">Ville is required</div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Register\r\n    </button>\r\n    <a routerLink=\"/login\" class=\"btn btn-link\">Cancel</a>\r\n  </div>\r\n</form>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Register</h2>\r\n<form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"nomUtilisateur\">Nom</label>\r\n    <input type=\"text\" formControlName=\"nomUtilisateur\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.nomUtilisateur.errors }\" />\r\n    <div *ngIf=\"submitted && f.nomUtilisateur.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.nomUtilisateur.errors.required\">Nom is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"prenomUtilisateur\">Prenom</label>\r\n    <input type=\"text\" formControlName=\"prenomUtilisateur\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.prenomUtilisateur.errors }\" />\r\n    <div *ngIf=\"submitted && f.prenomUtilisateur.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.prenomUtilisateur.errors.required\">Prenom is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"password\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"tel\">Tel</label>\r\n    <input type=\"text\" formControlName=\"tel\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.tel.errors }\" />\r\n    <div *ngIf=\"submitted && f.tel.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.tel.errors.required\">Tel is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"rue\">Rue</label>\r\n    <input type=\"text\" formControlName=\"rue\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.rue.errors }\" />\r\n    <div *ngIf=\"submitted && f.rue.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.rue.errors.required\">Rue is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"numRue\">Numéro</label>\r\n    <input type=\"text\" formControlName=\"numRue\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.numRue.errors }\" />\r\n    <div *ngIf=\"submitted && f.numRue.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.numRue.errors.required\">Numéro is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"cp\">Code postal</label>\r\n    <input type=\"text\" formControlName=\"cp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.cp.errors }\" />\r\n    <div *ngIf=\"submitted && f.cp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.cp.errors.required\">Code postal is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"ville\">Ville</label>\r\n    <input type=\"text\" formControlName=\"ville\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.ville.errors }\" />\r\n    <div *ngIf=\"submitted && f.ville.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.ville.errors.required\">Ville is required</div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Register\r\n    </button>\r\n    <a [routerLink]=\"'/'+ACCUEIL\" class=\"btn btn-link\">Cancel</a>\r\n  </div>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Login</h2>\r\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"mdp\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Login\r\n    </button>\r\n    <a routerLink=\"/register\" class=\"btn btn-link\">Register</a>\r\n  </div>\r\n</form>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Login</h2>\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n  <div class=\"form-group\">\n    <label for=\"mail\">Mail</label>\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mdp\">Mot de passe</label>\n    <input type=\"mdp\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\n      Login\n    </button>\n    <a routerLink=\"/register\" class=\"btn btn-link\">Register</a>\n  </div>\n</form>\n");
 
 /***/ }),
 
@@ -665,23 +665,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _pipes_processeur_pipe_pipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pipes/processeur-pipe.pipe */ "./src/app/pipes/processeur-pipe.pipe.ts");
 /* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
-/* harmony import */ var _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../enums/proc-marque.enum */ "./src/app/enums/proc-marque.enum.ts");
-/* harmony import */ var _services_proc_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/proc-service.service */ "./src/app/services/proc-service.service.ts");
-/* harmony import */ var _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pipes/disque-d.pipe */ "./src/app/pipes/disque-d.pipe.ts");
-/* harmony import */ var _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../enums/disque-d-ssd.enum */ "./src/app/enums/disque-d-ssd.enum.ts");
-/* harmony import */ var _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../enums/disque-d-marque.enum */ "./src/app/enums/disque-d-marque.enum.ts");
-/* harmony import */ var _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../services/disque-dservice.service */ "./src/app/services/disque-dservice.service.ts");
-/* harmony import */ var _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../services/ordi-service.service */ "./src/app/services/ordi-service.service.ts");
-/* harmony import */ var _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/carte-gservice.service */ "./src/app/services/carte-gservice.service.ts");
-/* harmony import */ var _pipes_ordinateur_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../pipes/ordinateur.pipe */ "./src/app/pipes/ordinateur.pipe.ts");
-/* harmony import */ var _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../enums/ordi-marque.enum */ "./src/app/enums/ordi-marque.enum.ts");
-/* harmony import */ var _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../pipes/carte-g.pipe */ "./src/app/pipes/carte-g.pipe.ts");
-/* harmony import */ var _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/panier-proc.service */ "./src/app/services/panier-proc.service.ts");
-/* harmony import */ var _services_panier_carte_graphique_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../services/panier-carte-graphique.service */ "./src/app/services/panier-carte-graphique.service.ts");
-/* harmony import */ var _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../services/panier-disque-dur.service */ "./src/app/services/panier-disque-dur.service.ts");
-/* harmony import */ var _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/panier-ordinateur.service */ "./src/app/services/panier-ordinateur.service.ts");
-
-
+/* harmony import */ var _services_proc_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/proc-service.service */ "./src/app/services/proc-service.service.ts");
+/* harmony import */ var _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pipes/disque-d.pipe */ "./src/app/pipes/disque-d.pipe.ts");
+/* harmony import */ var _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../enums/disque-d-ssd.enum */ "./src/app/enums/disque-d-ssd.enum.ts");
+/* harmony import */ var _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../services/disque-dservice.service */ "./src/app/services/disque-dservice.service.ts");
+/* harmony import */ var _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../services/ordi-service.service */ "./src/app/services/ordi-service.service.ts");
+/* harmony import */ var _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../services/carte-gservice.service */ "./src/app/services/carte-gservice.service.ts");
+/* harmony import */ var _pipes_ordinateur_pipe__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pipes/ordinateur.pipe */ "./src/app/pipes/ordinateur.pipe.ts");
+/* harmony import */ var _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pipes/carte-g.pipe */ "./src/app/pipes/carte-g.pipe.ts");
+/* harmony import */ var _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/panier-proc.service */ "./src/app/services/panier-proc.service.ts");
+/* harmony import */ var _services_panier_carte_graphique_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/panier-carte-graphique.service */ "./src/app/services/panier-carte-graphique.service.ts");
+/* harmony import */ var _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/panier-disque-dur.service */ "./src/app/services/panier-disque-dur.service.ts");
+/* harmony import */ var _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/panier-ordinateur.service */ "./src/app/services/panier-ordinateur.service.ts");
+/* harmony import */ var _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../enums/marques.enum */ "./src/app/enums/marques.enum.ts");
 
 
 
@@ -710,53 +706,63 @@ let ComponentAllComponent = class ComponentAllComponent {
         this.panierDDService = panierDDService;
         this.panierOrdinateurService = panierOrdinateurService;
         this._processeurPipe = new _pipes_processeur_pipe_pipe__WEBPACK_IMPORTED_MODULE_2__["ProcesseurPipePipe"]();
+        this.TYPE_FILTER_MARQUE = [{
+                id: 'Tout',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].ALL
+            }, {
+                id: 'Lacie',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].LACIE
+            }, {
+                id: 'Toshiba',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].TOSHIBA
+            }, {
+                id: 'Seagate',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].SEAGATE
+            }, {
+                id: 'ACER',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].ACER
+            }, {
+                id: 'ASUS',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].ASUS
+            }, {
+                id: 'HP',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].HP
+            }, {
+                id: 'MSI',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].MSI
+            }, {
+                id: 'Intel',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].Intel
+            }, {
+                id: 'AMD',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].AMD
+            }, {
+                id: 'Gigabyte',
+                value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].Gigabyte
+            }];
+        this.filterSelectedMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].ALL;
         //AJOUT DANS PANIER
         this._panierp = new class {
         };
-        this.TYPE_FILTER_MARQUE_PROC = [{
-                id: 'Tout',
-                value: _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_4__["ProcMarque"].ALL
-            }, {
-                id: 'Intel',
-                value: _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_4__["ProcMarque"].Intel
-            }, {
-                id: 'AMD',
-                value: _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_4__["ProcMarque"].AMD
-            }];
-        this.filterSelectedMarqueProc = _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_4__["ProcMarque"].ALL;
         this.procCharged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         //********************************************************************************************************************************
         //DISQUE DUR
         this.disqueDList = [];
-        this._disqueDPipe = new _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_6__["DisqueDPipe"]();
+        this._disqueDPipe = new _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_5__["DisqueDPipe"]();
         //AJOUT DANS PANIER
         this._panierdd = new class {
         };
         this.TYPE_FILTER_SSD = [{
                 id: 'Tout',
-                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_7__["DisqueDSsd"].ALL
+                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].ALL
             }, {
                 id: 'SSD',
-                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_7__["DisqueDSsd"].AVEC
+                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].AVEC
             }, {
                 id: 'Non SSD',
-                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_7__["DisqueDSsd"].SANS
+                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].SANS
             }];
-        this.filterSelectedSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_7__["DisqueDSsd"].ALL;
-        this.TYPE_FILTER_MARQUE_DISQUED = [{
-                id: 'Tout',
-                value: _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_8__["DisqueDMarque"].ALL
-            }, {
-                id: 'Lacie',
-                value: _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_8__["DisqueDMarque"].LACIE
-            }, {
-                id: 'Toshiba',
-                value: _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_8__["DisqueDMarque"].TOSHIBA
-            }, {
-                id: 'Seagate',
-                value: _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_8__["DisqueDMarque"].SEAGATE
-            }];
-        this.filterSelectedMarqueDD = _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_8__["DisqueDMarque"].ALL;
+        this.filterSelectedSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].ALL;
         this.TYPE_FILTER_PRIX = [{
                 id: 'Tout',
                 value: _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL
@@ -774,32 +780,15 @@ let ComponentAllComponent = class ComponentAllComponent {
         //********************************************************************************************************************************
         //ORDINATEURS
         this.ordiList = [];
-        this._ordiPipe = new _pipes_ordinateur_pipe__WEBPACK_IMPORTED_MODULE_12__["OrdinateurPipe"]();
+        this._ordiPipe = new _pipes_ordinateur_pipe__WEBPACK_IMPORTED_MODULE_10__["OrdinateurPipe"]();
         this._iOrdi = -1;
         //AJOUT DANS PANIER
         this._paniero = new class {
         };
-        this.TYPE_FILTER_MARQUE_ORDI = [{
-                id: 'Tout',
-                value: _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_13__["OrdiMarque"].ALL
-            }, {
-                id: 'ACER',
-                value: _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_13__["OrdiMarque"].ACER
-            }, {
-                id: 'ASUS',
-                value: _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_13__["OrdiMarque"].ASUS
-            }, {
-                id: 'HP',
-                value: _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_13__["OrdiMarque"].HP
-            }, {
-                id: 'MSI',
-                value: _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_13__["OrdiMarque"].MSI
-            }];
-        this.filterSelectedMarqueOrdi = _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_13__["OrdiMarque"].ALL;
         //********************************************************************************************************************************
         //CARTE GRAPHIQUE
         this.carteGList = [];
-        this._carteGPipe = new _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_14__["CarteGPipe"]();
+        this._carteGPipe = new _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_11__["CarteGPipe"]();
         this._icg = -1;
         //AJOUT DANS PANIER
         this._paniercg = new class {
@@ -829,7 +818,7 @@ let ComponentAllComponent = class ComponentAllComponent {
         return this._procList;
     }
     get filteredProcList() {
-        return this._processeurPipe.transform(this.procList, this.nameSearched, this.filterSelectedPrix, this.filterSelectedMarqueProc);
+        return this._processeurPipe.transform(this.procList, this.nameSearched, this.filterSelectedPrix, this.filterSelectedMarque);
     }
     get iProc() {
         return this._iProc;
@@ -863,7 +852,7 @@ let ComponentAllComponent = class ComponentAllComponent {
             .subscribe(disqueDs => this.disqueDList = disqueDs);
     }
     get filteredDisqueD() {
-        return this._disqueDPipe.transform(this.disqueDList, this.filterSelectedSSD, this.filterSelectedMarqueDD, this.filterSelectedPrix);
+        return this._disqueDPipe.transform(this.disqueDList, this.nameSearched, this.filterSelectedSSD, this.filterSelectedMarque, this.filterSelectedPrix);
     }
     get iDD() {
         return this._iDD;
@@ -909,7 +898,7 @@ let ComponentAllComponent = class ComponentAllComponent {
             .subscribe(ordis => this.ordiList = ordis);
     }
     get filteredOrdinateur() {
-        return this._ordiPipe.transform(this.ordiList, this.filterSelectedPrix, this.filterSelectedMarqueOrdi);
+        return this._ordiPipe.transform(this.ordiList, this.nameSearched, this.filterSelectedPrix, this.filterSelectedMarque);
     }
     //AJOUT DANS PANIER
     createdOrdi(nom) {
@@ -931,7 +920,7 @@ let ComponentAllComponent = class ComponentAllComponent {
             .subscribe(carteG => this.carteGList = carteG);
     }
     get filteredCarteG() {
-        return this._carteGPipe.transform(this.carteGList, this.filterSelectedPrix, this.nameSearched);
+        return this._carteGPipe.transform(this.carteGList, this.filterSelectedPrix, this.nameSearched, this.filterSelectedMarque);
     }
     get icg() {
         return this._icg;
@@ -955,14 +944,14 @@ let ComponentAllComponent = class ComponentAllComponent {
     }
 };
 ComponentAllComponent.ctorParameters = () => [
-    { type: _services_proc_service_service__WEBPACK_IMPORTED_MODULE_5__["ProcServiceService"] },
-    { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_9__["DisqueDServiceService"] },
-    { type: _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_10__["OrdiServiceService"] },
-    { type: _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_11__["CarteGServiceService"] },
-    { type: _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_15__["PanierProcService"] },
-    { type: _services_panier_carte_graphique_service__WEBPACK_IMPORTED_MODULE_16__["PanierCarteGraphiqueService"] },
-    { type: _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_17__["PanierDisqueDurService"] },
-    { type: _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_18__["PanierOrdinateurService"] }
+    { type: _services_proc_service_service__WEBPACK_IMPORTED_MODULE_4__["ProcServiceService"] },
+    { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_7__["DisqueDServiceService"] },
+    { type: _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_8__["OrdiServiceService"] },
+    { type: _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_9__["CarteGServiceService"] },
+    { type: _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_12__["PanierProcService"] },
+    { type: _services_panier_carte_graphique_service__WEBPACK_IMPORTED_MODULE_13__["PanierCarteGraphiqueService"] },
+    { type: _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_14__["PanierDisqueDurService"] },
+    { type: _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_15__["PanierOrdinateurService"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
@@ -1023,29 +1012,6 @@ ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/enums/disque-d-marque.enum.ts":
-/*!***********************************************!*\
-  !*** ./src/app/enums/disque-d-marque.enum.ts ***!
-  \***********************************************/
-/*! exports provided: DisqueDMarque */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisqueDMarque", function() { return DisqueDMarque; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-var DisqueDMarque;
-(function (DisqueDMarque) {
-    DisqueDMarque[DisqueDMarque["ALL"] = 0] = "ALL";
-    DisqueDMarque[DisqueDMarque["LACIE"] = 1] = "LACIE";
-    DisqueDMarque[DisqueDMarque["TOSHIBA"] = 2] = "TOSHIBA";
-    DisqueDMarque[DisqueDMarque["SEAGATE"] = 3] = "SEAGATE";
-})(DisqueDMarque || (DisqueDMarque = {}));
-
-
-/***/ }),
-
 /***/ "./src/app/enums/disque-d-ssd.enum.ts":
 /*!********************************************!*\
   !*** ./src/app/enums/disque-d-ssd.enum.ts ***!
@@ -1068,26 +1034,32 @@ var DisqueDSsd;
 
 /***/ }),
 
-/***/ "./src/app/enums/ordi-marque.enum.ts":
-/*!*******************************************!*\
-  !*** ./src/app/enums/ordi-marque.enum.ts ***!
-  \*******************************************/
-/*! exports provided: OrdiMarque */
+/***/ "./src/app/enums/marques.enum.ts":
+/*!***************************************!*\
+  !*** ./src/app/enums/marques.enum.ts ***!
+  \***************************************/
+/*! exports provided: Marques */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrdiMarque", function() { return OrdiMarque; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Marques", function() { return Marques; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
-var OrdiMarque;
-(function (OrdiMarque) {
-    OrdiMarque[OrdiMarque["ALL"] = 0] = "ALL";
-    OrdiMarque[OrdiMarque["HP"] = 1] = "HP";
-    OrdiMarque[OrdiMarque["ACER"] = 2] = "ACER";
-    OrdiMarque[OrdiMarque["ASUS"] = 3] = "ASUS";
-    OrdiMarque[OrdiMarque["MSI"] = 4] = "MSI";
-})(OrdiMarque || (OrdiMarque = {}));
+var Marques;
+(function (Marques) {
+    Marques[Marques["ALL"] = 0] = "ALL";
+    Marques[Marques["HP"] = 1] = "HP";
+    Marques[Marques["ACER"] = 2] = "ACER";
+    Marques[Marques["ASUS"] = 3] = "ASUS";
+    Marques[Marques["MSI"] = 4] = "MSI";
+    Marques[Marques["LACIE"] = 5] = "LACIE";
+    Marques[Marques["TOSHIBA"] = 6] = "TOSHIBA";
+    Marques[Marques["SEAGATE"] = 7] = "SEAGATE";
+    Marques[Marques["Intel"] = 8] = "Intel";
+    Marques[Marques["AMD"] = 9] = "AMD";
+    Marques[Marques["Gigabyte"] = 10] = "Gigabyte";
+})(Marques || (Marques = {}));
 
 
 /***/ }),
@@ -1111,28 +1083,6 @@ var Prix;
     Prix[Prix["INF1000"] = 2] = "INF1000";
     Prix[Prix["SUP1000"] = 3] = "SUP1000";
 })(Prix || (Prix = {}));
-
-
-/***/ }),
-
-/***/ "./src/app/enums/proc-marque.enum.ts":
-/*!*******************************************!*\
-  !*** ./src/app/enums/proc-marque.enum.ts ***!
-  \*******************************************/
-/*! exports provided: ProcMarque */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProcMarque", function() { return ProcMarque; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-var ProcMarque;
-(function (ProcMarque) {
-    ProcMarque[ProcMarque["ALL"] = 0] = "ALL";
-    ProcMarque[ProcMarque["Intel"] = 1] = "Intel";
-    ProcMarque[ProcMarque["AMD"] = 2] = "AMD";
-})(ProcMarque || (ProcMarque = {}));
 
 
 /***/ }),
@@ -1213,8 +1163,9 @@ let HeaderComponent = class HeaderComponent {
         this.logoPath = "assets/logo.png";
         this.PRODUCT = "produits";
         this.ACCUEIL = "Accueil";
-        this.CONTACT = "Contact";
+        this.CONTACT = "Admin";
         this.INSCRIPTION = "inscription";
+        this.LOGIN = "Login";
     }
     ngOnInit() {
     }
@@ -1257,74 +1208,64 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var _services_authentification_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/authentification.service */ "./src/app/services/authentification.service.ts");
-/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
-/* harmony import */ var _services_alert_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/alert.service */ "./src/app/services/alert.service.ts");
-/* harmony import */ var _routing_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../routing/routing.module */ "./src/app/routing/routing.module.ts");
-
-
-
-
+/* harmony import */ var _services_create_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/create-user.service */ "./src/app/services/create-user.service.ts");
 
 
 
 
 let InscriptionComponent = class InscriptionComponent {
-    constructor(formBuilder, router, authenticationService, userService, alertService) {
-        this.formBuilder = formBuilder;
-        this.router = router;
-        this.authenticationService = authenticationService;
-        this.userService = userService;
-        this.alertService = alertService;
+    constructor(fb, streamUserCreated) {
+        this.fb = fb;
+        this.streamUserCreated = streamUserCreated;
         this.loading = false;
         this.submitted = false;
-        // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) {
-            //this.router.navigate(['/']);
-        }
+        this.ACCUEIL = "Accueil";
+        this.LOGIN = "Login";
+        this.form = this.fb.group({
+            name: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            firstName: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            mail: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            mdp: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            mdpC: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            tel: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            rue: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            num: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            cp: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            ville: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+        });
     }
     ngOnInit() {
-        this.registerForm = this.formBuilder.group({
-            nomUtilisateur: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            prenomUtilisateur: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            mail: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            mdp: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            tel: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            rue: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            numRue: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            cp: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            ville: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-        });
+        this.listenStreamUserCreated();
     }
-    // convenience getter for easy access to form fields
-    get f() { return this.registerForm.controls; }
-    onSubmit() {
-        this.submitted = true;
-        // reset alerts on submit
-        this.alertService.clear();
-        // stop here if form is invalid
-        if (this.registerForm.invalid) {
-            return;
-        }
-        this.loading = true;
-        this.userService.register(this.registerForm.value)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["first"])())
-            .subscribe(data => {
-            this.alertService.success('Registration successful', true);
-            //this.router.navigate(['/login']);
-        }, error => {
-            this.alertService.error(error);
-            this.loading = false;
-        });
+    createUser($event) {
+        this.streamUserCreated.notify(this.buildUser());
+        this.form.reset();
+    }
+    listenStreamUserCreated() {
+        const sub = this.streamUserCreated.$userCreated.subscribe(users => this.createdUser(users));
+    }
+    buildUser() {
+        return {
+            nomUtilisateur: this.form.get("name").value,
+            prenomUtilisateur: this.form.get("firstName").value,
+            mail: this.form.get("mail").value,
+            mdp: this.form.get("mdp").value,
+            tel: this.form.get("tel").value,
+            rue: this.form.get("rue").value,
+            numRue: this.form.get("num").value,
+            cp: this.form.get("cp").value,
+            ville: this.form.get("ville").value,
+            //Modifier !!!!!!!!!!!!!!!!!!!!!!!!
+            token: null
+        };
+    }
+    createdUser(user) {
+        //  const sub = this.userService.post(user).subscribe(user => console.log());
     }
 };
 InscriptionComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: _routing_routing_module__WEBPACK_IMPORTED_MODULE_7__["RoutingModule"] },
-    { type: _services_authentification_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"] },
-    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"] },
-    { type: _services_alert_service__WEBPACK_IMPORTED_MODULE_6__["AlertService"] }
+    { type: _services_create_user_service__WEBPACK_IMPORTED_MODULE_3__["CreateUserService"] }
 ];
 InscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1367,9 +1308,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _services_authentification_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/authentification.service */ "./src/app/services/authentification.service.ts");
 /* harmony import */ var _services_alert_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/alert.service */ "./src/app/services/alert.service.ts");
-/* harmony import */ var _routing_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../routing/routing.module */ "./src/app/routing/routing.module.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
 
@@ -1422,8 +1361,8 @@ let LoginComponent = class LoginComponent {
 };
 LoginComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["ActivatedRoute"] },
-    { type: _routing_routing_module__WEBPACK_IMPORTED_MODULE_6__["RoutingModule"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"] },
     { type: _services_authentification_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"] },
     { type: _services_alert_service__WEBPACK_IMPORTED_MODULE_5__["AlertService"] }
 ];
@@ -1452,37 +1391,111 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
+/* harmony import */ var _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/marques.enum */ "./src/app/enums/marques.enum.ts");
+
 
 
 
 let CarteGPipe = class CarteGPipe {
-    transform(carteList, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, filter) {
+    transform(carteList, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, filter, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
         if (!filter) {
-            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL) {
+            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return carteList;
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return carteList.filter(cg => cg.prix <= 400.00);
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00);
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return carteList.filter(cg => cg.prix > 1000.00);
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return carteList.filter(cg => cg.marque.includes("MSI"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("MSI"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("MSI"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("MSI"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return carteList.filter(cg => cg.marque.includes("ASUS"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("ASUS"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("ASUS"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("ASUS"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                return carteList.filter(cg => cg.marque.includes("Gigabyte"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("Gigabyte"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("Gigabyte"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("Gigabyte"));
             }
         }
         else {
-            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL) {
+            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return carteList.filter(cg => cg.nom.includes(filter));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return carteList.filter(cg => cg.prix <= 400.00 && cg.nom.includes(filter));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.nom.includes(filter));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return carteList.filter(cg => cg.prix > 1000.00 && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return carteList.filter(cg => cg.marque.includes("MSI") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("MSI") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("MSI") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("MSI") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return carteList.filter(cg => cg.marque.includes("ASUS") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("ASUS") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("ASUS") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("ASUS") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                return carteList.filter(cg => cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
             }
         }
     }
@@ -1510,161 +1523,312 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/disque-d-ssd.enum */ "./src/app/enums/disque-d-ssd.enum.ts");
-/* harmony import */ var _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/disque-d-marque.enum */ "./src/app/enums/disque-d-marque.enum.ts");
-/* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
+/* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
+/* harmony import */ var _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../enums/marques.enum */ "./src/app/enums/marques.enum.ts");
 
 
 
 
 
 let DisqueDPipe = class DisqueDPipe {
-    transform(disqueDList, typeSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL, typeMarque = _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-        if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList;
+    transform(disqueDList, filter, typeSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+        if (!filter) {
+            if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList;
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.ssd);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => !dd.ssd);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.marque.includes("Lacie"));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie"));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie"));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.marque.includes("Toshiba"));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba"));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba"));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.marque.includes("Seagate"));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate"));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate"));
+            }
+            //PRIX INF400
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.ssd && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => !dd.ssd && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.prix <= 400.00);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.prix <= 400.00);
+            }
+            //PRIX SUP400 et inf 1000
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.prix > 400.00 && dd.prix <= 1000);
+            }
+            //PRIX SUP1000
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.prix > 1000);
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.prix > 1000);
+            }
         }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => dd.ssd);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => !dd.ssd);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => dd.marque.includes("Lacie"));
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie"));
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie"));
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => dd.marque.includes("Toshiba"));
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba"));
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba"));
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => dd.marque.includes("Seagate"));
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate"));
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].ALL) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate"));
-        }
-        //PRIX INF400
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => dd.ssd && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => !dd.ssd && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.prix <= 400.00);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF400) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.prix <= 400.00);
-        }
-        //PRIX SUP400 et inf 1000
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => dd.ssd && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => !dd.ssd && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].INF1000) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.prix > 400.00 && dd.prix <= 1000);
-        }
-        //PRIX SUP1000
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => dd.ssd && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => !dd.ssd && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.prix > 1000);
-        }
-        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_disque_d_marque_enum__WEBPACK_IMPORTED_MODULE_3__["DisqueDMarque"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_4__["Prix"].SUP1000) {
-            return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.prix > 1000);
+        else {
+            if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.ssd && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => !dd.ssd && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.nom.includes(filter));
+            }
+            //PRIX INF400
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.ssd && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => !dd.ssd && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.prix <= 400.00 && dd.nom.includes(filter));
+            }
+            //PRIX SUP400 et inf 1000
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.prix > 400.00 && dd.prix <= 1000 && dd.nom.includes(filter));
+            }
+            //PRIX SUP1000
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].ALL && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Lacie") && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Lacie") && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].LACIE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Lacie") && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Toshiba") && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].TOSHIBA && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Toshiba") && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.marque.includes("Seagate") && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].AVEC && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => dd.ssd && dd.marque.includes("Seagate") && dd.prix > 1000 && dd.nom.includes(filter));
+            }
+            else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_2__["DisqueDSsd"].SANS && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_4__["Marques"].SEAGATE && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000) {
+                return disqueDList.filter(dd => !dd.ssd && dd.marque.includes("Seagate") && dd.prix > 1000 && dd.nom.includes(filter));
+            }
         }
     }
 };
@@ -1691,72 +1855,136 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
-/* harmony import */ var _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/ordi-marque.enum */ "./src/app/enums/ordi-marque.enum.ts");
+/* harmony import */ var _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/marques.enum */ "./src/app/enums/marques.enum.ts");
 
 
 
 
 let OrdinateurPipe = class OrdinateurPipe {
-    transform(ordiList, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, typeMarque = _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ALL) {
-        if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ALL) {
-            return ordiList;
+    transform(ordiList, filter, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+        if (!filter) {
+            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return ordiList;
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00);
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00);
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00);
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                return ordiList.filter(ordi => ordi.marque.includes("ACER"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return ordiList.filter(ordi => ordi.marque.includes("ASUS"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                return ordiList.filter(ordi => ordi.marque.includes("HP"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return ordiList.filter(ordi => ordi.marque.includes("MSI"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI"));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI"));
+            }
         }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ALL) {
-            return ordiList.filter(ordi => ordi.prix <= 400.00);
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ALL) {
-            return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00);
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ALL) {
-            return ordiList.filter(ordi => ordi.prix > 1000.00);
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ACER) {
-            return ordiList.filter(ordi => ordi.marque.includes("ACER"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ACER) {
-            return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ACER) {
-            return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ACER) {
-            return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ASUS) {
-            return ordiList.filter(ordi => ordi.marque.includes("ASUS"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ASUS) {
-            return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ASUS) {
-            return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].ASUS) {
-            return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].HP) {
-            return ordiList.filter(ordi => ordi.marque.includes("HP"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].HP) {
-            return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].HP) {
-            return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].HP) {
-            return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].MSI) {
-            return ordiList.filter(ordi => ordi.marque.includes("MSI"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].MSI) {
-            return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].MSI) {
-            return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI"));
-        }
-        else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_ordi_marque_enum__WEBPACK_IMPORTED_MODULE_3__["OrdiMarque"].MSI) {
-            return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI"));
+        else {
+            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return ordiList.filter(ordi => ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                return ordiList.filter(ordi => ordi.marque.includes("ACER") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return ordiList.filter(ordi => ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                return ordiList.filter(ordi => ordi.marque.includes("HP") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return ordiList.filter(ordi => ordi.marque.includes("MSI") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter));
+            }
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter));
+            }
         }
     }
 };
@@ -1782,92 +2010,92 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProcesseurPipePipe", function() { return ProcesseurPipePipe; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/proc-marque.enum */ "./src/app/enums/proc-marque.enum.ts");
-/* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
+/* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
+/* harmony import */ var _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/marques.enum */ "./src/app/enums/marques.enum.ts");
 
 
 
 
 let ProcesseurPipePipe = class ProcesseurPipePipe {
-    transform(procList, filter, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL, typeMarque = _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].ALL) {
+    transform(procList, filter, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
         //TOUTES MARQUES
-        if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].ALL) {
+        if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
             return procList.filter(proc => proc.prix <= 400.00);
         }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].ALL) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
             return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00);
         }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].ALL) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
             return procList.filter(proc => proc.prix > 1000.00);
         }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].ALL) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
             return procList;
         }
         //UNIQUEMENT INTEL
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].Intel) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
             return procList.filter(proc => proc.prix <= 400.00 && proc.marque.includes("Intel"));
         }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].Intel) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
             return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("Intel"));
         }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].Intel) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
             return procList.filter(proc => proc.prix > 1000.00 && proc.marque.includes("Intel"));
         }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].Intel) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
             return procList.filter(proc => proc.prix > 0.00 && proc.marque.includes("Intel"));
         }
         //UNIQUEMENT AMD
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].AMD) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
             return procList.filter(proc => proc.prix <= 400.00 && proc.marque.includes("AMD"));
         }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].AMD) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
             return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("AMD"));
         }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].AMD) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
             return procList.filter(proc => proc.prix > 1000.00 && proc.marque.includes("AMD"));
         }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].AMD) {
+        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
             return procList.filter(proc => proc.prix > 0.00 && proc.marque.includes("AMD"));
         }
         //SI LE NOM N'EST PAS VIDE
         else {
             //TOUTES MARQUES
-            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].ALL) {
+            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00);
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].ALL) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00);
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].ALL) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00);
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].ALL) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00);
             }
             //UNIQUEMENT INTEL
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].Intel) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00 && proc.marque.includes("Intel"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].Intel) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("Intel"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].Intel) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00 && proc.marque.includes("Intel"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].Intel) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00 && proc.marque.includes("Intel"));
             }
             //UNIQUEMENT AMD
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].AMD) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00 && proc.marque.includes("AMD"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].AMD) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("AMD"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000 && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].AMD) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00 && proc.marque.includes("AMD"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL && typeMarque == _enums_proc_marque_enum__WEBPACK_IMPORTED_MODULE_2__["ProcMarque"].AMD) {
+            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
                 return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00 && proc.marque.includes("AMD"));
             }
         }
@@ -2179,6 +2407,41 @@ CarteGServiceService = CarteGServiceService_1 = tslib__WEBPACK_IMPORTED_MODULE_0
         providedIn: 'root'
     })
 ], CarteGServiceService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/create-user.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/create-user.service.ts ***!
+  \*************************************************/
+/*! exports provided: CreateUserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateUserService", function() { return CreateUserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let CreateUserService = class CreateUserService {
+    constructor() {
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.$userCreated = this.subject.asObservable();
+    }
+    notify(user) {
+        this.subject.next(user);
+    }
+};
+CreateUserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CreateUserService);
 
 
 
@@ -2606,7 +2869,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI\computer-horizon\site\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\HELHA\bloc3\projetTi\computer-horizon\site\src\main.ts */"./src/main.ts");
 
 
 /***/ })
