@@ -34,7 +34,7 @@ namespace ComputerHorizon.ComponentsDAO
         
             //AJOUTER UN NOUVEAU Utilisateur
         private static readonly string REQ_POST = 
-            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR},{FIELD_MAIL},{FIELD_MDP},{FIELD_TEL},{FIELD_RUE},{FIELD_NUMRUE},{FIELD_CP},{FIELD_VILLE}" +
+            $"INSERT INTO {TABLE_NAME} ({FIELD_NOM_UTILISATEUR},{FIELD_PRENOM_UTILISATEUR},{FIELD_MAIL},{FIELD_MDP},{FIELD_TEL},{FIELD_RUE},{FIELD_NUMRUE},{FIELD_CP},{FIELD_VILLE})" +
             //$" OUTPUT Inserted.{FIELD_IDPANIER}" +
             $" VALUES (@{FIELD_NOM_UTILISATEUR},@{FIELD_PRENOM_UTILISATEUR},@{FIELD_MAIL},@{FIELD_MDP},@{FIELD_TEL},@{FIELD_RUE},@{FIELD_NUMRUE},@{FIELD_CP},@{FIELD_VILLE})";
         
@@ -108,7 +108,8 @@ namespace ComputerHorizon.ComponentsDAO
                 command.Parameters.AddWithValue($"@{FIELD_NUMRUE}", user.NumRue);
                 command.Parameters.AddWithValue($"@{FIELD_CP}", user.Cp);
                 command.Parameters.AddWithValue($"@{FIELD_VILLE}", user.Ville);
-                user.Mail = (string)command.ExecuteScalar(); 
+                //user.Mail = (string)command.ExecuteScalar(); 
+                command.ExecuteNonQuery();
             }
             return user;
         }

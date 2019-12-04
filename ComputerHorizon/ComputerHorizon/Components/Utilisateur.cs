@@ -16,10 +16,10 @@ namespace ComputerHorizon.Components
         public string NumRue { get; set; }
         public int Cp { get; set; }
         public string Ville { get; set; }
-        public int IdPanier { get; set; }
+        //public int IdPanier { get; set; }
 
 
-        public Utilisateur(string nomUtilisateur, string prenomUtilisateur, string mail, string mdp, string tel, string rue, string numRue, int cp, string ville,int idPanier, string token)
+        public Utilisateur(string nomUtilisateur, string prenomUtilisateur, string mail, string mdp, string tel, string rue, string numRue, int cp, string ville/*,int idPanier, string token*/)
         {
             NomUtilisateur = nomUtilisateur;
             PrenomUtilisateur = prenomUtilisateur;
@@ -30,7 +30,7 @@ namespace ComputerHorizon.Components
             NumRue = numRue;
             Cp = cp;
             Ville = ville;
-            IdPanier = idPanier;
+            //IdPanier = idPanier;
         }
 
         public Utilisateur()

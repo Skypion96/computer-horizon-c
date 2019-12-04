@@ -32,7 +32,33 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"acceuil\">\r\n\r\n  <h1 class=\"welcome\">BIENVENUE</h1>\r\n\r\n</div>\r\n<br>\r\n<div>\r\n  <div class=\"view2\">\r\n    <img src=\"{{newHorizon}}\" width=\"700px\" height=\"393px\"/>\r\n  </div>\r\n</div>\r\n<br><br><br><br>\r\n\r\n<h1>Hi {{currentUser.nomUtilisateur}} {{currentUser.prenomUtilisateur}}!</h1>\r\n<p>You're logged in with Angular 8!!</p>\r\n<h3>All registered users:</h3>\r\n<ul>\r\n  <li *ngFor=\"let user of users\">\r\n    {{user.username}} ({{user.nomUtilisateur}} {{user.prenomUtilisateur}})\r\n    - <a (click)=\"deleteUser(user.mail)\" class=\"text-danger\">Delete</a>\r\n  </li>\r\n</ul>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"acceuil\">\r\n\r\n  <h1 class=\"welcome\">BIENVENUE</h1>\r\n\r\n</div>\r\n<br>\r\n<div>\r\n  <div class=\"view2\">\r\n    <img src=\"{{newHorizon}}\" width=\"700px\" height=\"393px\"/>\r\n  </div>\r\n</div>\r\n<br><br><br><br>\r\n\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin/Ajout/ajout-component/ajout-component.component.html":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/admin/Ajout/ajout-component/ajout-component.component.html ***!
+  \******************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"margin-top: 10%\">\r\n  <button [routerLink]=\"'/'+ADMIN\">Retour en arrière</button>\r\n</div>\r\n\r\n<div class=\"processeur\">\r\n  <h3>AJOUT PROCESSEUR</h3>\r\n  <form [formGroup]=\"form\" (ngSubmit)=\"createProc($event)\">\r\n    <div>\r\n      <label for=\"nom\">Nom : </label>\r\n      <input type=\"text\" formControlName=\"nom\" id=\"nom\">\r\n    </div>\r\n    <div>\r\n      <label for=\"marque\">Marque : </label>\r\n      <input type=\"text\" formControlName=\"marque\" id=\"marque\">\r\n    </div>\r\n    <div>\r\n      <label for=\"nbCoeurs\">nbCoeurs : </label>\r\n      <input type=\"text\" formControlName=\"nbCoeurs\" id=\"nbCoeurs\">\r\n    </div>\r\n    <div>\r\n      <label for=\"frequence\">Frequence : </label>\r\n      <input type=\"text\" formControlName=\"frequence\" id=\"frequence\">\r\n    </div>\r\n    <div>\r\n      <label for=\"prix\">Prix : </label>\r\n      <input type=\"text\" formControlName=\"prix\" id=\"prix\">\r\n    </div>\r\n    <div>\r\n      <label for=\"qte\">Quantite : </label>\r\n      <input type=\"text\" formControlName=\"qte\" id=\"qte\">\r\n    </div>\r\n    <div>\r\n      <label for=\"img\">Img : </label>\r\n      <input type=\"text\" formControlName=\"img\" id=\"img\">\r\n    </div>\r\n    <button class=\"addbtn\" [disabled]=\"!form.valid\">Ajouter</button>\r\n  </form>\r\n</div>\r\n\r\n<div class=\"carteG\">\r\n  <h3>AJOUT CARTE GRAPHIQUE</h3>\r\n  <form [formGroup]=\"formCG\" (ngSubmit)=\"createCG($event)\">\r\n    <div>\r\n      <label for=\"nomCG\">Nom : </label>\r\n      <input type=\"text\" formControlName=\"nomCG\" id=\"nomCG\">\r\n    </div>\r\n    <div>\r\n      <label for=\"marqueCG\">Marque : </label>\r\n      <input type=\"text\" formControlName=\"marqueCG\" id=\"marqueCG\">\r\n    </div>\r\n    <div>\r\n      <label for=\"prixCG\">Prix : </label>\r\n      <input type=\"text\" formControlName=\"prixCG\" id=\"prixCG\">\r\n    </div>\r\n    <div>\r\n      <label for=\"frequenceCG\">Frequence : </label>\r\n      <input type=\"text\" formControlName=\"frequenceCG\" id=\"frequenceCG\">\r\n    </div>\r\n    <div>\r\n      <label for=\"memoireVideoCG\">mMémoire Video : </label>\r\n      <input type=\"text\" formControlName=\"memoireVideoCG\" id=\"memoireVideoCG\">\r\n    </div>\r\n    <div>\r\n      <label for=\"qteCG\">Quantite : </label>\r\n      <input type=\"text\" formControlName=\"qteCG\" id=\"qteCG\">\r\n    </div>\r\n    <div>\r\n      <label for=\"imgCG\">Img : </label>\r\n      <input type=\"text\" formControlName=\"imgCG\" id=\"imgCG\">\r\n    </div>\r\n    <button class=\"addbtn\" [disabled]=\"!formCG.valid\">Ajouter</button>\r\n  </form>\r\n</div>\r\n\r\n\r\n<div class=\"disqueD\">\r\n  <h3>AJOUT DISQUE DUR</h3>\r\n  <form [formGroup]=\"formDD\" (ngSubmit)=\"createDD($event)\">\r\n    <div>\r\n      <label for=\"nomDD\">Nom : </label>\r\n      <input type=\"text\" formControlName=\"nomDD\" id=\"nomDD\">\r\n    </div>\r\n    <div>\r\n      <label for=\"marqueDD\">Marque : </label>\r\n      <input type=\"text\" formControlName=\"marqueDD\" id=\"marqueDD\">\r\n    </div>\r\n    <div>\r\n      <label for=\"capaciteDD\">Capacite : </label>\r\n      <input type=\"text\" formControlName=\"capaciteDD\" id=\"capaciteDD\">\r\n    </div>\r\n    <div>\r\n      <label for=\"ssdDD\">SSD : </label>\r\n      <input type=\"checkbox\" formControlName=\"ssdDD\" id=\"ssdDD\">\r\n    </div>\r\n    <div>\r\n      <label for=\"prixDD\">Prix : </label>\r\n      <input type=\"text\" formControlName=\"prixDD\" id=\"prixDD\">\r\n    </div>\r\n    <div>\r\n      <label for=\"interneDD\">Interne : </label>\r\n      <input type=\"checkbox\"  formControlName=\"interneDD\" id=\"interneDD\">\r\n    </div>\r\n    <div>\r\n      <label for=\"qteDD\">Quantite : </label>\r\n      <input type=\"text\" formControlName=\"qteDD\" id=\"qteDD\">\r\n    </div>\r\n    <div>\r\n      <label for=\"imgDD\">Img : </label>\r\n      <input type=\"text\" formControlName=\"imgDD\" id=\"imgDD\">\r\n    </div>\r\n    <button class=\"addbtn\" [disabled]=\"!formDD.valid\">Ajouter</button>\r\n  </form>\r\n</div>\r\n\r\n<div class=\"ordinateur\">\r\n  <h3>AJOUT ORDINATEUR</h3>\r\n  <form [formGroup]=\"formOrdi\" (ngSubmit)=\"createOrdi($event)\">\r\n    <div>\r\n      <label for=\"nomOrdi\">Nom : </label>\r\n      <input type=\"text\" formControlName=\"nomOrdi\" id=\"nomOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"marqueOrdi\">Marque : </label>\r\n      <input type=\"text\" formControlName=\"marqueOrdi\" id=\"marqueOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"prixOrdi\">Prix : </label>\r\n      <input type=\"text\" formControlName=\"prixOrdi\" id=\"prixOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"nomProcOrdi\">Nom processeur : </label>\r\n      <input type=\"text\" formControlName=\"nomProcOrdi\" id=\"nomProcOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"nomCgOrdi\">Nom carte graphique : </label>\r\n      <input type=\"text\" formControlName=\"nomCgOrdi\" id=\"nomCgOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"capaciteOrdi\">Capacite : </label>\r\n      <input type=\"text\" formControlName=\"capaciteOrdi\" id=\"capaciteOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"memoireVOrdi\">Memoire V : </label>\r\n      <input type=\"text\" formControlName=\"memoireVOrdi\" id=\"memoireVOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"ssdOrdi\">SSD : </label>\r\n      <input type=\"checkbox\" formControlName=\"ssdOrdi\" id=\"ssdOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"descriptionOrdi\">Description : </label>\r\n      <input type=\"text\" formControlName=\"descriptionOrdi\" id=\"descriptionOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"qteOrdi\">Quantite : </label>\r\n      <input type=\"text\" formControlName=\"qteOrdi\" id=\"qteOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"capaciteSsdOrdi\">Capacite SSD : </label>\r\n      <input type=\"text\"  formControlName=\"capaciteSsdOrdi\" id=\"capaciteSsdOrdi\">\r\n    </div>\r\n    <div>\r\n      <label for=\"imgOrdi\">Img : </label>\r\n      <input type=\"text\" formControlName=\"imgOrdi\" id=\"imgOrdi\">\r\n    </div>\r\n    <button class=\"addbtn\" [disabled]=\"!formOrdi.valid\">Ajouter</button>\r\n  </form>\r\n</div>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin/admin.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/admin/admin.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"margin-top: 10%\">\r\n  <button (click)=\"iElement=1\">Afficher les cartes graphiques</button>\r\n  <button (click)=\"iElement=2\">Afficher les disques durs</button>\r\n  <button (click)=\"iElement=3\">Afficher les ordinateurs</button>\r\n  <button (click)=\"iElement=4\">Afficher les processeurs</button>\r\n  <button [routerLink]=\"'/'+AJOUTPROC\">Ajouter un nouveau élément</button>\r\n  <button [routerLink]=\"'/'+MODIF\">Modifier des données</button>\r\n</div>\r\n\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\" *ngIf=\"iElement==1;then thenBlockCG\"></div>\r\n<ng-template #thenBlockCG>\r\n  <ul>\r\n      <li class=\"cg\" *ngFor=\"let cg of carteGList; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{cg.img}}\"/>\r\n          <div>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n              </tr>\r\n            </table>\r\n          </div>\r\n          <button (click)=\"deleteAndSaveCGList(cg)\">DELETE</button>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n</ng-template>\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\" >\r\n  <div class=\"disqueD\" *ngIf=\"iElement==2;then thenBlockDD\"></div>\r\n    <ng-template #thenBlockDD>\r\n      <ul>\r\n        <li class=\"dd\" *ngFor=\"let dd of disqueDList; index as i\">\r\n          <div class=\"card\" >\r\n            <img src=\"{{dd.img}}\"/>\r\n            <div>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n            </div>\r\n            <button (click)=\"deleteAndSaveDDList(dd)\">DELETE</button>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n  </ng-template>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\" >\r\n  <div class=\"ordinateur\" *ngIf=\"iElement==3;then thenBlockOrdi\"></div>\r\n  <ng-template #thenBlockOrdi>\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of ordiList; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n              </tr>\r\n            </table>\r\n          </div>\r\n          <button (click)=\"deleteAndSaveOrdiList(ordi)\">DELETE</button>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\" *ngIf=\"iElement==4;then thenBlockProc\">  </div>\r\n  <ng-template #thenBlockProc>\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of _procList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <div>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : </b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n              </tr>\r\n            </table>\r\n          </div>\r\n          <button (click)=\"deleteAndSaveProcList(proc)\">DELETE</button>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n\r\n\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -123,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Register</h2>\r\n<form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"nomUtilisateur\">Nom</label>\r\n    <input type=\"text\" formControlName=\"nomUtilisateur\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.nomUtilisateur.errors }\" />\r\n    <div *ngIf=\"submitted && f.nomUtilisateur.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.nomUtilisateur.errors.required\">Nom is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"prenomUtilisateur\">Prenom</label>\r\n    <input type=\"text\" formControlName=\"prenomUtilisateur\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.prenomUtilisateur.errors }\" />\r\n    <div *ngIf=\"submitted && f.prenomUtilisateur.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.prenomUtilisateur.errors.required\">Prenom is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"password\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"tel\">Tel</label>\r\n    <input type=\"text\" formControlName=\"tel\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.tel.errors }\" />\r\n    <div *ngIf=\"submitted && f.tel.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.tel.errors.required\">Tel is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"rue\">Rue</label>\r\n    <input type=\"text\" formControlName=\"rue\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.rue.errors }\" />\r\n    <div *ngIf=\"submitted && f.rue.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.rue.errors.required\">Rue is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"numRue\">Numéro</label>\r\n    <input type=\"text\" formControlName=\"numRue\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.numRue.errors }\" />\r\n    <div *ngIf=\"submitted && f.numRue.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.numRue.errors.required\">Numéro is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"cp\">Code postal</label>\r\n    <input type=\"text\" formControlName=\"cp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.cp.errors }\" />\r\n    <div *ngIf=\"submitted && f.cp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.cp.errors.required\">Code postal is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"ville\">Ville</label>\r\n    <input type=\"text\" formControlName=\"ville\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.ville.errors }\" />\r\n    <div *ngIf=\"submitted && f.ville.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.ville.errors.required\">Ville is required</div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Register\r\n    </button>\r\n    <a [routerLink]=\"'/'+ACCUEIL\" class=\"btn btn-link\">Cancel</a>\r\n  </div>\r\n</form>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Inscription</h2>\r\n<form [formGroup]=\"form\" (ngSubmit)=\"createUser($event)\">\r\n  <label for=\"nom\">Nom: </label>\r\n  <input id=\"nom\" type=\"text\" placeholder=\"ex: Dupont\" formControlName=\"nom\" [required]>\r\n\r\n  <label for=\"prenom\">Prénom: </label>\r\n  <input id=\"prenom\" type=\"text\" placeholder=\"ex: Jean\" formControlName=\"prenom\">\r\n\r\n  <label for=\"mail\">E-mail: </label>\r\n  <input id=\"mail\" type=\"text\" placeholder=\"ex: dupont@gmail.com\" formControlName=\"mail\">\r\n\r\n  <label for=\"mdp\">Mot de passe: </label>\r\n  <input id=\"mdp\" type=\"password\" formControlName=\"mdp\">\r\n\r\n  <label for=\"mdpC\">Confirmer le mot de passe: </label>\r\n  <input id=\"mdpC\" type=\"password\" formControlName=\"mdpC\">\r\n\r\n  <label for=\"tel\">Numéro de téléphone: </label>\r\n  <input id=\"tel\" type=\"number\" placeholder=\"ex: 0468802058\" formControlName=\"tel\">\r\n\r\n  <label for=\"rue\">Rue: </label>\r\n  <input id=\"rue\" type=\"text\" placeholder=\"ex: Rue de l'Église\" formControlName=\"rue\">\r\n\r\n  <label for=\"num\">Numéro: </label>\r\n  <input id=\"num\" type=\"text\" placeholder=\"20A\" formControlName=\"num\">\r\n\r\n  <label for=\"cp\">Code postal: </label>\r\n  <input id=\"cp\" type=\"number\" placeholder=\"ex: 7000\" formControlName=\"cp\">\r\n\r\n  <label for=\"ville\">Ville: </label>\r\n  <input id=\"ville\" type=\"text\" placeholder=\"ex: Mons\" formControlName=\"ville\">\r\n\r\n  <button>S'inscrire</button>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -136,7 +162,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Login</h2>\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n  <div class=\"form-group\">\n    <label for=\"mail\">Mail</label>\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"mdp\">Mot de passe</label>\n    <input type=\"mdp\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\n      Login\n    </button>\n    <a routerLink=\"/register\" class=\"btn btn-link\">Register</a>\n  </div>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Login</h2>\r\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"mdp\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Login\r\n    </button>\r\n    <a [routerLink]=\"'/'+INSCRIPTION\" class=\"btn btn-link\">Register</a>\r\n  </div>\r\n</form>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/panier/panier.component.html":
+/*!************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/panier/panier.component.html ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n\n</div>\n");
 
 /***/ }),
 
@@ -457,6 +496,373 @@ AccueilComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/admin/Ajout/ajout-component/ajout-component.component.css":
+/*!***************************************************************************!*\
+  !*** ./src/app/admin/Ajout/ajout-component/ajout-component.component.css ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".processeur{\r\n  margin-left: 5%;\r\n  margin-top: 5%;\r\n  float: left;\r\n}\r\n\r\n.disqueD{\r\n  margin-top: 5%;\r\n  margin-left: 5%;\r\n  float: left;\r\n}\r\n\r\n.carteG{\r\n  margin-top: 5%;\r\n  margin-left: 5%;\r\n  float: left;\r\n}\r\n\r\n.ordinateur{\r\n  margin-top: 5%;\r\n  margin-left: 5%;\r\n  float: left;\r\n}\r\n\r\nbutton{\r\n  margin-left: 2%;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n}\r\n\r\n.addbtn{\r\n  margin-top: 2%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vQWpvdXQvYWpvdXQtY29tcG9uZW50L2Fqb3V0LWNvbXBvbmVudC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLGNBQWM7RUFDZCxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsZUFBZTtFQUNmLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxlQUFlO0VBQ2YsV0FBVztBQUNiOztBQUVBO0VBQ0UsY0FBYztFQUNkLGVBQWU7RUFDZixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvYWRtaW4vQWpvdXQvYWpvdXQtY29tcG9uZW50L2Fqb3V0LWNvbXBvbmVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb2Nlc3NldXJ7XHJcbiAgbWFyZ2luLWxlZnQ6IDUlO1xyXG4gIG1hcmdpbi10b3A6IDUlO1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4uZGlzcXVlRHtcclxuICBtYXJnaW4tdG9wOiA1JTtcclxuICBtYXJnaW4tbGVmdDogNSU7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbi5jYXJ0ZUd7XHJcbiAgbWFyZ2luLXRvcDogNSU7XHJcbiAgbWFyZ2luLWxlZnQ6IDUlO1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4ub3JkaW5hdGV1cntcclxuICBtYXJnaW4tdG9wOiA1JTtcclxuICBtYXJnaW4tbGVmdDogNSU7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbmJ1dHRvbntcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG59XHJcblxyXG4uYWRkYnRue1xyXG4gIG1hcmdpbi10b3A6IDIlO1xyXG59XHJcbiJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/admin/Ajout/ajout-component/ajout-component.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/admin/Ajout/ajout-component/ajout-component.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: AjoutComponentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AjoutComponentComponent", function() { return AjoutComponentComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _services_create_proc_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/create-proc.service */ "./src/app/services/create-proc.service.ts");
+/* harmony import */ var _services_proc_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/proc-service.service */ "./src/app/services/proc-service.service.ts");
+/* harmony import */ var _services_create_carte_g_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/create-carte-g.service */ "./src/app/services/create-carte-g.service.ts");
+/* harmony import */ var _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/carte-gservice.service */ "./src/app/services/carte-gservice.service.ts");
+/* harmony import */ var _services_create_disque_d_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../services/create-disque-d.service */ "./src/app/services/create-disque-d.service.ts");
+/* harmony import */ var _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../services/disque-dservice.service */ "./src/app/services/disque-dservice.service.ts");
+/* harmony import */ var _services_create_ordi_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../services/create-ordi.service */ "./src/app/services/create-ordi.service.ts");
+/* harmony import */ var _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../services/ordi-service.service */ "./src/app/services/ordi-service.service.ts");
+
+
+
+
+
+
+
+
+
+
+
+let AjoutComponentComponent = class AjoutComponentComponent {
+    constructor(fb, fbCG, streamUserCreated, procService, streamCGCreated, carteGService, fbDD, streamDDCreated, disqueDService, fbOrdi, streamOrdiCreated, ordiService) {
+        this.fb = fb;
+        this.fbCG = fbCG;
+        this.streamUserCreated = streamUserCreated;
+        this.procService = procService;
+        this.streamCGCreated = streamCGCreated;
+        this.carteGService = carteGService;
+        this.fbDD = fbDD;
+        this.streamDDCreated = streamDDCreated;
+        this.disqueDService = disqueDService;
+        this.fbOrdi = fbOrdi;
+        this.streamOrdiCreated = streamOrdiCreated;
+        this.ordiService = ordiService;
+        this.AJOUTPROC = "AjoutProc";
+        this.ADMIN = "Admin";
+        this.form = this.fb.group({
+            nom: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            marque: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            nbCoeurs: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            frequence: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            prix: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            qte: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            img: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+        });
+        /////////////////////////////////////////////////////////
+        this.formCG = this.fbCG.group({
+            nomCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            marqueCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            prixCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            frequenceCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            memoireVideoCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            qteCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            imgCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+        });
+        //////////////////////////////////////////////////////
+        this._ssdbool = false;
+        this.formDD = this.fbDD.group({
+            nomDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            marqueDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            capaciteDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            ssdDD: this.fbDD.control(''),
+            prixDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            interneDD: this.fbDD.control(''),
+            qteDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            imgDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+        });
+        /////////////////////////////////////////////////////////////////////////////
+        this.formOrdi = this.fbOrdi.group({
+            nomOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            marqueOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            prixOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            nomProcOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            nomCgOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            capaciteOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            memoireVOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            ssdOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            descriptionOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            qteOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            capaciteSsdOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            imgOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+        });
+    }
+    ngOnInit() {
+        this.listenStreamProcCreated();
+        this.listenStreamCGCreated();
+        this.listenStreamDDCreated();
+        this.listenStreamOrdiCreated();
+    }
+    createProc($event) {
+        this.streamUserCreated.notify(this.buildUser());
+        this.form.reset();
+    }
+    listenStreamProcCreated() {
+        const sub = this.streamUserCreated.$procCreated.subscribe(users => this.createdProc(users));
+    }
+    buildUser() {
+        return {
+            nom: this.form.get("nom").value,
+            marque: this.form.get("marque").value,
+            nbCoeurs: this.form.get("nbCoeurs").value,
+            frequence: this.form.get("frequence").value,
+            prix: this.form.get("prix").value,
+            qte: this.form.get("qte").value,
+            img: this.form.get("img").value,
+            reduction: 0,
+            cote: 0,
+            dateCote: "00/00/00",
+            prixReduc: 0.00,
+        };
+    }
+    createdProc(proc) {
+        const sub = this.procService.post(proc).subscribe(proc => console.log());
+    }
+    createCG($event) {
+        this.streamCGCreated.notify(this.buildCG());
+        this.formCG.reset();
+    }
+    listenStreamCGCreated() {
+        const sub = this.streamCGCreated.$carteGCreated.subscribe(users => this.createdCG(users));
+    }
+    buildCG() {
+        return {
+            nom: this.formCG.get("nomCG").value,
+            marque: this.formCG.get("marqueCG").value,
+            prix: this.formCG.get("prixCG").value,
+            frequence: this.formCG.get("frequenceCG").value,
+            memoireVideo: this.formCG.get("memoireVideoCG").value,
+            qte: this.formCG.get("qteCG").value,
+            img: this.formCG.get("imgCG").value,
+            prixReduc: 0.00,
+        };
+    }
+    createdCG(cg) {
+        const sub = this.carteGService.post(cg).subscribe(proc => console.log());
+    }
+    get ssdbool() {
+        return this._ssdbool;
+    }
+    set ssdbool(value) {
+        this._ssdbool = value;
+    }
+    createDD($event) {
+        console.log(this.formDD.get("ssdDD").value);
+        this.streamDDCreated.notify(this.buildDD());
+        this.formDD.reset();
+    }
+    listenStreamDDCreated() {
+        const sub = this.streamDDCreated.$disqueDCreated.subscribe(users => this.createdDD(users));
+    }
+    buildDD() {
+        return {
+            nom: this.formDD.get("nomDD").value,
+            marque: this.formDD.get("marqueDD").value,
+            capacite: this.formDD.get("capaciteDD").value,
+            ssd: this.formDD.get("ssdDD").value,
+            prix: this.formDD.get("prixDD").value,
+            interne: this.formDD.get("interneDD").value,
+            qte: this.formDD.get("qteDD").value,
+            img: this.formDD.get("imgDD").value,
+            prixReduc: 0.00,
+        };
+    }
+    createdDD(dd) {
+        const sub = this.disqueDService.post(dd).subscribe(proc => console.log());
+    }
+    createOrdi($event) {
+        this.streamOrdiCreated.notify(this.buildOrdi());
+        this.formOrdi.reset();
+    }
+    listenStreamOrdiCreated() {
+        const sub = this.streamOrdiCreated.$ordiCreated.subscribe(users => this.createdOrdi(users));
+    }
+    buildOrdi() {
+        return {
+            nom: this.formOrdi.get("nomOrdi").value,
+            marque: this.formOrdi.get("marqueOrdi").value,
+            prix: this.formOrdi.get("prixOrdi").value,
+            nomProc: this.formOrdi.get("nomProcOrdi").value,
+            nomCg: this.formOrdi.get("nomCgOrdi").value,
+            capacite: this.formOrdi.get("capaciteOrdi").value,
+            memoireV: this.formOrdi.get("memoireVOrdi").value,
+            ssd: this.formOrdi.get("ssdOrdi").value,
+            description: this.formOrdi.get("descriptionOrdi").value,
+            qte: this.formOrdi.get("qteOrdi").value,
+            capaciteSsd: this.formOrdi.get("capaciteSsdOrdi").value,
+            img: this.formOrdi.get("imgOrdi").value,
+            prixReduc: 0.00,
+        };
+    }
+    createdOrdi(ordi) {
+        const sub = this.ordiService.post(ordi).subscribe(proc => console.log());
+    }
+};
+AjoutComponentComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _services_create_proc_service__WEBPACK_IMPORTED_MODULE_3__["CreateProcService"] },
+    { type: _services_proc_service_service__WEBPACK_IMPORTED_MODULE_4__["ProcServiceService"] },
+    { type: _services_create_carte_g_service__WEBPACK_IMPORTED_MODULE_5__["CreateCarteGService"] },
+    { type: _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_6__["CarteGServiceService"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _services_create_disque_d_service__WEBPACK_IMPORTED_MODULE_7__["CreateDisqueDService"] },
+    { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_8__["DisqueDServiceService"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _services_create_ordi_service__WEBPACK_IMPORTED_MODULE_9__["CreateOrdiService"] },
+    { type: _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_10__["OrdiServiceService"] }
+];
+AjoutComponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-ajout-component',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./ajout-component.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin/Ajout/ajout-component/ajout-component.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./ajout-component.component.css */ "./src/app/admin/Ajout/ajout-component/ajout-component.component.css")).default]
+    })
+], AjoutComponentComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/admin/admin.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/admin/admin.component.css ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 10%;\r\n  margin-right: 20%;\r\n  width: 450px;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 150px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 10px;\r\n}\r\n\r\nbutton{\r\n  margin-left: 2%;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vYWRtaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxzQ0FBc0M7RUFDdEMsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IsVUFBVTtBQUNaOztBQUVBO0VBQ0Usc0NBQXNDO0VBQ3RDLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9hZG1pbi9hZG1pbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmR7XHJcbiAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxuICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICBtYXJnaW4tbGVmdDogMTAlO1xyXG4gIG1hcmdpbi1yaWdodDogMjAlO1xyXG4gIHdpZHRoOiA0NTBweDtcclxufVxyXG5cclxuLmRlc2NyaXB0aW9ue1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG5cclxuaW1ne1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGhlaWdodDogMTUwcHg7XHJcbiAgd2lkdGg6IDMwJTtcclxufVxyXG5cclxuLm5vbXtcclxuICBmb250LWZhbWlseTogJ1lhbnRyYW1hbmF2Jywgc2Fucy1zZXJpZjtcclxuICBmb250LXNpemU6IDEwcHg7XHJcbn1cclxuXHJcbmJ1dHRvbntcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuIl19 */");
+
+/***/ }),
+
+/***/ "./src/app/admin/admin.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/admin/admin.component.ts ***!
+  \******************************************/
+/*! exports provided: AdminComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return AdminComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_proc_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/proc-service.service */ "./src/app/services/proc-service.service.ts");
+/* harmony import */ var _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/disque-dservice.service */ "./src/app/services/disque-dservice.service.ts");
+/* harmony import */ var _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/ordi-service.service */ "./src/app/services/ordi-service.service.ts");
+/* harmony import */ var _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/carte-gservice.service */ "./src/app/services/carte-gservice.service.ts");
+
+
+
+
+
+
+let AdminComponent = class AdminComponent {
+    constructor(procService, disqueDService, ordiService, carteGService) {
+        this.procService = procService;
+        this.disqueDService = disqueDService;
+        this.ordiService = ordiService;
+        this.carteGService = carteGService;
+        this.carteGList = [];
+        this.disqueDList = [];
+        this.ordiList = [];
+        this._iElement = 0;
+        this.AJOUTPROC = "Ajout";
+        this.MODIF = "Modif";
+    }
+    ngOnInit() {
+        this.loadProcList();
+        this.loadDDList();
+        this.loadOrdiList();
+        this.loadCGList();
+    }
+    ngOnDestroy() {
+        this.subQuery && this.subQuery.unsubscribe();
+    }
+    loadOrdiList() {
+        this.subQuery = this.ordiService
+            .queryBase()
+            .subscribe(ordis => this.ordiList = ordis);
+    }
+    loadCGList() {
+        this.subQuery = this.carteGService
+            .queryBase()
+            .subscribe(carteG => this.carteGList = carteG);
+    }
+    loadDDList() {
+        this.subQuery = this.disqueDService
+            .queryBase()
+            .subscribe(disqueDs => this.disqueDList = disqueDs);
+    }
+    loadProcList() {
+        this.subQuery = this.procService
+            .queryBase()
+            .subscribe(procs => this._procList = procs);
+    }
+    get iElement() {
+        return this._iElement;
+    }
+    set iElement(value) {
+        this._iElement = value;
+    }
+    deleteAndSaveProcList(proc) {
+        this.procService
+            .delete(proc.nom)
+            .subscribe(() => this.loadProcList());
+    }
+    deleteAndSaveOrdiList(ordi) {
+        this.ordiService
+            .delete(ordi.nom)
+            .subscribe(() => this.loadOrdiList());
+    }
+    deleteAndSaveCGList(carteG) {
+        this.carteGService
+            .delete(carteG.nom)
+            .subscribe(() => this.loadCGList());
+    }
+    deleteAndSaveDDList(dd) {
+        this.disqueDService
+            .delete(dd.nom)
+            .subscribe(() => this.loadDDList());
+    }
+};
+AdminComponent.ctorParameters = () => [
+    { type: _services_proc_service_service__WEBPACK_IMPORTED_MODULE_2__["ProcServiceService"] },
+    { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_3__["DisqueDServiceService"] },
+    { type: _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_4__["OrdiServiceService"] },
+    { type: _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_5__["CarteGServiceService"] }
+];
+AdminComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-admin',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./admin.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin/admin.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./admin.component.css */ "./src/app/admin/admin.component.css")).default]
+    })
+], AdminComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/alert/alert.component.css":
 /*!*******************************************!*\
   !*** ./src/app/alert/alert.component.css ***!
@@ -587,6 +993,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _alert_alert_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./alert/alert.component */ "./src/app/alert/alert.component.ts");
+/* harmony import */ var _panier_panier_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./panier/panier.component */ "./src/app/panier/panier.component.ts");
+
 
 
 
@@ -617,6 +1025,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_12__["DisqueDPipe"],
             _login_login_component__WEBPACK_IMPORTED_MODULE_13__["LoginComponent"],
             _alert_alert_component__WEBPACK_IMPORTED_MODULE_15__["AlertComponent"],
+            _panier_panier_component__WEBPACK_IMPORTED_MODULE_16__["PanierComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1165,7 +1574,7 @@ let HeaderComponent = class HeaderComponent {
         this.ACCUEIL = "Accueil";
         this.CONTACT = "Admin";
         this.INSCRIPTION = "inscription";
-        this.LOGIN = "Login";
+        this.LOGIN = "login";
     }
     ngOnInit() {
     }
@@ -1209,21 +1618,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _services_create_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/create-user.service */ "./src/app/services/create-user.service.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
+
 
 
 
 
 let InscriptionComponent = class InscriptionComponent {
-    constructor(fb, streamUserCreated) {
+    constructor(fb, streamUserCreated, userService) {
         this.fb = fb;
         this.streamUserCreated = streamUserCreated;
-        this.loading = false;
-        this.submitted = false;
+        this.userService = userService;
         this.ACCUEIL = "Accueil";
         this.LOGIN = "Login";
+        //private
         this.form = this.fb.group({
-            name: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            firstName: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            nom: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            prenom: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             mail: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             mdp: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
             mdpC: this.fb.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
@@ -1246,8 +1657,8 @@ let InscriptionComponent = class InscriptionComponent {
     }
     buildUser() {
         return {
-            nomUtilisateur: this.form.get("name").value,
-            prenomUtilisateur: this.form.get("firstName").value,
+            nomUtilisateur: this.form.get("nom").value,
+            prenomUtilisateur: this.form.get("prenom").value,
             mail: this.form.get("mail").value,
             mdp: this.form.get("mdp").value,
             tel: this.form.get("tel").value,
@@ -1255,17 +1666,17 @@ let InscriptionComponent = class InscriptionComponent {
             numRue: this.form.get("num").value,
             cp: this.form.get("cp").value,
             ville: this.form.get("ville").value,
-            //Modifier !!!!!!!!!!!!!!!!!!!!!!!!
-            token: null
         };
     }
     createdUser(user) {
-        //  const sub = this.userService.post(user).subscribe(user => console.log());
+        const sub = this.userService.post(user).subscribe(user => console.log());
+        //const sub = this.userService.post(user).subscribe(user => console.log());
     }
 };
 InscriptionComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: _services_create_user_service__WEBPACK_IMPORTED_MODULE_3__["CreateUserService"] }
+    { type: _services_create_user_service__WEBPACK_IMPORTED_MODULE_3__["CreateUserService"] },
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] }
 ];
 InscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1307,9 +1718,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _services_authentification_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/authentification.service */ "./src/app/services/authentification.service.ts");
-/* harmony import */ var _services_alert_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/alert.service */ "./src/app/services/alert.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
 
@@ -1317,23 +1726,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginComponent = class LoginComponent {
-    constructor(formBuilder, route, router, authenticationService, alertService) {
+    constructor(formBuilder, route, router, authenticationService) {
         this.formBuilder = formBuilder;
         this.route = route;
         this.router = router;
         this.authenticationService = authenticationService;
-        this.alertService = alertService;
         this.loading = false;
         this.submitted = false;
+        this.error = '';
+        this.INSCRIPTION = "inscription";
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
-            //this.router.navigate(['/']);
+            this.router.navigate(['/']);
         }
     }
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
-            username: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+            mail: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            mdp: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
         });
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -1342,8 +1752,6 @@ let LoginComponent = class LoginComponent {
     get f() { return this.loginForm.controls; }
     onSubmit() {
         this.submitted = true;
-        // reset alerts on submit
-        this.alertService.clear();
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
@@ -1352,19 +1760,18 @@ let LoginComponent = class LoginComponent {
         this.authenticationService.login(this.f.mail.value, this.f.mdp.value)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["first"])())
             .subscribe(data => {
-            //this.router.navigate([this.returnUrl]);
+            this.router.navigate([this.returnUrl]);
         }, error => {
-            this.alertService.error(error);
+            this.error = error;
             this.loading = false;
         });
     }
 };
 LoginComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"] },
-    { type: _services_authentification_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"] },
-    { type: _services_alert_service__WEBPACK_IMPORTED_MODULE_5__["AlertService"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: _services_authentification_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1373,6 +1780,69 @@ LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")).default]
     })
 ], LoginComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/panier/panier.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/panier/panier.component.css ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Bhbmllci9wYW5pZXIuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/panier/panier.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/panier/panier.component.ts ***!
+  \********************************************/
+/*! exports provided: PanierComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PanierComponent", function() { return PanierComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/panier-proc.service */ "./src/app/services/panier-proc.service.ts");
+/* harmony import */ var _services_panier_carte_graphique_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/panier-carte-graphique.service */ "./src/app/services/panier-carte-graphique.service.ts");
+/* harmony import */ var _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/panier-disque-dur.service */ "./src/app/services/panier-disque-dur.service.ts");
+/* harmony import */ var _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/panier-ordinateur.service */ "./src/app/services/panier-ordinateur.service.ts");
+
+
+
+
+
+
+let PanierComponent = class PanierComponent {
+    constructor(panierProc, panierCG, panierDD, panierOrdi) {
+        this.panierProc = panierProc;
+        this.panierCG = panierCG;
+        this.panierDD = panierDD;
+        this.panierOrdi = panierOrdi;
+    }
+    ngOnInit() {
+    }
+};
+PanierComponent.ctorParameters = () => [
+    { type: _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_2__["PanierProcService"] },
+    { type: _services_panier_carte_graphique_service__WEBPACK_IMPORTED_MODULE_3__["PanierCarteGraphiqueService"] },
+    { type: _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_4__["PanierDisqueDurService"] },
+    { type: _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_5__["PanierOrdinateurService"] }
+];
+PanierComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-panier',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./panier.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/panier/panier.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./panier.component.css */ "./src/app/panier/panier.component.css")).default]
+    })
+], PanierComponent);
 
 
 
@@ -2184,6 +2654,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inscription_inscription_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../inscription/inscription.component */ "./src/app/inscription/inscription.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _component_all_component_all_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../component-all/component-all.component */ "./src/app/component-all/component-all.component.ts");
+/* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../admin/admin.component */ "./src/app/admin/admin.component.ts");
+/* harmony import */ var _admin_Ajout_ajout_component_ajout_component_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../admin/Ajout/ajout-component/ajout-component.component */ "./src/app/admin/Ajout/ajout-component/ajout-component.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../login/login.component */ "./src/app/login/login.component.ts");
+
+
+
 
 
 
@@ -2219,13 +2695,25 @@ const routes = [
     {
         path: "Tout",
         component: _component_all_component_all_component__WEBPACK_IMPORTED_MODULE_9__["ComponentAllComponent"]
+    },
+    {
+        path: "Admin",
+        component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__["AdminComponent"]
+    },
+    {
+        path: "Ajout",
+        component: _admin_Ajout_ajout_component_ajout_component_component__WEBPACK_IMPORTED_MODULE_11__["AjoutComponentComponent"]
+    },
+    {
+        path: "login",
+        component: _login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"]
     }
 ];
 let RoutingModule = class RoutingModule {
 };
 RoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_accueil_accueil_component__WEBPACK_IMPORTED_MODULE_4__["AccueilComponent"], _products_products_component__WEBPACK_IMPORTED_MODULE_5__["ProductsComponent"], _contact_contact_contact_component__WEBPACK_IMPORTED_MODULE_6__["ContactComponent"], _inscription_inscription_component__WEBPACK_IMPORTED_MODULE_7__["InscriptionComponent"], _component_all_component_all_component__WEBPACK_IMPORTED_MODULE_9__["ComponentAllComponent"]],
+        declarations: [_accueil_accueil_component__WEBPACK_IMPORTED_MODULE_4__["AccueilComponent"], _products_products_component__WEBPACK_IMPORTED_MODULE_5__["ProductsComponent"], _contact_contact_contact_component__WEBPACK_IMPORTED_MODULE_6__["ContactComponent"], _inscription_inscription_component__WEBPACK_IMPORTED_MODULE_7__["InscriptionComponent"], _component_all_component_all_component__WEBPACK_IMPORTED_MODULE_9__["ComponentAllComponent"], _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__["AdminComponent"], _admin_Ajout_ajout_component_ajout_component_component__WEBPACK_IMPORTED_MODULE_11__["AjoutComponentComponent"]],
         exports: [
             _accueil_accueil_component__WEBPACK_IMPORTED_MODULE_4__["AccueilComponent"],
             _component_all_component_all_component__WEBPACK_IMPORTED_MODULE_9__["ComponentAllComponent"]
@@ -2238,70 +2726,6 @@ RoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ]
     })
 ], RoutingModule);
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/alert.service.ts":
-/*!*******************************************!*\
-  !*** ./src/app/services/alert.service.ts ***!
-  \*******************************************/
-/*! exports provided: AlertService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlertService", function() { return AlertService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-
-
-
-
-let AlertService = class AlertService {
-    constructor(router) {
-        this.router = router;
-        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
-        this.keepAfterRouteChange = false;
-        // clear alert messages on route change unless 'keepAfterRouteChange' flag is true
-        this.router.events.subscribe(event => {
-            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationStart"]) {
-                if (this.keepAfterRouteChange) {
-                    // only keep for a single route change
-                    this.keepAfterRouteChange = false;
-                }
-                else {
-                    // clear alert message
-                    this.clear();
-                }
-            }
-        });
-    }
-    getAlert() {
-        return this.subject.asObservable();
-    }
-    success(message, keepAfterRouteChange = false) {
-        this.keepAfterRouteChange = keepAfterRouteChange;
-        this.subject.next({ type: 'success', text: message });
-    }
-    error(message, keepAfterRouteChange = false) {
-        this.keepAfterRouteChange = keepAfterRouteChange;
-        this.subject.next({ type: 'error', text: message });
-    }
-    clear() {
-        // clear by calling subject.next() without parameters
-        this.subject.next();
-    }
-};
-AlertService.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
-];
-AlertService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({ providedIn: 'root' })
-], AlertService);
 
 
 
@@ -2407,6 +2831,146 @@ CarteGServiceService = CarteGServiceService_1 = tslib__WEBPACK_IMPORTED_MODULE_0
         providedIn: 'root'
     })
 ], CarteGServiceService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/create-carte-g.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/services/create-carte-g.service.ts ***!
+  \****************************************************/
+/*! exports provided: CreateCarteGService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateCarteGService", function() { return CreateCarteGService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let CreateCarteGService = class CreateCarteGService {
+    constructor() {
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.$carteGCreated = this.subject.asObservable();
+    }
+    notify(carteG) {
+        this.subject.next(carteG);
+    }
+};
+CreateCarteGService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CreateCarteGService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/create-disque-d.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/services/create-disque-d.service.ts ***!
+  \*****************************************************/
+/*! exports provided: CreateDisqueDService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateDisqueDService", function() { return CreateDisqueDService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let CreateDisqueDService = class CreateDisqueDService {
+    constructor() {
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.$disqueDCreated = this.subject.asObservable();
+    }
+    notify(disqueD) {
+        this.subject.next(disqueD);
+    }
+};
+CreateDisqueDService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CreateDisqueDService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/create-ordi.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/create-ordi.service.ts ***!
+  \*************************************************/
+/*! exports provided: CreateOrdiService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateOrdiService", function() { return CreateOrdiService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let CreateOrdiService = class CreateOrdiService {
+    constructor() {
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.$ordiCreated = this.subject.asObservable();
+    }
+    notify(ordi) {
+        this.subject.next(ordi);
+    }
+};
+CreateOrdiService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CreateOrdiService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/create-proc.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/create-proc.service.ts ***!
+  \*************************************************/
+/*! exports provided: CreateProcService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateProcService", function() { return CreateProcService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let CreateProcService = class CreateProcService {
+    constructor() {
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.$procCreated = this.subject.asObservable();
+    }
+    notify(proc) {
+        this.subject.next(proc);
+    }
+};
+CreateProcService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CreateProcService);
 
 
 
