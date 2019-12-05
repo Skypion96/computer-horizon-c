@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Maxime\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Maxime\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ComputerHorizon.-173370166.00" t="ExcludeRecursive" />
-    <e p="D:\HELHA\bloc3\projetRider\computer-horizon-c\ComputerHorizon" t="IncludeFlat">
+    <e p="C:\Users\krefel\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\krefel\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ComputerHorizon.622193748.00" t="ExcludeRecursive" />
+    <e p="C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI C#\computer-horizon-c\ComputerHorizon" t="IncludeFlat">
       <e p="ComputerHorizon" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
@@ -91,6 +91,9 @@
               <e p="disque8.jpg" t="Include" />
               <e p="disque9.jpg" t="Include" />
               <e p="disque_durpdt.jpg" t="Include" />
+              <e p="home1.jpg" t="Include" />
+              <e p="home2.jpg" t="Include" />
+              <e p="home3.JPG" t="Include" />
               <e p="id template.jpg" t="Include" />
               <e p="logo.png" t="Include" />
               <e p="ordinateur1.jpg" t="Include" />

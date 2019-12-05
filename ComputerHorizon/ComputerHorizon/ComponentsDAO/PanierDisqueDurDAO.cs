@@ -24,6 +24,9 @@ namespace ComputerHorizon.ComponentsDAO
         //AFFICHER UNIQUEMENT IMAGE + NOM + MARQUE                                     
         private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME}";
 
+        //SUPPRIMER EN FONCTION DU NOM
+        private static readonly string REQ_DELETE =
+            $"DELETE from {TABLE_NAME} WHERE {FIELD_NOM} = @{FIELD_NOM}";
         
         public static PanierDisqueDur Post(PanierDisqueDur pan)
         {
@@ -57,6 +60,21 @@ namespace ComputerHorizon.ComponentsDAO
                 }
             }
             return procs;
+        }
+        
+        //SUPPRESSION EN FONCTION DU NOM
+        public static bool Delete(string nom)
+        {
+            bool hasBeenDeleted = false;
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_DELETE;
+                command.Parameters.AddWithValue($"@{FIELD_NOM}", nom);
+                hasBeenDeleted = command.ExecuteNonQuery() == 1;
+            }
+            return hasBeenDeleted;
         }
     }
 }

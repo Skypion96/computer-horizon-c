@@ -19,5 +19,11 @@ namespace ComputerHorizon.Controllers
         {
             return PanierCarteGraphiqueDAO.QueryBase();
         }
+        
+        [HttpDelete("{nom}")]
+        public ActionResult Delete(string nom)
+        {
+            return PanierCarteGraphiqueDAO.Delete(nom) ? (ActionResult) Ok() : BadRequest();
+        }
     }
 }
