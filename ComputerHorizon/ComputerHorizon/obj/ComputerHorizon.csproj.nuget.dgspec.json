@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krefel\\Google Drive\\HELHA\\Bloc 3\\Projet\\DEPO TI C#\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj": {}
+    "D:\\HELHA\\bloc3\\projetRider\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krefel\\Google Drive\\HELHA\\Bloc 3\\Projet\\DEPO TI C#\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj": {
+    "D:\\HELHA\\bloc3\\projetRider\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krefel\\Google Drive\\HELHA\\Bloc 3\\Projet\\DEPO TI C#\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj",
+        "projectUniqueName": "D:\\HELHA\\bloc3\\projetRider\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj",
         "projectName": "ComputerHorizon",
-        "projectPath": "C:\\Users\\krefel\\Google Drive\\HELHA\\Bloc 3\\Projet\\DEPO TI C#\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj",
-        "packagesPath": "C:\\Users\\krefel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krefel\\Google Drive\\HELHA\\Bloc 3\\Projet\\DEPO TI C#\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\obj\\",
+        "projectPath": "D:\\HELHA\\bloc3\\projetRider\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj",
+        "packagesPath": "C:\\Users\\Maxime\\.nuget\\packages\\",
+        "outputPath": "D:\\HELHA\\bloc3\\projetRider\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\krefel\\.dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\krefel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Maxime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,11 +41,19 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "BCrypt.Net-Next.StrongName": {
+              "target": "Package",
+              "version": "[3.2.1, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
@@ -59,6 +69,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.0-preview1.19504.10, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
             }
           },
           "imports": [

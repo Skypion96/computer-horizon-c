@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using ComputerHorizon.Components;
 using ComputerHorizon.ComponentsDAO;
+using ComputerHorizon.Controllers;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using static ComputerHorizon.Token.ExtensionMethods;
@@ -14,7 +15,7 @@ namespace ComputerHorizon.Token
 {
     public interface IUserService
     {
-        Utilisateur Authenticate(string mail, string mdp);
+        UserConnected Authenticate(string mail, string mdp);
         IEnumerable<Utilisateur> GetAll();
     }
 
@@ -33,26 +34,26 @@ namespace ComputerHorizon.Token
             _appSettings = appSettings.Value;
         }
 
-        public Utilisateur Authenticate(string mail, string mdp)
+        public UserConnected Authenticate(string mail, string mdp)
         {
-            var user = _users.SingleOrDefault(x => x.Mail == mail && x.Mdp == mdp);
-
-            // return null if user not found
-            if (user == null)
-                return null;
-
-            // authentication successful so generate jwt token
+            var user = UtilisateurDAO.QueryBase()
+                .SingleOrDefault(x => x.Mail == mail && x.Mdp == mdp);
+            
+            if(user == null) return null;
+            
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Expires = DateTime.UtcNow.AddDays(7),
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, user.Mail) 
+                }),
+                Expires = DateTime.UtcNow.AddDays(30),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            return new Utilisateur();
-
-            return user;
+            return new UserConnected(tokenHandler.WriteToken(token));
         }
 
         public IEnumerable<Utilisateur> GetAll()

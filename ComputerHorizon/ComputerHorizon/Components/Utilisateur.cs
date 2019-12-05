@@ -37,6 +37,12 @@ namespace ComputerHorizon.Components
         {
         }
 
+        public Utilisateur(string mail, string mdp)
+        {
+            Mail = mail;
+            Mdp = mdp;
+        }
+
         public Utilisateur(SqlDataReader reader)
         {
             NomUtilisateur = reader[UtilisateurDAO.FIELD_NOM_UTILISATEUR].ToString();

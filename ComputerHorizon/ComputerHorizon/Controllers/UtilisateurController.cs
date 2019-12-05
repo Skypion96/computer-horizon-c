@@ -16,22 +16,27 @@ namespace ComputerHorizon.Controllers
     [Route("[controller]")] //ATENTION A LA ROUTE UTILISER
     public class UtilisateurController : ControllerBase
     {
-        //private IUserService _userService;
+        private IUserService _userService;
+        
+        public UtilisateurController(IUserService userService)
+        {
+            _userService = userService;
+        }
 
         //AFFICHAGE DE TOUT LES UTILISATEURS
-        [HttpGet]
-        public IEnumerable<ComputerHorizon.Components.Utilisateur> Get()
+        [HttpGet("all")]
+        public IEnumerable<ComputerHorizon.Components.Utilisateur> GetAll()
         {
             return UtilisateurDAO.QueryBase();
         }
         
         //AFFICHAGE D'UN UTILISATEUR PARTICULIER
-        [Route("[controller]")]
-        [HttpGet]
+        //[Route("[controller]")]
+        /*[HttpGet]
         public ComputerHorizon.Components.Utilisateur GetOneElement(Utilisateur user)
         {
             return UtilisateurDAO.Query(user);
-        }
+        }*/
 
         //AJOUT D'UN NOUVEAU UTILISATEUR
         [HttpPost]
@@ -54,42 +59,21 @@ namespace ComputerHorizon.Controllers
             return UtilisateurDAO.Update(user) ? (ActionResult) Ok():BadRequest();
         }
 
-       /*public UtilisateurController(IUserService userService)
-        {
-            _userService = userService;
-        }*/
-        
-        private readonly Startup.AppSettings _appSettings;
-        public UtilisateurController(IOptions<Startup.AppSettings> appSettings)
-        {
-            _appSettings = appSettings.Value;
-        }
-
         [AllowAnonymous]
         [HttpPost("authenticate")]
-        /*public IActionResult Authenticate([FromBody]AuthenticateModel model)
+        public ActionResult<UserConnected> Authenticate([FromBody] AuthenticateModel model)
         {
-            var user = UtilisateurController.Authenticate(model.Mail, model.Mdp);
+            UserConnected token = _userService.Authenticate(model.Mail, model.Mdp);
 
-            if (user == null)
+            if (token == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return Ok(user);
-        }*/
-
+            return Ok(token);
+        }
+        
         [HttpGet]
-        public IEnumerable<Utilisateur> GetAll()
+        public Utilisateur Get([FromBody] AuthenticateModel model)
         {
-            List<Utilisateur> users = UtilisateurDAO.QueryBase();
-            return users;
+            return UtilisateurDAO.Query(model.Mail, model.Mdp);
         }
     }
 }

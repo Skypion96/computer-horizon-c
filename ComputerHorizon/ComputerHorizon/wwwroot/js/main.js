@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"acceuil\">\r\n\r\n  <h1 class=\"welcome\">BIENVENUE {{currentUser}}</h1>\r\n\r\n</div>\r\n<br>\r\n<div>\r\n  <div class=\"view2\">\r\n    <img src=\"{{newHorizon}}\" width=\"700px\" height=\"393px\"/>\r\n  </div>\r\n</div>\r\n<h1>Que pouvons-nous vous proposer ?</h1>\r\n<hr>\r\n<div class=\"card\">\r\n  <img src=\"{{desc1}}\" width=\"25%\" height=\"20%\" class=\"imgDesc\">\r\n  <p class=\"desc\">Notre objectif est de vous proposer le meilleur de l'informatique au meilleur prix.</p>\r\n</div>\r\n\r\n<div class=\"card\">\r\n  <img src=\"{{desc2}}\" width=\"25%\" height=\"20%\" class=\"imgDesc\">\r\n  <p class=\"desc\">Toujours jusqu'au limite de l'informatique.</p>\r\n</div>\r\n<br>\r\n\r\n<h1>Nos partenaires</h1>\r\n<hr>\r\n<img src=\"{{desc3}}\" width=\"95%\" id=\"home3\">\r\n\r\n<br><br><br>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"acceuil\">\r\n\r\n  <h1 class=\"welcome\">BIENVENUE <!--{{currentUser.nomUtilisateur}} {{currentUser.prenomUtilisateur}}--></h1>\r\n\r\n</div>\r\n<br>\r\n<div>\r\n  <div class=\"view2\">\r\n    <img src=\"{{newHorizon}}\" width=\"700px\" height=\"393px\"/>\r\n  </div>\r\n</div>\r\n<h1>Que pouvons-nous vous proposer ?</h1>\r\n<hr>\r\n<div class=\"card\">\r\n  <img src=\"{{desc1}}\" width=\"25%\" height=\"20%\" class=\"imgDesc\">\r\n  <p class=\"desc\">Notre objectif est de vous proposer le meilleur de l'informatique au meilleur prix.</p>\r\n</div>\r\n\r\n<div class=\"card\">\r\n  <img src=\"{{desc2}}\" width=\"25%\" height=\"20%\" class=\"imgDesc\">\r\n  <p class=\"desc\">Toujours jusqu'au limite de l'informatique.</p>\r\n</div>\r\n<br>\r\n\r\n<h1>Nos partenaires</h1>\r\n<hr>\r\n<img src=\"{{desc3}}\" width=\"95%\" id=\"home3\">\r\n\r\n<br><br><br>\r\n\r\n");
 
 /***/ }),
 
@@ -62,6 +62,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin/modif/modif.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/admin/modif/modif.component.html ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"margin-top: 10%\">\r\n  <button [routerLink]=\"'/'+ADMIN\">Retour en arrière</button>\r\n  <button (click)=\"iElement=1\">Modifier les cartes graphiques</button>\r\n  <button (click)=\"iElement=2\">Modifier les disques durs</button>\r\n  <button (click)=\"iElement=3\">Modifier les ordinateurs</button>\r\n  <button (click)=\"iElement=4\">Modifier les processeurs</button>\r\n</div>\r\n\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\" *ngIf=\"iElement==1;then thenBlockCG\"></div>\r\n  <ng-template #thenBlockCG>\r\n    <ul>\r\n      <li class=\"cg\" *ngFor=\"let cg of carteGList; index as i\">\r\n        <div class=\"card\"  >\r\n          <img src=\"{{cg.img}}\"/>\r\n          <form [formGroup]=\"formCG\" (ngSubmit)=\"updateCG($event)\">\r\n            <div>\r\n              <label for=\"nomCG\">Nom : </label>\r\n              <input type=\"text\" formControlName=\"nomCG\" id=\"nomCG\" [value]=\"cg.nom\">\r\n            </div>\r\n            <div>\r\n              <label for=\"marqueCG\">Marque : </label>\r\n              <input type=\"text\" formControlName=\"marqueCG\" id=\"marqueCG\" [value]=\"cg.marque\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixCG\">Prix : </label>\r\n              <input type=\"text\" formControlName=\"prixCG\" id=\"prixCG\" [value]=\"cg.prix\">\r\n            </div>\r\n            <div>\r\n              <label for=\"frequenceCG\">Frequence : </label>\r\n              <input type=\"text\" formControlName=\"frequenceCG\" id=\"frequenceCG\" [value]=\"cg.frequence\">\r\n            </div>\r\n            <div>\r\n              <label for=\"memoireVideoCG\">mMémoire Video : </label>\r\n              <input type=\"text\" formControlName=\"memoireVideoCG\" id=\"memoireVideoCG\" [value]=\"cg.memoireVideo\">\r\n            </div>\r\n            <div>\r\n              <label for=\"qteCG\">Quantite : </label>\r\n              <input type=\"text\" formControlName=\"qteCG\" id=\"qteCG\" [value]=\"cg.qte\">\r\n            </div>\r\n            <div>\r\n              <label for=\"imgCG\">Img : </label>\r\n              <input type=\"text\" formControlName=\"imgCG\" id=\"imgCG\" [value]=\"cg.img\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducCG\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducCG\" id=\"prixReducCG\" [value]=\"cg.prixReduc\">\r\n            </div>\r\n            <button class=\"addbtn\" >Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\" >\r\n  <div class=\"disqueD\" *ngIf=\"iElement==2;then thenBlockDD\"></div>\r\n  <ng-template #thenBlockDD>\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of disqueDList; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <form [formGroup]=\"formDD\" >\r\n            <div>\r\n              <label for=\"nomDD\">Nom : </label>\r\n              <input type=\"text\" formControlName=\"nomDD\" id=\"nomDD\" [value]=\"dd.nom\">\r\n            </div>\r\n            <div>\r\n              <label for=\"marqueDD\">Marque : </label>\r\n              <input type=\"text\" formControlName=\"marqueDD\" id=\"marqueDD\" [value]=\"dd.marque\">\r\n            </div>\r\n            <div>\r\n              <label for=\"capaciteDD\">Capacite : </label>\r\n              <input type=\"text\" formControlName=\"capaciteDD\" id=\"capaciteDD\" [value]=\"dd.capacite\">\r\n            </div>\r\n            <div>\r\n              <label for=\"ssdDD\">SSD : </label>\r\n              <input type=\"checkbox\" formControlName=\"ssdDD\" id=\"ssdDD\" [value]=\"dd.ssd\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixDD\">Prix : </label>\r\n              <input type=\"text\" formControlName=\"prixDD\" id=\"prixDD\" [value]=\"dd.prix\">\r\n            </div>\r\n            <div>\r\n              <label for=\"interneDD\">Interne : </label>\r\n              <input type=\"checkbox\"  formControlName=\"interneDD\" id=\"interneDD\" [value]=\"dd.interne\">\r\n            </div>\r\n            <div>\r\n              <label for=\"qteDD\">Quantite : </label>\r\n              <input type=\"text\" formControlName=\"qteDD\" id=\"qteDD\" [value]=\"dd.qte\">\r\n            </div>\r\n            <div>\r\n              <label for=\"imgDD\">Img : </label>\r\n              <input type=\"text\" formControlName=\"imgDD\" id=\"imgDD\" [value]=\"dd.img\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducDD\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducDD\" id=\"prixReducDD\" [value]=\"dd.prixReduc\">\r\n            </div>\r\n            <button class=\"addbtn\" [disabled]=\"!formDD.valid\">Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\" >\r\n  <div class=\"ordinateur\" *ngIf=\"iElement==3;then thenBlockOrdi\"></div>\r\n  <ng-template #thenBlockOrdi>\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of ordiList; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <form [formGroup]=\"formOrdi\">\r\n            <div>\r\n              <label for=\"nomOrdi\">Nom : </label>\r\n              <input type=\"text\" formControlName=\"nomOrdi\" id=\"nomOrdi\" [value]=\"ordi.nom\">\r\n            </div>\r\n            <div>\r\n              <label for=\"marqueOrdi\">Marque : </label>\r\n              <input type=\"text\" formControlName=\"marqueOrdi\" id=\"marqueOrdi\" [value]=\"ordi.marque\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixOrdi\">Prix : </label>\r\n              <input type=\"text\" formControlName=\"prixOrdi\" id=\"prixOrdi\" [value]=\"ordi.prix\">\r\n            </div>\r\n            <div>\r\n              <label for=\"nomProcOrdi\">Nom processeur : </label>\r\n              <input type=\"text\" formControlName=\"nomProcOrdi\" id=\"nomProcOrdi\" [value]=\"ordi.nomProc\">\r\n            </div>\r\n            <div>\r\n              <label for=\"nomCgOrdi\">Nom carte graphique : </label>\r\n              <input type=\"text\" formControlName=\"nomCgOrdi\" id=\"nomCgOrdi\" [value]=\"ordi.nomCg\">\r\n            </div>\r\n            <div>\r\n              <label for=\"capaciteOrdi\">Capacite : </label>\r\n              <input type=\"text\" formControlName=\"capaciteOrdi\" id=\"capaciteOrdi\" [value]=\"ordi.capacite\">\r\n            </div>\r\n            <div>\r\n              <label for=\"memoireVOrdi\">Memoire V : </label>\r\n              <input type=\"text\" formControlName=\"memoireVOrdi\" id=\"memoireVOrdi\" [value]=\"ordi.memoireV\">\r\n            </div>\r\n            <div>\r\n              <label for=\"ssdOrdi\">SSD : </label>\r\n              <input type=\"checkbox\" formControlName=\"ssdOrdi\" id=\"ssdOrdi\" [value]=\"ordi.ssd\">\r\n            </div>\r\n            <div>\r\n              <label for=\"descriptionOrdi\">Description : </label>\r\n              <input type=\"text\" formControlName=\"descriptionOrdi\" id=\"descriptionOrdi\" [value]=\"ordi.description\">\r\n            </div>\r\n            <div>\r\n              <label for=\"qteOrdi\">Quantite : </label>\r\n              <input type=\"text\" formControlName=\"qteOrdi\" id=\"qteOrdi\" [value]=\"ordi.qte\">\r\n            </div>\r\n            <div>\r\n              <label for=\"capaciteSsdOrdi\">Capacite SSD : </label>\r\n              <input type=\"text\"  formControlName=\"capaciteSsdOrdi\" id=\"capaciteSsdOrdi\" [value]=\"ordi.capaciteSsd\">\r\n            </div>\r\n            <div>\r\n              <label for=\"imgOrdi\">Img : </label>\r\n              <input type=\"text\" formControlName=\"imgOrdi\" id=\"imgOrdi\" [value]=\"ordi.img\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducOrdi\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducOrdi\" id=\"prixReducOrdi\" [value]=\"ordi.prixReduc\">\r\n            </div>\r\n            <button class=\"addbtn\" [disabled]=\"!formOrdi.valid\">Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\" *ngIf=\"iElement==4;then thenBlockProc\">  </div>\r\n  <ng-template #thenBlockProc>\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of _procList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <form [formGroup]=\"formP\">\r\n            <div>\r\n            <label for=\"nomP\">Nom : </label>\r\n            <input type=\"text\" formControlName=\"nomP\" id=\"nomP\" [value]=\"proc.nom\">\r\n          </div>\r\n          <div>\r\n            <label for=\"marqueP\">Marque : </label>\r\n            <input type=\"text\" formControlName=\"marqueP\" id=\"marqueP\" [value]=\"proc.marque\">\r\n          </div>\r\n          <div>\r\n            <label for=\"nbCoeursP\">nbCoeurs : </label>\r\n            <input type=\"text\" formControlName=\"nbCoeursP\" id=\"nbCoeursP\" [value]=\"proc.nbCoeurs\">\r\n          </div>\r\n          <div>\r\n            <label for=\"frequenceP\">Frequence : </label>\r\n            <input type=\"text\" formControlName=\"frequenceP\" id=\"frequenceP\" [value]=\"proc.frequence\">\r\n          </div>\r\n          <div>\r\n            <label for=\"prixP\">Prix : </label>\r\n            <input type=\"text\" formControlName=\"prixP\" id=\"prixP\" [value]=\"proc.prix\">\r\n          </div>\r\n          <div>\r\n            <label for=\"qteP\">Quantite : </label>\r\n            <input type=\"text\" formControlName=\"qteP\" id=\"qteP\" [value]=\"proc.qte\">\r\n          </div>\r\n          <div>\r\n            <label for=\"imgP\">Img : </label>\r\n            <input type=\"text\" formControlName=\"imgP\" id=\"imgP\" [value]=\"proc.img\">\r\n          </div>\r\n            <div>\r\n              <label for=\"prixReducP\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducP\" id=\"prixReducP\" [value]=\"proc.prixReduc\">\r\n            </div>\r\n          <button class=\"addbtn\" [disabled]=\"!formP.valid\">Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n\r\n\r\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/alert/alert.component.html":
 /*!**********************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/alert/alert.component.html ***!
@@ -71,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"message\" [ngClass]=\"message.cssClass\">{{message.text}}</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"message\" [ngClass]=\"message.cssClass\">{{message.text}}</div>\n");
 
 /***/ }),
 
@@ -136,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header></header>\r\n<router-outlet>\r\n<nav>\r\n  <a [routerLink]=\"'/'+ACCUEIL\">\r\n    <img src=\"{{logoPath}}\" width=\"100px\" height=\"100px\"/>\r\n  </a>\r\n  <ul>\r\n    <li>\r\n      <a [routerLink]=\"'/'+ACCUEIL\">Accueil</a>\r\n    </li>\r\n    <li class=\"items\">\r\n      <a [routerLink]=\"'/'+PRODUCT\">Nos produits</a>\r\n    </li>\r\n    <li>\r\n      <a [routerLink]=\"'/'+CONTACT\">Nous contacter</a>\r\n    </li>\r\n    <li class=\"btnContainer\">\r\n      <button class=\"btn\" id=\"connexion\" [routerLink]=\"'/'+LOGIN\">Connexion</button>\r\n      <button class=\"btn\" id=\"inscrire\" [routerLink]=\"'/'+PANIER\">Panier</button>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n</router-outlet>\r\n<footer></footer>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header></header>\r\n<router-outlet>\r\n<nav>\r\n  <a [routerLink]=\"'/'+ACCUEIL\">\r\n    <img src=\"{{logoPath}}\" width=\"100px\" height=\"100px\"/>\r\n  </a>\r\n  <ul>\r\n    <li>\r\n      <a [routerLink]=\"'/'+ACCUEIL\">Accueil</a>\r\n    </li>\r\n    <li class=\"items\">\r\n      <a [routerLink]=\"'/'+PRODUCT\">Nos produits</a>\r\n    </li>\r\n    <li>\r\n      <a [routerLink]=\"'/'+CONTACT\">Nous contacter</a>\r\n    </li>\r\n    <li class=\"btnContainer\">\r\n      <button class=\"btn\" id=\"connexion\" [routerLink]=\"'/'+LOGIN\">Connexion</button>\r\n      <!--<button class=\"btn\" [routerLink]=\"'/'+LOGIN\">Connexion</button>-->\r\n      <button class=\"btn\" id=\"inscrire\" [routerLink]=\"'/'+PANIER\">Panier</button>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n</router-outlet>\r\n<footer></footer>\r\n");
 
 /***/ }),
 
@@ -162,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Login</h2>\r\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"mdp\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Login\r\n    </button>\r\n    <a [routerLink]=\"'/'+INSCRIPTION\" class=\"btn btn-link\">Register</a>\r\n  </div>\r\n</form>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Login</h2>\r\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"password\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Login\r\n    </button>\r\n    <a [routerLink]=\"'/'+INSCRIPTION\" class=\"btn btn-link\">Register</a>\r\n  </div>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -866,6 +879,168 @@ AdminComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/admin/modif/modif.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/admin/modif/modif.component.css ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 10%;\r\n  margin-right: 20%;\r\n  width: 450px;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 150px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nbutton{\r\n  margin-left: 2%;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vbW9kaWYvbW9kaWYuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxzQ0FBc0M7RUFDdEMsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IsVUFBVTtBQUNaOztBQUVBO0VBQ0Usc0NBQXNDO0VBQ3RDLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9hZG1pbi9tb2RpZi9tb2RpZi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmR7XHJcbiAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxuICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICBtYXJnaW4tbGVmdDogMTAlO1xyXG4gIG1hcmdpbi1yaWdodDogMjAlO1xyXG4gIHdpZHRoOiA0NTBweDtcclxufVxyXG5cclxuLmRlc2NyaXB0aW9ue1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG5cclxuaW1ne1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGhlaWdodDogMTUwcHg7XHJcbiAgd2lkdGg6IDMwJTtcclxufVxyXG5cclxuLm5vbXtcclxuICBmb250LWZhbWlseTogJ1lhbnRyYW1hbmF2Jywgc2Fucy1zZXJpZjtcclxuICBmb250LXNpemU6IDE1cHg7XHJcbn1cclxuXHJcbmJ1dHRvbntcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuIl19 */");
+
+/***/ }),
+
+/***/ "./src/app/admin/modif/modif.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/admin/modif/modif.component.ts ***!
+  \************************************************/
+/*! exports provided: ModifComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModifComponent", function() { return ModifComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_proc_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/proc-service.service */ "./src/app/services/proc-service.service.ts");
+/* harmony import */ var _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/disque-dservice.service */ "./src/app/services/disque-dservice.service.ts");
+/* harmony import */ var _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/ordi-service.service */ "./src/app/services/ordi-service.service.ts");
+/* harmony import */ var _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/carte-gservice.service */ "./src/app/services/carte-gservice.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+
+
+
+
+let ModifComponent = class ModifComponent {
+    constructor(fbP, fbOrdi, fbDD, fbCG, procService, disqueDService, ordiService, carteGService) {
+        this.fbP = fbP;
+        this.fbOrdi = fbOrdi;
+        this.fbDD = fbDD;
+        this.fbCG = fbCG;
+        this.procService = procService;
+        this.disqueDService = disqueDService;
+        this.ordiService = ordiService;
+        this.carteGService = carteGService;
+        this.formCG = this.fbCG.group({
+            nomCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            marqueCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            prixCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            frequenceCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            memoireVideoCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            qteCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            imgCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            prixReducCG: this.fbCG.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+        });
+        this.formDD = this.fbDD.group({
+            nomDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            marqueDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            capaciteDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            ssdDD: this.fbDD.control(''),
+            prixDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            interneDD: this.fbDD.control(''),
+            qteDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            imgDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            prixReducDD: this.fbDD.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+        });
+        this.formOrdi = this.fbOrdi.group({
+            nomOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            marqueOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            prixOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            nomProcOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            nomCgOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            capaciteOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            memoireVOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            ssdOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            descriptionOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            qteOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            capaciteSsdOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            imgOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            prixReducOrdi: this.fbOrdi.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+        });
+        this.formP = this.fbP.group({
+            nomP: this.fbP.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            marqueP: this.fbP.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            nbCoeursP: this.fbP.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            frequenceP: this.fbP.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            prixP: this.fbP.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            qteP: this.fbP.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            imgP: this.fbP.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+            prixReducP: this.fbP.control('', _angular_forms__WEBPACK_IMPORTED_MODULE_6__["Validators"].required),
+        });
+        this.carteGList = [];
+        this.disqueDList = [];
+        this.ordiList = [];
+        this._iElement = 0;
+        this.ADMIN = "Admin";
+    }
+    ngOnInit() {
+        this.loadProcList();
+        this.loadDDList();
+        this.loadOrdiList();
+        this.loadCGList();
+    }
+    ngOnDestroy() {
+        this.subQuery && this.subQuery.unsubscribe();
+    }
+    loadOrdiList() {
+        this.subQuery = this.ordiService
+            .queryBase()
+            .subscribe(ordis => this.ordiList = ordis);
+    }
+    loadCGList() {
+        this.subQuery = this.carteGService
+            .queryBase()
+            .subscribe(carteG => this.carteGList = carteG);
+    }
+    loadDDList() {
+        this.subQuery = this.disqueDService
+            .queryBase()
+            .subscribe(disqueDs => this.disqueDList = disqueDs);
+    }
+    loadProcList() {
+        this.subQuery = this.procService
+            .queryBase()
+            .subscribe(procs => this._procList = procs);
+    }
+    get iElement() {
+        return this._iElement;
+    }
+    set iElement(value) {
+        this._iElement = value;
+    }
+    updateCG($event) {
+        this.carteGService
+            .update($event)
+            .subscribe();
+    }
+};
+ModifComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"] },
+    { type: _services_proc_service_service__WEBPACK_IMPORTED_MODULE_2__["ProcServiceService"] },
+    { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_3__["DisqueDServiceService"] },
+    { type: _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_4__["OrdiServiceService"] },
+    { type: _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_5__["CarteGServiceService"] }
+];
+ModifComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-modif',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./modif.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin/modif/modif.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./modif.component.css */ "./src/app/admin/modif/modif.component.css")).default]
+    })
+], ModifComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/alert/alert.component.css":
 /*!*******************************************!*\
   !*** ./src/app/alert/alert.component.css ***!
@@ -993,10 +1168,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pipes/carte-g.pipe */ "./src/app/pipes/carte-g.pipe.ts");
 /* harmony import */ var _pipes_ordinateur_pipe__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pipes/ordinateur.pipe */ "./src/app/pipes/ordinateur.pipe.ts");
 /* harmony import */ var _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pipes/disque-d.pipe */ "./src/app/pipes/disque-d.pipe.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _alert_alert_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./alert/alert.component */ "./src/app/alert/alert.component.ts");
-
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _alert_alert_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./alert/alert.component */ "./src/app/alert/alert.component.ts");
 
 
 
@@ -1024,16 +1197,15 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _pipes_carte_g_pipe__WEBPACK_IMPORTED_MODULE_10__["CarteGPipe"],
             _pipes_ordinateur_pipe__WEBPACK_IMPORTED_MODULE_11__["OrdinateurPipe"],
             _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_12__["DisqueDPipe"],
-            _login_login_component__WEBPACK_IMPORTED_MODULE_13__["LoginComponent"],
-            _alert_alert_component__WEBPACK_IMPORTED_MODULE_15__["AlertComponent"],
+            _alert_alert_component__WEBPACK_IMPORTED_MODULE_14__["AlertComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"],
             _routing_routing_module__WEBPACK_IMPORTED_MODULE_8__["RoutingModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_14__["ReactiveFormsModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_14__["FormsModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"]
         ],
         exports: [
             _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"],
@@ -1736,6 +1908,7 @@ let LoginComponent = class LoginComponent {
         this.submitted = false;
         this.error = '';
         this.INSCRIPTION = "inscription";
+        this.ACCUEIL = "Accueil";
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
             this.router.navigate(['/']);
@@ -2797,6 +2970,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../admin/admin.component */ "./src/app/admin/admin.component.ts");
 /* harmony import */ var _admin_Ajout_ajout_component_ajout_component_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../admin/Ajout/ajout-component/ajout-component.component */ "./src/app/admin/Ajout/ajout-component/ajout-component.component.ts");
 /* harmony import */ var _panier_panier_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../panier/panier.component */ "./src/app/panier/panier.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _admin_modif_modif_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../admin/modif/modif.component */ "./src/app/admin/modif/modif.component.ts");
+
+
 
 
 
@@ -2847,13 +3024,21 @@ const routes = [
     {
         path: "panierpanier",
         component: _panier_panier_component__WEBPACK_IMPORTED_MODULE_12__["PanierComponent"]
+    },
+    {
+        path: "login",
+        component: _login_login_component__WEBPACK_IMPORTED_MODULE_13__["LoginComponent"]
+    },
+    {
+        path: "Modif",
+        component: _admin_modif_modif_component__WEBPACK_IMPORTED_MODULE_14__["ModifComponent"]
     }
 ];
 let RoutingModule = class RoutingModule {
 };
 RoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_accueil_accueil_component__WEBPACK_IMPORTED_MODULE_4__["AccueilComponent"], _products_products_component__WEBPACK_IMPORTED_MODULE_5__["ProductsComponent"], _contact_contact_contact_component__WEBPACK_IMPORTED_MODULE_6__["ContactComponent"], _inscription_inscription_component__WEBPACK_IMPORTED_MODULE_7__["InscriptionComponent"], _component_all_component_all_component__WEBPACK_IMPORTED_MODULE_9__["ComponentAllComponent"], _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__["AdminComponent"], _admin_Ajout_ajout_component_ajout_component_component__WEBPACK_IMPORTED_MODULE_11__["AjoutComponentComponent"], _panier_panier_component__WEBPACK_IMPORTED_MODULE_12__["PanierComponent"]],
+        declarations: [_accueil_accueil_component__WEBPACK_IMPORTED_MODULE_4__["AccueilComponent"], _products_products_component__WEBPACK_IMPORTED_MODULE_5__["ProductsComponent"], _contact_contact_contact_component__WEBPACK_IMPORTED_MODULE_6__["ContactComponent"], _inscription_inscription_component__WEBPACK_IMPORTED_MODULE_7__["InscriptionComponent"], _component_all_component_all_component__WEBPACK_IMPORTED_MODULE_9__["ComponentAllComponent"], _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__["AdminComponent"], _admin_Ajout_ajout_component_ajout_component_component__WEBPACK_IMPORTED_MODULE_11__["AjoutComponentComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_13__["LoginComponent"], _panier_panier_component__WEBPACK_IMPORTED_MODULE_12__["PanierComponent"], _admin_modif_modif_component__WEBPACK_IMPORTED_MODULE_14__["ModifComponent"]],
         exports: [
             _accueil_accueil_component__WEBPACK_IMPORTED_MODULE_4__["AccueilComponent"],
             _component_all_component_all_component__WEBPACK_IMPORTED_MODULE_9__["ComponentAllComponent"]
@@ -2902,8 +3087,8 @@ let AuthenticationService = class AuthenticationService {
     get currentUserValue() {
         return this.currentUserSubject.value;
     }
-    login(username, password) {
-        return this.http.post(`${_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"].getURAL_API()}/users/authenticate`, { username, password })
+    login(mail, mdp) {
+        return this.http.post(`${_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"].getURAL_API()}/authenticate`, { mail, mdp })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('currentUser', JSON.stringify(user));
@@ -3597,7 +3782,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI\computer-horizon\site\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\HELHA\bloc3\projetTi\computer-horizon\site\src\main.ts */"./src/main.ts");
 
 
 /***/ })

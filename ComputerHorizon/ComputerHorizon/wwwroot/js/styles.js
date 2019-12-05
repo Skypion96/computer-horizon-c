@@ -338,7 +338,7 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI\computer-horizon\site\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! D:\HELHA\bloc3\projetTi\computer-horizon\site\src\styles.css */"./src/styles.css");
 
 
 /***/ })

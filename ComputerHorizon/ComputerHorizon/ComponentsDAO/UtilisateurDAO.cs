@@ -27,7 +27,7 @@ namespace ComputerHorizon.ComponentsDAO
         
             //AFFICHER EN FONCTION DU NOM
         private static readonly string REQ_QUERY = $"SELECT * FROM {TABLE_NAME} " +
-            $" WHERE {FIELD_MAIL} = @{FIELD_MAIL}";
+            $" WHERE {FIELD_MAIL} = @{FIELD_MAIL} AND {FIELD_MDP} = @{FIELD_MDP}";
         
             //AFFICHER UNIQUEMENT IMAGE + NOM + MARQUE                                     
         private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME}";
@@ -52,28 +52,27 @@ namespace ComputerHorizon.ComponentsDAO
         //METHODES :
         
             //VALEUR DE UN Utilisateur PARTICULIER
-        public static Utilisateur Query(Utilisateur user)
+        public static Utilisateur Query(string mail, string mdp)
         {
+            Utilisateur user = null;
             using (SqlConnection connection = DataBase.GetConnection())
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_QUERY;
-                command.Parameters.AddWithValue($"@{FIELD_NOM_UTILISATEUR}", user.NomUtilisateur);
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    SqlDataReader reader = command.ExecuteReader();
+                command.Parameters.AddWithValue($"@{FIELD_MAIL}", mail);
+                command.Parameters.AddWithValue($"@{FIELD_MDP}", mdp);
+                SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         user = new Utilisateur(reader);
                     }
-                }
             }
             return user;
         }
         
         
-            //AFFICHAGE DE L'IMAGE/ NOM / MARQUE'
+            //AFFICHAGE
         public static List<Utilisateur> QueryBase()
         {
             List<Utilisateur> users = new List<Utilisateur>();
