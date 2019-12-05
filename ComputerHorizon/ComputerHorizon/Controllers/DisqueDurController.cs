@@ -44,5 +44,7 @@ namespace ComputerHorizon.Controllers
         {
             return DisqueDurDao.Update(disqueD) ? (ActionResult) Ok():BadRequest();
         }
+        
+        
     }
 }

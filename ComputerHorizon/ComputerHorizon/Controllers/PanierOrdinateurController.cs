@@ -19,5 +19,12 @@ namespace ComputerHorizon.Controllers
         {
             return PanierOrdinateurDAO.QueryBase();
         }
+        
+        //SUPPRESSION D'UN DISQUE DUR PARTICULIER
+        [HttpDelete("{nom}")]
+        public ActionResult Delete(string nom)
+        {
+            return PanierOrdinateurDAO.Delete(nom) ? (ActionResult) Ok() : BadRequest();
+        }
     }
 }
