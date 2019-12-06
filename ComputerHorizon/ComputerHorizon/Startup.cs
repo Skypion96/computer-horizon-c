@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ComputerHorizon.Token;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,11 @@ namespace ComputerHorizon
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSpaStaticFiles(spa => spa.RootPath = PATH_ANGULAR_APP); // modifier
+            
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
+            
+            services.AddScoped<IUserService, UserService>();
 
         }
 
@@ -52,10 +58,6 @@ namespace ComputerHorizon
             app.UseMvc();
             app.UseSpa(spa => spa.Options.SourcePath = PATH_ANGULAR_APP);
             
-        }  
-        public class AppSettings
-        {
-            public string Secret { get; set; }
         }
     }
 }

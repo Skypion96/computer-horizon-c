@@ -27,9 +27,9 @@ namespace ComputerHorizon.Token
             new Utilisateur {NomUtilisateur = "Test", PrenomUtilisateur = "User", Mail = "test", Mdp = "test", Tel = "02020202", Rue = "test", NumRue = "20", Cp = 2000, Ville = "test"} 
         };
 
-        private readonly Startup.AppSettings _appSettings;
+        private readonly AppSettings _appSettings;
 
-        public UserService(IOptions<Startup.AppSettings> appSettings)
+        public UserService(IOptions<AppSettings> appSettings)
         {
             _appSettings = appSettings.Value;
         }

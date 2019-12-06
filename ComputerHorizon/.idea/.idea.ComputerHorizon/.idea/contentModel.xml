@@ -65,6 +65,7 @@
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="Token" t="Include">
+          <e p="AppSettings.cs" t="Include" />
           <e p="AuthenticateModel.cs" t="Include" />
           <e p="ExtensionMethods.cs" t="Include" />
         </e>
