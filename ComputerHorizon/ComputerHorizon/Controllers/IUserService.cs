@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using ComputerHorizon.Components;
 using ComputerHorizon.ComponentsDAO;
@@ -37,7 +38,7 @@ namespace ComputerHorizon.Token
         public UserConnected Authenticate(string mail, string mdp)
         {
             var user = UtilisateurDAO.QueryBase()
-                .SingleOrDefault(x => x.Mail == mail && x.Mdp == mdp);
+                .SingleOrDefault(x => x.Mail == mail && BCrypt.Net.BCrypt.Verify(mdp,x.Mdp).Equals(true));
             
             if(user == null) return null;
             
