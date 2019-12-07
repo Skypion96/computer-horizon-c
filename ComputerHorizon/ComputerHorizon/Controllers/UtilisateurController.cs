@@ -29,14 +29,6 @@ namespace ComputerHorizon.Controllers
         {
             return UtilisateurDAO.QueryBase();
         }
-        
-        //AFFICHAGE D'UN UTILISATEUR PARTICULIER
-        //[Route("[controller]")]
-        /*[HttpGet]
-        public ComputerHorizon.Components.Utilisateur GetOneElement(Utilisateur user)
-        {
-            return UtilisateurDAO.Query(user);
-        }*/
 
         //AJOUT D'UN NOUVEAU UTILISATEUR
         [HttpPost]
@@ -66,7 +58,7 @@ namespace ComputerHorizon.Controllers
             UserConnected token = _userService.Authenticate(model.Mail, model.Mdp);
 
             if (token == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
+                return BadRequest(new { message = "Mail or password is incorrect" });
             return Ok(token);
         }
         

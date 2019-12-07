@@ -4,9 +4,9 @@ namespace ComputerHorizon.Controllers
 {
     public class HashService
     {
-        public static string HashPwd(string pwd)
+        public static string HashPwd(string mdp)
         {
-            return BCrypt.Net.BCrypt.HashPassword(pwd);
+            return BCrypt.Net.BCrypt.HashPassword(mdp);
         }
     }
 }

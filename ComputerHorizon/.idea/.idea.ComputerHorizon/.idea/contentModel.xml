@@ -9,6 +9,8 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Components" t="Include">
+          <e p="Admin.cs" t="Include" />
+          <e p="AdminConnected.cs" t="Include" />
           <e p="CarteGraphique.cs" t="Include" />
           <e p="DisqueDur.cs" t="Include" />
           <e p="Ordinateur.cs" t="Include" />
@@ -22,6 +24,7 @@
           <e p="Utilisateur.cs" t="Include" />
         </e>
         <e p="ComponentsDAO" t="Include">
+          <e p="AdminDAO.cs" t="Include" />
           <e p="CarteGraphiqueDao.cs" t="Include" />
           <e p="DisqueDurDao.cs" t="Include" />
           <e p="OrdinateurDao.cs" t="Include" />
@@ -35,9 +38,11 @@
         </e>
         <e p="ComputerHorizon.csproj" t="IncludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="AdminController.cs" t="Include" />
           <e p="CarteGraphiqueController.cs" t="Include" />
           <e p="DisqueDurController.cs" t="Include" />
           <e p="HashService.cs" t="Include" />
+          <e p="IAdminService.cs" t="Include" />
           <e p="IUserService.cs" t="Include" />
           <e p="OrdinateurController.cs" t="Include" />
           <e p="PanierCarteGraphiqueController.cs" t="Include" />
