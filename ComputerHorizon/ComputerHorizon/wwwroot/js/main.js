@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"margin-top: 10%\">\r\n  <button [routerLink]=\"'/'+ADMIN\">Retour en arrière</button>\r\n  <button (click)=\"iElement=1\">Modifier les cartes graphiques</button>\r\n  <button (click)=\"iElement=2\">Modifier les disques durs</button>\r\n  <button (click)=\"iElement=3\">Modifier les ordinateurs</button>\r\n  <button (click)=\"iElement=4\">Modifier les processeurs</button>\r\n</div>\r\n\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\" *ngIf=\"iElement==1;then thenBlockCG\"></div>\r\n  <ng-template #thenBlockCG>\r\n    <ul>\r\n      <li class=\"cg\" *ngFor=\"let cg of carteGList; index as i\">\r\n        <div class=\"card\"  >\r\n          <img src=\"{{cg.img}}\"/>\r\n          <form [formGroup]=\"formCG\" (ngSubmit)=\"updateCG(cg)\">\r\n            <div>\r\n              <label for=\"nomCG\">Nom : </label>\r\n              <input type=\"text\" formControlName=\"nomCG\" id=\"nomCG\" [value]=\"cg.nom\">\r\n            </div>\r\n            <div>\r\n              <label for=\"marqueCG\">Marque : </label>\r\n              <input type=\"text\" formControlName=\"marqueCG\" id=\"marqueCG\" [value]=\"cg.marque\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixCG\">Prix : </label>\r\n              <input type=\"text\" formControlName=\"prixCG\" id=\"prixCG\" [value]=\"cg.prix\">\r\n            </div>\r\n            <div>\r\n              <label for=\"frequenceCG\">Frequence : </label>\r\n              <input type=\"text\" formControlName=\"frequenceCG\" id=\"frequenceCG\" [value]=\"cg.frequence\">\r\n            </div>\r\n            <div>\r\n              <label for=\"memoireVideoCG\">mMémoire Video : </label>\r\n              <input type=\"text\" formControlName=\"memoireVideoCG\" id=\"memoireVideoCG\" [value]=\"cg.memoireVideo\">\r\n            </div>\r\n            <div>\r\n              <label for=\"qteCG\">Quantite : </label>\r\n              <input type=\"text\" formControlName=\"qteCG\" id=\"qteCG\" [value]=\"cg.qte\">\r\n            </div>\r\n            <div>\r\n              <label for=\"imgCG\">Img : </label>\r\n              <input type=\"text\" formControlName=\"imgCG\" id=\"imgCG\" [value]=\"cg.img\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducCG\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducCG\" id=\"prixReducCG\" [value]=\"cg.prixReduc\">\r\n            </div>\r\n            <button class=\"addbtn\" >Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\" >\r\n  <div class=\"disqueD\" *ngIf=\"iElement==2;then thenBlockDD\"></div>\r\n  <ng-template #thenBlockDD>\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of disqueDList; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <form [formGroup]=\"formDD\" (ngSubmit)=\"updateDD(dd)\">\r\n            <div>\r\n              <label for=\"nomDD\">Nom : </label>\r\n              <input type=\"text\" formControlName=\"nomDD\" id=\"nomDD\" [value]=\"dd.nom\">\r\n            </div>\r\n            <div>\r\n              <label for=\"marqueDD\">Marque : </label>\r\n              <input type=\"text\" formControlName=\"marqueDD\" id=\"marqueDD\" [value]=\"dd.marque\">\r\n            </div>\r\n            <div>\r\n              <label for=\"capaciteDD\">Capacite : </label>\r\n              <input type=\"text\" formControlName=\"capaciteDD\" id=\"capaciteDD\" [value]=\"dd.capacite\">\r\n            </div>\r\n            <div>\r\n              <label for=\"ssdDD\">SSD : </label>\r\n              <input type=\"checkbox\" formControlName=\"ssdDD\" id=\"ssdDD\" [value]=\"dd.ssd\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixDD\">Prix : </label>\r\n              <input type=\"text\" formControlName=\"prixDD\" id=\"prixDD\" [value]=\"dd.prix\">\r\n            </div>\r\n            <div>\r\n              <label for=\"interneDD\">Interne : </label>\r\n              <input type=\"checkbox\"  formControlName=\"interneDD\" id=\"interneDD\" [value]=\"dd.interne\">\r\n            </div>\r\n            <div>\r\n              <label for=\"qteDD\">Quantite : </label>\r\n              <input type=\"text\" formControlName=\"qteDD\" id=\"qteDD\" [value]=\"dd.qte\">\r\n            </div>\r\n            <div>\r\n              <label for=\"imgDD\">Img : </label>\r\n              <input type=\"text\" formControlName=\"imgDD\" id=\"imgDD\" [value]=\"dd.img\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducDD\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducDD\" id=\"prixReducDD\" [value]=\"dd.prixReduc\">\r\n            </div>\r\n            <button class=\"addbtn\" [disabled]=\"!formDD.valid\">Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\" >\r\n  <div class=\"ordinateur\" *ngIf=\"iElement==3;then thenBlockOrdi\"></div>\r\n  <ng-template #thenBlockOrdi>\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of ordiList; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <form [formGroup]=\"formOrdi\" (ngSubmit)=\"updateOrdi(ordi)\">\r\n            <div>\r\n              <label for=\"nomOrdi\">Nom : </label>\r\n              <input type=\"text\" formControlName=\"nomOrdi\" id=\"nomOrdi\" [value]=\"ordi.nom\">\r\n            </div>\r\n            <div>\r\n              <label for=\"marqueOrdi\">Marque : </label>\r\n              <input type=\"text\" formControlName=\"marqueOrdi\" id=\"marqueOrdi\" [value]=\"ordi.marque\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixOrdi\">Prix : </label>\r\n              <input type=\"text\" formControlName=\"prixOrdi\" id=\"prixOrdi\" [value]=\"ordi.prix\">\r\n            </div>\r\n            <div>\r\n              <label for=\"nomProcOrdi\">Nom processeur : </label>\r\n              <input type=\"text\" formControlName=\"nomProcOrdi\" id=\"nomProcOrdi\" [value]=\"ordi.nomProc\">\r\n            </div>\r\n            <div>\r\n              <label for=\"nomCgOrdi\">Nom carte graphique : </label>\r\n              <input type=\"text\" formControlName=\"nomCgOrdi\" id=\"nomCgOrdi\" [value]=\"ordi.nomCg\">\r\n            </div>\r\n            <div>\r\n              <label for=\"capaciteOrdi\">Capacite : </label>\r\n              <input type=\"text\" formControlName=\"capaciteOrdi\" id=\"capaciteOrdi\" [value]=\"ordi.capacite\">\r\n            </div>\r\n            <div>\r\n              <label for=\"memoireVOrdi\">Memoire V : </label>\r\n              <input type=\"text\" formControlName=\"memoireVOrdi\" id=\"memoireVOrdi\" [value]=\"ordi.memoireV\">\r\n            </div>\r\n            <div>\r\n              <label for=\"ssdOrdi\">SSD : </label>\r\n              <input type=\"checkbox\" formControlName=\"ssdOrdi\" id=\"ssdOrdi\" [value]=\"ordi.ssd\">\r\n            </div>\r\n            <div>\r\n              <label for=\"descriptionOrdi\">Description : </label>\r\n              <input type=\"text\" formControlName=\"descriptionOrdi\" id=\"descriptionOrdi\" [value]=\"ordi.description\">\r\n            </div>\r\n            <div>\r\n              <label for=\"qteOrdi\">Quantite : </label>\r\n              <input type=\"text\" formControlName=\"qteOrdi\" id=\"qteOrdi\" [value]=\"ordi.qte\">\r\n            </div>\r\n            <div>\r\n              <label for=\"capaciteSsdOrdi\">Capacite SSD : </label>\r\n              <input type=\"text\"  formControlName=\"capaciteSsdOrdi\" id=\"capaciteSsdOrdi\" [value]=\"ordi.capaciteSsd\">\r\n            </div>\r\n            <div>\r\n              <label for=\"imgOrdi\">Img : </label>\r\n              <input type=\"text\" formControlName=\"imgOrdi\" id=\"imgOrdi\" [value]=\"ordi.img\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducOrdi\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducOrdi\" id=\"prixReducOrdi\" [value]=\"ordi.prixReduc\">\r\n            </div>\r\n            <button class=\"addbtn\" [disabled]=\"!formOrdi.valid\">Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\" *ngIf=\"iElement==4;then thenBlockProc\">  </div>\r\n  <ng-template #thenBlockProc>\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of _procList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <form [formGroup]=\"formP\" (ngSubmit)=\"updateProc(proc)\">\r\n            <div>\r\n            <label for=\"nomP\">Nom : </label>\r\n            <input type=\"text\" formControlName=\"nomP\" id=\"nomP\" [value]=\"proc.nom\">\r\n          </div>\r\n          <div>\r\n            <label for=\"marqueP\">Marque : </label>\r\n            <input type=\"text\" formControlName=\"marqueP\" id=\"marqueP\" [value]=\"proc.marque\">\r\n          </div>\r\n          <div>\r\n            <label for=\"nbCoeursP\">nbCoeurs : </label>\r\n            <input type=\"text\" formControlName=\"nbCoeursP\" id=\"nbCoeursP\" [value]=\"proc.nbCoeurs\">\r\n          </div>\r\n          <div>\r\n            <label for=\"frequenceP\">Frequence : </label>\r\n            <input type=\"text\" formControlName=\"frequenceP\" id=\"frequenceP\" [value]=\"proc.frequence\">\r\n          </div>\r\n          <div>\r\n            <label for=\"prixP\">Prix : </label>\r\n            <input type=\"text\" formControlName=\"prixP\" id=\"prixP\" [value]=\"proc.prix\">\r\n          </div>\r\n          <div>\r\n            <label for=\"qteP\">Quantite : </label>\r\n            <input type=\"text\" formControlName=\"qteP\" id=\"qteP\" [value]=\"proc.qte\">\r\n          </div>\r\n          <div>\r\n            <label for=\"imgP\">Img : </label>\r\n            <input type=\"text\" formControlName=\"imgP\" id=\"imgP\" [value]=\"proc.img\">\r\n          </div>\r\n            <div>\r\n              <label for=\"reductionP\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"reductionP\" id=\"reductionP\" [value]=\"proc.reduction\">\r\n            </div>\r\n            <div>\r\n              <label for=\"coteP\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"coteP\" id=\"coteP\" [value]=\"proc.cote\">\r\n            </div>\r\n            <div>\r\n              <label for=\"dateCoteP\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"dateCoteP\" id=\"dateCoteP\" [value]=\"proc.dateCote\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducP\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducP\" id=\"prixReducP\" [value]=\"proc.prixReduc\">\r\n            </div>\r\n          <button class=\"addbtn\" [disabled]=\"!formP.valid\">Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"margin-top: 10%\">\r\n  <button [routerLink]=\"'/'+ADMIN\">Retour en arrière</button>\r\n  <button (click)=\"iElement=1\">Modifier les cartes graphiques</button>\r\n  <button (click)=\"iElement=2\">Modifier les disques durs</button>\r\n  <button (click)=\"iElement=3\">Modifier les ordinateurs</button>\r\n  <button (click)=\"iElement=4\">Modifier les processeurs</button>\r\n</div>\r\n\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\" *ngIf=\"iElement==1;then thenBlockCG\"></div>\r\n  <ng-template #thenBlockCG>\r\n    <ul>\r\n      <li class=\"cg\" *ngFor=\"let cg of carteGList; index as i\">\r\n        <div class=\"card\"  >\r\n          <img src=\"{{cg.img}}\"/>\r\n          <form [formGroup]=\"formCG\" (ngSubmit)=\"updateCG(cg)\">\r\n            <div>\r\n              <label for=\"nomCG\">Nom : </label>\r\n              <input type=\"text\" formControlName=\"nomCG\" id=\"nomCG\" [value]=\"cg.nom\">\r\n            </div>\r\n            <div>\r\n              <label for=\"marqueCG\">Marque : </label>\r\n              <input type=\"text\" formControlName=\"marqueCG\" id=\"marqueCG\" [value]=\"cg.marque\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixCG\">Prix : </label>\r\n              <input type=\"text\" formControlName=\"prixCG\" id=\"prixCG\" [value]=\"cg.prix\">\r\n            </div>\r\n            <div>\r\n              <label for=\"frequenceCG\">Frequence : </label>\r\n              <input type=\"text\" formControlName=\"frequenceCG\" id=\"frequenceCG\" [value]=\"cg.frequence\">\r\n            </div>\r\n            <div>\r\n              <label for=\"memoireVideoCG\">mMémoire Video : </label>\r\n              <input type=\"text\" formControlName=\"memoireVideoCG\" id=\"memoireVideoCG\" [value]=\"cg.memoireVideo\">\r\n            </div>\r\n            <div>\r\n              <label for=\"qteCG\">Quantite : </label>\r\n              <input type=\"text\" formControlName=\"qteCG\" id=\"qteCG\" [value]=\"cg.qte\">\r\n            </div>\r\n            <div>\r\n              <label for=\"imgCG\">Img : </label>\r\n              <input type=\"text\" formControlName=\"imgCG\" id=\"imgCG\" [value]=\"cg.img\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducCG\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducCG\" id=\"prixReducCG\" [value]=\"cg.prixReduc\">\r\n            </div>\r\n            <button class=\"addbtn\" >Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\" >\r\n  <div class=\"disqueD\" *ngIf=\"iElement==2;then thenBlockDD\"></div>\r\n  <ng-template #thenBlockDD>\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of disqueDList; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <form [formGroup]=\"formDD\" (ngSubmit)=\"updateDD(dd)\">\r\n            <div>\r\n              <label for=\"nomDD\">Nom : </label>\r\n              <input type=\"text\" formControlName=\"nomDD\" id=\"nomDD\" [value]=\"dd.nom\">\r\n            </div>\r\n            <div>\r\n              <label for=\"marqueDD\">Marque : </label>\r\n              <input type=\"text\" formControlName=\"marqueDD\" id=\"marqueDD\" [value]=\"dd.marque\">\r\n            </div>\r\n            <div>\r\n              <label for=\"capaciteDD\">Capacite : </label>\r\n              <input type=\"text\" formControlName=\"capaciteDD\" id=\"capaciteDD\" [value]=\"dd.capacite\">\r\n            </div>\r\n            <div>\r\n              <label for=\"ssdDD\">SSD : </label>\r\n              <input type=\"checkbox\" formControlName=\"ssdDD\" id=\"ssdDD\" [checked]=\"dd.ssd\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixDD\">Prix : </label>\r\n              <input type=\"text\" formControlName=\"prixDD\" id=\"prixDD\" [value]=\"dd.prix\">\r\n            </div>\r\n            <div>\r\n              <label for=\"interneDD\">Interne : </label>\r\n              <input type=\"checkbox\"  formControlName=\"interneDD\" id=\"interneDD\" [checked]=\"dd.interne\">\r\n            </div>\r\n            <div>\r\n              <label for=\"qteDD\">Quantite : </label>\r\n              <input type=\"text\" formControlName=\"qteDD\" id=\"qteDD\" [value]=\"dd.qte\">\r\n            </div>\r\n            <div>\r\n              <label for=\"imgDD\">Img : </label>\r\n              <input type=\"text\" formControlName=\"imgDD\" id=\"imgDD\" [value]=\"dd.img\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducDD\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducDD\" id=\"prixReducDD\" [value]=\"dd.prixReduc\">\r\n            </div>\r\n            <button class=\"addbtn\" [disabled]=\"!formDD.valid\">Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\" >\r\n  <div class=\"ordinateur\" *ngIf=\"iElement==3;then thenBlockOrdi\"></div>\r\n  <ng-template #thenBlockOrdi>\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of ordiList; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <form [formGroup]=\"formOrdi\" (ngSubmit)=\"updateOrdi(ordi)\">\r\n            <div>\r\n              <label for=\"nomOrdi\">Nom : </label>\r\n              <input type=\"text\" formControlName=\"nomOrdi\" id=\"nomOrdi\" [value]=\"ordi.nom\">\r\n            </div>\r\n            <div>\r\n              <label for=\"marqueOrdi\">Marque : </label>\r\n              <input type=\"text\" formControlName=\"marqueOrdi\" id=\"marqueOrdi\" [value]=\"ordi.marque\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixOrdi\">Prix : </label>\r\n              <input type=\"text\" formControlName=\"prixOrdi\" id=\"prixOrdi\" [value]=\"ordi.prix\">\r\n            </div>\r\n            <div>\r\n              <label for=\"nomProcOrdi\">Nom processeur : </label>\r\n              <input type=\"text\" formControlName=\"nomProcOrdi\" id=\"nomProcOrdi\" [value]=\"ordi.nomProc\">\r\n            </div>\r\n            <div>\r\n              <label for=\"nomCgOrdi\">Nom carte graphique : </label>\r\n              <input type=\"text\" formControlName=\"nomCgOrdi\" id=\"nomCgOrdi\" [value]=\"ordi.nomCg\">\r\n            </div>\r\n            <div>\r\n              <label for=\"capaciteOrdi\">Capacite : </label>\r\n              <input type=\"text\" formControlName=\"capaciteOrdi\" id=\"capaciteOrdi\" [value]=\"ordi.capacite\">\r\n            </div>\r\n            <div>\r\n              <label for=\"memoireVOrdi\">Memoire V : </label>\r\n              <input type=\"text\" formControlName=\"memoireVOrdi\" id=\"memoireVOrdi\" [value]=\"ordi.memoireV\">\r\n            </div>\r\n            <div>\r\n              <label for=\"ssdOrdi\">SSD : </label>\r\n              <input type=\"checkbox\" formControlName=\"ssdOrdi\" id=\"ssdOrdi\" [checked]=\"ordi.ssd\">\r\n            </div>\r\n            <div>\r\n              <label for=\"descriptionOrdi\">Description : </label>\r\n              <input type=\"text\" formControlName=\"descriptionOrdi\" id=\"descriptionOrdi\" [value]=\"ordi.description\">\r\n            </div>\r\n            <div>\r\n              <label for=\"qteOrdi\">Quantite : </label>\r\n              <input type=\"text\" formControlName=\"qteOrdi\" id=\"qteOrdi\" [value]=\"ordi.qte\">\r\n            </div>\r\n            <div>\r\n              <label for=\"capaciteSsdOrdi\">Capacite SSD : </label>\r\n              <input type=\"text\"  formControlName=\"capaciteSsdOrdi\" id=\"capaciteSsdOrdi\" [value]=\"ordi.capaciteSsd\">\r\n            </div>\r\n            <div>\r\n              <label for=\"imgOrdi\">Img : </label>\r\n              <input type=\"text\" formControlName=\"imgOrdi\" id=\"imgOrdi\" [value]=\"ordi.img\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducOrdi\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducOrdi\" id=\"prixReducOrdi\" [value]=\"ordi.prixReduc\">\r\n            </div>\r\n            <button class=\"addbtn\" [disabled]=\"!formOrdi.valid\">Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\" *ngIf=\"iElement==4;then thenBlockProc\">  </div>\r\n  <ng-template #thenBlockProc>\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of _procList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <form [formGroup]=\"formP\" (ngSubmit)=\"updateProc(proc)\">\r\n            <div>\r\n            <label for=\"nomP\">Nom : </label>\r\n            <input type=\"text\" formControlName=\"nomP\" id=\"nomP\" [value]=\"proc.nom\">\r\n          </div>\r\n          <div>\r\n            <label for=\"marqueP\">Marque : </label>\r\n            <input type=\"text\" formControlName=\"marqueP\" id=\"marqueP\" [value]=\"proc.marque\">\r\n          </div>\r\n          <div>\r\n            <label for=\"nbCoeursP\">nbCoeurs : </label>\r\n            <input type=\"text\" formControlName=\"nbCoeursP\" id=\"nbCoeursP\" [value]=\"proc.nbCoeurs\">\r\n          </div>\r\n          <div>\r\n            <label for=\"frequenceP\">Frequence : </label>\r\n            <input type=\"text\" formControlName=\"frequenceP\" id=\"frequenceP\" [value]=\"proc.frequence\">\r\n          </div>\r\n          <div>\r\n            <label for=\"prixP\">Prix : </label>\r\n            <input type=\"text\" formControlName=\"prixP\" id=\"prixP\" [value]=\"proc.prix\">\r\n          </div>\r\n          <div>\r\n            <label for=\"qteP\">Quantite : </label>\r\n            <input type=\"text\" formControlName=\"qteP\" id=\"qteP\" [value]=\"proc.qte\">\r\n          </div>\r\n          <div>\r\n            <label for=\"imgP\">Img : </label>\r\n            <input type=\"text\" formControlName=\"imgP\" id=\"imgP\" [value]=\"proc.img\">\r\n          </div>\r\n            <div>\r\n              <label for=\"reductionP\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"reductionP\" id=\"reductionP\" [value]=\"proc.reduction\">\r\n            </div>\r\n            <div>\r\n              <label for=\"coteP\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"coteP\" id=\"coteP\" [value]=\"proc.cote\">\r\n            </div>\r\n            <div>\r\n              <label for=\"dateCoteP\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"dateCoteP\" id=\"dateCoteP\" [value]=\"proc.dateCote\">\r\n            </div>\r\n            <div>\r\n              <label for=\"prixReducP\">Prix Reduc : </label>\r\n              <input type=\"text\" formControlName=\"prixReducP\" id=\"prixReducP\" [value]=\"proc.prixReduc\">\r\n            </div>\r\n          <button class=\"addbtn\" [disabled]=\"!formP.valid\">Ajouter</button>\r\n          </form>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </ng-template>\r\n</div>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"message\" [ngClass]=\"message.cssClass\">{{message.text}}</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"message\" [ngClass]=\"message.cssClass\">{{message.text}}</div>\r\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"filter\">\r\n  <h3>FILTRES : </h3>\r\n  <div class=\"filterPrixProc\">\r\n    <b>PRIX :</b>\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_PRIX\">\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterProc\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedPrix\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterNomProc\">\r\n    <b><label for=\"recherche\">Rechercher : </label></b>\r\n    <input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n  </div>\r\n  <div class=\"filterMarqueProc\">\r\n    <b>MARQUES :</b>\r\n    <div *ngFor=\"let typeFilterMarque of TYPE_FILTER_MARQUE\">\r\n      <label [for]=\"typeFilterMarque.id\">{{typeFilterMarque.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterMarque.id\" name=\"filterMarqueProc\" [value]=\"typeFilterMarque.value\"\r\n             [(ngModel)]=\"filterSelectedMarque\">\r\n    </div>\r\n  </div>\r\n  <h3>FILTRES DISQUES DUR : </h3>\r\n  <div class=\"filterSSDDD\">\r\n    <b>SSD :</b>\r\n    <div *ngFor=\"let typeFilterSSD of TYPE_FILTER_SSD\">\r\n      <label [for]=\"typeFilterSSD.id\">{{typeFilterSSD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterSSD.id\" name=\"filterSSDDD\" [value]=\"typeFilterSSD.value\"\r\n             [(ngModel)]=\"filterSelectedSSD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n  </div>\r\n</div>\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\">\r\n  <ul>\r\n    <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n      <div class=\"card\" >\r\n        <img src=\"{{cg.img}}\"/>\r\n        <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n          <table>\r\n            <tr>\r\n              <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n            </tr>\r\n            <br><br>\r\n            <tr>\r\n              <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n            </tr>\r\n          </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\">\r\n  <div class=\"disqueD\">\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n            <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\">\r\n  <div class=\"ordinateur\">\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n            <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n            <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\">\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n            <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n            <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"filter\">\r\n  <h3>FILTRES : </h3>\r\n  <div class=\"filterPrixProc\">\r\n    <b>PRIX :</b>\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_PRIX\">\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterProc\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedPrix\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterNomProc\">\r\n    <b><label for=\"recherche\">Rechercher : </label></b>\r\n    <input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n  </div>\r\n  <div class=\"filterMarqueProc\">\r\n    <b>MARQUES :</b>\r\n    <div *ngFor=\"let typeFilterMarque of TYPE_FILTER_MARQUE\">\r\n      <label [for]=\"typeFilterMarque.id\">{{typeFilterMarque.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterMarque.id\" name=\"filterMarqueProc\" [value]=\"typeFilterMarque.value\"\r\n             [(ngModel)]=\"filterSelectedMarque\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterSSDDD\">\r\n    <b>SSD :</b>\r\n    <div *ngFor=\"let typeFilterSSD of TYPE_FILTER_SSD\">\r\n      <label [for]=\"typeFilterSSD.id\">{{typeFilterSSD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterSSD.id\" name=\"filterSSDDD\" [value]=\"typeFilterSSD.value\"\r\n             [(ngModel)]=\"filterSelectedSSD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n  </div>\r\n</div>\r\n<div *ngIf=\"isConnected()==false;then thenBlockConnect;else elseBlockConnect\"></div>\r\n<ng-template #thenBlockConnect>\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\">\r\n  <ul>\r\n    <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n      <div class=\"card\" >\r\n        <img src=\"{{cg.img}}\"/>\r\n        <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n          <table>\r\n            <tr>\r\n              <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n            </tr>\r\n            <br><br>\r\n            <tr>\r\n              <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n            </tr>\r\n          </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n          </ng-template>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\">\r\n  <div class=\"disqueD\">\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n            </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\">\r\n  <div class=\"ordinateur\">\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\">\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n</ng-template>\r\n<ng-template #elseBlockConnect>\r\n  <!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n  <div class=\"carteGg\">\r\n    <ul>\r\n      <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{cg.img}}\"/>\r\n          <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <!-- *********************************************** DISQUE DUR *********************************************** -->\r\n  <div class=\"disque\">\r\n    <div class=\"disqueD\">\r\n      <ul>\r\n        <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n          <div class=\"card\" >\r\n            <img src=\"{{dd.img}}\"/>\r\n            <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n            <ng-template #elseBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <br><br>\r\n  <!-- ************************************* ORDINATEUR ***********************************************-->\r\n  <div class=\"ordinateurAll\">\r\n    <div class=\"ordinateur\">\r\n      <ul>\r\n        <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n          <div class=\"card\" >\r\n            <img src=\"{{ordi.img}}\"/>\r\n            <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n              <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n            <ng-template #elseBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n              <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <!-- *********************************************** PROCESSEUR *********************************************** -->\r\n  <div>\r\n    <div class=\"processeur\">\r\n      <ul>\r\n        <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n          <div class=\"card\">\r\n            <img src=\"{{proc.img}}\"/>\r\n            <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n              <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n\r\n            </ng-template>\r\n            <ng-template #elseBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n              <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</ng-template>\r\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>contact works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Contacter le support via Linkedin : </h1>\r\n\r\n<ul>\r\n  <li>\r\n  <img src=\"{{laptop}}\"><br><br>\r\n    <a href=\"https://www.linkedin.com/in/vincent-leurart-a1650b183/\">Leurart Vincent</a>\r\n  </li><br><br><br><br><br>\r\n  <li>\r\n  <img src=\"{{laptop}}\"><br><br>\r\n    <a href=\"https://www.linkedin.com/in/david-orient-874103183/\">Orient David</a>\r\n  </li><br><br><br><br><br>\r\n  <li>\r\n  <img src=\"{{laptop}}\"><br><br>\r\n    <a href=\"https://www.linkedin.com/in/maxime-janssens-6a176a183/\">Maxime Janssens</a>\r\n  </li>\r\n</ul>\r\n");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header></header>\r\n<router-outlet>\r\n<nav>\r\n  <a [routerLink]=\"'/'+ACCUEIL\">\r\n    <img src=\"{{logoPath}}\" width=\"100px\" height=\"100px\"/>\r\n  </a>\r\n  <ul>\r\n    <li>\r\n      <a [routerLink]=\"'/'+ACCUEIL\">Accueil</a>\r\n    </li>\r\n    <li class=\"items\">\r\n      <a [routerLink]=\"'/'+PRODUCT\">Nos produits</a>\r\n    </li>\r\n    <li>\r\n      <a [routerLink]=\"'/'+CONTACT\">Nous contacter</a>\r\n    </li>\r\n    <li class=\"btnContainer\">\r\n      <!--<div *ngIf=\"isConnected() == true;then connected else notConnected\"></div>\r\n\r\n      <ng-template #connected>\r\n          <button class=\"btn\" [routerLink]=\"'/'+ACCUEIL\">Déconnexion</button>\r\n          <button class=\"btn\" [routerLink]=\"'/'+PANIER\">Panier</button>\r\n        </ng-template>\r\n        <ng-template #notConnected>\r\n          <button class=\"btn\" id=\"connexion\" [routerLink]=\"'/'+LOGIN\">Connexion</button>\r\n          <button class=\"btn\" [routerLink]=\"'/'+PANIER\">Panier</button>\r\n        </ng-template>-->\r\n      <button class=\"btn\"  [routerLink]=\"'/'+ACCUEIL\">Déconnexion</button>\r\n      <button class=\"btn\" id=\"connexion\" [routerLink]=\"'/'+LOGIN\">Connexion</button>\r\n      <button class=\"btn\" [routerLink]=\"'/'+PANIER\">Panier</button>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n</router-outlet>\r\n<footer></footer>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header></header>\r\n<router-outlet>\r\n<nav>\r\n  <a [routerLink]=\"'/'+ACCUEIL\">\r\n    <img src=\"{{logoPath}}\" width=\"100px\" height=\"100px\"/>\r\n  </a>\r\n  <ul>\r\n    <li>\r\n      <a [routerLink]=\"'/'+ACCUEIL\">Accueil</a>\r\n    </li>\r\n    <li class=\"items\">\r\n      <a [routerLink]=\"'/'+PRODUCT\">Nos produits</a>\r\n    </li>\r\n    <li>\r\n      <a [routerLink]=\"'/'+CONTACT\">Nous contacter</a>\r\n    </li>\r\n    <li class=\"btnContainer\">\r\n      <div *ngIf=\"isConnected() == true;then connected else notConnected\"></div>\r\n\r\n      <ng-template #connected>\r\n          <button class=\"btn\" [routerLink]=\"'/'+ACCUEIL\" (click)=\"logout()\">Déconnexion</button>\r\n          <button class=\"btn\" [routerLink]=\"'/'+PANIER\">Panier</button>\r\n        </ng-template>\r\n        <ng-template #notConnected>\r\n          <button class=\"btn\" id=\"connexion\" [routerLink]=\"'/'+LOGIN\">Connexion</button>\r\n        </ng-template>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n</router-outlet>\r\n<footer></footer>\r\n");
 
 /***/ }),
 
@@ -521,7 +521,7 @@ AccueilComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".processeur{\r\n  margin-left: 5%;\r\n  margin-top: 5%;\r\n  float: left;\r\n}\r\n\r\n.disqueD{\r\n  margin-top: 5%;\r\n  margin-left: 5%;\r\n  float: left;\r\n}\r\n\r\n.carteG{\r\n  margin-top: 5%;\r\n  margin-left: 5%;\r\n  float: left;\r\n}\r\n\r\n.ordinateur{\r\n  margin-top: 5%;\r\n  margin-left: 5%;\r\n  float: left;\r\n}\r\n\r\nbutton{\r\n  margin-left: 2%;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n}\r\n\r\n.addbtn{\r\n  margin-top: 2%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vQWpvdXQvYWpvdXQtY29tcG9uZW50L2Fqb3V0LWNvbXBvbmVudC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLGNBQWM7RUFDZCxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsZUFBZTtFQUNmLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxlQUFlO0VBQ2YsV0FBVztBQUNiOztBQUVBO0VBQ0UsY0FBYztFQUNkLGVBQWU7RUFDZixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvYWRtaW4vQWpvdXQvYWpvdXQtY29tcG9uZW50L2Fqb3V0LWNvbXBvbmVudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb2Nlc3NldXJ7XHJcbiAgbWFyZ2luLWxlZnQ6IDUlO1xyXG4gIG1hcmdpbi10b3A6IDUlO1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4uZGlzcXVlRHtcclxuICBtYXJnaW4tdG9wOiA1JTtcclxuICBtYXJnaW4tbGVmdDogNSU7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbi5jYXJ0ZUd7XHJcbiAgbWFyZ2luLXRvcDogNSU7XHJcbiAgbWFyZ2luLWxlZnQ6IDUlO1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4ub3JkaW5hdGV1cntcclxuICBtYXJnaW4tdG9wOiA1JTtcclxuICBtYXJnaW4tbGVmdDogNSU7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbmJ1dHRvbntcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG59XHJcblxyXG4uYWRkYnRue1xyXG4gIG1hcmdpbi10b3A6IDIlO1xyXG59XHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".processeur{\r\n  margin-left: 5%;\r\n  margin-top: 5%;\r\n  float: left;\r\n}\r\n\r\n.disqueD{\r\n  margin-top: 5%;\r\n  margin-left: 5%;\r\n  float: left;\r\n}\r\n\r\n.carteG{\r\n  margin-top: 5%;\r\n  margin-left: 5%;\r\n  float: left;\r\n}\r\n\r\n.ordinateur{\r\n  margin-top: 5%;\r\n  margin-left: 5%;\r\n  float: left;\r\n}\r\n\r\nbutton{\r\n  margin-left: 2%;\r\n  background-color: darkcyan;\r\n  border: none;\r\n  border-radius: 8px;\r\n  color: white;\r\n  cursor: pointer;\r\n  margin-right: 5px;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n}\r\n\r\n.addbtn{\r\n  margin-top: 2%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vQWpvdXQvYWpvdXQtY29tcG9uZW50L2Fqb3V0LWNvbXBvbmVudC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLGNBQWM7RUFDZCxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsZUFBZTtFQUNmLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxlQUFlO0VBQ2YsV0FBVztBQUNiOztBQUVBO0VBQ0UsY0FBYztFQUNkLGVBQWU7RUFDZixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsMEJBQTBCO0VBQzFCLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLGVBQWU7RUFDZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGNBQWM7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9hZG1pbi9Bam91dC9ham91dC1jb21wb25lbnQvYWpvdXQtY29tcG9uZW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvY2Vzc2V1cntcclxuICBtYXJnaW4tbGVmdDogNSU7XHJcbiAgbWFyZ2luLXRvcDogNSU7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbi5kaXNxdWVEe1xyXG4gIG1hcmdpbi10b3A6IDUlO1xyXG4gIG1hcmdpbi1sZWZ0OiA1JTtcclxuICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuLmNhcnRlR3tcclxuICBtYXJnaW4tdG9wOiA1JTtcclxuICBtYXJnaW4tbGVmdDogNSU7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbi5vcmRpbmF0ZXVye1xyXG4gIG1hcmdpbi10b3A6IDUlO1xyXG4gIG1hcmdpbi1sZWZ0OiA1JTtcclxuICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuYnV0dG9ue1xyXG4gIG1hcmdpbi1sZWZ0OiAyJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkYXJrY3lhbjtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgbWFyZ2luLXJpZ2h0OiA1cHg7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG59XHJcblxyXG4uYWRkYnRue1xyXG4gIG1hcmdpbi10b3A6IDIlO1xyXG59XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -766,7 +766,7 @@ AjoutComponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 10%;\r\n  margin-right: 20%;\r\n  width: 450px;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 150px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nbutton{\r\n  margin-left: 2%;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vYWRtaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxzQ0FBc0M7RUFDdEMsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IsVUFBVTtBQUNaOztBQUVBO0VBQ0Usc0NBQXNDO0VBQ3RDLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9hZG1pbi9hZG1pbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmR7XHJcbiAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxuICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICBtYXJnaW4tbGVmdDogMTAlO1xyXG4gIG1hcmdpbi1yaWdodDogMjAlO1xyXG4gIHdpZHRoOiA0NTBweDtcclxufVxyXG5cclxuLmRlc2NyaXB0aW9ue1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG5cclxuaW1ne1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGhlaWdodDogMTUwcHg7XHJcbiAgd2lkdGg6IDMwJTtcclxufVxyXG5cclxuLm5vbXtcclxuICBmb250LWZhbWlseTogJ1lhbnRyYW1hbmF2Jywgc2Fucy1zZXJpZjtcclxuICBmb250LXNpemU6IDE1cHg7XHJcbn1cclxuXHJcbmJ1dHRvbntcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 10%;\r\n  margin-right: 20%;\r\n  width: 450px;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 150px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nbutton{\r\n  margin-left: 2%;\r\n  background-color: darkcyan;\r\n  border: none;\r\n  border-radius: 8px;\r\n  color: white;\r\n  cursor: pointer;\r\n  margin-right: 5px;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vYWRtaW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxzQ0FBc0M7RUFDdEMsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IsVUFBVTtBQUNaOztBQUVBO0VBQ0Usc0NBQXNDO0VBQ3RDLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsMEJBQTBCO0VBQzFCLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLGVBQWU7RUFDZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLGtCQUFrQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2FkbWluL2FkbWluLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2FyZHtcclxuICBib3JkZXItY29sb3I6IGJsYWNrO1xyXG4gIGJvcmRlci1yYWRpdXM6IDhweDtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAxMCU7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyMCU7XHJcbiAgd2lkdGg6IDQ1MHB4O1xyXG59XHJcblxyXG4uZGVzY3JpcHRpb257XHJcbiAgZm9udC1mYW1pbHk6ICdZYW50cmFtYW5hdicsIHNhbnMtc2VyaWY7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcblxyXG5pbWd7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgaGVpZ2h0OiAxNTBweDtcclxuICB3aWR0aDogMzAlO1xyXG59XHJcblxyXG4ubm9te1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG5cclxuYnV0dG9ue1xyXG4gIG1hcmdpbi1sZWZ0OiAyJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkYXJrY3lhbjtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgbWFyZ2luLXJpZ2h0OiA1cHg7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuIl19 */");
 
 /***/ }),
 
@@ -888,7 +888,7 @@ AdminComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 10%;\r\n  margin-right: 20%;\r\n  width: 450px;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 150px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nbutton{\r\n  margin-left: 2%;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vbW9kaWYvbW9kaWYuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxzQ0FBc0M7RUFDdEMsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IsVUFBVTtBQUNaOztBQUVBO0VBQ0Usc0NBQXNDO0VBQ3RDLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9hZG1pbi9tb2RpZi9tb2RpZi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmR7XHJcbiAgYm9yZGVyLWNvbG9yOiBibGFjaztcclxuICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgYm9yZGVyLXN0eWxlOiBzb2xpZDtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICBtYXJnaW4tbGVmdDogMTAlO1xyXG4gIG1hcmdpbi1yaWdodDogMjAlO1xyXG4gIHdpZHRoOiA0NTBweDtcclxufVxyXG5cclxuLmRlc2NyaXB0aW9ue1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG5cclxuaW1ne1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGhlaWdodDogMTUwcHg7XHJcbiAgd2lkdGg6IDMwJTtcclxufVxyXG5cclxuLm5vbXtcclxuICBmb250LWZhbWlseTogJ1lhbnRyYW1hbmF2Jywgc2Fucy1zZXJpZjtcclxuICBmb250LXNpemU6IDE1cHg7XHJcbn1cclxuXHJcbmJ1dHRvbntcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".card{\r\n  border-color: black;\r\n  border-radius: 8px;\r\n  border-style: solid;\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  margin-left: 10%;\r\n  margin-right: 20%;\r\n  width: 450px;\r\n}\r\n\r\n.description{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nimg{\r\n  float: left;\r\n  height: 150px;\r\n  width: 30%;\r\n}\r\n\r\n.nom{\r\n  font-family: 'Yantramanav', sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\nbutton{\r\n  margin-left: 2%;\r\n  background-color: darkcyan;\r\n  border: none;\r\n  border-radius: 8px;\r\n  color: white;\r\n  cursor: pointer;\r\n  margin-right: 5px;\r\n}\r\n\r\nul{\r\n  list-style: none;\r\n  margin-top: 10%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4vbW9kaWYvbW9kaWYuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsbUJBQW1CO0VBQ25CLHFCQUFxQjtFQUNyQixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtFQUNqQixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxzQ0FBc0M7RUFDdEMsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IsVUFBVTtBQUNaOztBQUVBO0VBQ0Usc0NBQXNDO0VBQ3RDLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsMEJBQTBCO0VBQzFCLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLGVBQWU7RUFDZixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLGtCQUFrQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2FkbWluL21vZGlmL21vZGlmLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2FyZHtcclxuICBib3JkZXItY29sb3I6IGJsYWNrO1xyXG4gIGJvcmRlci1yYWRpdXM6IDhweDtcclxuICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG4gIG1hcmdpbi1sZWZ0OiAxMCU7XHJcbiAgbWFyZ2luLXJpZ2h0OiAyMCU7XHJcbiAgd2lkdGg6IDQ1MHB4O1xyXG59XHJcblxyXG4uZGVzY3JpcHRpb257XHJcbiAgZm9udC1mYW1pbHk6ICdZYW50cmFtYW5hdicsIHNhbnMtc2VyaWY7XHJcbiAgZm9udC1zaXplOiAxNXB4O1xyXG59XHJcblxyXG5pbWd7XHJcbiAgZmxvYXQ6IGxlZnQ7XHJcbiAgaGVpZ2h0OiAxNTBweDtcclxuICB3aWR0aDogMzAlO1xyXG59XHJcblxyXG4ubm9te1xyXG4gIGZvbnQtZmFtaWx5OiAnWWFudHJhbWFuYXYnLCBzYW5zLXNlcmlmO1xyXG4gIGZvbnQtc2l6ZTogMTVweDtcclxufVxyXG5cclxuYnV0dG9ue1xyXG4gIG1hcmdpbi1sZWZ0OiAyJTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBkYXJrY3lhbjtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgYm9yZGVyLXJhZGl1czogOHB4O1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgbWFyZ2luLXJpZ2h0OiA1cHg7XHJcbn1cclxuXHJcbnVse1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgbWFyZ2luLXRvcDogMTAlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuIl19 */");
 
 /***/ }),
 
@@ -1482,7 +1482,7 @@ let ComponentAllComponent = class ComponentAllComponent {
         return this._procList;
     }
     get filteredProcList() {
-        return this._processeurPipe.transform(this.procList, this.nameSearched, this.filterSelectedPrix, this.filterSelectedMarque);
+        return this._processeurPipe.transform(this.procList, this.nameSearched, this.filterSelectedPrix, this.filterSelectedMarque, this.filterSelectedSSD);
     }
     get iProc() {
         return this._iProc;
@@ -1562,7 +1562,7 @@ let ComponentAllComponent = class ComponentAllComponent {
             .subscribe(ordis => this.ordiList = ordis);
     }
     get filteredOrdinateur() {
-        return this._ordiPipe.transform(this.ordiList, this.nameSearched, this.filterSelectedPrix, this.filterSelectedMarque);
+        return this._ordiPipe.transform(this.ordiList, this.nameSearched, this.filterSelectedPrix, this.filterSelectedMarque, this.filterSelectedSSD);
     }
     //AJOUT DANS PANIER
     createdOrdi(nom) {
@@ -1584,7 +1584,7 @@ let ComponentAllComponent = class ComponentAllComponent {
             .subscribe(carteG => this.carteGList = carteG);
     }
     get filteredCarteG() {
-        return this._carteGPipe.transform(this.carteGList, this.filterSelectedPrix, this.nameSearched, this.filterSelectedMarque);
+        return this._carteGPipe.transform(this.carteGList, this.filterSelectedPrix, this.nameSearched, this.filterSelectedMarque, this.filterSelectedSSD);
     }
     get icg() {
         return this._icg;
@@ -1605,6 +1605,12 @@ let ComponentAllComponent = class ComponentAllComponent {
         const sub = this.panieCGService
             .post(this.paniercg)
             .subscribe(thePP => console.log(thePP));
+    }
+    isConnected() {
+        if (localStorage.getItem("currentUser") != null) {
+            return true;
+        }
+        return false;
     }
 };
 ComponentAllComponent.ctorParameters = () => [
@@ -1641,7 +1647,7 @@ ComponentAllComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbnRhY3QvY29udGFjdC9jb250YWN0LmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("h1{\r\n  margin-top: 10%;\r\n  margin-left: 2%;\r\n}\r\nimg{\r\n  float: left;\r\n  height: 100px;\r\n  width: 7%;\r\n}\r\nul{\r\n  list-style-type: none;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGFjdC9jb250YWN0L2NvbnRhY3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGVBQWU7RUFDZixlQUFlO0FBQ2pCO0FBQ0E7RUFDRSxXQUFXO0VBQ1gsYUFBYTtFQUNiLFNBQVM7QUFDWDtBQUNBO0VBQ0UscUJBQXFCO0FBQ3ZCIiwiZmlsZSI6InNyYy9hcHAvY29udGFjdC9jb250YWN0L2NvbnRhY3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImgxe1xyXG4gIG1hcmdpbi10b3A6IDEwJTtcclxuICBtYXJnaW4tbGVmdDogMiU7XHJcbn1cclxuaW1ne1xyXG4gIGZsb2F0OiBsZWZ0O1xyXG4gIGhlaWdodDogMTAwcHg7XHJcbiAgd2lkdGg6IDclO1xyXG59XHJcbnVse1xyXG4gIGxpc3Qtc3R5bGUtdHlwZTogbm9uZTtcclxufVxyXG4iXX0= */");
 
 /***/ }),
 
@@ -1660,7 +1666,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ContactComponent = class ContactComponent {
-    constructor() { }
+    constructor() {
+        this.laptop = "assets/linkedin.png";
+    }
     ngOnInit() {
     }
 };
@@ -1820,21 +1828,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderComponent", function() { return HeaderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_authentification_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/authentification.service */ "./src/app/services/authentification.service.ts");
+
 
 
 let HeaderComponent = class HeaderComponent {
-    constructor() {
+    constructor(authenticationService) {
+        this.authenticationService = authenticationService;
         this.logoPath = "assets/logo.png";
         this.PRODUCT = "produits";
         this.ACCUEIL = "Accueil";
-        this.CONTACT = "Admin";
+        this.CONTACT = "Contact";
         this.INSCRIPTION = "inscription";
         this.LOGIN = "login";
         this.PANIER = "panierpanier";
     }
     ngOnInit() {
     }
+    isConnected() {
+        if (localStorage.getItem("currentUser") != null) {
+            return true;
+        }
+        return false;
+    }
+    logout() {
+        this.authenticationService.logout();
+    }
 };
+HeaderComponent.ctorParameters = () => [
+    { type: _services_authentification_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] }
+];
 HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-header',
@@ -2258,110 +2281,114 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
 /* harmony import */ var _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/marques.enum */ "./src/app/enums/marques.enum.ts");
+/* harmony import */ var _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../enums/disque-d-ssd.enum */ "./src/app/enums/disque-d-ssd.enum.ts");
+
 
 
 
 
 let CarteGPipe = class CarteGPipe {
-    transform(carteList, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, filter, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-        if (!filter) {
-            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return carteList;
+    transform(carteList, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, filter, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL, typeSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__["DisqueDSsd"].ALL) {
+        if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__["DisqueDSsd"].ALL) {
+            if (!filter) {
+                if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return carteList;
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return carteList.filter(cg => cg.prix <= 400.00);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return carteList.filter(cg => cg.prix > 1000.00);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return carteList.filter(cg => cg.marque.includes("MSI"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("MSI"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("MSI"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("MSI"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return carteList.filter(cg => cg.marque.includes("ASUS"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("ASUS"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("ASUS"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("ASUS"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                    return carteList.filter(cg => cg.marque.includes("Gigabyte"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                    return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("Gigabyte"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                    return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("Gigabyte"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                    return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("Gigabyte"));
+                }
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return carteList.filter(cg => cg.prix <= 400.00);
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00);
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return carteList.filter(cg => cg.prix > 1000.00);
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return carteList.filter(cg => cg.marque.includes("MSI"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("MSI"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("MSI"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("MSI"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return carteList.filter(cg => cg.marque.includes("ASUS"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("ASUS"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("ASUS"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("ASUS"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
-                return carteList.filter(cg => cg.marque.includes("Gigabyte"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
-                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("Gigabyte"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
-                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("Gigabyte"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
-                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("Gigabyte"));
-            }
-        }
-        else {
-            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return carteList.filter(cg => cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return carteList.filter(cg => cg.prix <= 400.00 && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return carteList.filter(cg => cg.prix > 1000.00 && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return carteList.filter(cg => cg.marque.includes("MSI") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("MSI") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("MSI") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("MSI") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return carteList.filter(cg => cg.marque.includes("ASUS") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("ASUS") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("ASUS") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("ASUS") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
-                return carteList.filter(cg => cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
-                return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
-                return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
-                return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
+            else {
+                if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return carteList.filter(cg => cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return carteList.filter(cg => cg.prix <= 400.00 && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return carteList.filter(cg => cg.prix > 1000.00 && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return carteList.filter(cg => cg.marque.includes("MSI") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("MSI") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("MSI") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("MSI") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return carteList.filter(cg => cg.marque.includes("ASUS") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("ASUS") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("ASUS") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("ASUS") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                    return carteList.filter(cg => cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                    return carteList.filter(cg => cg.prix <= 400.00 && cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                    return carteList.filter(cg => cg.prix > 400.00 && cg.prix <= 1000.00 && cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Gigabyte) {
+                    return carteList.filter(cg => cg.prix > 1000.00 && cg.marque.includes("Gigabyte") && cg.nom.includes(filter));
+                }
             }
         }
     }
@@ -2722,134 +2749,390 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
 /* harmony import */ var _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/marques.enum */ "./src/app/enums/marques.enum.ts");
+/* harmony import */ var _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../enums/disque-d-ssd.enum */ "./src/app/enums/disque-d-ssd.enum.ts");
+
 
 
 
 
 let OrdinateurPipe = class OrdinateurPipe {
-    transform(ordiList, filter, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-        if (!filter) {
-            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return ordiList;
+    transform(ordiList, filter, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL, typeSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__["DisqueDSsd"].ALL) {
+        if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__["DisqueDSsd"].ALL) {
+            if (!filter) {
+                if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList;
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ACER"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ASUS"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.marque.includes("HP"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.marque.includes("MSI"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI"));
+                }
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00);
+            else {
+                if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ACER") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.marque.includes("HP") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.marque.includes("MSI") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter));
+                }
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00);
+        }
+        else if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__["DisqueDSsd"].AVEC) {
+            if (!filter) {
+                if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ACER") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ASUS") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.marque.includes("HP") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.marque.includes("MSI") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI") && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI") && ordi.ssd);
+                }
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00);
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
-                return ordiList.filter(ordi => ordi.marque.includes("ACER"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return ordiList.filter(ordi => ordi.marque.includes("ASUS"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
-                return ordiList.filter(ordi => ordi.marque.includes("HP"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return ordiList.filter(ordi => ordi.marque.includes("MSI"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI"));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI"));
+            else {
+                if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ACER") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ASUS") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.marque.includes("HP") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.marque.includes("MSI") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter) && ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter) && ordi.ssd);
+                }
             }
         }
         else {
-            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return ordiList.filter(ordi => ordi.nom.includes(filter));
+            if (!filter) {
+                if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ACER") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ASUS") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.marque.includes("HP") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.marque.includes("MSI") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI") && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI") && !ordi.ssd);
+                }
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
-                return ordiList.filter(ordi => ordi.marque.includes("ACER") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return ordiList.filter(ordi => ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
-                return ordiList.filter(ordi => ordi.marque.includes("HP") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return ordiList.filter(ordi => ordi.marque.includes("MSI") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter));
-            }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
-                return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter));
+            else {
+                if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ACER") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ACER) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ACER") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.marque.includes("ASUS") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ASUS) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("ASUS") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.marque.includes("HP") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].HP) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("HP") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.marque.includes("MSI") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix <= 400.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 400.00 && ordi.prix <= 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].MSI) {
+                    return ordiList.filter(ordi => ordi.prix > 1000.00 && ordi.marque.includes("MSI") && ordi.nom.includes(filter) && !ordi.ssd);
+                }
             }
         }
     }
@@ -2878,91 +3161,95 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../enums/prix.enum */ "./src/app/enums/prix.enum.ts");
 /* harmony import */ var _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../enums/marques.enum */ "./src/app/enums/marques.enum.ts");
+/* harmony import */ var _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../enums/disque-d-ssd.enum */ "./src/app/enums/disque-d-ssd.enum.ts");
+
 
 
 
 
 let ProcesseurPipePipe = class ProcesseurPipePipe {
-    transform(procList, filter, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+    transform(procList, filter, typePrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL, typeMarque = _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL, typeSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__["DisqueDSsd"].ALL) {
         //TOUTES MARQUES
-        if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-            return procList.filter(proc => proc.prix <= 400.00);
-        }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-            return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00);
-        }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-            return procList.filter(proc => proc.prix > 1000.00);
-        }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-            return procList;
-        }
-        //UNIQUEMENT INTEL
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
-            return procList.filter(proc => proc.prix <= 400.00 && proc.marque.includes("Intel"));
-        }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
-            return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("Intel"));
-        }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
-            return procList.filter(proc => proc.prix > 1000.00 && proc.marque.includes("Intel"));
-        }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
-            return procList.filter(proc => proc.prix > 0.00 && proc.marque.includes("Intel"));
-        }
-        //UNIQUEMENT AMD
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
-            return procList.filter(proc => proc.prix <= 400.00 && proc.marque.includes("AMD"));
-        }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
-            return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("AMD"));
-        }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
-            return procList.filter(proc => proc.prix > 1000.00 && proc.marque.includes("AMD"));
-        }
-        else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
-            return procList.filter(proc => proc.prix > 0.00 && proc.marque.includes("AMD"));
-        }
-        //SI LE NOM N'EST PAS VIDE
-        else {
-            //TOUTES MARQUES
-            if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00);
+        if (typeSSD == _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_4__["DisqueDSsd"].ALL) {
+            if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return procList.filter(proc => proc.prix <= 400.00);
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00);
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00);
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00);
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return procList.filter(proc => proc.prix > 1000.00);
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00);
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                return procList;
             }
             //UNIQUEMENT INTEL
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00 && proc.marque.includes("Intel"));
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
+                return procList.filter(proc => proc.prix <= 400.00 && proc.marque.includes("Intel"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("Intel"));
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
+                return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("Intel"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00 && proc.marque.includes("Intel"));
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
+                return procList.filter(proc => proc.prix > 1000.00 && proc.marque.includes("Intel"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00 && proc.marque.includes("Intel"));
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
+                return procList.filter(proc => proc.prix > 0.00 && proc.marque.includes("Intel"));
             }
             //UNIQUEMENT AMD
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00 && proc.marque.includes("AMD"));
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
+                return procList.filter(proc => proc.prix <= 400.00 && proc.marque.includes("AMD"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("AMD"));
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
+                return procList.filter(proc => proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("AMD"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00 && proc.marque.includes("AMD"));
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
+                return procList.filter(proc => proc.prix > 1000.00 && proc.marque.includes("AMD"));
             }
-            else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
-                return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00 && proc.marque.includes("AMD"));
+            else if (!filter && typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
+                return procList.filter(proc => proc.prix > 0.00 && proc.marque.includes("AMD"));
+            }
+            //SI LE NOM N'EST PAS VIDE
+            else {
+                //TOUTES MARQUES
+                if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00);
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].ALL) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00);
+                }
+                //UNIQUEMENT INTEL
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00 && proc.marque.includes("Intel"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("Intel"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00 && proc.marque.includes("Intel"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].Intel) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00 && proc.marque.includes("Intel"));
+                }
+                //UNIQUEMENT AMD
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF400 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 400.00 && proc.marque.includes("AMD"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].INF1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix <= 1000.00 && proc.prix > 400.00 && proc.marque.includes("AMD"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].SUP1000 && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 1000.00 && proc.marque.includes("AMD"));
+                }
+                else if (typePrix == _enums_prix_enum__WEBPACK_IMPORTED_MODULE_2__["Prix"].ALL && typeMarque == _enums_marques_enum__WEBPACK_IMPORTED_MODULE_3__["Marques"].AMD) {
+                    return procList.filter(proc => proc.nom.includes(filter) && proc.prix > 0.00 && proc.marque.includes("AMD"));
+                }
             }
         }
     }
@@ -3865,7 +4152,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\HELHA\bloc3\projetTi\computer-horizon\site\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\krefel\Google Drive\HELHA\Bloc 3\Projet\DEPO TI\computer-horizon\site\src\main.ts */"./src/main.ts");
 
 
 /***/ })

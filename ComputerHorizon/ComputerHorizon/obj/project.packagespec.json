@@ -1,19 +1,18 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "D:\\HELHA\\bloc3\\projetRider\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj",
+    "projectUniqueName": "C:\\Users\\krefel\\Google Drive\\HELHA\\Bloc 3\\Projet\\DEPO TI C#\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj",
     "projectName": "ComputerHorizon",
-    "projectPath": "D:\\HELHA\\bloc3\\projetRider\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj",
-    "outputPath": "D:\\HELHA\\bloc3\\projetRider\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\obj\\",
+    "projectPath": "C:\\Users\\krefel\\Google Drive\\HELHA\\Bloc 3\\Projet\\DEPO TI C#\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\ComputerHorizon.csproj",
+    "outputPath": "C:\\Users\\krefel\\Google Drive\\HELHA\\Bloc 3\\Projet\\DEPO TI C#\\computer-horizon-c\\ComputerHorizon\\ComputerHorizon\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      "C:\\Users\\krefel\\.dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "originalTargetFrameworks": [
       "netcoreapp2.2"
     ],
     "sources": {
-      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
