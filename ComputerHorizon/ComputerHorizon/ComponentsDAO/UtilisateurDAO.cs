@@ -94,7 +94,7 @@ namespace ComputerHorizon.ComponentsDAO
             //METHODE POUR AJOUTER UN Utilisateur
         public static Utilisateur Post(Utilisateur user)
         {
-            user.Mdp = HashService.HashPwd(user.Mdp);
+            //user.Mdp = HashService.HashPwd(user.Mdp);
             using (SqlConnection connection = DataBase.GetConnection())
             {
                 connection.Open();
