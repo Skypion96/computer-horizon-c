@@ -17,6 +17,10 @@ namespace ComputerHorizon.ComponentsDAO
         
         private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME}";
         
+        private static readonly string REQ_POST = 
+            $"INSERT INTO {TABLE_NAME} ({FIELD_MAIL},{FIELD_MDP})" +
+            $" VALUES (@{FIELD_MAIL},@{FIELD_MDP})";
+        
         public static Admin Query(string mail, string mdp)
         {
             Admin admin = null;
@@ -53,6 +57,21 @@ namespace ComputerHorizon.ComponentsDAO
                 }
             }
             return admins;
+        }
+        
+        public static Admin Post(Admin admin)
+        {
+            using (SqlConnection connection = DataBase.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = REQ_POST;
+                command.Parameters.AddWithValue($"@{FIELD_MAIL}", admin.Mail);
+                command.Parameters.AddWithValue($"@{FIELD_MDP}", admin.Mdp);
+                //admin.Mail = (string)command.ExecuteScalar();
+                command.ExecuteNonQuery();
+            }
+            return admin;
         }
     }
 }

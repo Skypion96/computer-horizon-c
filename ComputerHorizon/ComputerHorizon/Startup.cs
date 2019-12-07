@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ComputerHorizon.Controllers;
 using ComputerHorizon.Token;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,7 @@ namespace ComputerHorizon
             services.Configure<AppSettings>(appSettingsSection);
             
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAdminService, AdminService>();
 
         }
 

@@ -41,5 +41,11 @@ namespace ComputerHorizon.Controllers
         {
             return AdminDAO.Query(model.Mail, model.Mdp);
         }
+        
+        [HttpPost]
+        public ComputerHorizon.Components.Admin Post([FromBody]ComputerHorizon.Components.Admin admin)
+        {
+            return AdminDAO.Post(admin);
+        }
     }
 }
