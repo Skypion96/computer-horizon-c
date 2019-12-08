@@ -23,7 +23,7 @@ namespace ComputerHorizon.ComponentsDAO
             $" values(@{FIELD_ID}, @{FIELD_NOM})";
         
         //AFFICHER UNIQUEMENT IMAGE + NOM + MARQUE                                     
-        private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME}";
+        private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME} where {FIELD_ID} = @{FIELD_ID}";
 
         //SUPPRIMER EN FONCTION DU NOM
         private static readonly string REQ_DELETE =
@@ -46,7 +46,7 @@ namespace ComputerHorizon.ComponentsDAO
             return pan;
         }
         
-        public static List<PanierProcesseur> QueryBase()
+        public static List<PanierProcesseur> QueryBase(string id)
         {
             List<PanierProcesseur> procs = new List<PanierProcesseur>();
             using (SqlConnection connection = DataBase.GetConnection())
@@ -54,6 +54,7 @@ namespace ComputerHorizon.ComponentsDAO
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_QUERY_BASE;
+                command.Parameters.AddWithValue($"@{FIELD_ID}", id);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {

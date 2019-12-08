@@ -16,10 +16,10 @@ namespace ComputerHorizon.Controllers
         }
         
                 
-        [HttpGet("{id}")]
-        public ComputerHorizon.Components.Panier Get(int id)
+        [HttpGet]
+        public IEnumerable<ComputerHorizon.Components.Panier> Get( )
         {
-            return PanierDAO.QueryBase(id);
+            return PanierDAO.QueryBase();
         }
         
     }

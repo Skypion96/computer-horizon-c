@@ -1898,16 +1898,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _services_create_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/create-user.service */ "./src/app/services/create-user.service.ts");
 /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _services_create_panier_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/create-panier.service */ "./src/app/services/create-panier.service.ts");
+/* harmony import */ var _services_panier_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/panier.service */ "./src/app/services/panier.service.ts");
+
+
 
 
 
 
 
 let InscriptionComponent = class InscriptionComponent {
-    constructor(fb, streamUserCreated, userService) {
+    constructor(fb, streamUserCreated, userService, streamPanierCreated, panierService) {
         this.fb = fb;
         this.streamUserCreated = streamUserCreated;
         this.userService = userService;
+        this.streamPanierCreated = streamPanierCreated;
+        this.panierService = panierService;
         this.ACCUEIL = "Accueil";
         this.LOGIN = "Login";
         //private
@@ -1926,9 +1932,11 @@ let InscriptionComponent = class InscriptionComponent {
     }
     ngOnInit() {
         this.listenStreamUserCreated();
+        this.listenStreamPanierCreated();
     }
     createUser($event) {
         this.streamUserCreated.notify(this.buildUser());
+        this.streamPanierCreated.notify(this.buildPanier());
         this.form.reset();
     }
     listenStreamUserCreated() {
@@ -1951,11 +1959,25 @@ let InscriptionComponent = class InscriptionComponent {
         const sub = this.userService.post(user).subscribe(user => console.log());
         //const sub = this.userService.post(user).subscribe(user => console.log());
     }
+    buildPanier() {
+        return {
+            mail: this.form.get("mail").value
+        };
+    }
+    listenStreamPanierCreated() {
+        const sub = this.streamPanierCreated.$panierCreated.subscribe(panier => this.createdPanier(panier));
+    }
+    createdPanier(panier) {
+        const sub = this.panierService.post(panier).subscribe(panier => console.log());
+        //const sub = this.userService.post(user).subscribe(user => console.log());
+    }
 };
 InscriptionComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
     { type: _services_create_user_service__WEBPACK_IMPORTED_MODULE_3__["CreateUserService"] },
-    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] }
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] },
+    { type: _services_create_panier_service__WEBPACK_IMPORTED_MODULE_5__["CreatePanierService"] },
+    { type: _services_panier_service__WEBPACK_IMPORTED_MODULE_6__["PanierService"] }
 ];
 InscriptionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2098,6 +2120,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../services/carte-gservice.service */ "./src/app/services/carte-gservice.service.ts");
 /* harmony import */ var _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../services/ordi-service.service */ "./src/app/services/ordi-service.service.ts");
 /* harmony import */ var _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../services/disque-dservice.service */ "./src/app/services/disque-dservice.service.ts");
+/* harmony import */ var _services_panier_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../services/panier.service */ "./src/app/services/panier.service.ts");
+
 
 
 
@@ -2109,7 +2133,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let PanierComponent = class PanierComponent {
-    constructor(panierProc, panierCG, panierDD, panierOrdi, procService, carteGService, ordiService, disqueDService) {
+    constructor(panierProc, panierCG, panierDD, panierOrdi, procService, carteGService, ordiService, disqueDService, panierService) {
         this.panierProc = panierProc;
         this.panierCG = panierCG;
         this.panierDD = panierDD;
@@ -2118,12 +2142,14 @@ let PanierComponent = class PanierComponent {
         this.carteGService = carteGService;
         this.ordiService = ordiService;
         this.disqueDService = disqueDService;
+        this.panierService = panierService;
         this._total = 0;
         this.carteGList = [];
         this.procList = [];
         this.disqueDList = [];
         this.ordiList = [];
         this._panierCalcTot = 0;
+        this.panier = [];
         //Liste de processeur car le panier contient des processeurs
         //A VERIFIER
         this.panierPList = [];
@@ -2140,6 +2166,12 @@ let PanierComponent = class PanierComponent {
         this.loadCGListCG();
         this.loadOrdiListOrdi();
         this.loadDisqueDListDD();
+        this.loadPanierList();
+    }
+    loadPanierList() {
+        this.subQuery = this.panierService
+            .queryBase()
+            .subscribe();
     }
     loadProcListProc() {
         this.subQuery = this.procService
@@ -2253,7 +2285,8 @@ PanierComponent.ctorParameters = () => [
     { type: _services_proc_service_service__WEBPACK_IMPORTED_MODULE_6__["ProcServiceService"] },
     { type: _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_7__["CarteGServiceService"] },
     { type: _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_8__["OrdiServiceService"] },
-    { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_9__["DisqueDServiceService"] }
+    { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_9__["DisqueDServiceService"] },
+    { type: _services_panier_service__WEBPACK_IMPORTED_MODULE_10__["PanierService"] }
 ];
 PanierComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -3636,6 +3669,41 @@ CreateOrdiService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/services/create-panier.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/services/create-panier.service.ts ***!
+  \***************************************************/
+/*! exports provided: CreatePanierService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreatePanierService", function() { return CreatePanierService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let CreatePanierService = class CreatePanierService {
+    constructor() {
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.$panierCreated = this.subject.asObservable();
+    }
+    notify(panier) {
+        this.subject.next(panier);
+    }
+};
+CreatePanierService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CreatePanierService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/create-proc.service.ts":
 /*!*************************************************!*\
   !*** ./src/app/services/create-proc.service.ts ***!
@@ -3977,6 +4045,48 @@ PanierProcService = PanierProcService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__
         providedIn: 'root'
     })
 ], PanierProcService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/panier.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/services/panier.service.ts ***!
+  \********************************************/
+/*! exports provided: PanierService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PanierService", function() { return PanierService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var PanierService_1;
+
+
+
+let PanierService = PanierService_1 = class PanierService {
+    constructor(http) {
+        this.http = http;
+    }
+    queryBase() {
+        return this.http.get(PanierService_1.URAL_API);
+    }
+    post(panier) {
+        return this.http.post(PanierService_1.URAL_API, panier);
+    }
+};
+PanierService.URAL_API = '/Panier';
+PanierService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+PanierService = PanierService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], PanierService);
 
 
 

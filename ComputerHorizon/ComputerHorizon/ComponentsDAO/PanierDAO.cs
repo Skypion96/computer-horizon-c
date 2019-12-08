@@ -12,16 +12,18 @@ namespace ComputerHorizon.ComponentsDAO
         
         //LES DIFFERENTS CHAMPS
         public static readonly string FIELD_ID = "id";
+        public static readonly string FIELD_MAIL = "mail";
         
         //REQUETES :
         
         //AJOUTER UN NOUVEAU PROCESSEUR
         private static readonly string REQ_POST =
-            $"INSERT INTO {TABLE_NAME} ({FIELD_ID})" +
-            $" values(@{FIELD_ID})";
+            $"INSERT INTO {TABLE_NAME} ({FIELD_MAIL})" +
+            $" OUTPUT Inserted.{FIELD_ID}"+
+            $" values(@{FIELD_MAIL})";
         
         //AFFICHER UNIQUEMENT IMAGE + NOM + MARQUE                                     
-        private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME} inner join panier_processeur on {TABLE_NAME}.@{FIELD_ID} = panier_processeur.id";
+        private static readonly string REQ_QUERY_BASE = $"SELECT * FROM {TABLE_NAME}";
 
 
         
@@ -32,7 +34,7 @@ namespace ComputerHorizon.ComponentsDAO
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_POST;
-                command.Parameters.AddWithValue($"@{FIELD_ID}", pan.Id);
+                command.Parameters.AddWithValue($"@{FIELD_MAIL}", pan.Mail);
                 pan.Id = (int)command.ExecuteScalar(); 
             }
             return pan;
@@ -40,26 +42,21 @@ namespace ComputerHorizon.ComponentsDAO
         
         
                 
-        public static Panier QueryBase(int id)
+        public static List<Panier> QueryBase( )
         {
-            Panier panier = new Panier();
-            PanierProcesseur panierProcesseur = new PanierProcesseur();
+            List<Panier> panier = new List<Panier>();
             using (SqlConnection connection = DataBase.GetConnection())
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = REQ_QUERY_BASE;
-                command.Parameters.AddWithValue($"@{FIELD_ID}",id);
-                if (command.ExecuteNonQuery() == 1)
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        panier = new Panier(reader);
-                        
-                    }
+                    panier.Add(new Panier(reader));
+
                 }
-                
+
             }
             return panier;
         }
