@@ -36,7 +36,7 @@ namespace ComputerHorizon.Controllers
         public AdminConnected Authenticate(string mail, string mdp)
         {
             var user = AdminDAO.QueryBase()
-                .SingleOrDefault(x => x.Mail == mail && x.Mdp == mdp);
+                .SingleOrDefault(x => x.Mail == mail && BCrypt.Net.BCrypt.Verify(mdp,x.Mdp).Equals(true));
 
             if (user == null) return null;
 

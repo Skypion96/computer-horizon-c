@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using ComputerHorizon.Components;
+using ComputerHorizon.Controllers;
 using ComputerHorizon.Models;
 
 namespace ComputerHorizon.ComponentsDAO
@@ -60,7 +61,9 @@ namespace ComputerHorizon.ComponentsDAO
         }
         
         public static Admin Post(Admin admin)
-        {
+        { 
+            admin.Mdp = HashService.HashPwd(admin.Mdp);
+
             using (SqlConnection connection = DataBase.GetConnection())
             {
                 connection.Open();

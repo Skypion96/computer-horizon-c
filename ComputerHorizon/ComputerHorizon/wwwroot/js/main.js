@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"acceuil\">\r\n\r\n  <h1 class=\"welcome\">BIENVENUE <!--{{currentUser.nomUtilisateur}} {{currentUser.prenomUtilisateur}}--></h1>\r\n\r\n</div>\r\n<br>\r\n<div>\r\n  <div class=\"view2\">\r\n    <img src=\"{{newHorizon}}\" width=\"700px\" height=\"393px\"/>\r\n  </div>\r\n</div>\r\n<h1>Que pouvons-nous vous proposer ?</h1>\r\n<hr>\r\n<div class=\"card\">\r\n  <img src=\"{{desc1}}\" width=\"25%\" height=\"20%\" class=\"imgDesc\">\r\n  <p class=\"desc\">Notre objectif est de vous proposer le meilleur de l'informatique au meilleur prix.</p>\r\n</div>\r\n\r\n<div class=\"card\">\r\n  <img src=\"{{desc2}}\" width=\"25%\" height=\"20%\" class=\"imgDesc\">\r\n  <p class=\"desc\">Toujours jusqu'au limite de l'informatique.</p>\r\n</div>\r\n<br>\r\n\r\n<h1>Nos partenaires</h1>\r\n<hr>\r\n<img src=\"{{desc3}}\" width=\"95%\" id=\"home3\">\r\n\r\n<br><br><br>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"acceuil\">\r\n\r\n  <h1 class=\"welcome\">BIENVENUE</h1>\r\n\r\n</div>\r\n<br>\r\n<div>\r\n  <div class=\"view2\">\r\n    <img src=\"{{newHorizon}}\" width=\"700px\" height=\"393px\"/>\r\n  </div>\r\n</div>\r\n<h1>Que pouvons-nous vous proposer ?</h1>\r\n<hr>\r\n<div class=\"card\">\r\n  <img src=\"{{desc1}}\" width=\"25%\" height=\"20%\" class=\"imgDesc\">\r\n  <p class=\"desc\">Notre objectif est de vous proposer le meilleur de l'informatique au meilleur prix.</p>\r\n</div>\r\n\r\n<div class=\"card\">\r\n  <img src=\"{{desc2}}\" width=\"25%\" height=\"20%\" class=\"imgDesc\">\r\n  <p class=\"desc\">Toujours jusqu'au limite de l'informatique.</p>\r\n</div>\r\n<br>\r\n\r\n<h1>Nos partenaires</h1>\r\n<hr>\r\n<img src=\"{{desc3}}\" width=\"95%\" id=\"home3\">\r\n\r\n<br><br><br>\r\n\r\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"filter\">\r\n  <h3>FILTRES : </h3>\r\n  <div class=\"filterPrixProc\">\r\n    <b>PRIX :</b>\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_PRIX\">\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterProc\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedPrix\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterNomProc\">\r\n    <b><label for=\"recherche\">Rechercher : </label></b>\r\n    <input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n  </div>\r\n  <div class=\"filterMarqueProc\">\r\n    <b>MARQUES :</b>\r\n    <div *ngFor=\"let typeFilterMarque of TYPE_FILTER_MARQUE\">\r\n      <label [for]=\"typeFilterMarque.id\">{{typeFilterMarque.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterMarque.id\" name=\"filterMarqueProc\" [value]=\"typeFilterMarque.value\"\r\n             [(ngModel)]=\"filterSelectedMarque\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterSSDDD\">\r\n    <b>SSD :</b>\r\n    <div *ngFor=\"let typeFilterSSD of TYPE_FILTER_SSD\">\r\n      <label [for]=\"typeFilterSSD.id\">{{typeFilterSSD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterSSD.id\" name=\"filterSSDDD\" [value]=\"typeFilterSSD.value\"\r\n             [(ngModel)]=\"filterSelectedSSD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n  </div>\r\n</div>\r\n<div *ngIf=\"isConnected()==false;then thenBlockConnect;else elseBlockConnect\"></div>\r\n<ng-template #thenBlockConnect>\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\">\r\n  <ul>\r\n    <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n      <div class=\"card\" >\r\n        <img src=\"{{cg.img}}\"/>\r\n        <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n          <table>\r\n            <tr>\r\n              <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n            </tr>\r\n            <br><br>\r\n            <tr>\r\n              <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n            </tr>\r\n          </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n          </ng-template>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\">\r\n  <div class=\"disqueD\">\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n            </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\">\r\n  <div class=\"ordinateur\">\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\">\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n</ng-template>\r\n<ng-template #elseBlockConnect>\r\n  <!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n  <div class=\"carteGg\">\r\n    <ul>\r\n      <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{cg.img}}\"/>\r\n          <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <!-- *********************************************** DISQUE DUR *********************************************** -->\r\n  <div class=\"disque\">\r\n    <div class=\"disqueD\">\r\n      <ul>\r\n        <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n          <div class=\"card\" >\r\n            <img src=\"{{dd.img}}\"/>\r\n            <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n            <ng-template #elseBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <br><br>\r\n  <!-- ************************************* ORDINATEUR ***********************************************-->\r\n  <div class=\"ordinateurAll\">\r\n    <div class=\"ordinateur\">\r\n      <ul>\r\n        <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n          <div class=\"card\" >\r\n            <img src=\"{{ordi.img}}\"/>\r\n            <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n              <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n            <ng-template #elseBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n              <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <!-- *********************************************** PROCESSEUR *********************************************** -->\r\n  <div>\r\n    <div class=\"processeur\">\r\n      <ul>\r\n        <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n          <div class=\"card\">\r\n            <img src=\"{{proc.img}}\"/>\r\n            <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n              <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n\r\n            </ng-template>\r\n            <ng-template #elseBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n              <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</ng-template>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"filter\">\r\n  <b>{{chargerUtilisateur()}}</b>\r\n  <h3>FILTRES : </h3>\r\n  <div class=\"filterPrixProc\">\r\n    <b>PRIX :</b>\r\n    <div *ngFor=\"let typeFilter of TYPE_FILTER_PRIX\">\r\n      <label [for]=\"typeFilter.id\">{{typeFilter.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilter.id\" name=\"filterProc\" [value]=\"typeFilter.value\"\r\n             [(ngModel)]=\"filterSelectedPrix\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterNomProc\">\r\n    <b><label for=\"recherche\">Rechercher : </label></b>\r\n    <input type=\"text\" [(ngModel)]=\"nameSearched\" id=\"recherche\">\r\n  </div>\r\n  <div class=\"filterMarqueProc\">\r\n    <b>MARQUES :</b>\r\n    <div *ngFor=\"let typeFilterMarque of TYPE_FILTER_MARQUE\">\r\n      <label [for]=\"typeFilterMarque.id\">{{typeFilterMarque.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterMarque.id\" name=\"filterMarqueProc\" [value]=\"typeFilterMarque.value\"\r\n             [(ngModel)]=\"filterSelectedMarque\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filterSSDDD\">\r\n    <b>SSD :</b>\r\n    <div *ngFor=\"let typeFilterSSD of TYPE_FILTER_SSD\">\r\n      <label [for]=\"typeFilterSSD.id\">{{typeFilterSSD.id}}</label>\r\n      <input type=\"radio\" [id]=\"typeFilterSSD.id\" name=\"filterSSDDD\" [value]=\"typeFilterSSD.value\"\r\n             [(ngModel)]=\"filterSelectedSSD\">\r\n    </div>\r\n  </div>\r\n  <div class=\"filter\">\r\n  </div>\r\n</div>\r\n<div *ngIf=\"isConnected()==false;then thenBlockConnect;else elseBlockConnect\"></div>\r\n<ng-template #thenBlockConnect>\r\n<!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n<div class=\"carteGg\">\r\n  <ul>\r\n    <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n      <div class=\"card\" >\r\n        <img src=\"{{cg.img}}\"/>\r\n        <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n          <table>\r\n            <tr>\r\n              <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n            </tr>\r\n            <br><br>\r\n            <tr>\r\n              <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n            </tr>\r\n            <tr>\r\n              <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n            </tr>\r\n          </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n          </ng-template>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n</div>\r\n<!-- *********************************************** DISQUE DUR *********************************************** -->\r\n<div class=\"disque\">\r\n  <div class=\"disqueD\">\r\n    <ul>\r\n      <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{dd.img}}\"/>\r\n          <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n            </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<br><br>\r\n<!-- ************************************* ORDINATEUR ***********************************************-->\r\n<div class=\"ordinateurAll\">\r\n  <div class=\"ordinateur\">\r\n    <ul>\r\n      <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n<!-- *********************************************** PROCESSEUR *********************************************** -->\r\n<div>\r\n  <div class=\"processeur\">\r\n    <ul>\r\n      <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n        <div class=\"card\">\r\n          <img src=\"{{proc.img}}\"/>\r\n          <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n</ng-template>\r\n<ng-template #elseBlockConnect>\r\n  <!-- *********************************************** CARTES GRAPHIQUES *********************************************** -->\r\n  <div class=\"carteGg\">\r\n    <ul>\r\n      <li class=\"cg\" *ngFor=\"let cg of filteredCarteG; index as i\">\r\n        <div class=\"card\" >\r\n          <img src=\"{{cg.img}}\"/>\r\n          <div *ngIf=\"i==icg; then thenBlock else elseBlock\"></div>\r\n          <ng-template #thenBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <br><br>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Marque : {{cg.marque}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Frequence : {{cg.frequence}} </b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"freq\" >Mémoire vidéo : {{cg.memoireVideo}} </b>\r\n              </tr>\r\n            </table>\r\n            <button (click)=\"changeretroICG(i)\">Afficher moins</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n          <ng-template #elseBlock>\r\n            <table>\r\n              <tr>\r\n                <b class=\"nom\">Nom : {{cg.nom}}</b>\r\n              </tr>\r\n              <tr>\r\n                <b class=\"prixICG\" >Prix : {{cg.prix}} €</b>\r\n              </tr>\r\n              <br><br>\r\n            </table>\r\n            <button (click)=\"changeICG(i)\">Afficher plus</button>\r\n            <button (click)=\"createdCG(cg.nom)\">Ajouter au Panier</button>\r\n          </ng-template>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <!-- *********************************************** DISQUE DUR *********************************************** -->\r\n  <div class=\"disque\">\r\n    <div class=\"disqueD\">\r\n      <ul>\r\n        <li class=\"dd\" *ngFor=\"let dd of filteredDisqueD; index as i\">\r\n          <div class=\"card\" >\r\n            <img src=\"{{dd.img}}\"/>\r\n            <div *ngIf=\"i==iDD; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\" >Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{dd.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{dd.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Interne : {{dd.interne}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{dd.capacite}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroDD(i)\">Afficher moins</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n            <ng-template #elseBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{dd.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{dd.prix}} €</b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeDD(i)\">Afficher plus</button>\r\n              <button (click)=\"createdDD(dd.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <br><br>\r\n  <!-- ************************************* ORDINATEUR ***********************************************-->\r\n  <div class=\"ordinateurAll\">\r\n    <div class=\"ordinateur\">\r\n      <ul>\r\n        <li class=\"ordi\" *ngFor=\"let ordi of filteredOrdinateur; index as i\">\r\n          <div class=\"card\" >\r\n            <img src=\"{{ordi.img}}\"/>\r\n            <div *ngIf=\"i==iOrdi; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{ordi.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Description : {{ordi.description}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite : {{ordi.capacite}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Nom carte graphique : {{ordi.nomCg}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Nom processeur : {{ordi.nomProc}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">SSD : {{ordi.ssd}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Capacite SSD : {{ordi.capaciteSsd}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroIOrdi(i)\">Afficher moins</button>\r\n              <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n            <ng-template #elseBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{ordi.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{ordi.prix}} €</b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeIOrdi(i)\">Afficher plus</button>\r\n              <button (click)=\"createdOrdi(ordi.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <!-- *********************************************** PROCESSEUR *********************************************** -->\r\n  <div>\r\n    <div class=\"processeur\">\r\n      <ul>\r\n        <li class=\"proc\" *ngFor=\"let proc of filteredProcList ; index as i\" >\r\n          <div class=\"card\">\r\n            <img src=\"{{proc.img}}\"/>\r\n            <div *ngIf=\"i==iProc; then thenBlock else elseBlock\"></div>\r\n            <ng-template #thenBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Marque : {{proc.marque}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Frequence : {{proc.frequence}} </b>\r\n                </tr>\r\n                <tr>\r\n                  <b class=\"prixI\">Nombre de coeurs : {{proc.nbCoeurs}} </b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeretroProc(i)\">Afficher moins</button>\r\n              <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n\r\n            </ng-template>\r\n            <ng-template #elseBlock>\r\n              <table>\r\n                <tr>\r\n                  <b class=\"nom\">Nom : {{proc.nom}}</b>\r\n                </tr>\r\n                <br><br>\r\n                <tr>\r\n                  <b class=\"prixI\">Prix : {{proc.prix}} €</b>\r\n                </tr>\r\n              </table>\r\n              <button (click)=\"changeProc(i)\">Afficher plus</button>\r\n              <button (click)=\"createdProc(proc.nom)\">Ajouter au Panier</button>\r\n            </ng-template>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</ng-template>\r\n");
 
 /***/ }),
 
@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header></header>\r\n<router-outlet>\r\n<nav>\r\n  <a [routerLink]=\"'/'+ACCUEIL\">\r\n    <img src=\"{{logoPath}}\" width=\"100px\" height=\"100px\"/>\r\n  </a>\r\n  <ul>\r\n    <li>\r\n      <a [routerLink]=\"'/'+ACCUEIL\">Accueil</a>\r\n    </li>\r\n    <li class=\"items\">\r\n      <a [routerLink]=\"'/'+PRODUCT\">Nos produits</a>\r\n    </li>\r\n    <li>\r\n      <a [routerLink]=\"'/'+CONTACT\">Nous contacter</a>\r\n    </li>\r\n    <li class=\"btnContainer\">\r\n      <div *ngIf=\"isConnected() == true;then connected else notConnected\"></div>\r\n\r\n      <ng-template #connected>\r\n          <button class=\"btn\" [routerLink]=\"'/'+ACCUEIL\" (click)=\"logout()\">Déconnexion</button>\r\n          <button class=\"btn\" [routerLink]=\"'/'+PANIER\">Panier</button>\r\n        </ng-template>\r\n        <ng-template #notConnected>\r\n          <button class=\"btn\" id=\"connexion\" [routerLink]=\"'/'+LOGIN\">Connexion</button>\r\n        </ng-template>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n</router-outlet>\r\n<footer></footer>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header></header>\r\n<router-outlet>\r\n<nav>\r\n  <a [routerLink]=\"'/'+ACCUEIL\">\r\n    <img src=\"{{logoPath}}\" width=\"100px\" height=\"100px\"/>\r\n  </a>\r\n  <ul>\r\n    <li>\r\n      <a [routerLink]=\"'/'+ACCUEIL\">Accueil</a>\r\n    </li>\r\n    <li class=\"items\">\r\n      <a [routerLink]=\"'/'+PRODUCT\">Nos produits</a>\r\n    </li>\r\n    <li>\r\n      <a [routerLink]=\"'/'+CONTACT\">Nous contacter</a>\r\n    </li>\r\n    <li class=\"btnContainer\">\r\n      <div *ngIf=\"isConnected() == true || isConnectedAdmin()==true;then connected; else notConnected\"></div>\r\n      <ng-template #connected>\r\n          <button class=\"btn\" [routerLink]=\"'/'+ACCUEIL\" (click)=\"logout() || logoutAdmin()\">Déconnexion</button>\r\n          <div *ngIf=\"isConnected() ==true;then userConnectedButton;else adminConnectedButton\"></div>\r\n      </ng-template>\r\n      <ng-template #notConnected>\r\n        <button class=\"btn\" id=\"connexion\" [routerLink]=\"'/'+LOGIN\">Connexion</button>\r\n      </ng-template>\r\n\r\n\r\n        <ng-template #adminConnectedButton>\r\n          <button class=\"btn\" [routerLink]=\"'/'+ADMIN\">Admin</button>\r\n        </ng-template>\r\n        <ng-template #userConnectedButton>\r\n          <button class=\"btn\" [routerLink]=\"'/'+PANIER\">Panier</button>\r\n        </ng-template>\r\n\r\n\r\n    </li>\r\n  </ul>\r\n</nav>\r\n</router-outlet>\r\n<footer></footer>\r\n");
 
 /***/ }),
 
@@ -175,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Login</h2>\r\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"password\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Login\r\n    </button>\r\n    <a [routerLink]=\"'/'+INSCRIPTION\" class=\"btn btn-link\">Register</a>\r\n  </div>\r\n</form>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2 style=\"margin-top: 20%\">Login</h2>\r\n<form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"password\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Login\r\n    </button>\r\n    <a [routerLink]=\"'/'+INSCRIPTION\" class=\"btn btn-link\">Register</a>\r\n  </div>\r\n</form>\r\n\r\n<h2>Login admin</h2>\r\n<form [formGroup]=\"loginFormAdmin\" (ngSubmit)=\"onSubmitAdmin()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"mail\">Mail</label>\r\n    <input type=\"text\" formControlName=\"mail\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mail.errors }\" />\r\n    <div *ngIf=\"submitted && f.mail.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mail.errors.required\">Mail is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"mdp\">Mot de passe</label>\r\n    <input type=\"password\" formControlName=\"mdp\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.mdp.errors }\" />\r\n    <div *ngIf=\"submitted && f.mdp.errors\" class=\"invalid-feedback\">\r\n      <div *ngIf=\"f.mdp.errors.required\">Mot de passe is required</div>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <button [disabled]=\"loading\" class=\"btn btn-primary\">\r\n      <span *ngIf=\"loading\" class=\"spinner-border spinner-border-sm mr-1\"></span>\r\n      Login\r\n    </button>\r\n  </div>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -188,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panier\" style=\"margin-top: 20%\" >\r\n  <ul>\r\n    <div *ngFor=\"let procp of panierPList\">\r\n      <li *ngFor=\"let proc of _procList\">\r\n        <div class=\"card\" *ngIf=\"proc.nom == procp.nom;then thenBlockP\"></div>\r\n          <ng-template #thenBlockP>\r\n            <img src=\"{{proc.img}}\"/>\r\n            <div>\r\n              <table>\r\n                <tr>\r\n                  {{proc.nom}}\r\n                </tr>\r\n                <tr>\r\n                  {{proc.prix}}\r\n                </tr>\r\n              </table>\r\n            </div>\r\n            <button (click)=\"deleteAndSaveProcList(procp)\">Supprimer du panier</button>\r\n          </ng-template>\r\n      </li>\r\n    </div>\r\n  </ul>\r\n\r\n  <ul>\r\n    <div *ngFor=\"let panDD of panierDDList\">\r\n      <li *ngFor=\"let dd of disqueDList\">\r\n        <div class=\"card\" *ngIf=\"dd.nom == panDD.nom;then thenBlockDD \"></div>\r\n          <ng-template #thenBlockDD>\r\n          <img src=\"{{dd.img}}\"/>\r\n          <div>\r\n            <table>\r\n              <tr>\r\n                {{dd.nom}}\r\n              </tr>\r\n              <tr>\r\n                {{dd.prix}}\r\n              </tr>\r\n            </table>\r\n          </div>\r\n          <button (click)=\"deleteAndSaveDDList(panDD)\">Supprimer du panier</button>\r\n      </ng-template>\r\n    </li>\r\n    </div>\r\n  </ul>\r\n\r\n  <ul>\r\n    <div *ngFor=\"let paniercg of panierCGList\">\r\n      <li *ngFor=\"let CG of carteGList\">\r\n        <div class=\"card\" *ngIf=\"CG.nom == paniercg.nom;then thenBlockCG\"></div>\r\n        <ng-template #thenBlockCG >\r\n          <img src=\"{{CG.img}}\"/>\r\n          <div>\r\n            <table>\r\n              <tr>\r\n                {{CG.nom}}\r\n              </tr>\r\n              <tr>\r\n                {{CG.prix}}\r\n              </tr>\r\n            </table>\r\n          </div>\r\n          <button (click)=\"deleteAndSaveCGList(paniercg)\">Supprimer du panier</button>\r\n        </ng-template>\r\n      </li>\r\n    </div>\r\n  </ul>\r\n\r\n  <ul>\r\n    <div *ngFor=\"let panOrdi of panierOrdiList\">\r\n      <li *ngFor=\"let ordi of ordiList\">\r\n        <div class=\"card\" *ngIf=\"ordi.nom == panOrdi.nom;then thenBlockOrdi \"></div>\r\n        <ng-template #thenBlockOrdi >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div>\r\n            <table>\r\n              <tr>\r\n                {{ordi.nom}}\r\n              </tr>\r\n              <tr>\r\n                {{ordi.prix}}\r\n              </tr>\r\n            </table >\r\n          </div>\r\n          <button (click)=\"deleteAndSaveOrdiList(panOrdi)\">Supprimer du panier</button>\r\n        </ng-template>\r\n      </li>\r\n    </div>\r\n  </ul>\r\n  <div *ngIf=\"panierCalcTot==1;then thenBlockDesact;else elseBlockDesact\"></div>\r\n  <ng-template #thenBlockDesact>\r\n    <button>Calculer le total</button>\r\n  </ng-template>\r\n  <ng-template #elseBlockDesact>\r\n    <button (click)=\"totalCalculate(1)\">Calculer le total</button>\r\n  </ng-template>\r\n\r\n  <!--[routerLink]=\"\"-->\r\n  <button >Confirmer l'achat</button>\r\n</div>\r\n\r\n<b >Total: {{total}}</b>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panier\" style=\"margin-top: 20%\" >\r\n  <b>{{chargerUtilisateur()}}</b>\r\n  <ul>\r\n    <div *ngFor=\"let procp of panierPList\">\r\n      <div *ngIf=\"procp.id == idPanier;then thenBlockProcPan\"></div>\r\n      <ng-template #thenBlockProcPan>\r\n        <li *ngFor=\"let proc of _procList\">\r\n          <div class=\"card\" *ngIf=\"proc.nom == procp.nom;then thenBlockP\"></div>\r\n            <ng-template #thenBlockP>\r\n              <img src=\"{{proc.img}}\"/>\r\n              <div>\r\n                <table>\r\n                  <tr>\r\n                    {{proc.nom}}\r\n                  </tr>\r\n                  <tr>\r\n                    {{proc.prix}}\r\n                  </tr>\r\n                </table>\r\n              </div>\r\n              <button (click)=\"deleteAndSaveProcList(procp)\">Supprimer du panier</button>\r\n            </ng-template>\r\n        </li>\r\n      </ng-template>\r\n    </div>\r\n  </ul>\r\n\r\n  <ul>\r\n    <div *ngFor=\"let panDD of panierDDList\">\r\n      <div *ngIf=\"panDD.id == idPanier;then thenBlockDDPan\"></div>\r\n      <ng-template #thenBlockDDPan>\r\n        <li *ngFor=\"let dd of disqueDList\">\r\n          <div class=\"card\" *ngIf=\"dd.nom == panDD.nom;then thenBlockDD \"></div>\r\n            <ng-template #thenBlockDD>\r\n            <img src=\"{{dd.img}}\"/>\r\n            <div>\r\n              <table>\r\n                <tr>\r\n                  {{dd.nom}}\r\n                </tr>\r\n                <tr>\r\n                  {{dd.prix}}\r\n                </tr>\r\n              </table>\r\n            </div>\r\n            <button (click)=\"deleteAndSaveDDList(panDD)\">Supprimer du panier</button>\r\n          </ng-template>\r\n        </li>\r\n      </ng-template>\r\n    </div>\r\n  </ul>\r\n\r\n  <ul>\r\n    <div *ngFor=\"let paniercg of panierCGList\">\r\n      <div *ngIf=\"paniercg.id == idPanier;then thenBlockCGPan\"></div>\r\n      <ng-template #thenBlockCGPan>\r\n      <li *ngFor=\"let CG of carteGList\">\r\n        <div class=\"card\" *ngIf=\"CG.nom == paniercg.nom;then thenBlockCG\"></div>\r\n        <ng-template #thenBlockCG >\r\n          <img src=\"{{CG.img}}\"/>\r\n          <div>\r\n            <table>\r\n              <tr>\r\n                {{CG.nom}}\r\n              </tr>\r\n              <tr>\r\n                {{CG.prix}}\r\n              </tr>\r\n            </table>\r\n          </div>\r\n          <button (click)=\"deleteAndSaveCGList(paniercg)\">Supprimer du panier</button>\r\n        </ng-template>\r\n      </li>\r\n      </ng-template>\r\n    </div>\r\n  </ul>\r\n\r\n  <ul>\r\n    <div *ngFor=\"let panOrdi of panierOrdiList\">\r\n      <div *ngIf=\"panOrdi.id == idPanier;then thenBlockOrdiPan\"></div>\r\n      <ng-template #thenBlockOrdiPan>\r\n      <li *ngFor=\"let ordi of ordiList\">\r\n        <div class=\"card\" *ngIf=\"ordi.nom == panOrdi.nom;then thenBlockOrdi \"></div>\r\n        <ng-template #thenBlockOrdi >\r\n          <img src=\"{{ordi.img}}\"/>\r\n          <div>\r\n            <table>\r\n              <tr>\r\n                {{ordi.nom}}\r\n              </tr>\r\n              <tr>\r\n                {{ordi.prix}}\r\n              </tr>\r\n            </table >\r\n          </div>\r\n          <button (click)=\"deleteAndSaveOrdiList(panOrdi)\">Supprimer du panier</button>\r\n        </ng-template>\r\n      </li>\r\n      </ng-template>\r\n    </div>\r\n  </ul>\r\n  <div *ngIf=\"panierCalcTot==1;then thenBlockDesact;else elseBlockDesact\"></div>\r\n  <ng-template #thenBlockDesact>\r\n    <button>Calculer le total</button>\r\n  </ng-template>\r\n  <ng-template #elseBlockDesact>\r\n    <button (click)=\"totalCalculate(1)\">Calculer le total</button>\r\n  </ng-template>\r\n\r\n  <!--[routerLink]=\"\"-->\r\n  <button >Confirmer l'achat</button>\r\n</div>\r\n\r\n<b >Total: {{total}}</b> <br>\r\n<b>{{idPanier}}</b>\r\n");
 
 /***/ }),
 
@@ -461,8 +461,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
 /* harmony import */ var _services_authentification_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/authentification.service */ "./src/app/services/authentification.service.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-
 
 
 
@@ -483,17 +481,6 @@ let AccueilComponent = class AccueilComponent {
         this.currentUser = this.authenticationService.currentUserValue;
     }
     ngOnInit() {
-        this.loadAllUsers();
-    }
-    deleteUser(mail) {
-        this.userService.delete(mail)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["first"])())
-            .subscribe(() => this.loadAllUsers());
-    }
-    loadAllUsers() {
-        this.userService.queryBase()
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["first"])())
-            .subscribe(users => this.users = users);
     }
 };
 AccueilComponent.ctorParameters = () => [
@@ -1342,6 +1329,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/panier-disque-dur.service */ "./src/app/services/panier-disque-dur.service.ts");
 /* harmony import */ var _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/panier-ordinateur.service */ "./src/app/services/panier-ordinateur.service.ts");
 /* harmony import */ var _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../enums/marques.enum */ "./src/app/enums/marques.enum.ts");
+/* harmony import */ var _services_authentification_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../services/authentification.service */ "./src/app/services/authentification.service.ts");
+/* harmony import */ var _services_panier_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/panier.service */ "./src/app/services/panier.service.ts");
+
+
 
 
 
@@ -1360,7 +1351,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ComponentAllComponent = class ComponentAllComponent {
-    constructor(procService, disqueDService, ordiService, carteGService, panierpService, panieCGService, panierDDService, panierOrdinateurService) {
+    constructor(procService, disqueDService, ordiService, carteGService, panierpService, panieCGService, panierDDService, panierOrdinateurService, auth, panierService) {
         this.procService = procService;
         this.disqueDService = disqueDService;
         this.ordiService = ordiService;
@@ -1369,7 +1360,41 @@ let ComponentAllComponent = class ComponentAllComponent {
         this.panieCGService = panieCGService;
         this.panierDDService = panierDDService;
         this.panierOrdinateurService = panierOrdinateurService;
+        this.auth = auth;
+        this.panierService = panierService;
         this._processeurPipe = new _pipes_processeur_pipe_pipe__WEBPACK_IMPORTED_MODULE_2__["ProcesseurPipePipe"]();
+        this._idPanier = 0;
+        this.panier = [];
+        this.disqueDList = [];
+        this._disqueDPipe = new _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_5__["DisqueDPipe"]();
+        //AJOUT DANS PANIER
+        this._panierdd = new class {
+        };
+        this.TYPE_FILTER_SSD = [{
+                id: 'Tout',
+                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].ALL
+            }, {
+                id: 'SSD',
+                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].AVEC
+            }, {
+                id: 'Non SSD',
+                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].SANS
+            }];
+        this.filterSelectedSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].ALL;
+        this.TYPE_FILTER_PRIX = [{
+                id: 'Tout',
+                value: _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL
+            }, {
+                id: 'Inférieur à 400',
+                value: _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400
+            }, {
+                id: 'Entre 400 et 1000',
+                value: _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000
+            }, {
+                id: 'Supérieur à 1000',
+                value: _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000
+            }];
+        this.filterSelectedPrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL;
         this.TYPE_FILTER_MARQUE = [{
                 id: 'Tout',
                 value: _enums_marques_enum__WEBPACK_IMPORTED_MODULE_16__["Marques"].ALL
@@ -1408,39 +1433,6 @@ let ComponentAllComponent = class ComponentAllComponent {
         //AJOUT DANS PANIER
         this._panierp = new class {
         };
-        this.procCharged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        //********************************************************************************************************************************
-        //DISQUE DUR
-        this.disqueDList = [];
-        this._disqueDPipe = new _pipes_disque_d_pipe__WEBPACK_IMPORTED_MODULE_5__["DisqueDPipe"]();
-        //AJOUT DANS PANIER
-        this._panierdd = new class {
-        };
-        this.TYPE_FILTER_SSD = [{
-                id: 'Tout',
-                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].ALL
-            }, {
-                id: 'SSD',
-                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].AVEC
-            }, {
-                id: 'Non SSD',
-                value: _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].SANS
-            }];
-        this.filterSelectedSSD = _enums_disque_d_ssd_enum__WEBPACK_IMPORTED_MODULE_6__["DisqueDSsd"].ALL;
-        this.TYPE_FILTER_PRIX = [{
-                id: 'Tout',
-                value: _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL
-            }, {
-                id: 'Inférieur à 400',
-                value: _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF400
-            }, {
-                id: 'Entre 400 et 1000',
-                value: _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].INF1000
-            }, {
-                id: 'Supérieur à 1000',
-                value: _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].SUP1000
-            }];
-        this.filterSelectedPrix = _enums_prix_enum__WEBPACK_IMPORTED_MODULE_3__["Prix"].ALL;
         //********************************************************************************************************************************
         //ORDINATEURS
         this.ordiList = [];
@@ -1458,17 +1450,12 @@ let ComponentAllComponent = class ComponentAllComponent {
         this._paniercg = new class {
         };
     }
-    get panierp() {
-        return this._panierp;
-    }
-    set panierp(value) {
-        this._panierp = value;
-    }
     ngOnInit() {
         this.loadProcList();
         this.loadDDList();
         this.loadOrdiList();
         this.loadCGList();
+        this.loadPanierList();
     }
     ngOnDestroy() {
         this.subQuery && this.subQuery.unsubscribe();
@@ -1478,8 +1465,19 @@ let ComponentAllComponent = class ComponentAllComponent {
             .queryBase()
             .subscribe(procs => this._procList = procs);
     }
+    get panierp() {
+        return this._panierp;
+    }
+    set panierp(value) {
+        this._panierp = value;
+    }
     get procList() {
         return this._procList;
+    }
+    loadPanierList() {
+        this.subQuery = this.panierService
+            .queryBase()
+            .subscribe(procs => this.panier = procs);
     }
     get filteredProcList() {
         return this._processeurPipe.transform(this.procList, this.nameSearched, this.filterSelectedPrix, this.filterSelectedMarque, this.filterSelectedSSD);
@@ -1499,11 +1497,13 @@ let ComponentAllComponent = class ComponentAllComponent {
     //AJOUT DANS PANIER
     createdProc(nom) {
         this.panierp.nom = nom;
-        this.panierp.id = 1;
+        this.panierp.id = this.idPanier;
         const sub = this.panierpService
             .post(this.panierp)
             .subscribe(thePP => console.log(thePP));
     }
+    //********************************************************************************************************************************
+    //DISQUE DUR
     get panierdd() {
         return this._panierdd;
     }
@@ -1533,7 +1533,7 @@ let ComponentAllComponent = class ComponentAllComponent {
     //AJOUT DANS PANIER
     createdDD(nom) {
         this.panierdd.nom = nom;
-        this.panierdd.id = 1;
+        this.panierdd.id = this.idPanier;
         const sub = this.panierDDService
             .post(this.panierdd)
             .subscribe(thePP => console.log(thePP));
@@ -1567,7 +1567,7 @@ let ComponentAllComponent = class ComponentAllComponent {
     //AJOUT DANS PANIER
     createdOrdi(nom) {
         this.paniero.nom = nom;
-        this.paniero.id = 1;
+        this.paniero.id = this.idPanier;
         const sub = this.panierOrdinateurService
             .post(this.paniero)
             .subscribe(thePP => console.log(thePP));
@@ -1601,7 +1601,7 @@ let ComponentAllComponent = class ComponentAllComponent {
     //AJOUT DANS PANIER
     createdCG(nom) {
         this.paniercg.nom = nom;
-        this.paniercg.id = 1;
+        this.paniercg.id = this.idPanier;
         const sub = this.panieCGService
             .post(this.paniercg)
             .subscribe(thePP => console.log(thePP));
@@ -1612,6 +1612,21 @@ let ComponentAllComponent = class ComponentAllComponent {
         }
         return false;
     }
+    get idPanier() {
+        return this._idPanier;
+    }
+    set idPanier(value) {
+        this._idPanier = value;
+    }
+    chargerUtilisateur() {
+        var hhh;
+        hhh = this.auth.getMail();
+        for (let p of this.panier) {
+            if (hhh == p.mail) {
+                this.idPanier = p.id;
+            }
+        }
+    }
 };
 ComponentAllComponent.ctorParameters = () => [
     { type: _services_proc_service_service__WEBPACK_IMPORTED_MODULE_4__["ProcServiceService"] },
@@ -1621,11 +1636,10 @@ ComponentAllComponent.ctorParameters = () => [
     { type: _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_12__["PanierProcService"] },
     { type: _services_panier_carte_graphique_service__WEBPACK_IMPORTED_MODULE_13__["PanierCarteGraphiqueService"] },
     { type: _services_panier_disque_dur_service__WEBPACK_IMPORTED_MODULE_14__["PanierDisqueDurService"] },
-    { type: _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_15__["PanierOrdinateurService"] }
+    { type: _services_panier_ordinateur_service__WEBPACK_IMPORTED_MODULE_15__["PanierOrdinateurService"] },
+    { type: _services_authentification_service__WEBPACK_IMPORTED_MODULE_17__["AuthenticationService"] },
+    { type: _services_panier_service__WEBPACK_IMPORTED_MODULE_18__["PanierService"] }
 ];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-], ComponentAllComponent.prototype, "procCharged", void 0);
 ComponentAllComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-component-all',
@@ -1841,6 +1855,7 @@ let HeaderComponent = class HeaderComponent {
         this.CONTACT = "Contact";
         this.INSCRIPTION = "inscription";
         this.LOGIN = "login";
+        this.ADMIN = "Admin";
         this.PANIER = "panierpanier";
     }
     ngOnInit() {
@@ -1851,8 +1866,17 @@ let HeaderComponent = class HeaderComponent {
         }
         return false;
     }
+    isConnectedAdmin() {
+        if (localStorage.getItem("currentAdmin") != null) {
+            return true;
+        }
+        return false;
+    }
     logout() {
         this.authenticationService.logout();
+    }
+    logoutAdmin() {
+        this.authenticationService.logoutAdmin();
     }
 };
 HeaderComponent.ctorParameters = () => [
@@ -2027,8 +2051,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginComponent = class LoginComponent {
-    constructor(formBuilder, route, router, authenticationService) {
+    constructor(formBuilder, formBuilderAdmin, route, router, authenticationService) {
         this.formBuilder = formBuilder;
+        this.formBuilderAdmin = formBuilderAdmin;
         this.route = route;
         this.router = router;
         this.authenticationService = authenticationService;
@@ -2037,8 +2062,12 @@ let LoginComponent = class LoginComponent {
         this.error = '';
         this.INSCRIPTION = "inscription";
         this.ACCUEIL = "Accueil";
+        this.ADMIN = "Admin";
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
+            this.router.navigate(['/']);
+        }
+        if (this.authenticationService.currentAdminValue) {
             this.router.navigate(['/']);
         }
     }
@@ -2046,12 +2075,17 @@ let LoginComponent = class LoginComponent {
         this.loginForm = this.formBuilder.group({
             mail: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             mdp: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
-        });
+        }, this.loginFormAdmin = this.formBuilderAdmin.group({
+            mail: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            mdp: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+        }));
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        this.returnUrlA = this.route.snapshot.queryParams['returnUrlA'] || '/';
     }
     // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
+    get fA() { return this.loginFormAdmin.controls; }
     onSubmit() {
         this.submitted = true;
         // stop here if form is invalid
@@ -2068,8 +2102,25 @@ let LoginComponent = class LoginComponent {
             this.loading = false;
         });
     }
+    onSubmitAdmin() {
+        this.submitted = true;
+        // stop here if form is invalid
+        if (this.loginFormAdmin.invalid) {
+            return;
+        }
+        this.loading = true;
+        this.authenticationService.loginAdmin(this.fA.mail.value, this.fA.mdp.value)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["first"])())
+            .subscribe(data => {
+            this.router.navigate([this.returnUrlA]);
+        }, error => {
+            this.error = error;
+            this.loading = false;
+        });
+    }
 };
 LoginComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
@@ -2121,6 +2172,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../services/ordi-service.service */ "./src/app/services/ordi-service.service.ts");
 /* harmony import */ var _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../services/disque-dservice.service */ "./src/app/services/disque-dservice.service.ts");
 /* harmony import */ var _services_panier_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../services/panier.service */ "./src/app/services/panier.service.ts");
+/* harmony import */ var _services_authentification_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/authentification.service */ "./src/app/services/authentification.service.ts");
+
 
 
 
@@ -2133,7 +2186,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let PanierComponent = class PanierComponent {
-    constructor(panierProc, panierCG, panierDD, panierOrdi, procService, carteGService, ordiService, disqueDService, panierService) {
+    constructor(panierProc, panierCG, panierDD, panierOrdi, procService, carteGService, ordiService, disqueDService, panierService, auth) {
         this.panierProc = panierProc;
         this.panierCG = panierCG;
         this.panierDD = panierDD;
@@ -2143,6 +2196,7 @@ let PanierComponent = class PanierComponent {
         this.ordiService = ordiService;
         this.disqueDService = disqueDService;
         this.panierService = panierService;
+        this.auth = auth;
         this._total = 0;
         this.carteGList = [];
         this.procList = [];
@@ -2150,6 +2204,7 @@ let PanierComponent = class PanierComponent {
         this.ordiList = [];
         this._panierCalcTot = 0;
         this.panier = [];
+        this._idPanier = 0;
         //Liste de processeur car le panier contient des processeurs
         //A VERIFIER
         this.panierPList = [];
@@ -2158,6 +2213,7 @@ let PanierComponent = class PanierComponent {
         this.panierOrdiList = [];
     }
     ngOnInit() {
+        this.loadPanierList();
         this.loadProcListProc();
         this.loadProcList();
         this.loadDisqueDList();
@@ -2167,11 +2223,12 @@ let PanierComponent = class PanierComponent {
         this.loadOrdiListOrdi();
         this.loadDisqueDListDD();
         this.loadPanierList();
+        this.chargerUtilisateur();
     }
     loadPanierList() {
         this.subQuery = this.panierService
             .queryBase()
-            .subscribe();
+            .subscribe(procs => this.panier = procs);
     }
     loadProcListProc() {
         this.subQuery = this.procService
@@ -2276,6 +2333,27 @@ let PanierComponent = class PanierComponent {
             .delete(dd.nom)
             .subscribe(() => this.loadDisqueDList());
     }
+    get user() {
+        return this._user;
+    }
+    set user(value) {
+        this._user = value;
+    }
+    chargerUtilisateur() {
+        var hhh;
+        hhh = this.auth.getMail();
+        for (let p of this.panier) {
+            if (hhh == p.mail) {
+                this.idPanier = p.id;
+            }
+        }
+    }
+    get idPanier() {
+        return this._idPanier;
+    }
+    set idPanier(value) {
+        this._idPanier = value;
+    }
 };
 PanierComponent.ctorParameters = () => [
     { type: _services_panier_proc_service__WEBPACK_IMPORTED_MODULE_2__["PanierProcService"] },
@@ -2286,7 +2364,8 @@ PanierComponent.ctorParameters = () => [
     { type: _services_carte_gservice_service__WEBPACK_IMPORTED_MODULE_7__["CarteGServiceService"] },
     { type: _services_ordi_service_service__WEBPACK_IMPORTED_MODULE_8__["OrdiServiceService"] },
     { type: _services_disque_dservice_service__WEBPACK_IMPORTED_MODULE_9__["DisqueDServiceService"] },
-    { type: _services_panier_service__WEBPACK_IMPORTED_MODULE_10__["PanierService"] }
+    { type: _services_panier_service__WEBPACK_IMPORTED_MODULE_10__["PanierService"] },
+    { type: _services_authentification_service__WEBPACK_IMPORTED_MODULE_11__["AuthenticationService"] }
 ];
 PanierComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -3375,6 +3454,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _panier_panier_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../panier/panier.component */ "./src/app/panier/panier.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _admin_modif_modif_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../admin/modif/modif.component */ "./src/app/admin/modif/modif.component.ts");
+/* harmony import */ var _services_authentification_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/authentification.service */ "./src/app/services/authentification.service.ts");
+/* harmony import */ var _services_admin_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../services/admin.service */ "./src/app/services/admin.service.ts");
+
+
 
 
 
@@ -3418,15 +3501,18 @@ const routes = [
     },
     {
         path: "Admin",
-        component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__["AdminComponent"]
+        component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_10__["AdminComponent"],
+        canActivate: [_services_admin_service__WEBPACK_IMPORTED_MODULE_16__["AdminService"]]
     },
     {
         path: "Ajout",
-        component: _admin_Ajout_ajout_component_ajout_component_component__WEBPACK_IMPORTED_MODULE_11__["AjoutComponentComponent"]
+        component: _admin_Ajout_ajout_component_ajout_component_component__WEBPACK_IMPORTED_MODULE_11__["AjoutComponentComponent"],
+        canActivate: [_services_admin_service__WEBPACK_IMPORTED_MODULE_16__["AdminService"]]
     },
     {
         path: "panierpanier",
-        component: _panier_panier_component__WEBPACK_IMPORTED_MODULE_12__["PanierComponent"]
+        component: _panier_panier_component__WEBPACK_IMPORTED_MODULE_12__["PanierComponent"],
+        canActivate: [_services_authentification_service__WEBPACK_IMPORTED_MODULE_15__["AuthenticationService"]]
     },
     {
         path: "login",
@@ -3434,7 +3520,8 @@ const routes = [
     },
     {
         path: "Modif",
-        component: _admin_modif_modif_component__WEBPACK_IMPORTED_MODULE_14__["ModifComponent"]
+        component: _admin_modif_modif_component__WEBPACK_IMPORTED_MODULE_14__["ModifComponent"],
+        canActivate: [_services_admin_service__WEBPACK_IMPORTED_MODULE_16__["AdminService"]]
     }
 ];
 let RoutingModule = class RoutingModule {
@@ -3459,6 +3546,57 @@ RoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/services/admin.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/admin.service.ts ***!
+  \*******************************************/
+/*! exports provided: AdminService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminService", function() { return AdminService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+var AdminService_1;
+
+
+
+let AdminService = AdminService_1 = class AdminService {
+    constructor(http) {
+        this.http = http;
+    }
+    post(admin) {
+        return this.http.post(AdminService_1.URL_API, admin);
+    }
+    register(admin) {
+        return this.http.post(`${AdminService_1.URL_API}/users/register`, admin);
+    }
+    static getURL_API() {
+        return AdminService_1.URL_API;
+    }
+    canActivate(route, state) {
+        if (localStorage.getItem("currentAdmin") != null) {
+            return true;
+        }
+        return false;
+    }
+};
+AdminService.URL_API = '/Admin';
+AdminService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+AdminService = AdminService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], AdminService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/authentification.service.ts":
 /*!******************************************************!*\
   !*** ./src/app/services/authentification.service.ts ***!
@@ -3474,7 +3612,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var jwt_decode__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jwt-decode */ "./node_modules/jwt-decode/lib/index.js");
+/* harmony import */ var jwt_decode__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jwt_decode__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _admin_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./admin.service */ "./src/app/services/admin.service.ts");
+
+
 
 
 
@@ -3486,12 +3629,17 @@ let AuthenticationService = class AuthenticationService {
         this.http = http;
         this.currentUserSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
+        this.currentAdminSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](JSON.parse(localStorage.getItem('currentAdmin')));
+        this.currentAdmin = this.currentAdminSubject.asObservable();
     }
     get currentUserValue() {
         return this.currentUserSubject.value;
     }
+    get currentAdminValue() {
+        return this.currentAdminSubject.value;
+    }
     login(mail, mdp) {
-        return this.http.post(`${_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"].getURAL_API()}/authenticate`, { mail, mdp })
+        return this.http.post(`${_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"].getURAL_API()}/authenticate`, { mail, mdp })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('currentUser', JSON.stringify(user));
@@ -3499,10 +3647,39 @@ let AuthenticationService = class AuthenticationService {
             return user;
         }));
     }
+    loginAdmin(mail, mdp) {
+        return this.http.post(`${_admin_service__WEBPACK_IMPORTED_MODULE_7__["AdminService"].getURL_API()}/authenticate`, { mail, mdp })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(admin => {
+            localStorage.setItem('currentAdmin', JSON.stringify(admin));
+            this.currentAdminSubject.next(admin);
+            return admin;
+        }));
+    }
     logout() {
         // remove user from local storage and set current user to null
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
+    }
+    logoutAdmin() {
+        localStorage.removeItem('currentAdmin');
+        this.currentAdminSubject.next(null);
+    }
+    getDecodedToken() {
+        //console.log(jwt_decode(this.getTokenFromLS()));
+        return jwt_decode__WEBPACK_IMPORTED_MODULE_5__(this.getTokenFromLS());
+    }
+    getTokenFromLS() {
+        //console.log(localStorage.getItem('currentUser'));
+        return localStorage.getItem('currentUser');
+    }
+    getMail() {
+        return this.getDecodedToken().unique_name;
+    }
+    canActivate(route, state) {
+        if (localStorage.getItem("currentUser") != null) {
+            return true;
+        }
+        return false;
     }
 };
 AuthenticationService.ctorParameters = () => [

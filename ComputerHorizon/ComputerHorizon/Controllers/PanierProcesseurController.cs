@@ -14,10 +14,10 @@ namespace ComputerHorizon.Controllers
             return PanierProcesseurDAO.Post(panierP);
         }
         
-        [HttpGet("{id}")]
-        public IEnumerable<ComputerHorizon.Components.PanierProcesseur> Get(string id)
+        [HttpGet]
+        public IEnumerable<ComputerHorizon.Components.PanierProcesseur> Get()
         {
-            return PanierProcesseurDAO.QueryBase(id);
+            return PanierProcesseurDAO.QueryBase();
         }
         
         //SUPPRESSION D'UN DISQUE DUR PARTICULIER
