@@ -24,13 +24,13 @@ namespace ComputerHorizon.Controllers
         }
         
         //AFFICHAGE D'UN ORDINATEUR PARTICULIER
-        [Route("[controller]")]
+       /* [Route("[controller]")]
         [HttpGet]
         public ComputerHorizon.Components.Ordinateur GetOneElement(Ordinateur ordi)
         {
             return OrdinateurDao.Query(ordi);
         }
-        
+        */
         //SUPPRESSION D'UN ORDINATEUR PARTICULIER
         [HttpDelete("{nom}")]
         public ActionResult Delete(string nom)

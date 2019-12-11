@@ -57,7 +57,6 @@ namespace ComputerHorizon
 
             app.UseStaticFiles(); //modifier
             app.UseSpaStaticFiles(); // modifier
-            app.UseHttpsRedirection();
             app.UseMvc();
             app.UseSpa(spa => spa.Options.SourcePath = PATH_ANGULAR_APP);
             
